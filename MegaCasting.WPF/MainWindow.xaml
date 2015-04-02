@@ -1,0 +1,24 @@
+﻿<Window x:Class="MegaCasting.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:MegaCasting.WPF"
+        Title="Gestionnaire MegaCasting" Height="700" Width="1050">
+    <Grid>
+        <TabControl x:Name="TabControlGestion">
+            <TabItem x:Name="TabOffres" Header="Offres">
+                <local:TabOffres x:Name="UserControlOffres"/>
+            </TabItem>
+
+            <TabItem x:Name="TabAnnonceurs" Header="Annonceurs" Height="22" VerticalAlignment="Top" >
+                <local:TabAnnonceurs x:Name="UserControlAnnonceurs"/>
+            </TabItem>
+            <TabItem x:Name="TabArtistes" Header="Artistes" Height="22" VerticalAlignment="Top" >
+                <local:TabArtistes x:Name="UserControlArtistes"/>
+            </TabItem>
+        
+            <TabItem x:Name="TabPartenaires" Header="Partenaires" Height="22" VerticalAlignment="Top" >
+            <local:TabPartenaires x:Name="UserControlPartenaires"/>
+        </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

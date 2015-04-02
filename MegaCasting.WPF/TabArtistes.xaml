@@ -1,0 +1,112 @@
+﻿<UserControl x:Class="MegaCasting.WPF.TabArtistes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="600">
+    <Grid Margin="1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+            <ColumnDefinition Width="0.4*"></ColumnDefinition>
+            <ColumnDefinition Width="0.4*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListBox Name="ListBoxArtistes" Grid.Column="0" Grid.Row="1">
+
+        </ListBox>
+        <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold">Artistes</Label>
+        <Grid Margin="1" Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <GroupBox Header="Adresse" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="2" Grid.Row="5" Width="auto"/>
+
+            <GroupBox Header="Coordonnées" Grid.Column="0" Grid.ColumnSpan="2"  Grid.RowSpan="3" Grid.Row="2" Width="auto"/>
+            <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center">Nom :</Label>
+            <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center">Prénom :</Label>
+            <Label Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center">N° Tel :</Label>
+            <Label Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center">email:</Label>
+            <Label Grid.Column="0" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center">N° et rue :</Label>
+            <Label Grid.Column="0" Grid.Row="7" HorizontalAlignment="Left" VerticalAlignment="Center">Code Postal :</Label>
+            <Label Grid.Column="0" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Center">Ville :</Label>
+            <Label Grid.Column="0" Grid.Row="9" HorizontalAlignment="Left" VerticalAlignment="Center">Pays:</Label>
+
+
+            <Label Grid.Column="1"  Grid.Row="0" Margin="10" Name="LabelAnnonceurNom" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+            <Label Grid.Column="1" Grid.Row="1" Margin="10" Name="LabelAnnonceurPrenom" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+            <Label Grid.Column="1" Grid.Row="2" Margin="10" Name="LabelAnnonceurAdresse" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+            <Label Grid.Column="1" Grid.Row="3" Margin="10" Name="LabelAnnonceurNumTel" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+            <Label Grid.Column="1" Grid.Row="4" Margin="10" Name="LabelAnnonceurEmail" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+
+            <Button Grid.Column="0" Grid.Row="12" Margin="1" Name="ButtonAnnoceurModifier" Content="Modifier" ></Button>
+            <Button Grid.Column="1" Grid.Row="12" Margin="1" Name="ButtonAnnonceurSupprimer" Content="Supprimer"></Button>
+
+
+        </Grid>
+        <Grid Margin="1" Grid.Column="2" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                <ColumnDefinition Width="0.9*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+            </Grid.RowDefinitions>
+ 
+            <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center">Nombre de Contrats :</Label>
+            <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center">Domaines d'activité :</Label>
+            <Label Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center">Metiers exercés :</Label>
+
+            <ListBox Margin="2" Grid.RowSpan="2" Name="ListBoxDomaines" Grid.Column="3" Grid.Row="1">
+            </ListBox>
+            <ListBox Margin="3" Grid.RowSpan="2"  Name="ListBoxMetiers" Grid.Column="3" Grid.Row="3">
+            </ListBox>
+
+
+            <Label Grid.Column="1"  Grid.Row="0" Margin="10"  HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+            <Label Grid.Column="1" Grid.Row="1" Margin="10"  HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+            <Label Grid.Column="1" Grid.Row="2" Margin="10"  HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+            <Label Grid.Column="1" Grid.Row="3" Margin="10"  HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+            <Label Grid.Column="1" Grid.Row="4" Margin="10"  HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+
+            <Button Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="5" Margin="3"  Content="Compétences" ></Button>
+            <Button Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="7" Margin="3"  Content="Médiathèque"></Button>
+            <Button Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="9" Margin="3"  Content="Contrats" ></Button>
+            <Button Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="11" Margin="3"  Content="Expériences"></Button>
+
+
+        </Grid>
+        <Button Grid.Column="0" Grid.Row="2" Name="ButtonArtisteAjouter" Content=" Ajouter "></Button>
+    </Grid>
+
+</UserControl>
