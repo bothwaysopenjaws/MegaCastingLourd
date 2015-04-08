@@ -21,3 +21,34 @@ c:\users\emmanuel\documents\visual studio 2013\Projects\MegaCasting\MegaCasting.
 c:\users\emmanuel\documents\visual studio 2013\Projects\MegaCasting\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.csproj.GenerateResource.Cache
 c:\users\emmanuel\documents\visual studio 2013\Projects\MegaCasting\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.exe
 c:\users\emmanuel\documents\visual studio 2013\Projects\MegaCasting\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.pdb
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\bin\Debug\MegaCasting.WPF.exe.config
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.exe
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.pdb
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\bin\Debug\MegaCasting.WPF.exe
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\bin\Debug\MegaCasting.WPF.pdb
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.csprojResolveAssemblyReference.cache
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\TabAnnonceurs.baml
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\TabArtistes.baml
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\TabOffres.baml
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\TabPartenaires.baml
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\MainWindow.g.cs
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\TabAnnonceurs.g.cs
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\TabArtistes.g.cs
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\TabOffres.g.cs
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\TabPartenaires.g.cs
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\App.g.cs
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\MegaCasting.WPF_MarkupCompile.cache
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\MegaCasting.WPF_MarkupCompile.lref
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\MainWindow.baml
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.g.resources
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.Properties.Resources.resources
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.csproj.GenerateResource.Cache
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\Gestion_Competences.baml
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\Gestion_Competences.g.cs
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\Gestion_Contrat.baml
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\Gestion_Experiences.baml
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\Gestion_Mediatheque.baml
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\Gestion_Contrat.g.cs
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\Gestion_Experiences.g.cs
+C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\Gestion_Mediatheque.g.cs

@@ -36,6 +36,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -44,15 +46,29 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Gestion_Competences.xaml.cs">
+      <DependentUpon>Gestion_Competences.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion_Contrat.xaml.cs">
+      <DependentUpon>Gestion_Contrat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion_Experiences.xaml.cs">
+      <DependentUpon>Gestion_Experiences.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion_Mediatheque.xaml.cs">
+      <DependentUpon>Gestion_Mediatheque.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TabAnnonceurs.xaml.cs">
       <DependentUpon>TabAnnonceurs.xaml</DependentUpon>
     </Compile>
@@ -65,6 +81,22 @@
     <Compile Include="TabPartenaires.xaml.cs">
       <DependentUpon>TabPartenaires.xaml</DependentUpon>
     </Compile>
+    <Page Include="Gestion_Competences.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gestion_Contrat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gestion_Experiences.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gestion_Mediatheque.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
