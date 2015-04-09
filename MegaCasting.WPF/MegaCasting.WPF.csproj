@@ -69,6 +69,9 @@
     <Compile Include="Gestion_Mediatheque.xaml.cs">
       <DependentUpon>Gestion_Mediatheque.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TabAbonnements.xaml.cs">
+      <DependentUpon>TabAbonnements.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TabAnnonceurs.xaml.cs">
       <DependentUpon>TabAnnonceurs.xaml</DependentUpon>
     </Compile>
@@ -80,6 +83,9 @@
     </Compile>
     <Compile Include="TabOffres.xaml.cs">
       <DependentUpon>TabOffres.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabParametres.xaml.cs">
+      <DependentUpon>TabParametres.xaml</DependentUpon>
     </Compile>
     <Compile Include="TabPartenaires.xaml.cs">
       <DependentUpon>TabPartenaires.xaml</DependentUpon>
@@ -112,6 +118,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="TabAbonnements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TabAnnonceurs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -125,6 +135,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TabOffres.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TabParametres.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

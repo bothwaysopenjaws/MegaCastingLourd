@@ -4,7 +4,14 @@
         xmlns:local="clr-namespace:MegaCasting.WPF"
         Title="Gestionnaire MegaCasting" Height="700" Width="1050">
     <Grid>
-        <TabControl x:Name="TabControlGestion">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+        </Grid>
+
+        <TabControl  x:Name="TabControlGestion">
             <TabItem x:Name="TabOffres" Header="Offres">
                 <local:TabOffres x:Name="UserControlOffres"/>
             </TabItem>
@@ -22,6 +29,13 @@
             <TabItem x:Name="TabCandidatures" Header="Candidatures" Height="22" VerticalAlignment="Top" >
                 <local:TabCandidatures x:Name="UserControlCandidatures"/>
             </TabItem>
+            <TabItem x:Name="TabParametres" Header="Paramètres" Height="22" VerticalAlignment="Top" >
+                <local:TabParametres x:Name="UserControlParametres"/>
+            </TabItem>
+            <TabItem x:Name="TabAbonnements" Header="Abonnements" Height="22" VerticalAlignment="Top" >
+                <local:TabAbonnements x:Name="UserControlAbonnements"/>
+            </TabItem>
+            
         </TabControl>
     </Grid>
 </Window>
