@@ -52,3 +52,13 @@ C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCa
 C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\Gestion_Contrat.g.cs
 C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\Gestion_Experiences.g.cs
 C:\Users\jeoffrey\Desktop\MegaCastingLourd-master\MegaCastingLourd-master\MegaCasting.WPF\obj\Debug\Gestion_Mediatheque.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\Projects\MegaCasting\MegaCasting.WPF\obj\Debug\Gestion_Competences.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\Projects\MegaCasting\MegaCasting.WPF\obj\Debug\Gestion_Contrat.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\Projects\MegaCasting\MegaCasting.WPF\obj\Debug\Gestion_Mediatheque.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\Projects\MegaCasting\MegaCasting.WPF\obj\Debug\Gestion_Competences.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\Projects\MegaCasting\MegaCasting.WPF\obj\Debug\Gestion_Contrat.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\Projects\MegaCasting\MegaCasting.WPF\obj\Debug\Gestion_Mediatheque.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\Projects\MegaCasting\MegaCasting.WPF\obj\Debug\Gestion_Experiences.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\Projects\MegaCasting\MegaCasting.WPF\obj\Debug\Gestion_Experiences.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\Projects\MegaCasting\MegaCasting.WPF\obj\Debug\TabCandidatures.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\Projects\MegaCasting\MegaCasting.WPF\obj\Debug\TabCandidatures.g.cs

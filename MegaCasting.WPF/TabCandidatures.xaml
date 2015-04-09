@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="MegaCasting.WPF.TabCandidatures"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.4*"></ColumnDefinition>
+            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            <ColumnDefinition Width="0.05*"></ColumnDefinition>
+            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+            <ColumnDefinition Width="0.05*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <ListBox Name="ListBoxCandidature" Grid.Column="0" Grid.Row="0" Grid.RowSpan="7"></ListBox>
+        <Button Name="ButtonCandidatureSupprimer" Grid.Column="0" Grid.Row="8" Content="Supprimer" Background="Red"></Button>
+        
+        <Label Grid.Column="1" Grid.Row="1"> Nom : </Label>
+        <Label Grid.Column="1" Grid.Row="2">Prénom :</Label>
+        <Label Grid.Column="1" Grid.Row="3">CV :</Label>
+        <Label Grid.Column="1" Grid.Row="4">Lettre de motivation : </Label>
+        <Label Grid.Column="1" Grid.Row="5">Émis le : </Label>
+        
+        <TextBox Name="TextBoxCandidatureNom" Grid.Column="3" Grid.Row="1" Margin="5" ></TextBox>
+        <TextBox Name="TextBoxCandidaturePrenom" Grid.Column="3" Grid.Row="2" Margin="5" ></TextBox>
+        <Button Name="TextBoxCandidatureUrlCV" Grid.Column="3" Grid.Row="3" Margin="5" >Aucun chemin sélectionné</Button>
+        <Button Name="TextBoxCandidatureUrlLettreMotivation" Grid.Column="3" Grid.Row="4" Margin="5" >Aucun chemin sélectionné</Button>
+
+        <Label Grid.Column="3" Grid.Row="5"> Pas de date </Label>
+
+    </Grid>
+</UserControl>
