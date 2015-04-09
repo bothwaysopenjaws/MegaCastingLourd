@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-c:\users\emmanuel\documents\visual studio 2013\Projects\MegaCasting\MegaCasting.WPF\obj\Debug\
+C:\Users\Emmanuel\Documents\Visual Studio 2013\Projects\MegaCasting\MegaCasting.WPF\obj\Debug\
 MegaCasting.WPF
 none
 false
 DEBUG;TRACE
-c:\users\emmanuel\documents\visual studio 2013\Projects\MegaCasting\MegaCasting.WPF\App.xaml
-51355583532
+C:\Users\Emmanuel\Documents\Visual Studio 2013\Projects\MegaCasting\MegaCasting.WPF\App.xaml
+10612202601
 
-132009362120
-12-1401562060
-MainWindow.xaml;TabAnnonceurs.xaml;TabArtistes.xaml;TabOffres.xaml;TabPartenaires.xaml;
+18658349171
+16-1880411717
+Gestion_Competences.xaml;Gestion_Contrat.xaml;Gestion_Experiences.xaml;Gestion_Mediatheque.xaml;MainWindow.xaml;TabAnnonceurs.xaml;TabArtistes.xaml;TabCandidatures.xaml;TabOffres.xaml;TabPartenaires.xaml;
 
 False
 

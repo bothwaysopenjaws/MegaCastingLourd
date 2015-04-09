@@ -19,6 +19,9 @@
             <TabItem x:Name="TabPartenaires" Header="Partenaires" Height="22" VerticalAlignment="Top" >
             <local:TabPartenaires x:Name="UserControlPartenaires"/>
         </TabItem>
+            <TabItem x:Name="TabCandidatures" Header="Candidatures" Height="22" VerticalAlignment="Top" >
+                <local:TabCandidatures x:Name="UserControlCandidatures"/>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>
