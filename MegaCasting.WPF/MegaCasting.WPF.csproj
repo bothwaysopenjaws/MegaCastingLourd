@@ -57,6 +57,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AjoutCredit.xaml.cs">
+      <DependentUpon>AjoutCredit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AjoutOffre.xaml.cs">
+      <DependentUpon>AjoutOffre.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AjoutTypeAbonnement.xaml.cs">
+      <DependentUpon>AjoutTypeAbonnement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GestionTypeAbonnement.xaml.cs">
+      <DependentUpon>GestionTypeAbonnement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GestionTypeCompetence.xaml.cs">
+      <DependentUpon>GestionTypeCompetence.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GestionTypeContrat.xaml.cs">
+      <DependentUpon>GestionTypeContrat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GestionTypeMetierDomaine.xaml.cs">
+      <DependentUpon>GestionTypeMetierDomaine.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gestion_Competences.xaml.cs">
       <DependentUpon>Gestion_Competences.xaml</DependentUpon>
     </Compile>
@@ -90,6 +111,34 @@
     <Compile Include="TabPartenaires.xaml.cs">
       <DependentUpon>TabPartenaires.xaml</DependentUpon>
     </Compile>
+    <Page Include="AjoutCredit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AjoutOffre.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AjoutTypeAbonnement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GestionTypeAbonnement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GestionTypeCompetence.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GestionTypeContrat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GestionTypeMetierDomaine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Gestion_Competences.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
