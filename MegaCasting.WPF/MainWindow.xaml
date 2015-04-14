@@ -4,35 +4,35 @@
         xmlns:local="clr-namespace:MegaCasting.WPF"
         Title="Gestionnaire MegaCasting" Height="700" Width="1050">
     <Grid>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-        </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.05*"></RowDefinition>
+            <RowDefinition Height="0.95*"></RowDefinition>
+        </Grid.RowDefinitions>
 
-        <TabControl  x:Name="TabControlGestion">
-            <TabItem x:Name="TabOffres" Header="Offres">
+
+
+        <TabControl Grid.Row="1" x:Name="TabControlGestion" >
+            <TabItem x:Name="TabOffres" Header="Offres" Visibility="Hidden" >
                 <local:TabOffres x:Name="UserControlOffres"/>
             </TabItem>
 
-            <TabItem x:Name="TabAnnonceurs" Header="Annonceurs" Height="22" VerticalAlignment="Top" >
+            <TabItem x:Name="TabAnnonceurs" Header="Annonceurs" Height="22" VerticalAlignment="Top" Visibility="Hidden" >
                 <local:TabAnnonceurs x:Name="UserControlAnnonceurs"/>
             </TabItem>
-            <TabItem x:Name="TabArtistes" Header="Artistes" Height="22" VerticalAlignment="Top" >
+            <TabItem x:Name="TabArtistes" Header="Artistes" Height="22" VerticalAlignment="Top" Visibility="Hidden" >
                 <local:TabArtistes x:Name="UserControlArtistes"/>
             </TabItem>
-        
-            <TabItem x:Name="TabPartenaires" Header="Partenaires" Height="22" VerticalAlignment="Top" >
+
+            <TabItem x:Name="TabPartenaires" Header="Partenaires" Height="22" VerticalAlignment="Top" Visibility="Hidden" >
             <local:TabPartenaires x:Name="UserControlPartenaires"/>
         </TabItem>
-            <TabItem x:Name="TabCandidatures" Header="Candidatures" Height="22" VerticalAlignment="Top" >
+            <TabItem x:Name="TabCandidatures" Header="Candidatures" Height="22" VerticalAlignment="Top" Visibility="Hidden">
                 <local:TabCandidatures x:Name="UserControlCandidatures"/>
             </TabItem>
-            <TabItem x:Name="TabParametres" Header="Paramètres" Height="22" VerticalAlignment="Top" >
+            <TabItem x:Name="TabParametres" Header="Paramètres" Height="22" VerticalAlignment="Top" Visibility="Hidden">
                 <local:TabParametres x:Name="UserControlParametres"/>
             </TabItem>
-            <TabItem x:Name="TabAbonnements" Header="Abonnements" Height="22" VerticalAlignment="Top" >
+            <TabItem x:Name="TabAbonnements" Header="Abonnements" Height="22" VerticalAlignment="Top" Visibility="Hidden">
                 <local:TabAbonnements x:Name="UserControlAbonnements"/>
             </TabItem>
             

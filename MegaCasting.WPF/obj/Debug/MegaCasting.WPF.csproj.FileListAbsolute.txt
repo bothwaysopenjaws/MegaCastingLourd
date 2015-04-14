@@ -144,3 +144,17 @@ C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ge
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionTypeCompetence.g.cs
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionTypeContrat.g.cs
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionTypeMetierDomaine.g.cs
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\AjoutCredit.baml
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\AjoutOffre.baml
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\AjoutTypeAbonnement.baml
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionTypeAbonnement.baml
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionTypeCompetence.baml
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionTypeContrat.baml
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionTypeMetierDomaine.baml
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\AjoutCredit.g.cs
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\AjoutOffre.g.cs
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\AjoutTypeAbonnement.g.cs
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionTypeAbonnement.g.cs
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionTypeCompetence.g.cs
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionTypeContrat.g.cs
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionTypeMetierDomaine.g.cs
