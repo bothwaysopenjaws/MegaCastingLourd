@@ -15,11 +15,11 @@ namespace MegaCasting.DBLib
     public partial class adresse
     {
         public int id { get; set; }
+        public int utilisateur_id { get; set; }
         public string rue { get; set; }
         public string ville { get; set; }
         public string codePostal { get; set; }
         public string pays { get; set; }
-        public int utilisateur_id { get; set; }
     
         public virtual utilisateur utilisateur { get; set; }
     }

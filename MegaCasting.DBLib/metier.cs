@@ -20,9 +20,9 @@ namespace MegaCasting.DBLib
         }
     
         public int id { get; set; }
+        public Nullable<int> domaine_id { get; set; }
         public string libelle { get; set; }
         public string description { get; set; }
-        public Nullable<int> domaine_id { get; set; }
     
         public virtual domaine domaine { get; set; }
         public virtual ICollection<offre> offres { get; set; }

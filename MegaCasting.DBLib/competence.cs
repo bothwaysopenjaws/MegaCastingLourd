@@ -15,9 +15,9 @@ namespace MegaCasting.DBLib
     public partial class competence
     {
         public int id { get; set; }
-        public Nullable<int> typeCompetence_id { get; set; }
         public Nullable<int> utilisateur_id { get; set; }
         public Nullable<int> niveau_id { get; set; }
+        public Nullable<int> typeCompetence_id { get; set; }
     
         public virtual typecompetence typecompetence { get; set; }
         public virtual niveau niveau { get; set; }

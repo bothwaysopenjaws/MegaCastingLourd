@@ -19,8 +19,14 @@
         <Button HorizontalAlignment="Right" Height="25" Width="100" Grid.Column="1" Grid.Row="2" Margin="0,11,28,11" Name="ButtonTypeAbonnementSupprimer" Content="Supprimer"/>
         <Button HorizontalAlignment="Left" Height="25" Width="100" Grid.Column="1" Grid.Row="2" Margin="23,11,0,11" Name="ButtonTypeAbonnementModifier" Content="Modifier"/>
 
-        <Label  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.ColumnSpan="2">Gestion des abonnements</Label>
-        <ListBox Name="ListBoxAbonnements" Grid.Column="0" Grid.Row="1" Margin="5"></ListBox>
+        <Label  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.ColumnSpan="2">Gestion des types d'abonnements</Label>
+        <ListBox Name="ListBoxAbonnements" Grid.Column="0" Grid.Row="1" Margin="5" ItemsSource="{Binding TypeAbonnements}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding libelle}"></Label>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
         <Grid Margin="1" Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.644,0.497">
             <Grid.ColumnDefinitions>

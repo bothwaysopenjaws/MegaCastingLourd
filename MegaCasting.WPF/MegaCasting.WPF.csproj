@@ -126,6 +126,15 @@
     <Compile Include="TabPartenaires.xaml.cs">
       <DependentUpon>TabPartenaires.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\ViewModelAbonnement.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="ViewModel\ViewModelCandidature.cs" />
+    <Compile Include="ViewModel\ViewModelCompetence.cs" />
+    <Compile Include="ViewModel\ViewModelContrat.cs" />
+    <Compile Include="ViewModel\ViewModelMedia.cs" />
+    <Compile Include="ViewModel\ViewModelMetier.cs" />
+    <Compile Include="ViewModel\ViewModelOffre.cs" />
+    <Compile Include="ViewModel\ViewModelUtilisateur.cs" />
     <Page Include="AjoutCredit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -238,6 +247,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MegaCasting.DBLib\MegaCasting.DBLib.csproj">
+      <Project>{b484af5d-3655-44f6-9ff0-32fb4c36db86}</Project>
+      <Name>MegaCasting.DBLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

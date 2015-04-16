@@ -10,21 +10,21 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="utilisateur_id" Type="int" Nullable="false" />
+          <Property Name="dateSouscription" Type="date" Nullable="false" />
           <Property Name="restant" Type="int" Nullable="false" />
           <Property Name="typeAbonnement_id" Type="int" />
-          <Property Name="dateSouscription" Type="date" Nullable="false" />
-          <Property Name="utilisateur_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="adresse">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="utilisateur_id" Type="int" Nullable="false" />
           <Property Name="rue" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="ville" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="codePostal" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="pays" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="utilisateur_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="candidature">
           <Key>
@@ -42,9 +42,9 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="typeCompetence_id" Type="int" />
           <Property Name="utilisateur_id" Type="int" />
           <Property Name="niveau_id" Type="int" />
+          <Property Name="typeCompetence_id" Type="int" />
         </EntityType>
         <EntityType Name="contrat">
           <Key>
@@ -75,30 +75,30 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="utilisateur_id" Type="int" />
           <Property Name="societe" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="dateDebut" Type="date" Nullable="false" />
           <Property Name="dateFin" Type="date" Nullable="false" />
           <Property Name="description" Type="longtext" Nullable="false" />
-          <Property Name="utilisateur_id" Type="int" />
         </EntityType>
         <EntityType Name="media">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="utilisateur_id" Type="int" Nullable="false" />
           <Property Name="nom" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="url" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="typeMedia_id" Type="int" />
-          <Property Name="utilisateur_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="metier">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="domaine_id" Type="int" />
           <Property Name="libelle" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="description" Type="longtext" Nullable="false" />
-          <Property Name="domaine_id" Type="int" />
         </EntityType>
         <EntityType Name="niveau">
           <Key>
@@ -113,11 +113,11 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="contrat_id" Type="int" />
+          <Property Name="metier_id" Type="int" />
           <Property Name="description" Type="longtext" Nullable="false" />
           <Property Name="dateDebut" Type="datetime" Precision="0" Nullable="false" />
           <Property Name="datefin" Type="datetime" Precision="0" Nullable="false" />
           <Property Name="duree" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="metier_id" Type="int" />
         </EntityType>
         <EntityType Name="typeabonnement">
           <Key>
@@ -457,10 +457,10 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="utilisateur_id" Type="Int32" Nullable="false" />
+          <Property Name="dateSouscription" Type="DateTime" Nullable="false" />
           <Property Name="restant" Type="Int32" Nullable="false" />
           <Property Name="typeAbonnement_id" Type="Int32" />
-          <Property Name="dateSouscription" Type="DateTime" Nullable="false" />
-          <Property Name="utilisateur_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="typeabonnement" Relationship="Self.FK_351268BB9FB1D74A" FromRole="abonnement" ToRole="typeabonnement" />
           <NavigationProperty Name="utilisateur" Relationship="Self.FK_351268BBFB88E14F" FromRole="abonnement" ToRole="utilisateur" />
         </EntityType>
@@ -469,11 +469,11 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="utilisateur_id" Type="Int32" Nullable="false" />
           <Property Name="rue" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ville" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="codePostal" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="pays" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="utilisateur_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="utilisateur" Relationship="Self.FK_C35F0816FB88E14F" FromRole="adresse" ToRole="utilisateur" />
         </EntityType>
         <EntityType Name="candidature">
@@ -492,9 +492,9 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="typeCompetence_id" Type="Int32" />
           <Property Name="utilisateur_id" Type="Int32" />
           <Property Name="niveau_id" Type="Int32" />
+          <Property Name="typeCompetence_id" Type="Int32" />
           <NavigationProperty Name="typecompetence" Relationship="Self.FK_94D4687F7B108EF2" FromRole="competence" ToRole="typecompetence" />
           <NavigationProperty Name="niveau" Relationship="Self.FK_94D4687FB3E9C81" FromRole="competence" ToRole="niveau" />
           <NavigationProperty Name="utilisateur" Relationship="Self.FK_94D4687FFB88E14F" FromRole="competence" ToRole="utilisateur" />
@@ -524,11 +524,11 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="utilisateur_id" Type="Int32" />
           <Property Name="societe" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="dateDebut" Type="DateTime" Nullable="false" />
           <Property Name="dateFin" Type="DateTime" Nullable="false" />
           <Property Name="description" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="utilisateur_id" Type="Int32" />
           <NavigationProperty Name="utilisateur" Relationship="Self.FK_EDBFD5ECFB88E14F" FromRole="historique" ToRole="utilisateur" />
         </EntityType>
         <EntityType Name="media">
@@ -536,10 +536,10 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="utilisateur_id" Type="Int32" Nullable="false" />
           <Property Name="nom" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="url" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="typeMedia_id" Type="Int32" />
-          <Property Name="utilisateur_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="typemedia" Relationship="Self.FK_6A2CA10C4F8031AB" FromRole="media" ToRole="typemedia" />
           <NavigationProperty Name="utilisateur" Relationship="Self.FK_6A2CA10CFB88E14F" FromRole="media" ToRole="utilisateur" />
         </EntityType>
@@ -548,9 +548,9 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="domaine_id" Type="Int32" />
           <Property Name="libelle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="description" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="domaine_id" Type="Int32" />
           <NavigationProperty Name="domaine" Relationship="Self.FK_51A00D8C4272FC9F" FromRole="metier" ToRole="domaine" />
           <NavigationProperty Name="offres" Relationship="Self.FK_AF86866FED16FA20" FromRole="metier" ToRole="offre" />
         </EntityType>
@@ -568,11 +568,11 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="contrat_id" Type="Int32" />
+          <Property Name="metier_id" Type="Int32" />
           <Property Name="description" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="dateDebut" Type="DateTime" Nullable="false" />
           <Property Name="datefin" Type="DateTime" Nullable="false" />
           <Property Name="duree" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="metier_id" Type="Int32" />
           <NavigationProperty Name="contrat" Relationship="Self.FK_AF86866F1823061F" FromRole="offre" ToRole="contrat" />
           <NavigationProperty Name="metier" Relationship="Self.FK_AF86866FED16FA20" FromRole="offre" ToRole="metier" />
         </EntityType>
@@ -897,10 +897,10 @@
             <EntityTypeMapping TypeName="megacastingModel.abonnement">
               <MappingFragment StoreEntitySet="abonnement">
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="utilisateur_id" ColumnName="utilisateur_id" />
+                <ScalarProperty Name="dateSouscription" ColumnName="dateSouscription" />
                 <ScalarProperty Name="restant" ColumnName="restant" />
                 <ScalarProperty Name="typeAbonnement_id" ColumnName="typeAbonnement_id" />
-                <ScalarProperty Name="dateSouscription" ColumnName="dateSouscription" />
-                <ScalarProperty Name="utilisateur_id" ColumnName="utilisateur_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -908,11 +908,11 @@
             <EntityTypeMapping TypeName="megacastingModel.adresse">
               <MappingFragment StoreEntitySet="adresse">
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="utilisateur_id" ColumnName="utilisateur_id" />
                 <ScalarProperty Name="rue" ColumnName="rue" />
                 <ScalarProperty Name="ville" ColumnName="ville" />
                 <ScalarProperty Name="codePostal" ColumnName="codePostal" />
                 <ScalarProperty Name="pays" ColumnName="pays" />
-                <ScalarProperty Name="utilisateur_id" ColumnName="utilisateur_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -932,9 +932,9 @@
             <EntityTypeMapping TypeName="megacastingModel.competence">
               <MappingFragment StoreEntitySet="competence">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="typeCompetence_id" ColumnName="typeCompetence_id" />
                 <ScalarProperty Name="utilisateur_id" ColumnName="utilisateur_id" />
                 <ScalarProperty Name="niveau_id" ColumnName="niveau_id" />
+                <ScalarProperty Name="typeCompetence_id" ColumnName="typeCompetence_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -960,11 +960,11 @@
             <EntityTypeMapping TypeName="megacastingModel.historique">
               <MappingFragment StoreEntitySet="historique">
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="utilisateur_id" ColumnName="utilisateur_id" />
                 <ScalarProperty Name="societe" ColumnName="societe" />
                 <ScalarProperty Name="dateDebut" ColumnName="dateDebut" />
                 <ScalarProperty Name="dateFin" ColumnName="dateFin" />
                 <ScalarProperty Name="description" ColumnName="description" />
-                <ScalarProperty Name="utilisateur_id" ColumnName="utilisateur_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -972,10 +972,10 @@
             <EntityTypeMapping TypeName="megacastingModel.media">
               <MappingFragment StoreEntitySet="media">
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="utilisateur_id" ColumnName="utilisateur_id" />
                 <ScalarProperty Name="nom" ColumnName="nom" />
                 <ScalarProperty Name="url" ColumnName="url" />
                 <ScalarProperty Name="typeMedia_id" ColumnName="typeMedia_id" />
-                <ScalarProperty Name="utilisateur_id" ColumnName="utilisateur_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -983,9 +983,9 @@
             <EntityTypeMapping TypeName="megacastingModel.metier">
               <MappingFragment StoreEntitySet="metier">
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="domaine_id" ColumnName="domaine_id" />
                 <ScalarProperty Name="libelle" ColumnName="libelle" />
                 <ScalarProperty Name="description" ColumnName="description" />
-                <ScalarProperty Name="domaine_id" ColumnName="domaine_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1002,11 +1002,11 @@
               <MappingFragment StoreEntitySet="offre">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="contrat_id" ColumnName="contrat_id" />
+                <ScalarProperty Name="metier_id" ColumnName="metier_id" />
                 <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="dateDebut" ColumnName="dateDebut" />
                 <ScalarProperty Name="datefin" ColumnName="datefin" />
                 <ScalarProperty Name="duree" ColumnName="duree" />
-                <ScalarProperty Name="metier_id" ColumnName="metier_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

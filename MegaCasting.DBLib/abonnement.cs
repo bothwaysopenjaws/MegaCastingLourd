@@ -15,10 +15,10 @@ namespace MegaCasting.DBLib
     public partial class abonnement
     {
         public int id { get; set; }
+        public int utilisateur_id { get; set; }
+        public System.DateTime dateSouscription { get; set; }
         public int restant { get; set; }
         public Nullable<int> typeAbonnement_id { get; set; }
-        public System.DateTime dateSouscription { get; set; }
-        public int utilisateur_id { get; set; }
     
         public virtual typeabonnement typeabonnement { get; set; }
         public virtual utilisateur utilisateur { get; set; }

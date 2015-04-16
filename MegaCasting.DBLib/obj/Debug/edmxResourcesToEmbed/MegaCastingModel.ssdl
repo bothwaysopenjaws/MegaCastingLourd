@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="megacastingModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="abonnement">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="utilisateur_id" Type="int" Nullable="false" />
+    <Property Name="dateSouscription" Type="date" Nullable="false" />
+    <Property Name="restant" Type="int" Nullable="false" />
+    <Property Name="typeAbonnement_id" Type="int" />
+  </EntityType>
+  <EntityType Name="adresse">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="utilisateur_id" Type="int" Nullable="false" />
+    <Property Name="rue" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ville" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="codePostal" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="pays" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="candidature">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="prenom" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="urlCv" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="urlLettreMotivation" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="competence">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="utilisateur_id" Type="int" />
+    <Property Name="niveau_id" Type="int" />
+    <Property Name="typeCompetence_id" Type="int" />
+  </EntityType>
+  <EntityType Name="contrat">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="clause" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="typeContrat_id" Type="int" />
+  </EntityType>
+  <EntityType Name="domaine">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="domaine_utilisateur">
+    <Key>
+      <PropertyRef Name="domaine_id" />
+      <PropertyRef Name="utilisateur_id" />
+    </Key>
+    <Property Name="domaine_id" Type="int" Nullable="false" />
+    <Property Name="utilisateur_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="historique">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="utilisateur_id" Type="int" />
+    <Property Name="societe" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="dateDebut" Type="date" Nullable="false" />
+    <Property Name="dateFin" Type="date" Nullable="false" />
+    <Property Name="description" Type="longtext" Nullable="false" />
+  </EntityType>
+  <EntityType Name="media">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="utilisateur_id" Type="int" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="url" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="typeMedia_id" Type="int" />
+  </EntityType>
+  <EntityType Name="metier">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="domaine_id" Type="int" />
+    <Property Name="libelle" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="description" Type="longtext" Nullable="false" />
+  </EntityType>
+  <EntityType Name="niveau">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="offre">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="contrat_id" Type="int" />
+    <Property Name="metier_id" Type="int" />
+    <Property Name="description" Type="longtext" Nullable="false" />
+    <Property Name="dateDebut" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="datefin" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="duree" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="typeabonnement">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="nbOffre" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="typecompetence">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="typecontrat">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="typemedia">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="typeutilisateur">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="utilisateur">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="prenom" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="login" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="dateNaissance" Type="date" Nullable="false" />
+    <Property Name="typeUtilisateur_id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_1D1C63B3E9516E8C">
+    <End Role="typeutilisateur" Type="Self.typeutilisateur" Multiplicity="1" />
+    <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="typeutilisateur">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="utilisateur">
+        <PropertyRef Name="typeUtilisateur_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_351268BB9FB1D74A">
+    <End Role="typeabonnement" Type="Self.typeabonnement" Multiplicity="0..1" />
+    <End Role="abonnement" Type="Self.abonnement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="typeabonnement">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="abonnement">
+        <PropertyRef Name="typeAbonnement_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_351268BBFB88E14F">
+    <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="1" />
+    <End Role="abonnement" Type="Self.abonnement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="utilisateur">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="abonnement">
+        <PropertyRef Name="utilisateur_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_51A00D8C4272FC9F">
+    <End Role="domaine" Type="Self.domaine" Multiplicity="0..1" />
+    <End Role="metier" Type="Self.metier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="domaine">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="metier">
+        <PropertyRef Name="domaine_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_60349993AE24E5C2">
+    <End Role="typecontrat" Type="Self.typecontrat" Multiplicity="0..1" />
+    <End Role="contrat" Type="Self.contrat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="typecontrat">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="contrat">
+        <PropertyRef Name="typeContrat_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_6A2CA10C4F8031AB">
+    <End Role="typemedia" Type="Self.typemedia" Multiplicity="0..1" />
+    <End Role="media" Type="Self.media" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="typemedia">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="media">
+        <PropertyRef Name="typeMedia_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_6A2CA10CFB88E14F">
+    <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="1" />
+    <End Role="media" Type="Self.media" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="utilisateur">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="media">
+        <PropertyRef Name="utilisateur_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_94D4687F7B108EF2">
+    <End Role="typecompetence" Type="Self.typecompetence" Multiplicity="0..1" />
+    <End Role="competence" Type="Self.competence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="typecompetence">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="competence">
+        <PropertyRef Name="typeCompetence_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_94D4687FB3E9C81">
+    <End Role="niveau" Type="Self.niveau" Multiplicity="0..1" />
+    <End Role="competence" Type="Self.competence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="niveau">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="competence">
+        <PropertyRef Name="niveau_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_94D4687FFB88E14F">
+    <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="0..1" />
+    <End Role="competence" Type="Self.competence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="utilisateur">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="competence">
+        <PropertyRef Name="utilisateur_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AF86866F1823061F">
+    <End Role="contrat" Type="Self.contrat" Multiplicity="0..1" />
+    <End Role="offre" Type="Self.offre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="contrat">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="offre">
+        <PropertyRef Name="contrat_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AF86866FED16FA20">
+    <End Role="metier" Type="Self.metier" Multiplicity="0..1" />
+    <End Role="offre" Type="Self.offre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="metier">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="offre">
+        <PropertyRef Name="metier_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_C35F0816FB88E14F">
+    <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="1" />
+    <End Role="adresse" Type="Self.adresse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="utilisateur">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="adresse">
+        <PropertyRef Name="utilisateur_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_E7882CC94272FC9F">
+    <End Role="domaine" Type="Self.domaine" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="domaine_utilisateur" Type="Self.domaine_utilisateur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="domaine">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="domaine_utilisateur">
+        <PropertyRef Name="domaine_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_E7882CC9FB88E14F">
+    <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="domaine_utilisateur" Type="Self.domaine_utilisateur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="utilisateur">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="domaine_utilisateur">
+        <PropertyRef Name="utilisateur_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EDBFD5ECFB88E14F">
+    <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="0..1" />
+    <End Role="historique" Type="Self.historique" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="utilisateur">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="historique">
+        <PropertyRef Name="utilisateur_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="megacastingModelStoreContainer">
+    <EntitySet Name="abonnement" EntityType="Self.abonnement" Schema="megacasting" store:Type="Tables" />
+    <EntitySet Name="adresse" EntityType="Self.adresse" Schema="megacasting" store:Type="Tables" />
+    <EntitySet Name="candidature" EntityType="Self.candidature" Schema="megacasting" store:Type="Tables" />
+    <EntitySet Name="competence" EntityType="Self.competence" Schema="megacasting" store:Type="Tables" />
+    <EntitySet Name="contrat" EntityType="Self.contrat" Schema="megacasting" store:Type="Tables" />
+    <EntitySet Name="domaine" EntityType="Self.domaine" Schema="megacasting" store:Type="Tables" />
+    <EntitySet Name="domaine_utilisateur" EntityType="Self.domaine_utilisateur" Schema="megacasting" store:Type="Tables" />
+    <EntitySet Name="historique" EntityType="Self.historique" Schema="megacasting" store:Type="Tables" />
+    <EntitySet Name="media" EntityType="Self.media" Schema="megacasting" store:Type="Tables" />
+    <EntitySet Name="metier" EntityType="Self.metier" Schema="megacasting" store:Type="Tables" />
+    <EntitySet Name="niveau" EntityType="Self.niveau" Schema="megacasting" store:Type="Tables" />
+    <EntitySet Name="offre" EntityType="Self.offre" Schema="megacasting" store:Type="Tables" />
+    <EntitySet Name="typeabonnement" EntityType="Self.typeabonnement" Schema="megacasting" store:Type="Tables" />
+    <EntitySet Name="typecompetence" EntityType="Self.typecompetence" Schema="megacasting" store:Type="Tables" />
+    <EntitySet Name="typecontrat" EntityType="Self.typecontrat" Schema="megacasting" store:Type="Tables" />
+    <EntitySet Name="typemedia" EntityType="Self.typemedia" Schema="megacasting" store:Type="Tables" />
+    <EntitySet Name="typeutilisateur" EntityType="Self.typeutilisateur" Schema="megacasting" store:Type="Tables" />
+    <EntitySet Name="utilisateur" EntityType="Self.utilisateur" Schema="megacasting" store:Type="Tables" />
+    <AssociationSet Name="FK_1D1C63B3E9516E8C" Association="Self.FK_1D1C63B3E9516E8C">
+      <End Role="typeutilisateur" EntitySet="typeutilisateur" />
+      <End Role="utilisateur" EntitySet="utilisateur" />
+    </AssociationSet>
+    <AssociationSet Name="FK_351268BB9FB1D74A" Association="Self.FK_351268BB9FB1D74A">
+      <End Role="typeabonnement" EntitySet="typeabonnement" />
+      <End Role="abonnement" EntitySet="abonnement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_351268BBFB88E14F" Association="Self.FK_351268BBFB88E14F">
+      <End Role="utilisateur" EntitySet="utilisateur" />
+      <End Role="abonnement" EntitySet="abonnement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_51A00D8C4272FC9F" Association="Self.FK_51A00D8C4272FC9F">
+      <End Role="domaine" EntitySet="domaine" />
+      <End Role="metier" EntitySet="metier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_60349993AE24E5C2" Association="Self.FK_60349993AE24E5C2">
+      <End Role="typecontrat" EntitySet="typecontrat" />
+      <End Role="contrat" EntitySet="contrat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_6A2CA10C4F8031AB" Association="Self.FK_6A2CA10C4F8031AB">
+      <End Role="typemedia" EntitySet="typemedia" />
+      <End Role="media" EntitySet="media" />
+    </AssociationSet>
+    <AssociationSet Name="FK_6A2CA10CFB88E14F" Association="Self.FK_6A2CA10CFB88E14F">
+      <End Role="utilisateur" EntitySet="utilisateur" />
+      <End Role="media" EntitySet="media" />
+    </AssociationSet>
+    <AssociationSet Name="FK_94D4687F7B108EF2" Association="Self.FK_94D4687F7B108EF2">
+      <End Role="typecompetence" EntitySet="typecompetence" />
+      <End Role="competence" EntitySet="competence" />
+    </AssociationSet>
+    <AssociationSet Name="FK_94D4687FB3E9C81" Association="Self.FK_94D4687FB3E9C81">
+      <End Role="niveau" EntitySet="niveau" />
+      <End Role="competence" EntitySet="competence" />
+    </AssociationSet>
+    <AssociationSet Name="FK_94D4687FFB88E14F" Association="Self.FK_94D4687FFB88E14F">
+      <End Role="utilisateur" EntitySet="utilisateur" />
+      <End Role="competence" EntitySet="competence" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AF86866F1823061F" Association="Self.FK_AF86866F1823061F">
+      <End Role="contrat" EntitySet="contrat" />
+      <End Role="offre" EntitySet="offre" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AF86866FED16FA20" Association="Self.FK_AF86866FED16FA20">
+      <End Role="metier" EntitySet="metier" />
+      <End Role="offre" EntitySet="offre" />
+    </AssociationSet>
+    <AssociationSet Name="FK_C35F0816FB88E14F" Association="Self.FK_C35F0816FB88E14F">
+      <End Role="utilisateur" EntitySet="utilisateur" />
+      <End Role="adresse" EntitySet="adresse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_E7882CC94272FC9F" Association="Self.FK_E7882CC94272FC9F">
+      <End Role="domaine" EntitySet="domaine" />
+      <End Role="domaine_utilisateur" EntitySet="domaine_utilisateur" />
+    </AssociationSet>
+    <AssociationSet Name="FK_E7882CC9FB88E14F" Association="Self.FK_E7882CC9FB88E14F">
+      <End Role="utilisateur" EntitySet="utilisateur" />
+      <End Role="domaine_utilisateur" EntitySet="domaine_utilisateur" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EDBFD5ECFB88E14F" Association="Self.FK_EDBFD5ECFB88E14F">
+      <End Role="utilisateur" EntitySet="utilisateur" />
+      <End Role="historique" EntitySet="historique" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

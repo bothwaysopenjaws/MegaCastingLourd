@@ -15,10 +15,10 @@ namespace MegaCasting.DBLib
     public partial class media
     {
         public int id { get; set; }
+        public int utilisateur_id { get; set; }
         public string nom { get; set; }
         public string url { get; set; }
         public Nullable<int> typeMedia_id { get; set; }
-        public int utilisateur_id { get; set; }
     
         public virtual typemedia typemedia { get; set; }
         public virtual utilisateur utilisateur { get; set; }
