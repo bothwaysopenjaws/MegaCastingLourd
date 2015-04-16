@@ -10,8 +10,8 @@ namespace MegaCasting.WPF.ViewModel
 {
     class ViewModelAbonnement : ViewModelBase
     {
-        ObservableCollection<abonnement> Abonnements { get; set; }
-        ObservableCollection<typeabonnement> TypeAbonnements { get; set; }
+       public ObservableCollection<abonnement> Abonnements { get; set; }
+       public ObservableCollection<typeabonnement> TypeAbonnements { get; set; }
 
 
         public ViewModelAbonnement()

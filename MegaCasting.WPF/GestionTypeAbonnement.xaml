@@ -15,9 +15,9 @@
             <RowDefinition Height="0.3*"></RowDefinition>
         </Grid.RowDefinitions>
         
-        <Button HorizontalAlignment="Center" Height="25" Width="100" Grid.Column="0" Grid.Row="2" Margin="5" Name="ButtoTypeAbonnementAjouter" Content="Ajouter" Grid.RowSpan="2"></Button>
-        <Button HorizontalAlignment="Right" Height="25" Width="100" Grid.Column="1" Grid.Row="2" Margin="0,11,28,11" Name="ButtonTypeAbonnementSupprimer" Content="Supprimer"/>
-        <Button HorizontalAlignment="Left" Height="25" Width="100" Grid.Column="1" Grid.Row="2" Margin="23,11,0,11" Name="ButtonTypeAbonnementModifier" Content="Modifier"/>
+        <Button HorizontalAlignment="Center" Height="25" Width="100" Grid.Column="0" Grid.Row="2" Margin="5" Name="ButtoTypeAbonnementAjouter" Content="Ajouter" Grid.RowSpan="2" Click="ButtoTypeAbonnementAjouter_Click"></Button>
+        <Button HorizontalAlignment="Right" Height="25" Width="100" Grid.Column="1" Grid.Row="2" Margin="0,11,28,11" Name="ButtonTypeAbonnementSupprimer" Content="Supprimer" Click="ButtonTypeAbonnementSupprimer_Click"/>
+        <Button HorizontalAlignment="Left" Height="25" Width="100" Grid.Column="1" Grid.Row="2" Margin="23,11,0,11" Name="ButtonTypeAbonnementModifier" Content="Modifier" Click="ButtonTypeAbonnementModifier_Click"/>
 
         <Label  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.ColumnSpan="2">Gestion des types d'abonnements</Label>
         <ListBox Name="ListBoxAbonnements" Grid.Column="0" Grid.Row="1" Margin="5" ItemsSource="{Binding TypeAbonnements}">
@@ -34,15 +34,15 @@
                 <ColumnDefinition Width="130*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="0.5*"></RowDefinition>
                 <RowDefinition Height="0.5*"></RowDefinition>
                 
             </Grid.RowDefinitions>
 
             <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.ColumnSpan="2">Nom :</Label>
-            <Label Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.ColumnSpan="2">Nom</Label>
+            <Label Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.ColumnSpan="2" Content="{Binding libelle}"></Label>
             <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.ColumnSpan="2">Nombres d'offres :</Label>
-            <Label Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.ColumnSpan="2">Offre</Label>
+            <Label Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.ColumnSpan="2" Content="{Binding nbOffre}"></Label>
         </Grid>
     </Grid>
 </Window>
