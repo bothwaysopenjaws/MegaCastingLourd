@@ -8,16 +8,16 @@ using MegaCasting.DBLib;
 
 namespace MegaCasting.WPF.ViewModel
 {
-    class ViewModelAbonnement : ViewModelBase
+    public class ViewModelAbonnement : ViewModelBase
     {
-       public ObservableCollection<abonnement> Abonnements { get; set; }
-       public ObservableCollection<typeabonnement> TypeAbonnements { get; set; }
+       public ObservableCollection<Abonnement> Abonnements { get; set; }
+       public ObservableCollection<TypeAbonnement> TypeAbonnements { get; set; }
 
 
         public ViewModelAbonnement()
         {
-            Abonnements = new ObservableCollection<abonnement>(this.Entities.abonnements);
-            TypeAbonnements = new ObservableCollection<typeabonnement>(this.Entities.typeabonnements);
+            Abonnements = new ObservableCollection<Abonnement>(this.Entities.Abonnements);
+            TypeAbonnements = new ObservableCollection<TypeAbonnement>(this.Entities.TypeAbonnements);
         }
     }
 }

@@ -12,17 +12,17 @@ namespace MegaCasting.DBLib
     using System;
     using System.Collections.Generic;
     
-    public partial class offre
+    public partial class Offre
     {
-        public int id { get; set; }
-        public Nullable<int> metier_id { get; set; }
-        public string description { get; set; }
-        public System.DateTime dateDebut { get; set; }
-        public System.DateTime datefin { get; set; }
-        public string duree { get; set; }
-        public Nullable<int> typeContrat_id { get; set; }
+        public int Identifiant { get; set; }
+        public Nullable<int> IdentifiantMetier { get; set; }
+        public string Description { get; set; }
+        public System.DateTime DateDebut { get; set; }
+        public System.DateTime Datefin { get; set; }
+        public string Duree { get; set; }
+        public Nullable<int> IdentifiantTypeContrat { get; set; }
     
-        public virtual metier metier { get; set; }
-        public virtual typecontrat typecontrat { get; set; }
+        public virtual Metier metier { get; set; }
+        public virtual TypeContrat typecontrat { get; set; }
     }
 }

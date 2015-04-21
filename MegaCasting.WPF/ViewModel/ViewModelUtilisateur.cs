@@ -10,18 +10,18 @@ namespace MegaCasting.WPF.ViewModel
 {
     class ViewModelUtilisateur : ViewModelBase
     {
-        ObservableCollection<utilisateur> Utilisateurs { get; set; }
-        ObservableCollection<typeutilisateur> TypeUtilisateurs { get; set; }
-        ObservableCollection<adresse> Adresses { get; set; }
-        ObservableCollection<historique> Historiques { get; set; }
+        ObservableCollection<Utilisateur> Utilisateurs { get; set; }
+        ObservableCollection<TypeUtilisateur> TypeUtilisateurs { get; set; }
+        ObservableCollection<Adresse> Adresses { get; set; }
+        ObservableCollection<Historique> Historiques { get; set; }
         
 
         public ViewModelUtilisateur()
         {
-            Utilisateurs = new ObservableCollection<utilisateur>(this.Entities.utilisateurs);
-            TypeUtilisateurs = new ObservableCollection<typeutilisateur>(this.Entities.typeutilisateurs);
-            Adresses = new ObservableCollection<adresse>(this.Entities.adresses);
-            Historiques = new ObservableCollection<historique>(this.Entities.historiques);
+            Utilisateurs = new ObservableCollection<Utilisateur>(this.Entities.Utilisateurs);
+            TypeUtilisateurs = new ObservableCollection<TypeUtilisateur>(this.Entities.TypeUtilisateurs);
+            Adresses = new ObservableCollection<Adresse>(this.Entities.Adresses);
+            Historiques = new ObservableCollection<Historique>(this.Entities.Historiques);
 
         }
 

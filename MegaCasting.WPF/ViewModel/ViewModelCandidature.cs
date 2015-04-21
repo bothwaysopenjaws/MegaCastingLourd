@@ -11,11 +11,11 @@ namespace MegaCasting.WPF.ViewModel
     class ViewModelCandidature : ViewModelBase
     {
 
-        ObservableCollection<candidature> Candidatures { get; set; }
+        ObservableCollection<Candidature> Candidatures { get; set; }
 
         public ViewModelCandidature()
         {
-            Candidatures = new ObservableCollection<candidature>(this.Entities.candidatures);
+            Candidatures = new ObservableCollection<Candidature>(this.Entities.Candidatures);
             
         }
 

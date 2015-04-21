@@ -10,13 +10,13 @@ namespace MegaCasting.WPF.ViewModel
 {
     class ViewModelOffre : ViewModelBase
     {
-        public ObservableCollection<offre> Offres { get; set; }
-        public ObservableCollection<typecontrat> TypeContrats { get; set; }
+        public ObservableCollection<Offre> Offres { get; set; }
+        public ObservableCollection<TypeContrat> TypeContrats { get; set; }
 
         public ViewModelOffre ()
         {
-            Offres   = new ObservableCollection<offre>(this.Entities.offres);
-            TypeContrats = new ObservableCollection<typecontrat>(this.Entities.typecontrats);
+            Offres   = new ObservableCollection<Offre>(this.Entities.Offres);
+            TypeContrats = new ObservableCollection<TypeContrat>(this.Entities.TypeContrats);
 
         }
 

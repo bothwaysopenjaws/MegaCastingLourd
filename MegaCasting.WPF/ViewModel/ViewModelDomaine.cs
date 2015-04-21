@@ -10,13 +10,13 @@ namespace MegaCasting.WPF.ViewModel
 {
     class ViewModelDomaine : ViewModelBase
     {
-        ObservableCollection<domaine> domaines { get; set; }
-        ObservableCollection<metier> metiers { get; set; }
+        ObservableCollection<Domaine> domaines { get; set; }
+        ObservableCollection<Metier> metiers { get; set; }
         
         public ViewModelDomaine()
         {
-            domaines = new ObservableCollection<domaine>(this.Entities.domaines);
-            metiers = new ObservableCollection<metier>(this.Entities.metiers);
+            domaines = new ObservableCollection<Domaine>(this.Entities.Domaines);
+            metiers = new ObservableCollection<Metier>(this.Entities.Metiers);
         }
 
 

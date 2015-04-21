@@ -12,16 +12,16 @@ namespace MegaCasting.DBLib
     using System;
     using System.Collections.Generic;
     
-    public partial class typeutilisateur
+    public partial class TypeUtilisateur
     {
-        public typeutilisateur()
+        public TypeUtilisateur()
         {
-            this.utilisateurs = new HashSet<utilisateur>();
+            this.utilisateurs = new HashSet<Utilisateur>();
         }
     
-        public int id { get; set; }
-        public string libelle { get; set; }
+        public int Identifiant { get; set; }
+        public string Libelle { get; set; }
     
-        public virtual ICollection<utilisateur> utilisateurs { get; set; }
+        public virtual ICollection<Utilisateur> utilisateurs { get; set; }
     }
 }

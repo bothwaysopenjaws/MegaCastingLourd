@@ -12,16 +12,16 @@ namespace MegaCasting.DBLib
     using System;
     using System.Collections.Generic;
     
-    public partial class typecontrat
+    public partial class TypeContrat
     {
-        public typecontrat()
+        public TypeContrat()
         {
-            this.offres = new HashSet<offre>();
+            this.offres = new HashSet<Offre>();
         }
     
-        public int id { get; set; }
-        public string libelle { get; set; }
+        public int Identifiant { get; set; }
+        public string Libelle { get; set; }
     
-        public virtual ICollection<offre> offres { get; set; }
+        public virtual ICollection<Offre> offres { get; set; }
     }
 }

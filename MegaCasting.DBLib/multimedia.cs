@@ -12,15 +12,15 @@ namespace MegaCasting.DBLib
     using System;
     using System.Collections.Generic;
     
-    public partial class multimedia
+    public partial class Multimedia
     {
-        public int id { get; set; }
-        public Nullable<int> utilisateur_id { get; set; }
-        public string nom { get; set; }
-        public string url { get; set; }
-        public Nullable<int> typeMedia_id { get; set; }
+        public int Identifiant { get; set; }
+        public Nullable<int> IdentifiantUtilisateur { get; set; }
+        public string Nom { get; set; }
+        public string Url { get; set; }
+        public Nullable<int> IdentifiantTypeMedia { get; set; }
     
-        public virtual typemedia typemedia { get; set; }
-        public virtual utilisateur utilisateur { get; set; }
+        public virtual TypeMedia typemedia { get; set; }
+        public virtual Utilisateur utilisateur { get; set; }
     }
 }

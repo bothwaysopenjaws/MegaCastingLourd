@@ -22,17 +22,18 @@ namespace MegaCasting.WPF
     public partial class AjoutTypeAbonnement : Window
     {
 
-        private ViewModelAbonnement _ViewModel;
+        protected ViewModelAbonnement _ViewModelAbonement;
 
-        public AjoutTypeAbonnement()
+        // Récupération de la viewModel de la frame précédente
+        public  AjoutTypeAbonnement(ViewModelAbonnement _ViewModel)
         {
             InitializeComponent();
 
-            // Récupération de la ViewModel
-            _ViewModel = new ViewModelAbonnement();
+            // Intégration de la ViewModel récupérer avec celle de cette fenêtre
+            _ViewModelAbonement =  _ViewModel;
 
             // intégrer la View au dataContext
-            this.DataContext = _ViewModel;
+            this.DataContext = _ViewModelAbonement;
         }
         
         private void ButtonAjoutTypeAbonnement_Click(object sender, RoutedEventArgs e)
@@ -44,15 +45,15 @@ namespace MegaCasting.WPF
             if (this.TextBoxNom.Text != null && IsInteger(saisieOffre) == true)
             {
                      // instancié un nouveau type d'abonnement
-                    typeabonnement typeAbonnement = new typeabonnement();
-                    typeAbonnement.libelle = this.TextBoxNom.Text;
-                    typeAbonnement.nbOffre = int.Parse(saisieOffre);
+                TypeAbonnement typeAbonnement = new TypeAbonnement();
+                    typeAbonnement.Libelle = this.TextBoxNom.Text;
+                    typeAbonnement.NombreOffres = int.Parse(saisieOffre);
 
                     // ajouter à la viewModel du nouveau type d'abonnement
-                    _ViewModel.TypeAbonnements.Add(typeAbonnement);
-
+                    _ViewModelAbonement.TypeAbonnements.Add(typeAbonnement);
+                    _ViewModelAbonement.Entities.TypeAbonnements.Add(typeAbonnement);
                     // Une fois que la viewModel est mise a jour on sauvegarde les modifications 
-                    this._ViewModel.Save();
+                    this._ViewModelAbonement.Save();
 
                     // fermeture de la fenêtre
                     this.Close();
@@ -60,7 +61,8 @@ namespace MegaCasting.WPF
                 // si la saisie n'est pas valide apparition d'un message d'erreur
             else
             {
-                MessageBox.Show("Saisie invalide !, veuillez saisir des données correcte.");
+                MessageBox.Show("Saisie invalide !\r veuillez saisir des données correcte.");
+                this.TextBoxOffre.Clear();
             }
         
         }

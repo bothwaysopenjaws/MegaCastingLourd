@@ -9,7 +9,7 @@ using MegaCasting.DBLib;
 
 namespace MegaCasting.WPF.ViewModel
 {
-    class ViewModelBase
+  public  class ViewModelBase
     {
         megacastingEntities _Entities = new megacastingEntities();
 

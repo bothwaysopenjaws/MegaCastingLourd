@@ -12,18 +12,18 @@ namespace MegaCasting.DBLib
     using System;
     using System.Collections.Generic;
     
-    public partial class domaine
+    public partial class Domaine
     {
-        public domaine()
+        public Domaine()
         {
-            this.metiers = new HashSet<metier>();
-            this.utilisateurs = new HashSet<utilisateur>();
+            this.metiers = new HashSet<Metier>();
+            this.utilisateurs = new HashSet<Utilisateur>();
         }
     
-        public int id { get; set; }
-        public string libelle { get; set; }
+        public int Identifiant { get; set; }
+        public string Libelle { get; set; }
     
-        public virtual ICollection<metier> metiers { get; set; }
-        public virtual ICollection<utilisateur> utilisateurs { get; set; }
+        public virtual ICollection<Metier> metiers { get; set; }
+        public virtual ICollection<Utilisateur> utilisateurs { get; set; }
     }
 }

@@ -10,15 +10,15 @@ namespace MegaCasting.WPF.ViewModel
 {
     class ViewModelCompetence : ViewModelBase
     {
-        ObservableCollection<competence> Competences { get; set; }
-        ObservableCollection<typecompetence> TypeCompetences { get; set; }
-        ObservableCollection<niveau> niveaux { get; set; }
+        ObservableCollection<Competence> Competences { get; set; }
+        ObservableCollection<TypeCompetence> TypeCompetences { get; set; }
+        ObservableCollection<Niveau> niveaux { get; set; }
 
         public ViewModelCompetence()
         {
-            Competences = new ObservableCollection<competence>(this.Entities.competences);
-            TypeCompetences = new ObservableCollection<typecompetence>(this.Entities.typecompetences);
-            niveaux = new ObservableCollection<niveau>(this.Entities.niveaux);
+            Competences = new ObservableCollection<Competence>(this.Entities.Competences);
+            TypeCompetences = new ObservableCollection<TypeCompetence>(this.Entities.TypeCompetences);
+            niveaux = new ObservableCollection<Niveau>(this.Entities.Niveaux);
         }
 
     }

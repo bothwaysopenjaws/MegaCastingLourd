@@ -24,5 +24,11 @@ namespace MegaCasting.WPF
         {
             InitializeComponent();
         }
+
+        private void ButtonParametreTypeAbonnements_Click(object sender, RoutedEventArgs e)
+        {
+            GestionTypeAbonnement gestionAbonnement = new GestionTypeAbonnement();
+            gestionAbonnement.ShowDialog();
+        }
     }
 }

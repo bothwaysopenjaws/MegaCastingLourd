@@ -12,17 +12,17 @@ namespace MegaCasting.DBLib
     using System;
     using System.Collections.Generic;
     
-    public partial class typeabonnement
+    public partial class TypeAbonnement
     {
-        public typeabonnement()
+        public TypeAbonnement()
         {
-            this.abonnements = new HashSet<abonnement>();
+            this.abonnements = new HashSet<Abonnement>();
         }
     
-        public int id { get; set; }
-        public string libelle { get; set; }
-        public int nbOffre { get; set; }
+        public int Identifiant { get; set; }
+        public string Libelle { get; set; }
+        public int NombreOffres { get; set; }
     
-        public virtual ICollection<abonnement> abonnements { get; set; }
+        public virtual ICollection<Abonnement> abonnements { get; set; }
     }
 }

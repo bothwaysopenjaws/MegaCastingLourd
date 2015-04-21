@@ -12,32 +12,32 @@ namespace MegaCasting.DBLib
     using System;
     using System.Collections.Generic;
     
-    public partial class utilisateur
+    public partial class Utilisateur
     {
-        public utilisateur()
+        public Utilisateur()
         {
-            this.abonnements = new HashSet<abonnement>();
-            this.adresses = new HashSet<adresse>();
-            this.competences = new HashSet<competence>();
-            this.historiques = new HashSet<historique>();
-            this.multimedias = new HashSet<multimedia>();
-            this.domaines = new HashSet<domaine>();
+            this.abonnements = new HashSet<Abonnement>();
+            this.adresses = new HashSet<Adresse>();
+            this.competences = new HashSet<Competence>();
+            this.historiques = new HashSet<Historique>();
+            this.multimedias = new HashSet<Multimedia>();
+            this.domaines = new HashSet<Domaine>();
         }
     
-        public int id { get; set; }
-        public string nom { get; set; }
-        public string prenom { get; set; }
-        public string login { get; set; }
-        public string password { get; set; }
-        public System.DateTime dateNaissance { get; set; }
-        public int typeUtilisateur_id { get; set; }
+        public int Identifiant { get; set; }
+        public string Nom { get; set; }
+        public string Prenom { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
+        public System.DateTime DateNaissance { get; set; }
+        public int IdentifiantTypeUtilisateur { get; set; }
     
-        public virtual ICollection<abonnement> abonnements { get; set; }
-        public virtual ICollection<adresse> adresses { get; set; }
-        public virtual ICollection<competence> competences { get; set; }
-        public virtual ICollection<historique> historiques { get; set; }
-        public virtual ICollection<multimedia> multimedias { get; set; }
-        public virtual typeutilisateur typeutilisateur { get; set; }
-        public virtual ICollection<domaine> domaines { get; set; }
+        public virtual ICollection<Abonnement> abonnements { get; set; }
+        public virtual ICollection<Adresse> adresses { get; set; }
+        public virtual ICollection<Competence> competences { get; set; }
+        public virtual ICollection<Historique> historiques { get; set; }
+        public virtual ICollection<Multimedia> multimedias { get; set; }
+        public virtual TypeUtilisateur typeutilisateur { get; set; }
+        public virtual ICollection<Domaine> domaines { get; set; }
     }
 }

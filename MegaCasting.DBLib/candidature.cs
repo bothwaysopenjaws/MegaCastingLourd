@@ -12,13 +12,13 @@ namespace MegaCasting.DBLib
     using System;
     using System.Collections.Generic;
     
-    public partial class candidature
+    public partial class Candidature
     {
-        public int id { get; set; }
-        public string nom { get; set; }
-        public string prenom { get; set; }
-        public string urlCv { get; set; }
-        public string urlLettreMotivation { get; set; }
-        public System.DateTime date { get; set; }
+        public int Identifiant { get; set; }
+        public string Nom { get; set; }
+        public string Prenom { get; set; }
+        public string UrlCv { get; set; }
+        public string UrlLettreMotivation { get; set; }
+        public System.DateTime Date { get; set; }
     }
 }

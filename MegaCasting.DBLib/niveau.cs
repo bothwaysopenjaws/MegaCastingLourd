@@ -12,16 +12,16 @@ namespace MegaCasting.DBLib
     using System;
     using System.Collections.Generic;
     
-    public partial class niveau
+    public partial class Niveau
     {
-        public niveau()
+        public Niveau()
         {
-            this.competences = new HashSet<competence>();
+            this.competences = new HashSet<Competence>();
         }
     
-        public int id { get; set; }
-        public string libelle { get; set; }
+        public int Identifiant { get; set; }
+        public string Libelle { get; set; }
     
-        public virtual ICollection<competence> competences { get; set; }
+        public virtual ICollection<Competence> competences { get; set; }
     }
 }

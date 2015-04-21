@@ -12,16 +12,16 @@ namespace MegaCasting.DBLib
     using System;
     using System.Collections.Generic;
     
-    public partial class typemedia
+    public partial class TypeMedia
     {
-        public typemedia()
+        public TypeMedia()
         {
-            this.multimedias = new HashSet<multimedia>();
+            this.multimedias = new HashSet<Multimedia>();
         }
     
-        public int id { get; set; }
-        public string libelle { get; set; }
+        public int Identifiant { get; set; }
+        public string Libelle { get; set; }
     
-        public virtual ICollection<multimedia> multimedias { get; set; }
+        public virtual ICollection<Multimedia> multimedias { get; set; }
     }
 }

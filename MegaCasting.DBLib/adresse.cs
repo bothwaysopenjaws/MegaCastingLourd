@@ -12,15 +12,15 @@ namespace MegaCasting.DBLib
     using System;
     using System.Collections.Generic;
     
-    public partial class adresse
+    public partial class Adresse
     {
-        public int id { get; set; }
-        public int utilisateur_id { get; set; }
-        public string rue { get; set; }
-        public string ville { get; set; }
-        public string codePostal { get; set; }
-        public string pays { get; set; }
+        public int Identifiant { get; set; }
+        public int IdentifiantUtilisateur { get; set; }
+        public string Rue { get; set; }
+        public string Ville { get; set; }
+        public string CodePostal { get; set; }
+        public string Pays { get; set; }
     
-        public virtual utilisateur utilisateur { get; set; }
+        public virtual Utilisateur utilisateur { get; set; }
     }
 }

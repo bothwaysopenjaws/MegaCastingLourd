@@ -30,7 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data.Entity.EF6, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
@@ -50,91 +51,91 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="abonnement.cs">
-      <DependentUpon>MegaCastingModel.tt</DependentUpon>
+    <Compile Include="Abonnement.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="adresse.cs">
-      <DependentUpon>MegaCastingModel.tt</DependentUpon>
+    <Compile Include="Adresse.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="candidature.cs">
-      <DependentUpon>MegaCastingModel.tt</DependentUpon>
+    <Compile Include="Candidature.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="competence.cs">
-      <DependentUpon>MegaCastingModel.tt</DependentUpon>
+    <Compile Include="Competence.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="domaine.cs">
-      <DependentUpon>MegaCastingModel.tt</DependentUpon>
+    <Compile Include="Domaine.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="historique.cs">
-      <DependentUpon>MegaCastingModel.tt</DependentUpon>
+    <Compile Include="Historique.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="MegaCastingModel.Context.cs">
+    <Compile Include="Metier.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MegaCastingModel.Context.tt</DependentUpon>
+      <DependentUpon>Model.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="MegaCastingModel.cs">
+    <Compile Include="Model.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MegaCastingModel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="MegaCastingModel.Designer.cs">
+    <Compile Include="Model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MegaCastingModel.edmx</DependentUpon>
+      <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
-    <Compile Include="metier.cs">
-      <DependentUpon>MegaCastingModel.tt</DependentUpon>
+    <Compile Include="Multimedia.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="multimedia.cs">
-      <DependentUpon>MegaCastingModel.tt</DependentUpon>
+    <Compile Include="Niveau.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="niveau.cs">
-      <DependentUpon>MegaCastingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="offre.cs">
-      <DependentUpon>MegaCastingModel.tt</DependentUpon>
+    <Compile Include="Offre.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="typeabonnement.cs">
-      <DependentUpon>MegaCastingModel.tt</DependentUpon>
+    <Compile Include="TypeAbonnement.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="typecompetence.cs">
-      <DependentUpon>MegaCastingModel.tt</DependentUpon>
+    <Compile Include="TypeCompetence.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="typecontrat.cs">
-      <DependentUpon>MegaCastingModel.tt</DependentUpon>
+    <Compile Include="TypeContrat.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="typemedia.cs">
-      <DependentUpon>MegaCastingModel.tt</DependentUpon>
+    <Compile Include="TypeMedia.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="typeutilisateur.cs">
-      <DependentUpon>MegaCastingModel.tt</DependentUpon>
+    <Compile Include="TypeUtilisateur.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="utilisateur.cs">
-      <DependentUpon>MegaCastingModel.tt</DependentUpon>
+    <Compile Include="Utilisateur.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <EntityDeploy Include="MegaCastingModel.edmx">
+    <EntityDeploy Include="Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MegaCastingModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="MegaCastingModel.Context.tt">
+    <None Include="Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MegaCastingModel.edmx</DependentUpon>
-      <LastGenOutput>MegaCastingModel.Context.cs</LastGenOutput>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
     </None>
-    <None Include="MegaCastingModel.edmx.diagram">
-      <DependentUpon>MegaCastingModel.edmx</DependentUpon>
+    <None Include="Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
     </None>
-    <None Include="MegaCastingModel.tt">
+    <None Include="Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MegaCastingModel.edmx</DependentUpon>
-      <LastGenOutput>MegaCastingModel.cs</LastGenOutput>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

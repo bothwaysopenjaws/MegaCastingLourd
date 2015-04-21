@@ -21,7 +21,7 @@ namespace MegaCasting.WPF
     /// </summary>
     public partial class GestionTypeAbonnement : Window
     {
-        private ViewModelAbonnement _ViewModel;
+        protected ViewModelAbonnement _ViewModel;
 
         public GestionTypeAbonnement()
         {
@@ -34,21 +34,78 @@ namespace MegaCasting.WPF
             this.DataContext = _ViewModel;
         }
 
+        // Ajouter un type Abonnement
         private void ButtoTypeAbonnementAjouter_Click(object sender, RoutedEventArgs e)
         {
-            AjoutTypeAbonnement ajout = new AjoutTypeAbonnement();
+            // créer la fenêtre permettant l'ajout en passant en paramètre La viewModel
+            AjoutTypeAbonnement ajout = new AjoutTypeAbonnement(_ViewModel);
 
+            // Ouverture sans possibilité de naviguer sur les autres fenêtres
             ajout.ShowDialog();
         }
 
+        // Supprimer un type d'abonnement
         private void ButtonTypeAbonnementSupprimer_Click(object sender, RoutedEventArgs e)
         {
+            // On créer un type temporaire
+            TypeAbonnement type = new TypeAbonnement();
+
+            // On récupère l'abonnement sélectionner dans la liste
+            type = (TypeAbonnement)(this.ListBoxAbonnements.SelectedItem);
+
+            if (type != null)
+            {
+
+                // Suppression 
+                _ViewModel.Entities.TypeAbonnements.Remove(type);
+                _ViewModel.TypeAbonnements.Remove(type);
+                // Sauvegarder la suppression
+                this._ViewModel.Save();
+            }
+
+
+            else
+            {
+                MessageBox.Show("Saisie invalide !\r veuillez saisir des données correcte.");
+            }
+        }
+
+        // modifier un type d'abonnement
+        private void ButtonTypeAbonnementModifier_Click(object sender, RoutedEventArgs e)
+        {
+            string saisieOffre = this.TextBoxNombreOffreTypeAbonnement.Text;
+
+            if (this.TextBoxNombreOffreTypeAbonnement.Text != null && IsInteger(saisieOffre) == true)
+            {
+                // Modifier le type d'abonnement
+                ((TypeAbonnement)(this.ListBoxAbonnements.SelectedItem)).Libelle = this.TextBoxNomTypeAbonnement.Text;
+                ((TypeAbonnement)(this.ListBoxAbonnements.SelectedItem)).NombreOffres = int.Parse(saisieOffre);
+                
+                
+
+                // Une fois que la viewModel est mise à jour on sauvegarde les modifications 
+                this._ViewModel.Save();
+
+         
+            }
+
+            // si la saisie n'est pas valide apparition d'un message d'erreur
+            else
+            {
+                MessageBox.Show("Saisie invalide !\r veuillez saisir des données correcte.");
+                
+            }
+
+
 
         }
 
-        private void ButtonTypeAbonnementModifier_Click(object sender, RoutedEventArgs e)
+        // Permet de vérifier si la saisie est un int
+        public bool IsInteger(string text)
         {
-
+            //Le mot clé uint désigne un type int
+            uint value;
+            return uint.TryParse(text, out value);
         }
     }
 }

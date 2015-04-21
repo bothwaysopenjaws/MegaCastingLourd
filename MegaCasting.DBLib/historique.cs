@@ -12,15 +12,15 @@ namespace MegaCasting.DBLib
     using System;
     using System.Collections.Generic;
     
-    public partial class historique
+    public partial class Historique
     {
-        public int id { get; set; }
-        public Nullable<int> utilisateur_id { get; set; }
-        public string societe { get; set; }
-        public System.DateTime dateDebut { get; set; }
-        public System.DateTime dateFin { get; set; }
-        public string description { get; set; }
+        public int Identifiant { get; set; }
+        public Nullable<int> IdentifiantUtilisateur { get; set; }
+        public string Societe { get; set; }
+        public System.DateTime DateDebut { get; set; }
+        public System.DateTime DateFin { get; set; }
+        public string Description { get; set; }
     
-        public virtual utilisateur utilisateur { get; set; }
+        public virtual Utilisateur utilisateur { get; set; }
     }
 }

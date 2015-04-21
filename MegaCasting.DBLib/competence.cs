@@ -12,15 +12,15 @@ namespace MegaCasting.DBLib
     using System;
     using System.Collections.Generic;
     
-    public partial class competence
+    public partial class Competence
     {
-        public int id { get; set; }
-        public Nullable<int> utilisateur_id { get; set; }
-        public Nullable<int> niveau_id { get; set; }
-        public Nullable<int> typeCompetence_id { get; set; }
+        public int Identifiant { get; set; }
+        public Nullable<int> IdentifiantUtilisateur { get; set; }
+        public Nullable<int> IdentifiantNiveau { get; set; }
+        public Nullable<int> IdentifiantTypeCompetence { get; set; }
     
-        public virtual typecompetence typecompetence { get; set; }
-        public virtual niveau niveau { get; set; }
-        public virtual utilisateur utilisateur { get; set; }
+        public virtual TypeCompetence typecompetence { get; set; }
+        public virtual Niveau niveau { get; set; }
+        public virtual Utilisateur utilisateur { get; set; }
     }
 }
