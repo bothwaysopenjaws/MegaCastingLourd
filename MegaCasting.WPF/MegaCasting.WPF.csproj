@@ -131,6 +131,7 @@
     <Compile Include="ViewModel\ViewModelCandidature.cs" />
     <Compile Include="ViewModel\ViewModelCompetence.cs" />
     <Compile Include="ViewModel\ViewModelContrat.cs" />
+    <Compile Include="ViewModel\ViewModelDomaine.cs" />
     <Compile Include="ViewModel\ViewModelMedia.cs" />
     <Compile Include="ViewModel\ViewModelMetier.cs" />
     <Compile Include="ViewModel\ViewModelOffre.cs" />

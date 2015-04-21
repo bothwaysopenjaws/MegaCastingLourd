@@ -14,6 +14,7 @@ namespace MegaCasting.WPF.ViewModel
         ObservableCollection<typeutilisateur> TypeUtilisateurs { get; set; }
         ObservableCollection<adresse> Adresses { get; set; }
         ObservableCollection<historique> Historiques { get; set; }
+        
 
         public ViewModelUtilisateur()
         {
