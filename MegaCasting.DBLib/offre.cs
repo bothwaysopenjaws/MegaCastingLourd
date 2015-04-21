@@ -15,14 +15,14 @@ namespace MegaCasting.DBLib
     public partial class offre
     {
         public int id { get; set; }
-        public Nullable<int> contrat_id { get; set; }
         public Nullable<int> metier_id { get; set; }
         public string description { get; set; }
         public System.DateTime dateDebut { get; set; }
         public System.DateTime datefin { get; set; }
         public string duree { get; set; }
+        public Nullable<int> typeContrat_id { get; set; }
     
-        public virtual contrat contrat { get; set; }
         public virtual metier metier { get; set; }
+        public virtual typecontrat typecontrat { get; set; }
     }
 }

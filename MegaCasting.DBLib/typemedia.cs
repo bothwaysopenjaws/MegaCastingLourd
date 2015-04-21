@@ -16,12 +16,12 @@ namespace MegaCasting.DBLib
     {
         public typemedia()
         {
-            this.media = new HashSet<media>();
+            this.multimedias = new HashSet<multimedia>();
         }
     
         public int id { get; set; }
         public string libelle { get; set; }
     
-        public virtual ICollection<media> media { get; set; }
+        public virtual ICollection<multimedia> multimedias { get; set; }
     }
 }

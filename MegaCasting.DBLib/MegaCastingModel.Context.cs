@@ -29,11 +29,10 @@ namespace MegaCasting.DBLib
         public DbSet<adresse> adresses { get; set; }
         public DbSet<candidature> candidatures { get; set; }
         public DbSet<competence> competences { get; set; }
-        public DbSet<contrat> contrats { get; set; }
         public DbSet<domaine> domaines { get; set; }
         public DbSet<historique> historiques { get; set; }
-        public DbSet<media> medias { get; set; }
         public DbSet<metier> metiers { get; set; }
+        public DbSet<multimedia> multimedias { get; set; }
         public DbSet<niveau> niveaux { get; set; }
         public DbSet<offre> offres { get; set; }
         public DbSet<typeabonnement> typeabonnements { get; set; }

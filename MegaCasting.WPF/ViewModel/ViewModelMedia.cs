@@ -11,13 +11,13 @@ namespace MegaCasting.WPF.ViewModel
     class ViewModelMedia : ViewModelBase
     {
         ObservableCollection<typemedia> TypeMedias { get; set; }
-        ObservableCollection<media> Medias { get; set; }
+        ObservableCollection<multimedia> Multimedias { get; set; }
 
 
         public ViewModelMedia()
         {
             TypeMedias = new ObservableCollection<typemedia>(this.Entities.typemedias);
-            Medias = new ObservableCollection<media>(this.Entities.medias);  
+            Multimedias = new ObservableCollection<multimedia>(this.Entities.multimedias);  
         }
     }
 }

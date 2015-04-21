@@ -62,16 +62,10 @@
     <Compile Include="competence.cs">
       <DependentUpon>MegaCastingModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="contrat.cs">
-      <DependentUpon>MegaCastingModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="domaine.cs">
       <DependentUpon>MegaCastingModel.tt</DependentUpon>
     </Compile>
     <Compile Include="historique.cs">
-      <DependentUpon>MegaCastingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="media.cs">
       <DependentUpon>MegaCastingModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MegaCastingModel.Context.cs">
@@ -90,6 +84,9 @@
       <DependentUpon>MegaCastingModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="metier.cs">
+      <DependentUpon>MegaCastingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="multimedia.cs">
       <DependentUpon>MegaCastingModel.tt</DependentUpon>
     </Compile>
     <Compile Include="niveau.cs">

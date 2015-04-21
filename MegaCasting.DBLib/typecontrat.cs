@@ -16,12 +16,12 @@ namespace MegaCasting.DBLib
     {
         public typecontrat()
         {
-            this.contrats = new HashSet<contrat>();
+            this.offres = new HashSet<offre>();
         }
     
         public int id { get; set; }
         public string libelle { get; set; }
     
-        public virtual ICollection<contrat> contrats { get; set; }
+        public virtual ICollection<offre> offres { get; set; }
     }
 }

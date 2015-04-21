@@ -20,7 +20,7 @@ namespace MegaCasting.DBLib
             this.adresses = new HashSet<adresse>();
             this.competences = new HashSet<competence>();
             this.historiques = new HashSet<historique>();
-            this.media = new HashSet<media>();
+            this.multimedias = new HashSet<multimedia>();
             this.domaines = new HashSet<domaine>();
         }
     
@@ -36,7 +36,7 @@ namespace MegaCasting.DBLib
         public virtual ICollection<adresse> adresses { get; set; }
         public virtual ICollection<competence> competences { get; set; }
         public virtual ICollection<historique> historiques { get; set; }
-        public virtual ICollection<media> media { get; set; }
+        public virtual ICollection<multimedia> multimedias { get; set; }
         public virtual typeutilisateur typeutilisateur { get; set; }
         public virtual ICollection<domaine> domaines { get; set; }
     }
