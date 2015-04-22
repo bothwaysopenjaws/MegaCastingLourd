@@ -24,7 +24,7 @@
         </Grid.RowDefinitions>
         <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"> Ajout/suppression/Modification de paramètres </Label>
         <Button Name="ButtonParametreTypeContrat" Grid.Column="1" Grid.Row="2"> Contrats </Button>
-        <Button Name="ButtonParametreTypeCompetences" Grid.Column="3" Grid.Row="2">Compétences</Button>
+        <Button Name="ButtonParametreTypeCompetences" Grid.Column="3" Grid.Row="2" Click="ButtonParametreTypeCompetences_Click">Compétences</Button>
         <Button Name="ButtonParametreTypeAbonnements" Grid.Column="3" Grid.Row="4" Click="ButtonParametreTypeAbonnements_Click">Abonnements</Button>
         <Button Name="ButtonParametreMetierDomaines" Grid.Column="1" Grid.Row="4">Metiers et Domaines</Button>
 

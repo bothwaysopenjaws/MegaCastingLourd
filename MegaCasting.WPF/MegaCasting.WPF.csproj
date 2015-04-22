@@ -83,6 +83,9 @@
     <Compile Include="AjoutTypeAbonnement.xaml.cs">
       <DependentUpon>AjoutTypeAbonnement.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AjoutTypeCompetence.xaml.cs">
+      <DependentUpon>AjoutTypeCompetence.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GestionTypeAbonnement.xaml.cs">
       <DependentUpon>GestionTypeAbonnement.xaml</DependentUpon>
     </Compile>
@@ -146,6 +149,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AjoutTypeAbonnement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AjoutTypeCompetence.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

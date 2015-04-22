@@ -19,7 +19,13 @@
         <Button VerticalAlignment="Bottom" Height="25" Width="100" Grid.Column="0" Grid.Row="2"  Name="ButtonContratModifier" Content="Modifier"/>
 
         <Label  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.ColumnSpan="2">Gestion des Contrats</Label>
-        <ListBox Name="ListBoxAbonnements" Grid.Column="0" Grid.Row="1" Margin="5"></ListBox>
+        <ListBox x:Name="ListBoxTypeContrats" Grid.Column="0" Grid.Row="1" Margin="5">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding Libelle}"></Label>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
         <Grid Margin="1" Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.644,0.497">
             <Grid.ColumnDefinitions>

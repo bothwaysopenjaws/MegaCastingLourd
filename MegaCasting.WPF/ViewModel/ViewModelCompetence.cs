@@ -8,11 +8,11 @@ using MegaCasting.DBLib;
 
 namespace MegaCasting.WPF.ViewModel
 {
-    class ViewModelCompetence : ViewModelBase
+   public class ViewModelCompetence : ViewModelBase
     {
-        ObservableCollection<Competence> Competences { get; set; }
-        ObservableCollection<TypeCompetence> TypeCompetences { get; set; }
-        ObservableCollection<Niveau> niveaux { get; set; }
+       public ObservableCollection<Competence> Competences { get; set; }
+       public ObservableCollection<TypeCompetence> TypeCompetences { get; set; }
+       public ObservableCollection<Niveau> niveaux { get; set; }
 
         public ViewModelCompetence()
         {

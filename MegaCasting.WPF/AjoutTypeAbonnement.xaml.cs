@@ -41,8 +41,8 @@ namespace MegaCasting.WPF
 
             string saisieOffre = this.TextBoxOffre.Text;
 
-            // Vérifier que les saisies du nom n'est pa null et que l'offre ne soit pas des chiffres 
-            if (this.TextBoxNom.Text != null && IsInteger(saisieOffre) == true)
+            // Vérifier que les saisies du nom n'est pa null et que l'offre ne soit pas des chiffres que l'offre ne soit pas null 
+            if (this.TextBoxNom.Text != null && IsInteger(saisieOffre) == true && this.TextBoxNom.Text != "" && this.TextBoxOffre.Text != "")
             {
                      // instancié un nouveau type d'abonnement
                 TypeAbonnement typeAbonnement = new TypeAbonnement();

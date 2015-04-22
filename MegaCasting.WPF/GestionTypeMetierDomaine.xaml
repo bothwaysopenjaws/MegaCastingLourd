@@ -1,8 +1,8 @@
 ﻿<Window x:Class="MegaCasting.WPF.GestionTypeMetierDomaine"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="GestionTypeMetierDomaine" Height="300" Width="300">
+        Title="GestionTypeMetierDomaine" Height="314" Width="323">
     <Grid>
-        
+
     </Grid>
 </Window>

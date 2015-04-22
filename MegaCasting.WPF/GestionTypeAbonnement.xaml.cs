@@ -53,20 +53,22 @@ namespace MegaCasting.WPF
             // On récupère l'abonnement sélectionner dans la liste
             type = (TypeAbonnement)(this.ListBoxAbonnements.SelectedItem);
 
+            // Vérifie qu'un type a été séléctionné dans la listeBox
             if (type != null)
             {
 
                 // Suppression 
                 _ViewModel.Entities.TypeAbonnements.Remove(type);
                 _ViewModel.TypeAbonnements.Remove(type);
+
                 // Sauvegarder la suppression
                 this._ViewModel.Save();
+
+                MessageBox.Show("Suppression réussite !!!");
             }
-
-
             else
             {
-                MessageBox.Show("Saisie invalide !\r veuillez saisir des données correcte.");
+                MessageBox.Show(" Saisie invalide !\r Veuillez sélectionner un abonnement à supprimer.");
             }
         }
 
@@ -75,7 +77,14 @@ namespace MegaCasting.WPF
         {
             string saisieOffre = this.TextBoxNombreOffreTypeAbonnement.Text;
 
-            if (this.TextBoxNombreOffreTypeAbonnement.Text != null && IsInteger(saisieOffre) == true)
+            // On créer un type temporaire
+            TypeAbonnement type = new TypeAbonnement();
+
+            // On récupère l'abonnement sélectionner dans la liste et on l'intègre au temporaire
+            type = (TypeAbonnement)(this.ListBoxAbonnements.SelectedItem);
+
+            // Vérifie que la saisie n'est pas null que l'offre est bien en chiffre et que un Abonnment à été sélectionner dans la liste
+            if (this.TextBoxNombreOffreTypeAbonnement.Text != null && IsInteger(saisieOffre) == true && type != null)
             {
                 // Modifier le type d'abonnement
                 ((TypeAbonnement)(this.ListBoxAbonnements.SelectedItem)).Libelle = this.TextBoxNomTypeAbonnement.Text;
@@ -85,14 +94,14 @@ namespace MegaCasting.WPF
 
                 // Une fois que la viewModel est mise à jour on sauvegarde les modifications 
                 this._ViewModel.Save();
-
+                MessageBox.Show("Modification réussite !!!");
          
             }
 
             // si la saisie n'est pas valide apparition d'un message d'erreur
             else
             {
-                MessageBox.Show("Saisie invalide !\r veuillez saisir des données correcte.");
+                MessageBox.Show("Saisie invalide !\r Modification impossible.");
                 
             }
 
