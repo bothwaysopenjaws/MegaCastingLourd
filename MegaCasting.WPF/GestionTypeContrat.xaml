@@ -1,7 +1,7 @@
 ﻿<Window x:Class="MegaCasting.WPF.GestionTypeContrat"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="GestionTypeContrat" Height="300" Width="500">
+        Title="Gestion des types de contrats" Height="300" Width="500">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.2*"></ColumnDefinition>

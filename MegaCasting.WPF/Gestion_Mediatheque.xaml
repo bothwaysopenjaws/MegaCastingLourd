@@ -1,7 +1,7 @@
 ﻿<Window x:Class="MegaCasting.WPF.Gestion_Mediatheque"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Gestion_Mediatheque" Height="500" Width="400">
+        Title="Gestion des Médias" Height="500" Width="400">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.2*"></ColumnDefinition>

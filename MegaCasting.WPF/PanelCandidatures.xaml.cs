@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace MegaCasting.WPF
 {
     /// <summary>
-    /// Logique d'interaction pour Gestion_Contrat.xaml
+    /// Logique d'interaction pour PanelCandidatures.xaml
     /// </summary>
-    public partial class Gestion_Contrat : Window
+    public partial class PanelCandidatures : UserControl
     {
-        public Gestion_Contrat()
+        public PanelCandidatures()
         {
             InitializeComponent();
         }

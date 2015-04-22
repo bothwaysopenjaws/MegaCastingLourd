@@ -24,5 +24,65 @@ namespace MegaCasting.WPF
         {
             InitializeComponent();
         }
+
+        private void MenuItemAnnonceurs_Click(object sender, RoutedEventArgs e)
+        {
+            this.CleanDockPanel();
+            PanelAnnonceurs panelAnnonceurs = new PanelAnnonceurs();
+            dockPanelMain.Children.Add(panelAnnonceurs);
+        }
+
+        private void MenuItemOffres_Click(object sender, RoutedEventArgs e)
+        {
+            this.CleanDockPanel();
+            PanelOffres panelOffres = new PanelOffres();
+            dockPanelMain.Children.Add(panelOffres);
+        }
+
+        private void MenuItemPartenaires_Click(object sender, RoutedEventArgs e)
+        {
+            this.CleanDockPanel();
+            PanelPartenaires panelPartenaires = new PanelPartenaires();
+            dockPanelMain.Children.Add(panelPartenaires);
+        }
+
+        private void MenuItemArtistes_Click(object sender, RoutedEventArgs e)
+        {
+            this.CleanDockPanel();
+            PanelArtistes panelArtistes = new PanelArtistes();
+            dockPanelMain.Children.Add(panelArtistes);
+        }
+
+        private void MenuItemCandidatures_Click(object sender, RoutedEventArgs e)
+        {
+            this.CleanDockPanel();
+            PanelCandidatures panelCandidatures = new PanelCandidatures();
+            dockPanelMain.Children.Add(panelCandidatures);
+        }
+
+        private void MenuItemParametres_Click(object sender, RoutedEventArgs e)
+        {
+            this.CleanDockPanel();
+            PanelParametres panelParametres = new PanelParametres();
+            dockPanelMain.Children.Add(panelParametres);
+        }
+
+        private void MenuItemAbonnements_Click(object sender, RoutedEventArgs e)
+        {
+            this.CleanDockPanel();
+            PanelAbonnements panelAbonnements = new PanelAbonnements();
+            dockPanelMain.Children.Add(panelAbonnements);
+        }
+
+
+
+        #region Méthodes
+        private void CleanDockPanel()
+        {
+              dockPanelMain.Children.Clear();  //Nettoyage du dockPanel
+
+            
+        }
+        #endregion
     }
 }

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace MegaCasting.WPF
 {
     /// <summary>
-    /// Logique d'interaction pour TabParametres.xaml
+    /// Logique d'interaction pour PanelParametres.xaml
     /// </summary>
-    public partial class TabParametres : UserControl
+    public partial class PanelParametres : UserControl
     {
-        public TabParametres()
+        public PanelParametres()
         {
             InitializeComponent();
         }

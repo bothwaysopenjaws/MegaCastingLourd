@@ -36,9 +36,9 @@ namespace MegaCasting.WPF {
     
     
     /// <summary>
-    /// TabParametres
+    /// PanelParametre
     /// </summary>
-    public partial class TabParametres : System.Windows.Controls.UserControl, System.Windows.Markup.IComponentConnector {
+    public partial class PanelParametre : System.Windows.Controls.UserControl, System.Windows.Markup.IComponentConnector {
         
         
         #line 26 "..\..\TabParametres.xaml"

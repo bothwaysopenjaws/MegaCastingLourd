@@ -11,31 +11,24 @@
 
 
 
-        <TabControl Grid.Row="1" x:Name="TabControlGestion" >
-            <TabItem x:Name="TabOffres" Header="Offres" Visibility="Visible" >
-                <local:TabOffres x:Name="UserControlOffres"/>
-            </TabItem>
+        <Menu Grid.Row="0" x:Name="TabControlGestion" >
+            <MenuItem Header="Entreprises">
+                <MenuItem x:Name="menuItemAnnonceurs" Header="Annonceurs" Click="MenuItemAnnonceurs_Click"/>
+                <MenuItem x:Name="menuItemOffres" Header="Offres" Click="MenuItemOffres_Click" />
+                <MenuItem x:Name="menuItemPartenaires" Header="Partenaires" Click="MenuItemPartenaires_Click" />    
+            </MenuItem>
+            <MenuItem Header="Artistes">
+                <MenuItem x:Name="menuItemArtistes" Header="Artistes" Click="MenuItemArtistes_Click"/>
+                <MenuItem x:Name="menuItemCandidatures" Header="Candidatures" Click="MenuItemCandidatures_Click" />
+            </MenuItem>
+            <MenuItem x:Name="menuItemParametres" Header="Paramètres" Click="MenuItemParametres_Click" >
+            </MenuItem>
+            <MenuItem x:Name="menuItemAbonnements" Header="Abonnements" Click="MenuItemAbonnements_Click" />
 
-            <TabItem x:Name="TabAnnonceurs" Header="Annonceurs" Height="22" VerticalAlignment="Top" Visibility="Visible" >
-                <local:TabAnnonceurs x:Name="UserControlAnnonceurs"/>
-            </TabItem>
-            <TabItem x:Name="TabArtistes" Header="Artistes" Height="22" VerticalAlignment="Top" Visibility="Visible" >
-                <local:TabArtistes x:Name="UserControlArtistes"/>
-            </TabItem>
 
-            <TabItem x:Name="TabPartenaires" Header="Partenaires" Height="22" VerticalAlignment="Top" Visibility="Visible" >
-            <local:TabPartenaires x:Name="UserControlPartenaires"/>
-        </TabItem>
-            <TabItem x:Name="TabCandidatures" Header="Candidatures" Height="22" VerticalAlignment="Top" Visibility="Visible">
-                <local:TabCandidatures x:Name="UserControlCandidatures"/>
-            </TabItem>
-            <TabItem x:Name="TabParametres" Header="Paramètres" Height="22" VerticalAlignment="Top" Visibility="Visible">
-                <local:TabParametres x:Name="UserControlParametres"/>
-            </TabItem>
-            <TabItem x:Name="TabAbonnements" Header="Abonnements" Height="22" VerticalAlignment="Top" Visibility="Visible">
-                <local:TabAbonnements x:Name="UserControlAbonnements"/>
-            </TabItem>
-            
-        </TabControl>
+        </Menu>
+        <DockPanel x:Name="dockPanelMain" Grid.Row="1">
+            <local:PanelMain x:Name="PanelMain"/>
+        </DockPanel>
     </Grid>
 </Window>

@@ -36,9 +36,9 @@ namespace MegaCasting.WPF {
     
     
     /// <summary>
-    /// TabOffres
+    /// PanelOffres
     /// </summary>
-    public partial class TabOffres : System.Windows.Controls.UserControl, System.Windows.Markup.IComponentConnector {
+    public partial class PanelOffres : System.Windows.Controls.UserControl, System.Windows.Markup.IComponentConnector {
         
         
         #line 29 "..\..\TabOffres.xaml"

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace MegaCasting.WPF
 {
     /// <summary>
-    /// Logique d'interaction pour TabAnnonceurs.xaml
+    /// Logique d'interaction pour PanelMain.xaml
     /// </summary>
-    public partial class TabAnnonceurs : UserControl
+    public partial class PanelMain : UserControl
     {
-        public TabAnnonceurs()
+        public PanelMain()
         {
             InitializeComponent();
         }

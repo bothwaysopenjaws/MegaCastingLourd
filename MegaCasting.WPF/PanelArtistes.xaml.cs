@@ -14,13 +14,14 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace MegaCasting.WPF
+
 {
     /// <summary>
-    /// Logique d'interaction pour TabCandidatures.xaml
+    /// Logique d'interaction pour PanelArtistes.xaml
     /// </summary>
-    public partial class TabCandidatures : UserControl
+    public partial class PanelArtistes : UserControl
     {
-        public TabCandidatures()
+        public PanelArtistes()
         {
             InitializeComponent();
         }
