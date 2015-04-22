@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="megacastingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Abonnement">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdenfiantUtilisateur" Type="Int32" Nullable="false" />
+    <Property Name="DateSouscription" Type="DateTime" Nullable="false" />
+    <Property Name="Restant" Type="Int32" Nullable="false" />
+    <Property Name="IdentifiantTypeAbonnement" Type="Int32" />
+    <NavigationProperty Name="typeabonnement" Relationship="Self.FK_351268BB9FB1D74A" FromRole="abonnement" ToRole="typeabonnement" />
+    <NavigationProperty Name="utilisateur" Relationship="Self.FK_351268BBFB88E14F" FromRole="abonnement" ToRole="utilisateur" />
+  </EntityType>
+  <EntityType Name="Adresse">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdentifiantUtilisateur" Type="Int32" Nullable="false" />
+    <Property Name="Rue" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ville" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CodePostal" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Pays" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="utilisateur" Relationship="Self.FK_C35F0816FB88E14F" FromRole="adresse" ToRole="utilisateur" />
+  </EntityType>
+  <EntityType Name="Candidature">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Prenom" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UrlCv" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UrlLettreMotivation" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Competence">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdentifiantUtilisateur" Type="Int32" />
+    <Property Name="IdentifiantNiveau" Type="Int32" />
+    <Property Name="IdentifiantTypeCompetence" Type="Int32" />
+    <NavigationProperty Name="typecompetence" Relationship="Self.FK_94D4687F7B108EF2" FromRole="competence" ToRole="typecompetence" />
+    <NavigationProperty Name="niveau" Relationship="Self.FK_94D4687FB3E9C81" FromRole="competence" ToRole="niveau" />
+    <NavigationProperty Name="utilisateur" Relationship="Self.FK_94D4687FFB88E14F" FromRole="competence" ToRole="utilisateur" />
+  </EntityType>
+  <EntityType Name="Domaine">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="metiers" Relationship="Self.FK_51A00D8C4272FC9F" FromRole="domaine" ToRole="metier" />
+    <NavigationProperty Name="utilisateurs" Relationship="Self.domaine_utilisateur" FromRole="domaine" ToRole="utilisateur" />
+  </EntityType>
+  <EntityType Name="Historique">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdentifiantUtilisateur" Type="Int32" />
+    <Property Name="Societe" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateDebut" Type="DateTime" Nullable="false" />
+    <Property Name="DateFin" Type="DateTime" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="utilisateur" Relationship="Self.FK_EDBFD5ECFB88E14F" FromRole="historique" ToRole="utilisateur" />
+  </EntityType>
+  <EntityType Name="Metier">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdentifiantDomaine" Type="Int32" />
+    <Property Name="Libelle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="domaine" Relationship="Self.FK_51A00D8C4272FC9F" FromRole="metier" ToRole="domaine" />
+    <NavigationProperty Name="offres" Relationship="Self.FK_AF86866FED16FA20" FromRole="metier" ToRole="offre" />
+  </EntityType>
+  <EntityType Name="Multimedia">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdentifiantUtilisateur" Type="Int32" />
+    <Property Name="Nom" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Url" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdentifiantTypeMedia" Type="Int32" />
+    <NavigationProperty Name="typemedia" Relationship="Self.FK_2E6C2BB34F8031AB" FromRole="multimedia" ToRole="typemedia" />
+    <NavigationProperty Name="utilisateur" Relationship="Self.FK_2E6C2BB3FB88E14F" FromRole="multimedia" ToRole="utilisateur" />
+  </EntityType>
+  <EntityType Name="Niveau">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="competences" Relationship="Self.FK_94D4687FB3E9C81" FromRole="niveau" ToRole="competence" />
+  </EntityType>
+  <EntityType Name="Offre">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdentifiantMetier" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateDebut" Type="DateTime" Nullable="false" />
+    <Property Name="Datefin" Type="DateTime" Nullable="false" />
+    <Property Name="Duree" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdentifiantTypeContrat" Type="Int32" />
+    <NavigationProperty Name="metier" Relationship="Self.FK_AF86866FED16FA20" FromRole="offre" ToRole="metier" />
+    <NavigationProperty Name="typecontrat" Relationship="Self.FK_AF86866FAE24E5C2" FromRole="offre" ToRole="typecontrat" />
+  </EntityType>
+  <EntityType Name="TypeAbonnement">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NombreOffres" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="abonnements" Relationship="Self.FK_351268BB9FB1D74A" FromRole="typeabonnement" ToRole="abonnement" />
+  </EntityType>
+  <EntityType Name="TypeCompetence">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="competences" Relationship="Self.FK_94D4687F7B108EF2" FromRole="typecompetence" ToRole="competence" />
+  </EntityType>
+  <EntityType Name="TypeContrat">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="offres" Relationship="Self.FK_AF86866FAE24E5C2" FromRole="typecontrat" ToRole="offre" />
+  </EntityType>
+  <EntityType Name="TypeMedia">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="multimedias" Relationship="Self.FK_2E6C2BB34F8031AB" FromRole="typemedia" ToRole="multimedia" />
+  </EntityType>
+  <EntityType Name="TypeUtilisateur">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="utilisateurs" Relationship="Self.FK_1D1C63B3E9516E8C" FromRole="typeutilisateur" ToRole="utilisateur" />
+  </EntityType>
+  <EntityType Name="Utilisateur">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Prenom" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Login" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateNaissance" Type="DateTime" Nullable="false" />
+    <Property Name="IdentifiantTypeUtilisateur" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="abonnements" Relationship="Self.FK_351268BBFB88E14F" FromRole="utilisateur" ToRole="abonnement" />
+    <NavigationProperty Name="adresses" Relationship="Self.FK_C35F0816FB88E14F" FromRole="utilisateur" ToRole="adresse" />
+    <NavigationProperty Name="competences" Relationship="Self.FK_94D4687FFB88E14F" FromRole="utilisateur" ToRole="competence" />
+    <NavigationProperty Name="historiques" Relationship="Self.FK_EDBFD5ECFB88E14F" FromRole="utilisateur" ToRole="historique" />
+    <NavigationProperty Name="multimedias" Relationship="Self.FK_2E6C2BB3FB88E14F" FromRole="utilisateur" ToRole="multimedia" />
+    <NavigationProperty Name="typeutilisateur" Relationship="Self.FK_1D1C63B3E9516E8C" FromRole="utilisateur" ToRole="typeutilisateur" />
+    <NavigationProperty Name="domaines" Relationship="Self.domaine_utilisateur" FromRole="utilisateur" ToRole="domaine" />
+  </EntityType>
+  <Association Name="FK_351268BB9FB1D74A">
+    <End Role="typeabonnement" Type="megacastingModel.TypeAbonnement" Multiplicity="0..1" />
+    <End Role="abonnement" Type="megacastingModel.Abonnement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="typeabonnement">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="abonnement">
+        <PropertyRef Name="IdentifiantTypeAbonnement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_351268BBFB88E14F">
+    <End Role="utilisateur" Type="megacastingModel.Utilisateur" Multiplicity="1" />
+    <End Role="abonnement" Type="megacastingModel.Abonnement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="utilisateur">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="abonnement">
+        <PropertyRef Name="IdenfiantUtilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_C35F0816FB88E14F">
+    <End Role="utilisateur" Type="megacastingModel.Utilisateur" Multiplicity="1" />
+    <End Role="adresse" Type="megacastingModel.Adresse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="utilisateur">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="adresse">
+        <PropertyRef Name="IdentifiantUtilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_94D4687F7B108EF2">
+    <End Role="typecompetence" Type="megacastingModel.TypeCompetence" Multiplicity="0..1" />
+    <End Role="competence" Type="megacastingModel.Competence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="typecompetence">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="competence">
+        <PropertyRef Name="IdentifiantTypeCompetence" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_94D4687FB3E9C81">
+    <End Role="niveau" Type="megacastingModel.Niveau" Multiplicity="0..1" />
+    <End Role="competence" Type="megacastingModel.Competence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="niveau">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="competence">
+        <PropertyRef Name="IdentifiantNiveau" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_94D4687FFB88E14F">
+    <End Role="utilisateur" Type="megacastingModel.Utilisateur" Multiplicity="0..1" />
+    <End Role="competence" Type="megacastingModel.Competence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="utilisateur">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="competence">
+        <PropertyRef Name="IdentifiantUtilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_51A00D8C4272FC9F">
+    <End Role="domaine" Type="megacastingModel.Domaine" Multiplicity="0..1" />
+    <End Role="metier" Type="megacastingModel.Metier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="domaine">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="metier">
+        <PropertyRef Name="IdentifiantDomaine" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EDBFD5ECFB88E14F">
+    <End Role="utilisateur" Type="megacastingModel.Utilisateur" Multiplicity="0..1" />
+    <End Role="historique" Type="megacastingModel.Historique" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="utilisateur">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="historique">
+        <PropertyRef Name="IdentifiantUtilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AF86866FED16FA20">
+    <End Role="metier" Type="megacastingModel.Metier" Multiplicity="0..1" />
+    <End Role="offre" Type="megacastingModel.Offre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="metier">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="offre">
+        <PropertyRef Name="IdentifiantMetier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_2E6C2BB34F8031AB">
+    <End Role="typemedia" Type="megacastingModel.TypeMedia" Multiplicity="0..1" />
+    <End Role="multimedia" Type="megacastingModel.Multimedia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="typemedia">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="multimedia">
+        <PropertyRef Name="IdentifiantTypeMedia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_2E6C2BB3FB88E14F">
+    <End Role="utilisateur" Type="megacastingModel.Utilisateur" Multiplicity="0..1" />
+    <End Role="multimedia" Type="megacastingModel.Multimedia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="utilisateur">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="multimedia">
+        <PropertyRef Name="IdentifiantUtilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AF86866FAE24E5C2">
+    <End Role="typecontrat" Type="megacastingModel.TypeContrat" Multiplicity="0..1" />
+    <End Role="offre" Type="megacastingModel.Offre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="typecontrat">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="offre">
+        <PropertyRef Name="IdentifiantTypeContrat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_1D1C63B3E9516E8C">
+    <End Role="typeutilisateur" Type="megacastingModel.TypeUtilisateur" Multiplicity="1" />
+    <End Role="utilisateur" Type="megacastingModel.Utilisateur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="typeutilisateur">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="utilisateur">
+        <PropertyRef Name="IdentifiantTypeUtilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="domaine_utilisateur">
+    <End Role="domaine" Type="megacastingModel.Domaine" Multiplicity="*" />
+    <End Role="utilisateur" Type="megacastingModel.Utilisateur" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="megacastingEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Abonnements" EntityType="megacastingModel.Abonnement" />
+    <EntitySet Name="Adresses" EntityType="megacastingModel.Adresse" />
+    <EntitySet Name="Candidatures" EntityType="megacastingModel.Candidature" />
+    <EntitySet Name="Competences" EntityType="megacastingModel.Competence" />
+    <EntitySet Name="Domaines" EntityType="megacastingModel.Domaine" />
+    <EntitySet Name="Historiques" EntityType="megacastingModel.Historique" />
+    <EntitySet Name="Metiers" EntityType="megacastingModel.Metier" />
+    <EntitySet Name="Multimedias" EntityType="megacastingModel.Multimedia" />
+    <EntitySet Name="Niveaux" EntityType="megacastingModel.Niveau" />
+    <EntitySet Name="Offres" EntityType="megacastingModel.Offre" />
+    <EntitySet Name="TypeAbonnements" EntityType="megacastingModel.TypeAbonnement" />
+    <EntitySet Name="TypeCompetences" EntityType="megacastingModel.TypeCompetence" />
+    <EntitySet Name="TypeContrats" EntityType="megacastingModel.TypeContrat" />
+    <EntitySet Name="TypeMedias" EntityType="megacastingModel.TypeMedia" />
+    <EntitySet Name="TypeUtilisateurs" EntityType="megacastingModel.TypeUtilisateur" />
+    <EntitySet Name="Utilisateurs" EntityType="megacastingModel.Utilisateur" />
+    <AssociationSet Name="FK_351268BB9FB1D74A" Association="Self.FK_351268BB9FB1D74A">
+      <End Role="typeabonnement" EntitySet="TypeAbonnements" />
+      <End Role="abonnement" EntitySet="Abonnements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_351268BBFB88E14F" Association="Self.FK_351268BBFB88E14F">
+      <End Role="utilisateur" EntitySet="Utilisateurs" />
+      <End Role="abonnement" EntitySet="Abonnements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_C35F0816FB88E14F" Association="Self.FK_C35F0816FB88E14F">
+      <End Role="utilisateur" EntitySet="Utilisateurs" />
+      <End Role="adresse" EntitySet="Adresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_94D4687F7B108EF2" Association="Self.FK_94D4687F7B108EF2">
+      <End Role="typecompetence" EntitySet="TypeCompetences" />
+      <End Role="competence" EntitySet="Competences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_94D4687FB3E9C81" Association="Self.FK_94D4687FB3E9C81">
+      <End Role="niveau" EntitySet="Niveaux" />
+      <End Role="competence" EntitySet="Competences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_94D4687FFB88E14F" Association="Self.FK_94D4687FFB88E14F">
+      <End Role="utilisateur" EntitySet="Utilisateurs" />
+      <End Role="competence" EntitySet="Competences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_51A00D8C4272FC9F" Association="Self.FK_51A00D8C4272FC9F">
+      <End Role="domaine" EntitySet="Domaines" />
+      <End Role="metier" EntitySet="Metiers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EDBFD5ECFB88E14F" Association="Self.FK_EDBFD5ECFB88E14F">
+      <End Role="utilisateur" EntitySet="Utilisateurs" />
+      <End Role="historique" EntitySet="Historiques" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AF86866FED16FA20" Association="Self.FK_AF86866FED16FA20">
+      <End Role="metier" EntitySet="Metiers" />
+      <End Role="offre" EntitySet="Offres" />
+    </AssociationSet>
+    <AssociationSet Name="FK_2E6C2BB34F8031AB" Association="Self.FK_2E6C2BB34F8031AB">
+      <End Role="typemedia" EntitySet="TypeMedias" />
+      <End Role="multimedia" EntitySet="Multimedias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_2E6C2BB3FB88E14F" Association="Self.FK_2E6C2BB3FB88E14F">
+      <End Role="utilisateur" EntitySet="Utilisateurs" />
+      <End Role="multimedia" EntitySet="Multimedias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AF86866FAE24E5C2" Association="Self.FK_AF86866FAE24E5C2">
+      <End Role="typecontrat" EntitySet="TypeContrats" />
+      <End Role="offre" EntitySet="Offres" />
+    </AssociationSet>
+    <AssociationSet Name="FK_1D1C63B3E9516E8C" Association="Self.FK_1D1C63B3E9516E8C">
+      <End Role="typeutilisateur" EntitySet="TypeUtilisateurs" />
+      <End Role="utilisateur" EntitySet="Utilisateurs" />
+    </AssociationSet>
+    <AssociationSet Name="domaine_utilisateur" Association="Self.domaine_utilisateur">
+      <End Role="domaine" EntitySet="Domaines" />
+      <End Role="utilisateur" EntitySet="Utilisateurs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

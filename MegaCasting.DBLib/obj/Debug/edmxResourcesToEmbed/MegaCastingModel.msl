@@ -4,180 +4,170 @@
     <EntitySetMapping Name="abonnements">
       <EntityTypeMapping TypeName="megacastingModel.abonnement">
         <MappingFragment StoreEntitySet="abonnement">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="utilisateur_id" ColumnName="utilisateur_id" />
-          <ScalarProperty Name="dateSouscription" ColumnName="dateSouscription" />
-          <ScalarProperty Name="restant" ColumnName="restant" />
           <ScalarProperty Name="typeAbonnement_id" ColumnName="typeAbonnement_id" />
+          <ScalarProperty Name="restant" ColumnName="restant" />
+          <ScalarProperty Name="dateSouscription" ColumnName="dateSouscription" />
+          <ScalarProperty Name="utilisateur_id" ColumnName="utilisateur_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="adresses">
       <EntityTypeMapping TypeName="megacastingModel.adresse">
         <MappingFragment StoreEntitySet="adresse">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="utilisateur_id" ColumnName="utilisateur_id" />
-          <ScalarProperty Name="rue" ColumnName="rue" />
-          <ScalarProperty Name="ville" ColumnName="ville" />
-          <ScalarProperty Name="codePostal" ColumnName="codePostal" />
           <ScalarProperty Name="pays" ColumnName="pays" />
+          <ScalarProperty Name="codePostal" ColumnName="codePostal" />
+          <ScalarProperty Name="ville" ColumnName="ville" />
+          <ScalarProperty Name="rue" ColumnName="rue" />
+          <ScalarProperty Name="utilisateur_id" ColumnName="utilisateur_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="candidatures">
       <EntityTypeMapping TypeName="megacastingModel.candidature">
         <MappingFragment StoreEntitySet="candidature">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="nom" ColumnName="nom" />
-          <ScalarProperty Name="prenom" ColumnName="prenom" />
-          <ScalarProperty Name="urlCv" ColumnName="urlCv" />
-          <ScalarProperty Name="urlLettreMotivation" ColumnName="urlLettreMotivation" />
           <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="urlLettreMotivation" ColumnName="urlLettreMotivation" />
+          <ScalarProperty Name="urlCv" ColumnName="urlCv" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="competences">
       <EntityTypeMapping TypeName="megacastingModel.competence">
         <MappingFragment StoreEntitySet="competence">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="utilisateur_id" ColumnName="utilisateur_id" />
-          <ScalarProperty Name="niveau_id" ColumnName="niveau_id" />
           <ScalarProperty Name="typeCompetence_id" ColumnName="typeCompetence_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="contrats">
-      <EntityTypeMapping TypeName="megacastingModel.contrat">
-        <MappingFragment StoreEntitySet="contrat">
+          <ScalarProperty Name="niveau_id" ColumnName="niveau_id" />
+          <ScalarProperty Name="utilisateur_id" ColumnName="utilisateur_id" />
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="libelle" ColumnName="libelle" />
-          <ScalarProperty Name="clause" ColumnName="clause" />
-          <ScalarProperty Name="typeContrat_id" ColumnName="typeContrat_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="domaines">
       <EntityTypeMapping TypeName="megacastingModel.domaine">
         <MappingFragment StoreEntitySet="domaine">
-          <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="libelle" ColumnName="libelle" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="historiques">
       <EntityTypeMapping TypeName="megacastingModel.historique">
         <MappingFragment StoreEntitySet="historique">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="utilisateur_id" ColumnName="utilisateur_id" />
-          <ScalarProperty Name="societe" ColumnName="societe" />
-          <ScalarProperty Name="dateDebut" ColumnName="dateDebut" />
-          <ScalarProperty Name="dateFin" ColumnName="dateFin" />
           <ScalarProperty Name="description" ColumnName="description" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="medias">
-      <EntityTypeMapping TypeName="megacastingModel.media">
-        <MappingFragment StoreEntitySet="media">
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="dateFin" ColumnName="dateFin" />
+          <ScalarProperty Name="dateDebut" ColumnName="dateDebut" />
+          <ScalarProperty Name="societe" ColumnName="societe" />
           <ScalarProperty Name="utilisateur_id" ColumnName="utilisateur_id" />
-          <ScalarProperty Name="nom" ColumnName="nom" />
-          <ScalarProperty Name="url" ColumnName="url" />
-          <ScalarProperty Name="typeMedia_id" ColumnName="typeMedia_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="metiers">
       <EntityTypeMapping TypeName="megacastingModel.metier">
         <MappingFragment StoreEntitySet="metier">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="domaine_id" ColumnName="domaine_id" />
-          <ScalarProperty Name="libelle" ColumnName="libelle" />
           <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+          <ScalarProperty Name="domaine_id" ColumnName="domaine_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="multimedias">
+      <EntityTypeMapping TypeName="megacastingModel.multimedia">
+        <MappingFragment StoreEntitySet="multimedia">
+          <ScalarProperty Name="typeMedia_id" ColumnName="typeMedia_id" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="utilisateur_id" ColumnName="utilisateur_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="niveaux">
       <EntityTypeMapping TypeName="megacastingModel.niveau">
         <MappingFragment StoreEntitySet="niveau">
-          <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="libelle" ColumnName="libelle" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="offres">
       <EntityTypeMapping TypeName="megacastingModel.offre">
         <MappingFragment StoreEntitySet="offre">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="contrat_id" ColumnName="contrat_id" />
-          <ScalarProperty Name="metier_id" ColumnName="metier_id" />
-          <ScalarProperty Name="description" ColumnName="description" />
-          <ScalarProperty Name="dateDebut" ColumnName="dateDebut" />
-          <ScalarProperty Name="datefin" ColumnName="datefin" />
+          <ScalarProperty Name="typeContrat_id" ColumnName="typeContrat_id" />
           <ScalarProperty Name="duree" ColumnName="duree" />
+          <ScalarProperty Name="datefin" ColumnName="datefin" />
+          <ScalarProperty Name="dateDebut" ColumnName="dateDebut" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="metier_id" ColumnName="metier_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="typeabonnements">
       <EntityTypeMapping TypeName="megacastingModel.typeabonnement">
         <MappingFragment StoreEntitySet="typeabonnement">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="libelle" ColumnName="libelle" />
           <ScalarProperty Name="nbOffre" ColumnName="nbOffre" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="typecompetences">
       <EntityTypeMapping TypeName="megacastingModel.typecompetence">
         <MappingFragment StoreEntitySet="typecompetence">
-          <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="libelle" ColumnName="libelle" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="typecontrats">
       <EntityTypeMapping TypeName="megacastingModel.typecontrat">
         <MappingFragment StoreEntitySet="typecontrat">
-          <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="libelle" ColumnName="libelle" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="typemedias">
       <EntityTypeMapping TypeName="megacastingModel.typemedia">
         <MappingFragment StoreEntitySet="typemedia">
-          <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="libelle" ColumnName="libelle" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="typeutilisateurs">
       <EntityTypeMapping TypeName="megacastingModel.typeutilisateur">
         <MappingFragment StoreEntitySet="typeutilisateur">
-          <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="libelle" ColumnName="libelle" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="utilisateurs">
       <EntityTypeMapping TypeName="megacastingModel.utilisateur">
         <MappingFragment StoreEntitySet="utilisateur">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="nom" ColumnName="nom" />
-          <ScalarProperty Name="prenom" ColumnName="prenom" />
-          <ScalarProperty Name="login" ColumnName="login" />
-          <ScalarProperty Name="password" ColumnName="password" />
-          <ScalarProperty Name="dateNaissance" ColumnName="dateNaissance" />
           <ScalarProperty Name="typeUtilisateur_id" ColumnName="typeUtilisateur_id" />
+          <ScalarProperty Name="dateNaissance" ColumnName="dateNaissance" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <AssociationSetMapping Name="domaine_utilisateur" TypeName="megacastingModel.domaine_utilisateur" StoreEntitySet="domaine_utilisateur">
-      <EndProperty Name="domaine">
-        <ScalarProperty Name="id" ColumnName="domaine_id" />
-      </EndProperty>
       <EndProperty Name="utilisateur">
         <ScalarProperty Name="id" ColumnName="utilisateur_id" />
+      </EndProperty>
+      <EndProperty Name="domaine">
+        <ScalarProperty Name="id" ColumnName="domaine_id" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>
