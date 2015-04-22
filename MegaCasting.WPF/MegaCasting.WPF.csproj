@@ -135,9 +135,8 @@
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\ViewModelCandidature.cs" />
     <Compile Include="ViewModel\ViewModelCompetence.cs" />
-    <Compile Include="ViewModel\ViewModelDomaine.cs" />
+    <Compile Include="ViewModel\ViewModelDomaine_Metier.cs" />
     <Compile Include="ViewModel\ViewModelMedia.cs" />
-    <Compile Include="ViewModel\ViewModelMetier.cs" />
     <Compile Include="ViewModel\ViewModelOffre.cs" />
     <Compile Include="ViewModel\ViewModelUtilisateur.cs" />
     <Page Include="AjoutCredit.xaml">

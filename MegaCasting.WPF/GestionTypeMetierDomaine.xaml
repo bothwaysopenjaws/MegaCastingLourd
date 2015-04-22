@@ -1,8 +1,128 @@
 ﻿<Window x:Class="MegaCasting.WPF.GestionTypeMetierDomaine"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="GestionTypeMetierDomaine" Height="314" Width="323">
+        Title="GestionTypeMetierDomaine" Height="500" Width="900">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.4*"></ColumnDefinition>
+            <ColumnDefinition Width="0.4*"></ColumnDefinition>
+            
+        </Grid.ColumnDefinitions>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label  Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.ColumnSpan="1">Gestion des types de métiers</Label>
+        <Label  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.ColumnSpan="2">Gestion des domaines</Label>
+        
+
+        <Grid Margin="1" Grid.Column="0" Grid.Row="2" RenderTransformOrigin="0.644,0.497"  Grid.ColumnSpan="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="65*"></ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"></RowDefinition>
+                <RowDefinition Height="0.5*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Button HorizontalAlignment="Center" Height="25" Width="100" Grid.Column="0" Grid.Row="1" Margin="5" Name="ButtonMetierAjouter" Content="Ajouter"></Button>
+            <Button HorizontalAlignment="Right" Height="25" Width="100" Grid.Column="0" Grid.Row="0" Margin="5" Name="ButtonMetierModifier" Content="Modifier"/>
+            <Button HorizontalAlignment="Left" Height="25" Width="100" Grid.Column="0" Grid.Row="0" Margin="5" Name="ButtonMetierSupprimer" Content="Supprimer"/>
+
+
+        </Grid>
+        <Grid Margin="1" Grid.Column="0" Grid.Row="1" RenderTransformOrigin="0.644,0.497"  Grid.ColumnSpan="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25*"></ColumnDefinition>
+                <ColumnDefinition Width="65*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"></RowDefinition>
+                
+            </Grid.RowDefinitions>
+            
+            <ListBox Name="ListBoxTypesMetiers" Grid.Column="0" Grid.Row="0"></ListBox>
+            
+            <Grid Margin="1" Grid.Column="1" Grid.Row="0" RenderTransformOrigin="0.644,0.497"  Grid.ColumnSpan="1">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25*"></ColumnDefinition>
+                    <ColumnDefinition Width="65*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"></RowDefinition>
+                    <RowDefinition Height="0.5*"></RowDefinition>
+                    <RowDefinition Height="0.9*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label  Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.ColumnSpan="1">Nom :</Label>
+                <Label  Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.ColumnSpan="1">Domaine :</Label>
+                <Label  Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.ColumnSpan="1">Description :</Label>
+                
+                <TextBox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="150"></TextBox>
+                <ComboBox Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="150"></ComboBox>
+                <TextBlock Grid.Column="1" Grid.Row="2" Margin="5" ></TextBlock>
+            </Grid>
+            
+        </Grid>
+        
+        <Grid Margin="1" Grid.Column="1" Grid.Row="2" RenderTransformOrigin="0.644,0.497"  Grid.ColumnSpan="1" >
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="65*"></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"></RowDefinition>
+                    <RowDefinition Height="0.5*"></RowDefinition>
+
+                </Grid.RowDefinitions>
+
+            <Button HorizontalAlignment="Center" Height="25" Width="100" Grid.Column="0" Grid.Row="1" Margin="5" Name="ButtonDomaineAjouter" Content="Ajouter"></Button>
+            <Button HorizontalAlignment="Left" Height="25" Width="100" Grid.Column="1" Grid.Row="0" Margin="5" Name="ButtonDomaineSupprimer" Content="Supprimer"/>
+            <Button HorizontalAlignment="Right" Height="25" Width="100" Grid.Column="1" Grid.Row="0" Margin="5" Name="ButtonDomaineModifier" Content="Modifier"/>
+
+
+        </Grid>
+        <Grid Margin="1" Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.644,0.497"  Grid.ColumnSpan="1" >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25*"></ColumnDefinition>
+                <ColumnDefinition Width="65*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <ListBox x:Name="ListBoxDomaines" Grid.Column="0" Grid.Row="1" ItemsSource="{Binding }">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding }"></Label>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Grid Margin="1" Grid.Column="1" Grid.Row="0" RenderTransformOrigin="0.644,0.497"  Grid.ColumnSpan="1">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25*"></ColumnDefinition>
+                    <ColumnDefinition Width="65*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"></RowDefinition>
+                    <RowDefinition Height="0.5*"></RowDefinition>
+                    <RowDefinition Height="0.9*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label  Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.ColumnSpan="1">Nom :</Label>
+                
+
+                <TextBox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="150"></TextBox>
+               
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

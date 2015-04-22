@@ -8,12 +8,12 @@ using MegaCasting.DBLib;
 
 namespace MegaCasting.WPF.ViewModel
 {
-    class ViewModelDomaine : ViewModelBase
+   public class ViewModelDomaine_Metier : ViewModelBase
     {
-        ObservableCollection<Domaine> domaines { get; set; }
-        ObservableCollection<Metier> metiers { get; set; }
+       public ObservableCollection<Domaine> domaines { get; set; }
+       public ObservableCollection<Metier> metiers { get; set; }
         
-        public ViewModelDomaine()
+        public ViewModelDomaine_Metier()
         {
             domaines = new ObservableCollection<Domaine>(this.Entities.Domaines);
             metiers = new ObservableCollection<Metier>(this.Entities.Metiers);
