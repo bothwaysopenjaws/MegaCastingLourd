@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\App.xaml
-202038380048
+20-1356028250
 
-331223988307
+32134265762
 23-287811854
-AjoutCredit.xaml;AjoutOffre.xaml;AjoutTypeAbonnement.xaml;AjoutTypeCompetence.xaml;GestionTypeAbonnement.xaml;GestionTypeCompetence.xaml;GestionTypeContrat.xaml;GestionTypeMetierDomaine.xaml;Gestion_Competences.xaml;Gestion_Contrat.xaml;Gestion_Experiences.xaml;Gestion_Mediatheque.xaml;MainWindow.xaml;TabAbonnements.xaml;TabAnnonceurs.xaml;TabArtistes.xaml;TabCandidatures.xaml;TabOffres.xaml;TabParametres.xaml;TabPartenaires.xaml;
+AjoutCredit.xaml;AjoutOffre.xaml;AjoutTypeAbonnement.xaml;AjoutTypeCompetence.xaml;GestionTypeAbonnement.xaml;GestionTypeCompetence.xaml;GestionTypeContrat.xaml;GestionTypeMetierDomaine.xaml;Gestion_Competences.xaml;Gestion_Experiences.xaml;Gestion_Mediatheque.xaml;MainWindow.xaml;PanelAbonnements.xaml;PanelAnnonceurs.xaml;PanelArtistes.xaml;PanelCandidatures.xaml;PanelMain.xaml;PanelOffres.xaml;PanelParametres.xaml;PanelPartenaires.xaml;
 
 False
 

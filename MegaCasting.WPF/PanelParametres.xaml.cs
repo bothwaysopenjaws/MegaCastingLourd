@@ -36,5 +36,11 @@ namespace MegaCasting.WPF
             GestionTypeCompetence gestiontypeCompetence = new GestionTypeCompetence();
             gestiontypeCompetence.ShowDialog();
         }
+
+        private void ButtonParametreMetierDomaines_Click(object sender, RoutedEventArgs e)
+        {
+            GestionTypeMetierDomaine gestionTypeMetierDomaine = new GestionTypeMetierDomaine();
+            gestionTypeMetierDomaine.ShowDialog();
+        }
     }
 }
