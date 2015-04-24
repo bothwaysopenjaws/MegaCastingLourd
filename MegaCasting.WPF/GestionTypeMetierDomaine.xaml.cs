@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MegaCasting.DBLib;
+using MegaCasting.WPF.ViewModel;
 
 namespace MegaCasting.WPF
 {
@@ -19,9 +21,19 @@ namespace MegaCasting.WPF
     /// </summary>
     public partial class GestionTypeMetierDomaine : Window
     {
+        protected ViewModelDomaine_Metier _ViewModel;
+
+
         public GestionTypeMetierDomaine()
         {
             InitializeComponent();
+            
+
+            // Récupération de la ViewModel
+            _ViewModel = new ViewModelDomaine_Metier();
+
+            // intégrer la View au dataContext
+            this.DataContext = _ViewModel;
         }
     }
 }
