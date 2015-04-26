@@ -34,9 +34,9 @@
                 <RowDefinition Height="0.5*"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Button HorizontalAlignment="Center" Height="25" Width="100" Grid.Column="0" Grid.Row="1" Margin="5" Name="ButtonMetierAjouter" Content="Ajouter"></Button>
-            <Button HorizontalAlignment="Right" Height="25" Width="100" Grid.Column="0" Grid.Row="0" Margin="5" Name="ButtonMetierModifier" Content="Modifier"/>
-            <Button HorizontalAlignment="Left" Height="25" Width="100" Grid.Column="0" Grid.Row="0" Margin="5" Name="ButtonMetierSupprimer" Content="Supprimer"/>
+            <Button Background="Green" HorizontalAlignment="Center" Height="25" Width="100" Grid.Column="0" Grid.Row="1" Margin="5" Name="ButtonMetierAjouter" Content="Ajouter"></Button>
+            <Button Background="SteelBlue" HorizontalAlignment="Right" Height="25" Width="100" Grid.Column="0" Grid.Row="0" Margin="5" Name="ButtonMetierModifier" Content="Modifier"/>
+            <Button Background="Red" HorizontalAlignment="Left" Height="25" Width="100" Grid.Column="0" Grid.Row="0" Margin="5" Name="ButtonMetierSupprimer" Content="Supprimer"/>
 
 
         </Grid>
@@ -77,7 +77,7 @@
                 <Label  Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.ColumnSpan="1">Description :</Label>
 
                 <TextBox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="150" Text="{Binding Path=SelectedItem.Libelle, ElementName=ListBoxTypeMetier, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-                <ComboBox Grid.Column="1" Grid.Row="1" Name="comboBoxDomaine" HorizontalAlignment="Center" ItemsSource="{Binding  ElementName=domaines.nom}" VerticalAlignment="Center" Height="25" Width="150" ></ComboBox>
+                <ComboBox Grid.Column="1" Grid.Row="1" Name="comboBoxDomaine" HorizontalAlignment="Center" SelectedValue="{Binding Path=SelectedItem.domaine, ElementName=ListBoxTypeMetier, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Libelle" VerticalAlignment="Center" Height="25" Width="150" ></ComboBox>
                 <TextBox Grid.Column="1" Grid.Row="2" Margin="5" Text="{Binding Path=SelectedItem.Description, ElementName=ListBoxTypeMetier, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             </Grid>
             
@@ -95,9 +95,9 @@
 
                 </Grid.RowDefinitions>
 
-            <Button HorizontalAlignment="Center" Height="25" Width="100" Grid.Column="0" Grid.Row="1" Margin="5" Name="ButtonDomaineAjouter" Content="Ajouter" Click="ButtonDomaineAjouter_Click"></Button>
-            <Button HorizontalAlignment="Left" Height="25" Width="100" Grid.Column="1" Grid.Row="0" Margin="5" Name="ButtonDomaineSupprimer" Content="Supprimer" Click="ButtonDomaineSupprimer_Click"/>
-            <Button HorizontalAlignment="Right" Height="25" Width="100" Grid.Column="1" Grid.Row="0" Margin="5" Name="ButtonDomaineModifier" Content="Modifier" Click="ButtonDomaineModifier_Click"/>
+            <Button Background="Green" HorizontalAlignment="Center" Height="25" Width="100" Grid.Column="0" Grid.Row="1" Margin="5" Name="ButtonDomaineAjouter" Content="Ajouter" Click="ButtonDomaineAjouter_Click"></Button>
+            <Button Background="Red" HorizontalAlignment="Left" Height="25" Width="100" Grid.Column="1" Grid.Row="0" Margin="5" Name="ButtonDomaineSupprimer" Content="Supprimer" Click="ButtonDomaineSupprimer_Click"/>
+            <Button Background="SteelBlue" HorizontalAlignment="Right" Height="25" Width="100" Grid.Column="1" Grid.Row="0" Margin="5" Name="ButtonDomaineModifier" Content="Modifier" Click="ButtonDomaineModifier_Click"/>
 
 
         </Grid>

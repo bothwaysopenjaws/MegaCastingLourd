@@ -28,13 +28,18 @@ namespace MegaCasting.WPF
         public GestionTypeMetierDomaine()
         {
             InitializeComponent();
-            
+
 
             // Récupération de la ViewModel
             _ViewModel = new ViewModelDomaine_Metier();
 
             // intégrer la View au dataContext
             this.DataContext = _ViewModel;
+
+
+            this.comboBoxDomaine.ItemsSource = _ViewModel.domaines;
+
+
         }
 
         private void ButtonDomaineSupprimer_Click(object sender, RoutedEventArgs e)
