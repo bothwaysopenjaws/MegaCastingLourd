@@ -71,22 +71,18 @@ namespace MegaCasting.WPF
 
         private void ButtonDomaineModifier_Click(object sender, RoutedEventArgs e)
         {
-            // récupère la saisie
-            string saisieLibelle = this.TextBoxNomDomaine.Text;
-
-            // On créer un type temporaire
+            
+            // On créer un domaine temporaire
             Domaine domaine = new Domaine();
 
-            // On récupère la Compétence sélectionner dans la liste et on l'intègre au temporaire
+            // On récupère le domaine sélectionner dans la liste et on l'intègre au temporaire
             domaine = (Domaine)(this.ListBoxDomaines.SelectedItem);
 
             // Vérifie que la textBox n'est pas null et vérifie la sélection dans la liste
             if (this.TextBoxNomDomaine.Text != null && domaine != null)
             {
-                // Modifier le type d'abonnement
+                // Modifier le type de domaine
                 ((Domaine)(this.ListBoxDomaines.SelectedItem)).Libelle = this.TextBoxNomDomaine.Text;
-
-
 
 
                 // Une fois que la viewModel est mise à jour on sauvegarde les modifications 
@@ -105,8 +101,82 @@ namespace MegaCasting.WPF
 
         private void ButtonDomaineAjouter_Click(object sender, RoutedEventArgs e)
         {
-            AjoutDomaine ajoutDomaine = new AjoutDomaine();
+            AjoutDomaine ajoutDomaine = new AjoutDomaine(_ViewModel);
             ajoutDomaine.ShowDialog();
+        }
+
+        private void ButtonMetierModifier_Click(object sender, RoutedEventArgs e)
+        {
+            // récupère la saisie
+            string saisieLibelle = this.TextboxNomMetier.Text;
+            
+            string saisieDescription = this.TextboxDescriptionMetier.Text;
+
+            Domaine domaine = ((Domaine)(this.comboBoxDomaine.SelectedItem));
+
+  
+
+            // On créer un metier temporaire
+            Metier metier = new Metier();
+
+            // On récupère le metier sélectionner dans la liste et on l'intègre au temporaire
+            metier = (Metier)(this.ListBoxTypeMetier.SelectedItem);
+
+            // Vérifie que la textBox n'est pas null et vérifie la sélection dans la liste
+            if (saisieLibelle != null)
+            {
+                // Modifier le type d'abonnement
+                ((Metier)(this.ListBoxTypeMetier.SelectedItem)).Libelle = saisieLibelle;
+                ((Metier)(this.ListBoxTypeMetier.SelectedItem)).Description = saisieDescription;
+                ((Metier)(this.ListBoxTypeMetier.SelectedItem)).domaine = domaine;
+
+
+
+
+                // Une fois que la viewModel est mise à jour on sauvegarde les modifications 
+                this._ViewModel.Save();
+
+                // Affiche un message confirmant la modification
+                MessageBox.Show("Modification réussite !!!");
+
+            }
+            else
+            {
+                MessageBox.Show("Saisie invalide !\r Modification impossible.");
+
+            }
+        }
+
+        private void ButtonMetierSupprimer_Click(object sender, RoutedEventArgs e)
+        {
+            // On créer un métier temporaire
+            Metier metier = new Metier();
+
+            // On récupère le métier sélectionner dans la liste
+            metier = (Metier)(this.ListBoxTypeMetier.SelectedItem);
+
+            // Vérifie qu'un métier a été séléctionné dans la listeBox
+            if (metier != null)
+            {
+
+                // Suppression 
+                _ViewModel.Entities.Metiers.Remove(metier);
+                _ViewModel.metiers.Remove(metier);
+
+                // Sauvegarder la suppression
+                this._ViewModel.Save();
+
+                MessageBox.Show("Suppression réussite !!!");
+            }
+            else
+            {
+                MessageBox.Show(" Saisie invalide !\r Veuillez sélectionner un métier à supprimer.");
+            }
+        }
+
+        private void ButtonMetierAjouter_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

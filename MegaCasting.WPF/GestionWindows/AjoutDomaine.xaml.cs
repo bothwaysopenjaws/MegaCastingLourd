@@ -11,7 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using MegaCasting.DBLib;
+using MegaCasting.WPF.ViewModel;
 namespace MegaCasting.WPF.GestionWindows
 {
     /// <summary>
@@ -19,14 +20,52 @@ namespace MegaCasting.WPF.GestionWindows
     /// </summary>
     public partial class AjoutDomaine : Window
     {
-        public AjoutDomaine()
+        protected ViewModelDomaine_Metier _ViewModelDomaine;
+
+        public AjoutDomaine(ViewModelDomaine_Metier _ViewModel)
         {
             InitializeComponent();
+            // Intégration de la ViewModel récupérer avec celle de cette fenêtre
+            _ViewModelDomaine = _ViewModel;
+
+            // intégrer la View au dataContext
+            this.DataContext = _ViewModelDomaine;
         }
 
         private void ButtonAjoutDomaine_Click(object sender, RoutedEventArgs e)
         {
+            // récupère le text de la textbox dans une string 
+            string saisieLibelle = this.TextBoxNomDomaine.Text;
+
+            // Vérifier que les saisies du nom n'est pa null n'y vide  
+            if (this.TextBoxNomDomaine.Text != null && this.TextBoxNomDomaine.Text != "")
+            {
+                // instancié un nouveau domaine
+                Domaine domaine = new Domaine();
+                domaine.Libelle = this.TextBoxNomDomaine.Text;
+                
+
+                // ajouter à la viewModel du nouveau domaine
+                _ViewModelDomaine.domaines.Add(domaine);
+                _ViewModelDomaine.Entities.Domaines.Add(domaine);
+
+                // Une fois que la viewModel est mise a jour on sauvegarde les modifications 
+                this._ViewModelDomaine.Save();
+
+               
+                this.Close();
+            }
+            // si la saisie n'est pas valide apparition d'un message d'erreur
+            else
+            {
+                MessageBox.Show("Saisie invalide !\r veuillez saisir des données correcte.");
+                this.TextBoxNomDomaine.Clear();
+            }
+
+
 
         }
+
+        
     }
 }
