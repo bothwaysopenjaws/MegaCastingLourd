@@ -6,6 +6,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-            
+        <Label FontSize="20" FontFamily="Segoe Script" VerticalAlignment="Center" HorizontalAlignment="Center"  > Bienvenue dans MegaGestion, Gestionnaire de données pour le site MegaShow !</Label>
     </Grid>
 </UserControl>

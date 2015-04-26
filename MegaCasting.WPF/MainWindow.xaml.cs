@@ -75,6 +75,10 @@ namespace MegaCasting.WPF
         }
 
 
+        private void menuItemQuitter_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
 
         #region Méthodes
         private void CleanDockPanel()
@@ -84,5 +88,14 @@ namespace MegaCasting.WPF
             
         }
         #endregion
+
+        private void DragWindow_Click(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
+        {
+
+            this.Left += e.HorizontalChange;
+            this.Top += e.VerticalChange;
+
+        }
+
     }
 }

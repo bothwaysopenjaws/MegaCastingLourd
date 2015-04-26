@@ -40,22 +40,6 @@ namespace MegaCasting.WPF.GestionWindows {
     /// </summary>
     public partial class AjoutDomaine : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
-        
-        #line 21 "..\..\..\GestionWindows\AjoutDomaine.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.TextBox TextBoxNom;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 23 "..\..\..\GestionWindows\AjoutDomaine.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button ButtonAjoutDomaine;
-        
-        #line default
-        #line hidden
-        
         private bool _contentLoaded;
         
         /// <summary>
@@ -84,21 +68,6 @@ namespace MegaCasting.WPF.GestionWindows {
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
         void System.Windows.Markup.IComponentConnector.Connect(int connectionId, object target) {
-            switch (connectionId)
-            {
-            case 1:
-            this.TextBoxNom = ((System.Windows.Controls.TextBox)(target));
-            return;
-            case 2:
-            this.ButtonAjoutDomaine = ((System.Windows.Controls.Button)(target));
-            
-            #line 23 "..\..\..\GestionWindows\AjoutDomaine.xaml"
-            this.ButtonAjoutDomaine.Click += new System.Windows.RoutedEventHandler(this.ButtonAjoutDomaine_Click);
-            
-            #line default
-            #line hidden
-            return;
-            }
             this._contentLoaded = true;
         }
     }
