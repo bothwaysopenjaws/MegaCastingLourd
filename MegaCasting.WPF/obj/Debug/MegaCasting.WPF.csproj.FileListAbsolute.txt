@@ -173,3 +173,5 @@ C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Pa
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\PanelOffres.g.cs
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\PanelParametres.g.cs
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\PanelPartenaires.g.cs
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutDomaine.baml
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutDomaine.g.cs

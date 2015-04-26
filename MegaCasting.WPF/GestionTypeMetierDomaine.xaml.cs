@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MegaCasting.DBLib;
 using MegaCasting.WPF.ViewModel;
+using MegaCasting.WPF.GestionWindows;
 
 namespace MegaCasting.WPF
 {
@@ -34,6 +35,73 @@ namespace MegaCasting.WPF
 
             // intégrer la View au dataContext
             this.DataContext = _ViewModel;
+        }
+
+        private void ButtonDomaineSupprimer_Click(object sender, RoutedEventArgs e)
+        {
+            // On créer un domaine temporaire
+            Domaine domaine = new Domaine();
+
+            // On récupère le domaine sélectionner dans la liste
+            domaine = (Domaine)(this.ListBoxDomaines.SelectedItem);
+
+            // Vérifie qu'un domaine a été séléctionné dans la listeBox
+            if (domaine != null)
+            {
+
+                // Suppression 
+                _ViewModel.Entities.Domaines.Remove(domaine);
+                _ViewModel.domaines.Remove(domaine);
+
+                // Sauvegarder la suppression
+                this._ViewModel.Save();
+
+                MessageBox.Show("Suppression réussite !!!");
+            }
+            else
+            {
+                MessageBox.Show(" Saisie invalide !\r Veuillez sélectionner un Domaine à supprimer.");
+            }
+        }
+
+        private void ButtonDomaineModifier_Click(object sender, RoutedEventArgs e)
+        {
+            // récupère la saisie
+            string saisieLibelle = this.TextBoxNomDomaine.Text;
+
+            // On créer un type temporaire
+            Domaine domaine = new Domaine();
+
+            // On récupère la Compétence sélectionner dans la liste et on l'intègre au temporaire
+            domaine = (Domaine)(this.ListBoxDomaines.SelectedItem);
+
+            // Vérifie que la textBox n'est pas null et vérifie la sélection dans la liste
+            if (this.TextBoxNomDomaine.Text != null && domaine != null)
+            {
+                // Modifier le type d'abonnement
+                ((Domaine)(this.ListBoxDomaines.SelectedItem)).Libelle = this.TextBoxNomDomaine.Text;
+
+
+
+
+                // Une fois que la viewModel est mise à jour on sauvegarde les modifications 
+                this._ViewModel.Save();
+
+                // Affiche un message confirmant la modification
+                MessageBox.Show("Modification réussite !!!");
+
+            }
+            else
+            {
+                MessageBox.Show("Saisie invalide !\r Modification impossible.");
+
+            }
+        }
+
+        private void ButtonDomaineAjouter_Click(object sender, RoutedEventArgs e)
+        {
+            AjoutDomaine ajoutDomaine = new AjoutDomaine();
+            ajoutDomaine.ShowDialog();
         }
     }
 }

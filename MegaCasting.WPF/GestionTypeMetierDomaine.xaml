@@ -95,9 +95,9 @@
 
                 </Grid.RowDefinitions>
 
-            <Button HorizontalAlignment="Center" Height="25" Width="100" Grid.Column="0" Grid.Row="1" Margin="5" Name="ButtonDomaineAjouter" Content="Ajouter"></Button>
-            <Button HorizontalAlignment="Left" Height="25" Width="100" Grid.Column="1" Grid.Row="0" Margin="5" Name="ButtonDomaineSupprimer" Content="Supprimer"/>
-            <Button HorizontalAlignment="Right" Height="25" Width="100" Grid.Column="1" Grid.Row="0" Margin="5" Name="ButtonDomaineModifier" Content="Modifier"/>
+            <Button HorizontalAlignment="Center" Height="25" Width="100" Grid.Column="0" Grid.Row="1" Margin="5" Name="ButtonDomaineAjouter" Content="Ajouter" Click="ButtonDomaineAjouter_Click"></Button>
+            <Button HorizontalAlignment="Left" Height="25" Width="100" Grid.Column="1" Grid.Row="0" Margin="5" Name="ButtonDomaineSupprimer" Content="Supprimer" Click="ButtonDomaineSupprimer_Click"/>
+            <Button HorizontalAlignment="Right" Height="25" Width="100" Grid.Column="1" Grid.Row="0" Margin="5" Name="ButtonDomaineModifier" Content="Modifier" Click="ButtonDomaineModifier_Click"/>
 
 
         </Grid>
@@ -132,7 +132,7 @@
                 <Label  Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.ColumnSpan="1">Nom :</Label>
 
 
-                <TextBox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="150" Text="{Binding Path=SelectedItem.Libelle, ElementName=ListBoxDomaines, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBox x:Name="TextBoxNomDomaine" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="150" Text="{Binding Path=SelectedItem.Libelle, ElementName=ListBoxDomaines, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                
             </Grid>
         </Grid>
