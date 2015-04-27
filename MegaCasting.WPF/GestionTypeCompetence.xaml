@@ -3,22 +3,22 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="GestionTypeCompetence" Height="300" Width="500">
     <Grid>
-    <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="0.2*"></ColumnDefinition>
-        <ColumnDefinition Width="0.4*"></ColumnDefinition>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+            <ColumnDefinition Width="0.4*"></ColumnDefinition>
 
-    </Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
 
-    <Grid.RowDefinitions>
-        <RowDefinition Height="0.2*"></RowDefinition>
-        <RowDefinition></RowDefinition>
-        <RowDefinition Height="0.3*"></RowDefinition>
-    </Grid.RowDefinitions>
-    <Button HorizontalAlignment="Center" Height="25" Width="100" Grid.Column="0" Grid.Row="2" Margin="5" Name="ButtontypeCompetenceAjouter" Content="Ajouter" Grid.RowSpan="2" Click="ButtontypeCompetenceAjouter_Click"></Button>
-        <Button VerticalAlignment="Center" HorizontalAlignment="Right" Height="25" Width="100" Grid.Column="1" Grid.Row="2"  Name="ButtontypeCompetenceSupprimer" Content="Supprimer" Margin="0,11,28,11" Click="ButtontypeCompetenceSupprimer_Click"/>
-        <Button VerticalAlignment="Center" HorizontalAlignment="Left" Height="25" Width="100" Grid.Column="1" Grid.Row="2"  Name="ButtontypeCompetenceModifier" Content="Modifier" Margin="23,11,0,11" Click="ButtontypeCompetenceModifier_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Background="Green" HorizontalAlignment="Center" Height="25" Width="100" Grid.Column="0" Grid.Row="2" Margin="29,14,35,14" Name="ButtontypeCompetenceAjouter" Content="Ajouter" Click="ButtontypeCompetenceAjouter_Click"/>
+        <Button Background="Red" VerticalAlignment="Center" HorizontalAlignment="Right" Height="25" Width="100" Grid.Column="1" Grid.Row="2"  Name="ButtontypeCompetenceSupprimer" Content="Supprimer" Margin="0,11,28,11" Click="ButtontypeCompetenceSupprimer_Click"/>
+        <Button Background="SteelBlue" VerticalAlignment="Center" HorizontalAlignment="Left" Height="25" Width="100" Grid.Column="1" Grid.Row="2"  Name="ButtontypeCompetenceModifier" Content="Modifier" Margin="23,11,0,11" Click="ButtontypeCompetenceModifier_Click"/>
 
-    <Label  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.ColumnSpan="2">Gestion des types de Compétences</Label>
+        <Label  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.ColumnSpan="2">Gestion des types de Compétences</Label>
         <ListBox x:Name="ListBoxTypeCompetences" Grid.Column="0" Grid.Row="1" Margin="5" ItemsSource="{Binding TypeCompetences}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -28,19 +28,19 @@
         </ListBox>
 
         <Grid Margin="1" Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.644,0.497" DataContext="{Binding ElementName=ListBoxTypeCompetences, Path=SelectedItem}">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="65*"></ColumnDefinition>
-            <ColumnDefinition Width="0*"/>
-            <ColumnDefinition Width="130*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"></RowDefinition>
-        </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="65*"></ColumnDefinition>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="130*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
 
-        <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.ColumnSpan="2">Nom du type :</Label>
+            <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.ColumnSpan="2">Nom du type :</Label>
             <TextBox Name="TextboxNomAjoutTypeCompetence" Grid.ColumnSpan="2" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="5" Width="180" Text="{Binding Path=SelectedItem.Libelle, ElementName=ListBoxTypeCompetences, UpdateSourceTrigger=PropertyChanged}"></TextBox>
 
+        </Grid>
     </Grid>
-    </Grid>
-    
+
 </Window>

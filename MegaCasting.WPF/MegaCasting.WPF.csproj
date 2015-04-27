@@ -104,6 +104,9 @@
     <Compile Include="GestionWindows\AjoutMetier.xaml.cs">
       <DependentUpon>AjoutMetier.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GestionWindows\AjoutTypeContrat.xaml.cs">
+      <DependentUpon>AjoutTypeContrat.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gestion_Competences.xaml.cs">
       <DependentUpon>Gestion_Competences.xaml</DependentUpon>
     </Compile>
@@ -182,6 +185,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GestionWindows\AjoutMetier.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GestionWindows\AjoutTypeContrat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

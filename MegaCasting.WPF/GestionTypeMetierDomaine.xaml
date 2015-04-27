@@ -111,7 +111,7 @@
                 <RowDefinition Height="0.5*"></RowDefinition>
 
             </Grid.RowDefinitions>
-            <ListBox x:Name="ListBoxDomaines" Grid.Column="0" Grid.Row="1" ItemsSource="{Binding domaines }" Margin="5">
+            <ListBox x:Name="ListBoxDomaines" Grid.Column="0" Grid.Row="1" ItemsSource="{Binding domaines}" Margin="5">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Label Content="{Binding Libelle }"></Label>

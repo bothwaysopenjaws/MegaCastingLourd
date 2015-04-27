@@ -8,7 +8,7 @@ using MegaCasting.DBLib;
 
 namespace MegaCasting.WPF.ViewModel
 {
-    class ViewModelOffre : ViewModelBase
+   public class ViewModelOffre : ViewModelBase
     {
         public ObservableCollection<Offre> Offres { get; set; }
         public ObservableCollection<TypeContrat> TypeContrats { get; set; }

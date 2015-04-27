@@ -188,3 +188,5 @@ C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Pa
 C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\PanelPartenaires.g.cs
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutMetier.baml
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutMetier.g.cs
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutTypeContrat.baml
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutTypeContrat.g.cs

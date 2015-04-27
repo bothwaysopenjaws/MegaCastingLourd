@@ -3,6 +3,33 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="AjoutMetier" Height="300" Width="300">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+            
+            <ColumnDefinition Width="0.4*"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15"></RowDefinition>
+            <RowDefinition Height="0.05*"></RowDefinition>
+            <RowDefinition Height="0.05*"></RowDefinition>
+            <RowDefinition Height="0.1*"></RowDefinition>
+            <RowDefinition Height="0.05*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="1" Content="Nom :" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+        <Label Grid.Column="0" Grid.Row="2" Content="Domaine :" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+        <Label Grid.Column="0" Grid.Row="3" Content="Description :" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+
+        <TextBox Height="25" Grid.Column="1" Grid.Row="1" Margin="10" Name="TextBoxNomMetier" ></TextBox>
+
+        <ComboBox Grid.Column="1" Grid.Row="2" Name="comboBoxMetier" HorizontalAlignment="Center" SelectedValue="{Binding Path=SelectedItem.domaine}" DisplayMemberPath="Libelle" VerticalAlignment="Center" Height="25" Width="150" ></ComboBox>
         
+        <TextBox Name="TextboxDescriptionMetier" Grid.Column="1" Grid.Row="3" Margin="5"></TextBox>
+
+        <Button Background="Green" Height="25" Width="100" Name="ButtonAjoutMetier" Grid.Column="1" Grid.Row="4" Content="Ajouter" Margin="10" Click="ButtonAjoutMetier_Click"></Button>
     </Grid>
+    
 </Window>

@@ -20,6 +20,6 @@
        
         <TextBox Height="25" Grid.Column="1" Grid.Row="1" Margin="10" Name="TextBoxNom" ></TextBox>
 
-        <Button Height="25" Width="100" Name="ButtonAjoutTypeCompetence" Grid.Column="1" Grid.Row="3" Content="Ajouter" Margin="10" Click="ButtonAjoutTypeCompetence_Click"></Button>
+        <Button Background="Green" Height="25" Width="100" Name="ButtonAjoutTypeCompetence" Grid.Column="1" Grid.Row="3" Content="Ajouter" Margin="10" Click="ButtonAjoutTypeCompetence_Click"></Button>
     </Grid>
 </Window>

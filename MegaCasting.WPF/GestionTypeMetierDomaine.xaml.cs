@@ -176,7 +176,8 @@ namespace MegaCasting.WPF
 
         private void ButtonMetierAjouter_Click(object sender, RoutedEventArgs e)
         {
-
+            AjoutMetier ajoutMetier = new AjoutMetier(_ViewModel);
+            ajoutMetier.ShowDialog();
         }
     }
 }

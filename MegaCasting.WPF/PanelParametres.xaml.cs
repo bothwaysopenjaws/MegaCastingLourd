@@ -42,5 +42,11 @@ namespace MegaCasting.WPF
             GestionTypeMetierDomaine gestionTypeMetierDomaine = new GestionTypeMetierDomaine();
             gestionTypeMetierDomaine.ShowDialog();
         }
+
+        private void ButtonParametreTypeContrat_Click(object sender, RoutedEventArgs e)
+        {
+            GestionTypeContrat gestionTypeContrat = new GestionTypeContrat();
+            gestionTypeContrat.ShowDialog();
+        }
     }
 }
