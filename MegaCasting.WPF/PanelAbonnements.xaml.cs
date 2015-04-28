@@ -23,17 +23,20 @@ namespace MegaCasting.WPF
     {
        protected ViewModelUtilisateur _ViewModelUtilisateur;
        protected String nbUtilisateur;
+
        public PanelAbonnements()
         {
             InitializeComponent();
 
-            // Récupération de la ViewMode
+            // Récupération du viewModel
            
             this._ViewModelUtilisateur = new ViewModelUtilisateur();
 
             nbUtilisateur = (_ViewModelUtilisateur.Entities.Utilisateurs.Count()).ToString();
+
            // Test de fonctionnement : le libelle banana affiche le nombre correct d'utilisateur
             Banana.Content = nbUtilisateur;
+
             // intégration de la View au dataContext
             this.DataContext = _ViewModelUtilisateur;
         }
