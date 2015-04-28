@@ -12,7 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using MegaCasting.WPF.ViewModel;
+using MegaCasting.DBLib;
 namespace MegaCasting.WPF
 {
     /// <summary>
@@ -20,9 +21,17 @@ namespace MegaCasting.WPF
     /// </summary>
     public partial class PanelAbonnements : UserControl
     {
-        public PanelAbonnements()
+       protected ViewModelUtilisateur _ViewModel;
+
+       public PanelAbonnements()
         {
             InitializeComponent();
+
+            // Récupération de la ViewModel
+            _ViewModel = new ViewModelUtilisateur();
+
+            // intégrer la View au dataContext
+            this.DataContext = _ViewModel;
         }
     }
 }

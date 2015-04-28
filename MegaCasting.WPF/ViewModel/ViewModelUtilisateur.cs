@@ -8,12 +8,13 @@ using MegaCasting.DBLib;
 
 namespace MegaCasting.WPF.ViewModel
 {
-    class ViewModelUtilisateur : ViewModelBase
+    public class ViewModelUtilisateur : ViewModelBase
     {
         ObservableCollection<Utilisateur> Utilisateurs { get; set; }
         ObservableCollection<TypeUtilisateur> TypeUtilisateurs { get; set; }
         ObservableCollection<Adresse> Adresses { get; set; }
         ObservableCollection<Historique> Historiques { get; set; }
+        
         
 
         public ViewModelUtilisateur()
