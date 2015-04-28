@@ -24,7 +24,12 @@ namespace MegaCasting.WPF
         {
             InitializeComponent();
         }
-
+        
+       /// <summary>
+       /// Efface le panel actuel et envoie vers le panel panelAnnonceurs
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private void MenuItemAnnonceurs_Click(object sender, RoutedEventArgs e)
         {
             this.CleanDockPanel();
@@ -32,6 +37,11 @@ namespace MegaCasting.WPF
             dockPanelMain.Children.Add(panelAnnonceurs);
         }
 
+        /// <summary>
+        /// Efface le panel actuel et envoie vers le panel panelOffres
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuItemOffres_Click(object sender, RoutedEventArgs e)
         {
             this.CleanDockPanel();
@@ -39,6 +49,11 @@ namespace MegaCasting.WPF
             dockPanelMain.Children.Add(panelOffres);
         }
 
+        /// <summary>
+        /// Efface le panel actuel et envoie vers le panel panelPartenaires
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuItemPartenaires_Click(object sender, RoutedEventArgs e)
         {
             this.CleanDockPanel();
@@ -46,20 +61,33 @@ namespace MegaCasting.WPF
             dockPanelMain.Children.Add(panelPartenaires);
         }
 
+        /// <summary>
+        /// Efface le panel actuel et envoie vers le panel panelArtistes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuItemArtistes_Click(object sender, RoutedEventArgs e)
         {
             this.CleanDockPanel();
             PanelArtistes panelArtistes = new PanelArtistes();
             dockPanelMain.Children.Add(panelArtistes);
         }
-
+        /// <summary>
+        /// Efface le panel actuel et envoie vers le panel panelCandidatures
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuItemCandidatures_Click(object sender, RoutedEventArgs e)
         {
             this.CleanDockPanel();
             PanelCandidatures panelCandidatures = new PanelCandidatures();
             dockPanelMain.Children.Add(panelCandidatures);
         }
-
+        /// <summary>
+        /// Efface le panel actuel et envoie vers le panel panelParametres
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuItemParametres_Click(object sender, RoutedEventArgs e)
         {
             this.CleanDockPanel();
@@ -67,6 +95,12 @@ namespace MegaCasting.WPF
             dockPanelMain.Children.Add(panelParametres);
         }
 
+
+        /// <summary>
+        /// Efface le panel actuel et envoie vers le panel panelAbonnements
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuItemAbonnements_Click(object sender, RoutedEventArgs e)
         {
             this.CleanDockPanel();
@@ -74,13 +108,21 @@ namespace MegaCasting.WPF
             dockPanelMain.Children.Add(panelAbonnements);
         }
 
-
+        /// <summary>
+        /// Ferme la fenetre MainWindows
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void menuItemQuitter_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
         #region Méthodes
+
+        /// <summary>
+        /// Supprime le panel acutellement présent dans le dockPanel
+        /// </summary>
         private void CleanDockPanel()
         {
               dockPanelMain.Children.Clear();  //Nettoyage du dockPanel
@@ -89,6 +131,11 @@ namespace MegaCasting.WPF
         }
         #endregion
 
+        /// <summary>
+        /// Permet le déplacement de la fenêtre lorsque l'on clique en continu sur le thumb de la mainWindow
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DragWindow_Click(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
         {
 

@@ -18,9 +18,16 @@
             <RowDefinition></RowDefinition>
             <RowDefinition Height="0.1*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListBox Name="ListBoxAnnonceurs" Grid.Column="0" Grid.Row="1">
-                
-            </ListBox>
+        <ListBox Name="ListBoxAnnonceurs" Grid.Column="0" Grid.Row="1" ItemsSource="{Binding Utilisateurs}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock  Text="{Binding Path=nom}"  FontWeight="SemiBold"/>
+                        <TextBlock Text="{Binding Path=prenom}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold">Annonceurs</Label>
         <Label Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold">Ses Offres</Label>
         <ListBox Name="ListBoxOffres" Grid.Column="2" Grid.Row="1">

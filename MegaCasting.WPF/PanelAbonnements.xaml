@@ -23,7 +23,10 @@
         <ListBox x:Name="ListBoxUtilisateurs" Grid.Column="0" Grid.Row="0" Grid.RowSpan="6" Margin="5" ItemsSource="{Binding Utilisateurs}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Label Content="{Binding Nom}"></Label>
+                    <StackPanel>
+                        <TextBlock  Text="{Binding Path=Nom}"  FontWeight="SemiBold" Foreground="Black"/>
+                        <TextBlock Text="{Binding Path=Prenom}"/>
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
@@ -31,6 +34,7 @@
         <Label Grid.Column="1" Grid.Row="0" >Pack actuel : </Label>
         <Label Grid.Column="1" Grid.Row="1" >Diffusions restantes :</Label>
         <Label Grid.Column="1" Grid.Row="2" > Date d'inscription : </Label>
+        <Label x:Name="Banana" Grid.Row="2"  Grid.Column="2" FontSize="20" FontFamily="Segoe Script" VerticalAlignment="Top" HorizontalAlignment="Left"  >jhgjhg</Label>
 
         <Label Name="LabelAbonnementTypeAbonnement" Grid.Column="3" Grid.Row="0" > Pack100 </Label>
         <Label Name="LabelAbonnementRestant" Grid.Column="3" Grid.Row="1" > 1/100 </Label>

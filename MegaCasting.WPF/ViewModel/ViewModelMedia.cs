@@ -8,7 +8,7 @@ using MegaCasting.DBLib;
 
 namespace MegaCasting.WPF.ViewModel
 {
-    class ViewModelMedia : ViewModelBase
+    public class ViewModelMedia : ViewModelBase
     {
         ObservableCollection<TypeMedia> TypeMedias { get; set; }
         ObservableCollection<Multimedia> Multimedias { get; set; }

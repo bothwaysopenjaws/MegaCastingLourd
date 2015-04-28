@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace MegaCasting.WPF
 {
     /// <summary>
@@ -20,9 +21,14 @@ namespace MegaCasting.WPF
     /// </summary>
     public partial class PanelMain : UserControl
     {
+
+
         public PanelMain()
         {
             InitializeComponent();
+
+
+            
         }
     }
 }

@@ -21,17 +21,21 @@ namespace MegaCasting.WPF
     /// </summary>
     public partial class PanelAbonnements : UserControl
     {
-       protected ViewModelUtilisateur _ViewModel;
-
+       protected ViewModelUtilisateur _ViewModelUtilisateur;
+       protected String nbUtilisateur;
        public PanelAbonnements()
         {
             InitializeComponent();
 
-            // Récupération de la ViewModel
-            _ViewModel = new ViewModelUtilisateur();
+            // Récupération de la ViewMode
+           
+            this._ViewModelUtilisateur = new ViewModelUtilisateur();
 
-            // intégrer la View au dataContext
-            this.DataContext = _ViewModel;
+            nbUtilisateur = (_ViewModelUtilisateur.Entities.Utilisateurs.Count()).ToString();
+           // Test de fonctionnement : le libelle banana affiche le nombre correct d'utilisateur
+            Banana.Content = nbUtilisateur;
+            // intégration de la View au dataContext
+            this.DataContext = _ViewModelUtilisateur;
         }
     }
 }
