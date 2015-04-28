@@ -16,7 +16,7 @@ namespace MegaCasting.WPF.ViewModel
         public ViewModelCandidature()
         {
             candidatures = new ObservableCollection<Candidature>(this.Entities.Candidatures);
-            
+
         }
 
     }

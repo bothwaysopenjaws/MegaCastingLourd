@@ -14,6 +14,7 @@ namespace MegaCasting.WPF.ViewModel
        public ObservableCollection<TypeCompetence> typeCompetences { get; set; }
        public ObservableCollection<Niveau> niveaux { get; set; }
 
+
         public ViewModelCompetence()
         {
             competences = new ObservableCollection<Competence>(this.Entities.Competences);

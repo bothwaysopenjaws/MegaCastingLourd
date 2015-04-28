@@ -30,7 +30,7 @@ namespace MegaCasting.WPF
             // Récupération de la ViewModel
             _ViewModel = new ViewModelAbonnement();
 
-            // intégrer la View au dataContext
+            // intégration la View au dataContext
             this.DataContext = _ViewModel;
         }
 

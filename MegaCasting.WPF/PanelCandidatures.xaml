@@ -6,6 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
+        <!--Definition de la grille principale-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.4*"></ColumnDefinition>
             <ColumnDefinition Width="0.5*"></ColumnDefinition>
@@ -23,21 +24,38 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         
-        <ListBox Name="ListBoxCandidature" Grid.Column="0" Grid.Row="0" Grid.RowSpan="7"></ListBox>
-        <Button Name="ButtonCandidatureSupprimer" Grid.Column="0" Grid.Row="8" Content="Supprimer" Background="Red"></Button>
         
+        <!-- Definition listbox -->
+        <ListBox Name="ListBoxCandidatures" ItemsSource="{Binding candidatures}" Grid.Column="0" Grid.Row="0" Grid.RowSpan="7">
+            <ListBox.ItemTemplate >
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Grid.Row="0" Grid.Column="0"  Text="{Binding Path=Nom}"  FontWeight="SemiBold" Foreground="Black" HorizontalAlignment="Stretch"/>
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Path=Prenom}" HorizontalAlignment="Stretch"/>
+                    </StackPanel>
+
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    
+        <Button Name="ButtonCandidatureSupprimer" Grid.Column="0" Grid.Row="8" Content="Supprimer" Background="Red" Click="ButtonCandidatureSupprimer_Click"></Button>
+        
+        
+        <!--Definition labels-->
         <Label Grid.Column="1" Grid.Row="1"> Nom : </Label>
         <Label Grid.Column="1" Grid.Row="2">Prénom :</Label>
         <Label Grid.Column="1" Grid.Row="3">CV :</Label>
         <Label Grid.Column="1" Grid.Row="4">Lettre de motivation : </Label>
         <Label Grid.Column="1" Grid.Row="5">Émis le : </Label>
         
-        <TextBox Name="TextBoxCandidatureNom" Grid.Column="3" Grid.Row="1" Margin="5" ></TextBox>
-        <TextBox Name="TextBoxCandidaturePrenom" Grid.Column="3" Grid.Row="2" Margin="5" ></TextBox>
-        <Button Name="TextBoxCandidatureUrlCV" Grid.Column="3" Grid.Row="3" Margin="5" >Aucun chemin sélectionné</Button>
-        <Button Name="TextBoxCandidatureUrlLettreMotivation" Grid.Column="3" Grid.Row="4" Margin="5" >Aucun chemin sélectionné</Button>
+        
+        <!--Definitions items binder-->
+        <TextBox Name="TextBoxCandidatureNom" Text="{Binding Path=SelectedItem.Nom, ElementName=ListBoxCandidatures, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3" Grid.Row="1" Margin="5" ></TextBox>
+        <TextBox Name="TextBoxCandidaturePrenom" Text="{Binding Path=SelectedItem.Prenom, ElementName=ListBoxCandidatures, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3" Grid.Row="2" Margin="5" ></TextBox>
+        <Button Name="TextBoxCandidatureUrlCV"  Content="{Binding Path=SelectedItem.UrlCv, ElementName=ListBoxCandidatures, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3" Grid.Row="3" Margin="5" ></Button>
+        <Button Name="TextBoxCandidatureUrlLettreMotivation" Content="{Binding Path=SelectedItem.UrlLettreMotivation, ElementName=ListBoxCandidatures, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3" Grid.Row="4" Margin="5" ></Button>
 
-        <Label Grid.Column="3" Grid.Row="5"> Pas de date </Label>
+        <Label Grid.Column="3" Grid.Row="5" Content="{Binding Path=SelectedItem.Date, ElementName=ListBoxCandidatures, UpdateSourceTrigger=PropertyChanged}"></Label>
 
     </Grid>
 </UserControl>

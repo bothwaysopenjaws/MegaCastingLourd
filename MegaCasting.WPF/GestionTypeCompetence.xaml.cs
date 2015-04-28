@@ -95,7 +95,7 @@ namespace MegaCasting.WPF
 
                 // Suppression 
                 _ViewModel.Entities.TypeCompetences.Remove(type);
-                _ViewModel.TypeCompetences.Remove(type);
+                _ViewModel.typeCompetences.Remove(type);
 
                 // Sauvegarder la suppression
                 this._ViewModel.Save();

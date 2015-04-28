@@ -34,9 +34,6 @@ namespace MegaCasting.WPF
 
             nbUtilisateur = (_ViewModelUtilisateur.Entities.Utilisateurs.Count()).ToString();
 
-           // Test de fonctionnement : le libelle banana affiche le nombre correct d'utilisateur
-            Banana.Content = nbUtilisateur;
-
             // intégration de la View au dataContext
             this.DataContext = _ViewModelUtilisateur;
         }

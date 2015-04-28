@@ -31,16 +31,15 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <Label Grid.Column="1" Grid.Row="0" >Pack actuel : </Label>
+        <Label Grid.Column="1" Grid.Row="0" >Dernier Pack : </Label>
         <Label Grid.Column="1" Grid.Row="1" >Diffusions restantes :</Label>
         <Label Grid.Column="1" Grid.Row="2" > Date d'inscription : </Label>
-        <Label x:Name="Banana" Grid.Row="2"  Grid.Column="2" FontSize="20" FontFamily="Segoe Script" VerticalAlignment="Top" HorizontalAlignment="Left"  >jhgjhg</Label>
 
         <Label Name="LabelAbonnementTypeAbonnement" Grid.Column="3" Grid.Row="0" > Pack100 </Label>
-        <Label Name="LabelAbonnementRestant" Grid.Column="3" Grid.Row="1" > 1/100 </Label>
+        <Label Name="LabelAbonnementRestant" Grid.Column="3" Grid.Row="1" > 1 </Label>
         <Label Grid.Column="3" Grid.Row="2" >Date d'inscription :</Label>
 
-        <Button Name="ButtonAbonnementsAjouter" Grid.Column="1" Margin="10" Grid.ColumnSpan="3" Grid.Row="3" >Ajouter des credits </Button>
+        <Button Name="ButtonAbonnementsAjouter" Grid.Column="1" Margin="10" Grid.ColumnSpan="3" Grid.Row="3" >Ajouter des crédits </Button>
         <Label Grid.Column="1" Grid.Row="4" > Historique des achats</Label>
         <ListBox Name="ListBoxHistoriqueHistorique" Grid.Column="1" Margin="10" Grid.ColumnSpan="3" Grid.Row="5" ></ListBox>
         

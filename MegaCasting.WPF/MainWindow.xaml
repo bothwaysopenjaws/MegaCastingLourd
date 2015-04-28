@@ -9,6 +9,7 @@
     
     
     <Grid>
+        <!--Definition de la grille-->
         <Grid.RowDefinitions>
             <RowDefinition Height="0.06*"></RowDefinition>
             <RowDefinition Height="0.04*"></RowDefinition>
@@ -20,17 +21,22 @@
         </Grid.ColumnDefinitions>
         
 
+        <!-- Thumb de controle, placé en superposition de l'entete-->
         <Thumb Grid.Row="0" Grid.Column="0"  Background="Transparent"  DragDelta="DragWindow_Click" Foreground="Transparent" Opacity="0" />
+        <!--Entete-->
         <Label Grid.Row="0"  Grid.ColumnSpan="2" Background="Transparent" HorizontalAlignment="Center" FontSize="18" FontFamily="Segoe Print" VerticalAlignment="Top"> MegaGestion </Label>
-
+        
+        
+        <!--Menu à un onglet : fermeture de la fenêtre, en haute à droite-->
         <Menu Grid.Row="0" Grid.Column="1" FlowDirection="RightToLeft" Background="Transparent">
+            
             <MenuItem  x:Name="menuItemQuitter" Header="  X  " Foreground="White" Margin="0" Padding="0" Background="#BFFF0000" Click="menuItemQuitter_Click"  />
         </Menu>
 
 
 
 
-
+        <!--Menu de navigation entre les panels-->
 
         <Menu Grid.ColumnSpan="2" Grid.Row="1" x:Name="TabControlGestion" Background="White" Margin="0"  HorizontalContentAlignment="Stretch" FontFamily="Segoe Print">
             <MenuItem Header="Entreprises" VerticalAlignment="Stretch">
@@ -49,6 +55,8 @@
    
                 
         </Menu>
+        
+        <!-- panel d'accueil-->
         <DockPanel x:Name="dockPanelMain" Grid.Row="2" Grid.ColumnSpan="2">
             <local:PanelMain x:Name="PanelMain"/>
         </DockPanel>

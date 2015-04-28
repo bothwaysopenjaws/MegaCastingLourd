@@ -47,7 +47,7 @@ namespace MegaCasting.WPF
                 
 
                 // ajouter à la viewModel du nouveau type de compétences
-                _ViewModelCompetence.TypeCompetences.Add(typeCompetence);
+                _ViewModelCompetence.typeCompetences.Add(typeCompetence);
                 _ViewModelCompetence.Entities.TypeCompetences.Add(typeCompetence);
 
                 // Une fois que la viewModel est mise a jour on sauvegarde les modifications 
