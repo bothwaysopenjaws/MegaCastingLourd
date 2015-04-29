@@ -14,13 +14,17 @@ namespace MegaCasting.DBLib
     
     public partial class Adresse
     {
+        public Adresse()
+        {
+            this.utilisateurs = new HashSet<Utilisateur>();
+        }
+    
         public int Identifiant { get; set; }
-        public int IdentifiantUtilisateur { get; set; }
         public string Rue { get; set; }
         public string Ville { get; set; }
         public string CodePostal { get; set; }
         public string Pays { get; set; }
     
-        public virtual Utilisateur utilisateur { get; set; }
+        public virtual ICollection<Utilisateur> utilisateurs { get; set; }
     }
 }

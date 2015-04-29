@@ -6,7 +6,6 @@
     <edmx:Diagrams>
       <Diagram DiagramId="5fc82287f4cc45caa90d00d1a06533f2" Name="Diagram1" ZoomLevel="86">
         <EntityTypeShape EntityType="megacastingModel.Abonnement" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="megacastingModel.Adresse" Width="1.5" PointX="5.25" PointY="6.875" IsExpanded="true" />
         <EntityTypeShape EntityType="megacastingModel.Candidature" Width="1.5" PointX="7.75" PointY="10.375" IsExpanded="true" />
         <EntityTypeShape EntityType="megacastingModel.Competence" Width="1.5" PointX="8.25" PointY="6.375" IsExpanded="true" />
         <EntityTypeShape EntityType="megacastingModel.Domaine" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
@@ -20,22 +19,23 @@
         <EntityTypeShape EntityType="megacastingModel.TypeContrat" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="megacastingModel.TypeMedia" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="megacastingModel.TypeUtilisateur" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="megacastingModel.Utilisateur" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
         <AssociationConnector Association="megacastingModel.FK_351268BB9FB1D74A" ManuallyRouted="false" />
-        <AssociationConnector Association="megacastingModel.FK_351268BBFB88E14F" ManuallyRouted="false" />
-        <AssociationConnector Association="megacastingModel.FK_C35F0816FB88E14F" ManuallyRouted="false" />
         <AssociationConnector Association="megacastingModel.FK_94D4687F7B108EF2" ManuallyRouted="false" />
         <AssociationConnector Association="megacastingModel.FK_94D4687FB3E9C81" ManuallyRouted="false" />
-        <AssociationConnector Association="megacastingModel.FK_94D4687FFB88E14F" ManuallyRouted="false" />
         <AssociationConnector Association="megacastingModel.FK_51A00D8C4272FC9F" ManuallyRouted="false" />
-        <AssociationConnector Association="megacastingModel.FK_EDBFD5ECFB88E14F" ManuallyRouted="false" />
         <AssociationConnector Association="megacastingModel.FK_AF86866FED16FA20" ManuallyRouted="false" />
         <AssociationConnector Association="megacastingModel.FK_2E6C2BB34F8031AB" ManuallyRouted="false" />
-        <AssociationConnector Association="megacastingModel.FK_2E6C2BB3FB88E14F" ManuallyRouted="false" />
         <AssociationConnector Association="megacastingModel.FK_AF86866FAE24E5C2" ManuallyRouted="false" />
-        <AssociationConnector Association="megacastingModel.FK_1D1C63B3E9516E8C" ManuallyRouted="false" />
-        <AssociationConnector Association="megacastingModel.domaine_utilisateur" ManuallyRouted="false" />
-      </Diagram>
+        <EntityTypeShape EntityType="megacastingModel.Adresse" Width="1.5" PointX="0.75" PointY="13.5" />
+        <EntityTypeShape EntityType="megacastingModel.Utilisateur" Width="1.5" PointX="3" PointY="5.5" />
+        <AssociationConnector Association="megacastingModel.FK_351268BBFB88E14F" />
+        <AssociationConnector Association="megacastingModel.FK_1D1C63B34DE7DC5C" />
+        <AssociationConnector Association="megacastingModel.FK_94D4687FFB88E14F" />
+        <AssociationConnector Association="megacastingModel.FK_EDBFD5ECFB88E14F" />
+        <AssociationConnector Association="megacastingModel.FK_2E6C2BB3FB88E14F" />
+        <AssociationConnector Association="megacastingModel.FK_1D1C63B3E9516E8C" />
+        <AssociationConnector Association="megacastingModel.domaine_utilisateur" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

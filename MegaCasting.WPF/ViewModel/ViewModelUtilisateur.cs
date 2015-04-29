@@ -12,17 +12,16 @@ namespace MegaCasting.WPF.ViewModel
     {
         public ObservableCollection<Utilisateur> utilisateurs { get; set; }
         public ObservableCollection<TypeUtilisateur> typeUtilisateurs { get; set; }
-        public ObservableCollection<Adresse> adresses { get; set; }
         public ObservableCollection<Historique> historiques { get; set; }
-        
+        public ObservableCollection<Utilisateur> artistes { get; set; }
         
 
         public ViewModelUtilisateur()
         {
             utilisateurs = new ObservableCollection<Utilisateur>(this.Entities.Utilisateurs);
             typeUtilisateurs = new ObservableCollection<TypeUtilisateur>(this.Entities.TypeUtilisateurs);
-            adresses = new ObservableCollection<Adresse>(this.Entities.Adresses);
             historiques = new ObservableCollection<Historique>(this.Entities.Historiques);
+            artistes = new ObservableCollection<Utilisateur>(utilisateurs.Where(UtilisateurTemp => UtilisateurTemp.IdentifiantTypeutilisateur == 3).ToList());
 
         }
 

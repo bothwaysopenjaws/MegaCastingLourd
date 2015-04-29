@@ -12,21 +12,11 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Adresses">
-      <EntityTypeMapping TypeName="megacastingModel.Adresse">
-        <MappingFragment StoreEntitySet="adresse">
-          <ScalarProperty Name="Identifiant" ColumnName="id" />
-          <ScalarProperty Name="IdentifiantUtilisateur" ColumnName="utilisateur_id" />
-          <ScalarProperty Name="Rue" ColumnName="rue" />
-          <ScalarProperty Name="Ville" ColumnName="ville" />
-          <ScalarProperty Name="CodePostal" ColumnName="codePostal" />
-          <ScalarProperty Name="Pays" ColumnName="pays" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Candidatures">
       <EntityTypeMapping TypeName="megacastingModel.Candidature">
         <MappingFragment StoreEntitySet="candidature">
+          <ScalarProperty Name="Telephone" ColumnName="telephone" />
+          <ScalarProperty Name="Email" ColumnName="email" />
           <ScalarProperty Name="Identifiant" ColumnName="id" />
           <ScalarProperty Name="Nom" ColumnName="nom" />
           <ScalarProperty Name="Prenom" ColumnName="prenom" />
@@ -149,25 +139,39 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Adresses">
+      <EntityTypeMapping TypeName="megacastingModel.Adresse">
+        <MappingFragment StoreEntitySet="adresse">
+          <ScalarProperty Name="Pays" ColumnName="pays" />
+          <ScalarProperty Name="CodePostal" ColumnName="codePostal" />
+          <ScalarProperty Name="Ville" ColumnName="ville" />
+          <ScalarProperty Name="Rue" ColumnName="rue" />
+          <ScalarProperty Name="Identifiant" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Utilisateurs">
       <EntityTypeMapping TypeName="megacastingModel.Utilisateur">
         <MappingFragment StoreEntitySet="utilisateur">
-          <ScalarProperty Name="Identifiant" ColumnName="id" />
-          <ScalarProperty Name="Nom" ColumnName="nom" />
-          <ScalarProperty Name="Prenom" ColumnName="prenom" />
-          <ScalarProperty Name="Login" ColumnName="login" />
-          <ScalarProperty Name="Password" ColumnName="password" />
+          <ScalarProperty Name="IdentifiantAdresse" ColumnName="adresse_id" />
+          <ScalarProperty Name="Telephone" ColumnName="telephone" />
+          <ScalarProperty Name="Email" ColumnName="email" />
+          <ScalarProperty Name="IdentifiantTypeutilisateur" ColumnName="typeUtilisateur_id" />
           <ScalarProperty Name="DateNaissance" ColumnName="dateNaissance" />
-          <ScalarProperty Name="IdentifiantTypeUtilisateur" ColumnName="typeUtilisateur_id" />
+          <ScalarProperty Name="Password" ColumnName="password" />
+          <ScalarProperty Name="Login" ColumnName="login" />
+          <ScalarProperty Name="Prenom" ColumnName="prenom" />
+          <ScalarProperty Name="Nom" ColumnName="nom" />
+          <ScalarProperty Name="Identifiant" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <AssociationSetMapping Name="domaine_utilisateur" TypeName="megacastingModel.domaine_utilisateur" StoreEntitySet="domaine_utilisateur">
-      <EndProperty Name="domaine">
-        <ScalarProperty Name="Identifiant" ColumnName="domaine_id" />
-      </EndProperty>
       <EndProperty Name="utilisateur">
         <ScalarProperty Name="Identifiant" ColumnName="utilisateur_id" />
+      </EndProperty>
+      <EndProperty Name="Domaine">
+        <ScalarProperty Name="Identifiant" ColumnName="domaine_id" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

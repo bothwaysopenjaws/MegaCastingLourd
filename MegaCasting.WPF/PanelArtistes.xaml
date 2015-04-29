@@ -16,9 +16,14 @@
             <RowDefinition></RowDefinition>
             <RowDefinition Height="0.1*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListBox Name="ListBoxArtistes" Grid.Column="0" Grid.Row="1">
-
+        <ListBox x:Name="ListBoxArtistes" Grid.Column="0" Grid.Row="1" Margin="5" ItemsSource="{Binding artistes}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                  <Label Content="{Binding Nom}"></Label>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
+
         <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold">Artistes</Label>
         <Grid Margin="1" Grid.Column="1" Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -52,11 +57,15 @@
             <Label Grid.Column="0" Grid.Row="9" HorizontalAlignment="Left" VerticalAlignment="Center">Pays:</Label>
 
 
-            <Label Grid.Column="1"  Grid.Row="0" Margin="10" Name="LabelAnnonceurNom" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
-            <Label Grid.Column="1" Grid.Row="1" Margin="10" Name="LabelAnnonceurPrenom" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+            <Label Grid.Column="1"  Grid.Row="0" Margin="10" Name="LabelAnnonceurNom" HorizontalAlignment="Right" VerticalAlignment="Center" Content = "{Binding Path=SelectedItem.Nom, ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></Label>
+            <Label Grid.Column="1" Grid.Row="1" Margin="10" Name="LabelAnnonceurPrenom" HorizontalAlignment="Right" VerticalAlignment="Center" Content = "{Binding Path=SelectedItem.Prenom, ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></Label>
             <Label Grid.Column="1" Grid.Row="2" Margin="10" Name="LabelAnnonceurAdresse" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
-            <Label Grid.Column="1" Grid.Row="3" Margin="10" Name="LabelAnnonceurNumTel" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
-            <Label Grid.Column="1" Grid.Row="4" Margin="10" Name="LabelAnnonceurEmail" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+            <Label Grid.Column="1" Grid.Row="3" Margin="10" Name="LabelAnnonceurNumTel" HorizontalAlignment="Right" VerticalAlignment="Center"  Content = "{Binding Path=SelectedItem.Telephone, ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></Label>
+            <Label Grid.Column="1" Grid.Row="4" Margin="10" Name="LabelAnnonceurEmail" HorizontalAlignment="Right" VerticalAlignment="Center"  Content = "{Binding Path=SelectedItem.Email, ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></Label>
+            <Label Grid.Column="1" Grid.Row="6" Margin="10" Name="LabelNumeroRue" HorizontalAlignment="Right" VerticalAlignment="Center"  Content = "{Binding Path=SelectedItem.adresse.Rue , ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></Label>
+            <Label Grid.Column="1" Grid.Row="7" Margin="10" Name="LabelCodePostal" HorizontalAlignment="Right" VerticalAlignment="Center"  Content = "{Binding Path=SelectedItem.adresse.CodePostal , ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></Label>
+            <Label Grid.Column="1" Grid.Row="8" Margin="10" Name="LabelVille" HorizontalAlignment="Right" VerticalAlignment="Center"  Content = "{Binding Path=SelectedItem.adresse.Ville , ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></Label>
+            <Label Grid.Column="1" Grid.Row="9" Margin="10" Name="LabelPays" HorizontalAlignment="Right" VerticalAlignment="Center"  Content = "{Binding Path=SelectedItem.adresse.Pays , ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></Label>
 
             <Button Grid.Column="0" Grid.Row="12" Margin="1" Name="ButtonAnnoceurModifier" Content="Modifier" ></Button>
             <Button Grid.Column="1" Grid.Row="12" Margin="1" Name="ButtonAnnonceurSupprimer" Content="Supprimer"></Button>
@@ -87,7 +96,12 @@
             <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center">Domaines d'activité :</Label>
             <Label Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center">Metiers exercés :</Label>
 
-            <ListBox Margin="2" Grid.RowSpan="2" Name="ListBoxDomaines" Grid.Column="3" Grid.Row="1">
+            <ListBox x:Name="ListBoxDomaines" Grid.Column="0" Grid.Row="1" Margin="5" ItemsSource="{Binding artistes}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding Nom}"></Label>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
             </ListBox>
             <ListBox Margin="3" Grid.RowSpan="2"  Name="ListBoxMetiers" Grid.Column="3" Grid.Row="3">
             </ListBox>

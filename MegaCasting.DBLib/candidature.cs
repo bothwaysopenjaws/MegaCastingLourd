@@ -20,5 +20,7 @@ namespace MegaCasting.DBLib
         public string UrlCv { get; set; }
         public string UrlLettreMotivation { get; set; }
         public System.DateTime Date { get; set; }
+        public string Email { get; set; }
+        public string Telephone { get; set; }
     }
 }

@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MegaCasting.DBLib;
+using MegaCasting.WPF.ViewModel;
+using System.Collections.ObjectModel;
 
 namespace MegaCasting.WPF
 
@@ -21,9 +24,19 @@ namespace MegaCasting.WPF
     /// </summary>
     public partial class PanelArtistes : UserControl
     {
+        protected ViewModelUtilisateur _ViewModel;
+
         public PanelArtistes()
         {
             InitializeComponent();
+
+            // Récupération de la ViewModel
+            _ViewModel = new ViewModelUtilisateur();
+
+            // intégrer la View au dataContext
+            this.DataContext = _ViewModel;
+
+            
         }
     }
 }

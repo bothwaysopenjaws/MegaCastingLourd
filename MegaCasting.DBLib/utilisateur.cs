@@ -17,7 +17,6 @@ namespace MegaCasting.DBLib
         public Utilisateur()
         {
             this.abonnements = new HashSet<Abonnement>();
-            this.adresses = new HashSet<Adresse>();
             this.competences = new HashSet<Competence>();
             this.historiques = new HashSet<Historique>();
             this.multimedias = new HashSet<Multimedia>();
@@ -30,10 +29,13 @@ namespace MegaCasting.DBLib
         public string Login { get; set; }
         public string Password { get; set; }
         public System.DateTime DateNaissance { get; set; }
-        public int IdentifiantTypeUtilisateur { get; set; }
+        public int IdentifiantTypeutilisateur { get; set; }
+        public string Email { get; set; }
+        public string Telephone { get; set; }
+        public Nullable<int> IdentifiantAdresse { get; set; }
     
         public virtual ICollection<Abonnement> abonnements { get; set; }
-        public virtual ICollection<Adresse> adresses { get; set; }
+        public virtual Adresse adresse { get; set; }
         public virtual ICollection<Competence> competences { get; set; }
         public virtual ICollection<Historique> historiques { get; set; }
         public virtual ICollection<Multimedia> multimedias { get; set; }

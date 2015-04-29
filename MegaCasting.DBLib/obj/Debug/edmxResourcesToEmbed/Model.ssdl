@@ -15,7 +15,6 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="utilisateur_id" Type="int" Nullable="false" />
     <Property Name="rue" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="ville" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="codePostal" Type="varchar" MaxLength="255" Nullable="false" />
@@ -31,6 +30,8 @@
     <Property Name="urlCv" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="urlLettreMotivation" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="telephone" Type="varchar" MaxLength="255" Nullable="false" />
   </EntityType>
   <EntityType Name="competence">
     <Key>
@@ -152,7 +153,22 @@
     <Property Name="password" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="dateNaissance" Type="date" Nullable="false" />
     <Property Name="typeUtilisateur_id" Type="int" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="telephone" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="adresse_id" Type="int" />
   </EntityType>
+  <Association Name="FK_1D1C63B34DE7DC5C">
+    <End Role="adresse" Type="Self.adresse" Multiplicity="0..1" />
+    <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="adresse">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="utilisateur">
+        <PropertyRef Name="adresse_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_1D1C63B3E9516E8C">
     <End Role="typeutilisateur" Type="Self.typeutilisateur" Multiplicity="1" />
     <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="*" />
@@ -285,18 +301,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_C35F0816FB88E14F">
-    <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="1" />
-    <End Role="adresse" Type="Self.adresse" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="utilisateur">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="adresse">
-        <PropertyRef Name="utilisateur_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_E7882CC94272FC9F">
     <End Role="domaine" Type="Self.domaine" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -355,6 +359,10 @@
     <EntitySet Name="typemedia" EntityType="Self.typemedia" Schema="megacasting" store:Type="Tables" />
     <EntitySet Name="typeutilisateur" EntityType="Self.typeutilisateur" Schema="megacasting" store:Type="Tables" />
     <EntitySet Name="utilisateur" EntityType="Self.utilisateur" Schema="megacasting" store:Type="Tables" />
+    <AssociationSet Name="FK_1D1C63B34DE7DC5C" Association="Self.FK_1D1C63B34DE7DC5C">
+      <End Role="adresse" EntitySet="adresse" />
+      <End Role="utilisateur" EntitySet="utilisateur" />
+    </AssociationSet>
     <AssociationSet Name="FK_1D1C63B3E9516E8C" Association="Self.FK_1D1C63B3E9516E8C">
       <End Role="typeutilisateur" EntitySet="typeutilisateur" />
       <End Role="utilisateur" EntitySet="utilisateur" />
@@ -398,10 +406,6 @@
     <AssociationSet Name="FK_AF86866FED16FA20" Association="Self.FK_AF86866FED16FA20">
       <End Role="metier" EntitySet="metier" />
       <End Role="offre" EntitySet="offre" />
-    </AssociationSet>
-    <AssociationSet Name="FK_C35F0816FB88E14F" Association="Self.FK_C35F0816FB88E14F">
-      <End Role="utilisateur" EntitySet="utilisateur" />
-      <End Role="adresse" EntitySet="adresse" />
     </AssociationSet>
     <AssociationSet Name="FK_E7882CC94272FC9F" Association="Self.FK_E7882CC94272FC9F">
       <End Role="domaine" EntitySet="domaine" />
