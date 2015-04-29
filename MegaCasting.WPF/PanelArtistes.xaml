@@ -96,14 +96,19 @@
             <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center">Domaines d'activité :</Label>
             <Label Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center">Metiers exercés :</Label>
 
-            <ListBox x:Name="ListBoxDomaines" Grid.Column="0" Grid.Row="1" Margin="5" ItemsSource="{Binding artistes}">
+            <ListBox x:Name="ListBoxDomaines" Grid.Column="1" Grid.Row="1" Margin="5" ItemsSource="{Binding artistes.domaines}" Grid.RowSpan="2">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Label Content="{Binding Nom}"></Label>
+                        <Label Content="{Binding Libelle}"></Label>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <ListBox Margin="3" Grid.RowSpan="2"  Name="ListBoxMetiers" Grid.Column="3" Grid.Row="3">
+            <ListBox x:Name="ListBoxMetiers" Grid.Column="1" Grid.Row="3" Margin="5" ItemsSource="{Binding artistes}" Grid.RowSpan="2">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding Libelle}"></Label>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
             </ListBox>
 
 
