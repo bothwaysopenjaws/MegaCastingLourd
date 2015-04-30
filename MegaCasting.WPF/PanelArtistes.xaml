@@ -16,7 +16,7 @@
             <RowDefinition></RowDefinition>
             <RowDefinition Height="0.1*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListBox x:Name="ListBoxArtistes" Grid.Column="0" Grid.Row="1" Margin="5" ItemsSource="{Binding artistes}">
+        <ListBox SelectionChanged="ListBoxArtistes_SelectionChanged" x:Name="ListBoxArtistes" Grid.Column="0" Grid.Row="1" Margin="5" ItemsSource="{Binding artistes}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                   <Label Content="{Binding Nom}"></Label>
@@ -92,21 +92,21 @@
                 <RowDefinition Height="0.1*"></RowDefinition>
             </Grid.RowDefinitions>
  
-            <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center">Nombre de Contrats :</Label>
-            <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center">Domaines d'activité :</Label>
+            
+            <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center">Domaines d'activité :</Label>
             <Label Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center">Metiers exercés :</Label>
 
-            <ListBox x:Name="ListBoxDomaines" Grid.Column="1" Grid.Row="1" Margin="5" ItemsSource="{Binding artistes.domaines}" Grid.RowSpan="2">
+            <ListBox x:Name="ListBoxDomaines" Grid.Column="1" Grid.Row="0" Margin="5" ItemsSource="{Binding DomaineArtiste}" Grid.RowSpan="2">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Label Content="{Binding Libelle}"></Label>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <ListBox x:Name="ListBoxMetiers" Grid.Column="1" Grid.Row="3" Margin="5" ItemsSource="{Binding artistes}" Grid.RowSpan="2">
+            <ListBox x:Name="ListBoxMetiers" Grid.Column="1" Grid.Row="3" Margin="5" ItemsSource="{Binding metierArtiste}" Grid.RowSpan="2">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Label Content="{Binding Libelle}"></Label>
+                        <TextBlock Text="{Binding Libelle}" Foreground="Black"></TextBlock>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
@@ -118,7 +118,7 @@
             <Label Grid.Column="1" Grid.Row="3" Margin="10"  HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
             <Label Grid.Column="1" Grid.Row="4" Margin="10"  HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
 
-            <Button Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="5" Margin="3"  Content="Compétences" ></Button>
+            <Button x:Name="ButtonGestionCompetenceArtiste" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="5" Margin="3"  Content="Compétences" Click="ButtonGestionCompetenceArtiste_Click" ></Button>
             <Button Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="7" Margin="3"  Content="Médiathèque"></Button>
             <Button Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="9" Margin="3"  Content="Contrats" ></Button>
             <Button Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="11" Margin="3"  Content="Expériences"></Button>

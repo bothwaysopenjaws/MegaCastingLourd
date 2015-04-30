@@ -49,14 +49,6 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="libelle" Type="varchar" MaxLength="255" Nullable="false" />
   </EntityType>
-  <EntityType Name="domaine_utilisateur">
-    <Key>
-      <PropertyRef Name="domaine_id" />
-      <PropertyRef Name="utilisateur_id" />
-    </Key>
-    <Property Name="domaine_id" Type="int" Nullable="false" />
-    <Property Name="utilisateur_id" Type="int" Nullable="false" />
-  </EntityType>
   <EntityType Name="historique">
     <Key>
       <PropertyRef Name="id" />
@@ -76,6 +68,14 @@
     <Property Name="domaine_id" Type="int" />
     <Property Name="libelle" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="description" Type="longtext" Nullable="false" />
+  </EntityType>
+  <EntityType Name="metier_utilisateur">
+    <Key>
+      <PropertyRef Name="metier_id" />
+      <PropertyRef Name="utilisateur_id" />
+    </Key>
+    <Property Name="metier_id" Type="int" Nullable="false" />
+    <Property Name="utilisateur_id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="multimedia">
     <Key>
@@ -178,6 +178,34 @@
       </Principal>
       <Dependent Role="utilisateur">
         <PropertyRef Name="typeUtilisateur_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_2189E1CFED16FA20">
+    <End Role="metier" Type="Self.metier" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="metier_utilisateur" Type="Self.metier_utilisateur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="metier">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="metier_utilisateur">
+        <PropertyRef Name="metier_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_2189E1CFFB88E14F">
+    <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="metier_utilisateur" Type="Self.metier_utilisateur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="utilisateur">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="metier_utilisateur">
+        <PropertyRef Name="utilisateur_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -301,34 +329,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_E7882CC94272FC9F">
-    <End Role="domaine" Type="Self.domaine" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="domaine_utilisateur" Type="Self.domaine_utilisateur" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="domaine">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="domaine_utilisateur">
-        <PropertyRef Name="domaine_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_E7882CC9FB88E14F">
-    <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="domaine_utilisateur" Type="Self.domaine_utilisateur" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="utilisateur">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="domaine_utilisateur">
-        <PropertyRef Name="utilisateur_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_EDBFD5ECFB88E14F">
     <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="0..1" />
     <End Role="historique" Type="Self.historique" Multiplicity="*" />
@@ -347,9 +347,9 @@
     <EntitySet Name="candidature" EntityType="Self.candidature" Schema="megacasting" store:Type="Tables" />
     <EntitySet Name="competence" EntityType="Self.competence" Schema="megacasting" store:Type="Tables" />
     <EntitySet Name="domaine" EntityType="Self.domaine" Schema="megacasting" store:Type="Tables" />
-    <EntitySet Name="domaine_utilisateur" EntityType="Self.domaine_utilisateur" Schema="megacasting" store:Type="Tables" />
     <EntitySet Name="historique" EntityType="Self.historique" Schema="megacasting" store:Type="Tables" />
     <EntitySet Name="metier" EntityType="Self.metier" Schema="megacasting" store:Type="Tables" />
+    <EntitySet Name="metier_utilisateur" EntityType="Self.metier_utilisateur" Schema="megacasting" store:Type="Tables" />
     <EntitySet Name="multimedia" EntityType="Self.multimedia" Schema="megacasting" store:Type="Tables" />
     <EntitySet Name="niveau" EntityType="Self.niveau" Schema="megacasting" store:Type="Tables" />
     <EntitySet Name="offre" EntityType="Self.offre" Schema="megacasting" store:Type="Tables" />
@@ -366,6 +366,14 @@
     <AssociationSet Name="FK_1D1C63B3E9516E8C" Association="Self.FK_1D1C63B3E9516E8C">
       <End Role="typeutilisateur" EntitySet="typeutilisateur" />
       <End Role="utilisateur" EntitySet="utilisateur" />
+    </AssociationSet>
+    <AssociationSet Name="FK_2189E1CFED16FA20" Association="Self.FK_2189E1CFED16FA20">
+      <End Role="metier" EntitySet="metier" />
+      <End Role="metier_utilisateur" EntitySet="metier_utilisateur" />
+    </AssociationSet>
+    <AssociationSet Name="FK_2189E1CFFB88E14F" Association="Self.FK_2189E1CFFB88E14F">
+      <End Role="utilisateur" EntitySet="utilisateur" />
+      <End Role="metier_utilisateur" EntitySet="metier_utilisateur" />
     </AssociationSet>
     <AssociationSet Name="FK_2E6C2BB34F8031AB" Association="Self.FK_2E6C2BB34F8031AB">
       <End Role="typemedia" EntitySet="typemedia" />
@@ -406,14 +414,6 @@
     <AssociationSet Name="FK_AF86866FED16FA20" Association="Self.FK_AF86866FED16FA20">
       <End Role="metier" EntitySet="metier" />
       <End Role="offre" EntitySet="offre" />
-    </AssociationSet>
-    <AssociationSet Name="FK_E7882CC94272FC9F" Association="Self.FK_E7882CC94272FC9F">
-      <End Role="domaine" EntitySet="domaine" />
-      <End Role="domaine_utilisateur" EntitySet="domaine_utilisateur" />
-    </AssociationSet>
-    <AssociationSet Name="FK_E7882CC9FB88E14F" Association="Self.FK_E7882CC9FB88E14F">
-      <End Role="utilisateur" EntitySet="utilisateur" />
-      <End Role="domaine_utilisateur" EntitySet="domaine_utilisateur" />
     </AssociationSet>
     <AssociationSet Name="FK_EDBFD5ECFB88E14F" Association="Self.FK_EDBFD5ECFB88E14F">
       <End Role="utilisateur" EntitySet="utilisateur" />

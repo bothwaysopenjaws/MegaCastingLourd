@@ -17,13 +17,11 @@ namespace MegaCasting.DBLib
         public Domaine()
         {
             this.metiers = new HashSet<Metier>();
-            this.utilisateurs = new HashSet<Utilisateur>();
         }
     
         public int Identifiant { get; set; }
         public string Libelle { get; set; }
     
         public virtual ICollection<Metier> metiers { get; set; }
-        public virtual ICollection<Utilisateur> utilisateurs { get; set; }
     }
 }

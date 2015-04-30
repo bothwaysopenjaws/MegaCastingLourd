@@ -17,6 +17,7 @@ namespace MegaCasting.DBLib
         public Metier()
         {
             this.offres = new HashSet<Offre>();
+            this.utilisateurs = new HashSet<Utilisateur>();
         }
     
         public int Identifiant { get; set; }
@@ -24,7 +25,8 @@ namespace MegaCasting.DBLib
         public string Libelle { get; set; }
         public string Description { get; set; }
     
-        public virtual Domaine domaine { get; set; }
         public virtual ICollection<Offre> offres { get; set; }
+        public virtual ICollection<Utilisateur> utilisateurs { get; set; }
+        public virtual Domaine domaine { get; set; }
     }
 }

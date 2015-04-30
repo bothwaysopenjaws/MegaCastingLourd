@@ -107,8 +107,8 @@
     <Compile Include="GestionWindows\AjoutTypeContrat.xaml.cs">
       <DependentUpon>AjoutTypeContrat.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gestion_Competences.xaml.cs">
-      <DependentUpon>Gestion_Competences.xaml</DependentUpon>
+    <Compile Include="GestionCompetences.xaml.cs">
+      <DependentUpon>GestionCompetences.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gestion_Experiences.xaml.cs">
       <DependentUpon>Gestion_Experiences.xaml</DependentUpon>
@@ -192,7 +192,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Gestion_Competences.xaml">
+    <Page Include="GestionCompetences.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -8,7 +8,7 @@ using MegaCasting.DBLib;
 
 namespace MegaCasting.WPF.ViewModel
 {
-   public class ViewModelDomaine_Metier : ViewModelBase
+   public class ViewModelDomaine_Metier : ViewModelUtilisateur
     {
        public ObservableCollection<Domaine> domaines { get; set; }
        public ObservableCollection<Metier> metiers { get; set; }

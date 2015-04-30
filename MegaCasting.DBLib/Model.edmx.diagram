@@ -8,7 +8,6 @@
         <EntityTypeShape EntityType="megacastingModel.Abonnement" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="megacastingModel.Candidature" Width="1.5" PointX="7.75" PointY="10.375" IsExpanded="true" />
         <EntityTypeShape EntityType="megacastingModel.Competence" Width="1.5" PointX="8.25" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="megacastingModel.Domaine" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
         <EntityTypeShape EntityType="megacastingModel.Historique" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
         <EntityTypeShape EntityType="megacastingModel.Metier" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
         <EntityTypeShape EntityType="megacastingModel.Multimedia" Width="1.5" PointX="8.25" PointY="2.375" IsExpanded="true" />
@@ -22,7 +21,6 @@
         <AssociationConnector Association="megacastingModel.FK_351268BB9FB1D74A" ManuallyRouted="false" />
         <AssociationConnector Association="megacastingModel.FK_94D4687F7B108EF2" ManuallyRouted="false" />
         <AssociationConnector Association="megacastingModel.FK_94D4687FB3E9C81" ManuallyRouted="false" />
-        <AssociationConnector Association="megacastingModel.FK_51A00D8C4272FC9F" ManuallyRouted="false" />
         <AssociationConnector Association="megacastingModel.FK_AF86866FED16FA20" ManuallyRouted="false" />
         <AssociationConnector Association="megacastingModel.FK_2E6C2BB34F8031AB" ManuallyRouted="false" />
         <AssociationConnector Association="megacastingModel.FK_AF86866FAE24E5C2" ManuallyRouted="false" />
@@ -34,7 +32,9 @@
         <AssociationConnector Association="megacastingModel.FK_EDBFD5ECFB88E14F" />
         <AssociationConnector Association="megacastingModel.FK_2E6C2BB3FB88E14F" />
         <AssociationConnector Association="megacastingModel.FK_1D1C63B3E9516E8C" />
-        <AssociationConnector Association="megacastingModel.domaine_utilisateur" />
+        <AssociationConnector Association="megacastingModel.metier_utilisateur" />
+        <EntityTypeShape EntityType="megacastingModel.Domaine" Width="1.5" PointX="0.75" PointY="10.875" />
+        <AssociationConnector Association="megacastingModel.FK_51A00D8C4272FC9F" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

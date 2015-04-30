@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using MegaCasting.DBLib;
 using MegaCasting.WPF.ViewModel;
 using System.Collections.ObjectModel;
+using MegaCasting.WPF;
 
 namespace MegaCasting.WPF
 
@@ -24,19 +25,60 @@ namespace MegaCasting.WPF
     /// </summary>
     public partial class PanelArtistes : UserControl
     {
-        protected ViewModelUtilisateur _ViewModel;
+
+        protected ViewModelDomaine_Metier _ViewModelMetierDomaine;
+        public ObservableCollection<Metier> metierArtiste = new ObservableCollection<Metier>();
+        public ObservableCollection<Domaine> DomaineArtiste = new ObservableCollection<Domaine>();
+        
 
         public PanelArtistes()
         {
             InitializeComponent();
-
+            _ViewModelMetierDomaine = new ViewModelDomaine_Metier();
             // Récupération de la ViewModel
-            _ViewModel = new ViewModelUtilisateur();
-
+            
             // intégrer la View au dataContext
-            this.DataContext = _ViewModel;
+            this.DataContext = _ViewModelMetierDomaine;
+
+           
+        }
+        /// <summary>
+        /// Permet de gérer la mise en place des données dans les listBox Metier et domaine
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ListBoxArtistes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // Récupère tout les métiers assorti à l'artiste sélectionné
+            metierArtiste = new ObservableCollection<Metier>(((Utilisateur)this.ListBoxArtistes.SelectedItem).metiers);
+            this.ListBoxMetiers.ItemsSource = metierArtiste;
+
+            DomaineArtiste = new ObservableCollection<Domaine>();
+            // recherche tout les domaines associés aux métiers
+            foreach (Metier metier in metierArtiste)
+            {
+                // si le domaine est déja contenu dans la collection on ne le rajoute pas 
+                if ( !DomaineArtiste.Contains(metier.domaine))
+                {
+                    DomaineArtiste.Add(metier.domaine);
+                }
+                
+            }
+            
+            this.ListBoxDomaines.ItemsSource = DomaineArtiste;
 
             
         }
+
+        private void ButtonGestionCompetenceArtiste_Click(object sender, RoutedEventArgs e)
+        {
+            Utilisateur utilisateur = new Utilisateur();
+            utilisateur = (Utilisateur)(this.ListBoxArtistes.SelectedItem);
+
+            GestionCompetences gestionCompetence = new GestionCompetences(_ViewModelMetierDomaine, utilisateur);
+            gestionCompetence.ShowDialog();
+        }
+
+
     }
 }

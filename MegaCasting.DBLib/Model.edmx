@@ -54,14 +54,6 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="libelle" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
-        <EntityType Name="domaine_utilisateur">
-          <Key>
-            <PropertyRef Name="domaine_id" />
-            <PropertyRef Name="utilisateur_id" />
-          </Key>
-          <Property Name="domaine_id" Type="int" Nullable="false" />
-          <Property Name="utilisateur_id" Type="int" Nullable="false" />
-        </EntityType>
         <EntityType Name="historique">
           <Key>
             <PropertyRef Name="id" />
@@ -81,6 +73,14 @@
           <Property Name="domaine_id" Type="int" />
           <Property Name="libelle" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="description" Type="longtext" Nullable="false" />
+        </EntityType>
+        <EntityType Name="metier_utilisateur">
+          <Key>
+            <PropertyRef Name="metier_id" />
+            <PropertyRef Name="utilisateur_id" />
+          </Key>
+          <Property Name="metier_id" Type="int" Nullable="false" />
+          <Property Name="utilisateur_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="multimedia">
           <Key>
@@ -183,6 +183,34 @@
             </Principal>
             <Dependent Role="utilisateur">
               <PropertyRef Name="typeUtilisateur_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_2189E1CFED16FA20">
+          <End Role="metier" Type="Self.metier" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="metier_utilisateur" Type="Self.metier_utilisateur" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="metier">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="metier_utilisateur">
+              <PropertyRef Name="metier_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_2189E1CFFB88E14F">
+          <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="metier_utilisateur" Type="Self.metier_utilisateur" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="utilisateur">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="metier_utilisateur">
+              <PropertyRef Name="utilisateur_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -306,34 +334,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_E7882CC94272FC9F">
-          <End Role="domaine" Type="Self.domaine" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="domaine_utilisateur" Type="Self.domaine_utilisateur" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="domaine">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="domaine_utilisateur">
-              <PropertyRef Name="domaine_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_E7882CC9FB88E14F">
-          <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="domaine_utilisateur" Type="Self.domaine_utilisateur" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="utilisateur">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="domaine_utilisateur">
-              <PropertyRef Name="utilisateur_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_EDBFD5ECFB88E14F">
           <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="0..1" />
           <End Role="historique" Type="Self.historique" Multiplicity="*" />
@@ -352,9 +352,9 @@
           <EntitySet Name="candidature" EntityType="Self.candidature" Schema="megacasting" store:Type="Tables" />
           <EntitySet Name="competence" EntityType="Self.competence" Schema="megacasting" store:Type="Tables" />
           <EntitySet Name="domaine" EntityType="Self.domaine" Schema="megacasting" store:Type="Tables" />
-          <EntitySet Name="domaine_utilisateur" EntityType="Self.domaine_utilisateur" Schema="megacasting" store:Type="Tables" />
           <EntitySet Name="historique" EntityType="Self.historique" Schema="megacasting" store:Type="Tables" />
           <EntitySet Name="metier" EntityType="Self.metier" Schema="megacasting" store:Type="Tables" />
+          <EntitySet Name="metier_utilisateur" EntityType="Self.metier_utilisateur" Schema="megacasting" store:Type="Tables" />
           <EntitySet Name="multimedia" EntityType="Self.multimedia" Schema="megacasting" store:Type="Tables" />
           <EntitySet Name="niveau" EntityType="Self.niveau" Schema="megacasting" store:Type="Tables" />
           <EntitySet Name="offre" EntityType="Self.offre" Schema="megacasting" store:Type="Tables" />
@@ -371,6 +371,14 @@
           <AssociationSet Name="FK_1D1C63B3E9516E8C" Association="Self.FK_1D1C63B3E9516E8C">
             <End Role="typeutilisateur" EntitySet="typeutilisateur" />
             <End Role="utilisateur" EntitySet="utilisateur" />
+          </AssociationSet>
+          <AssociationSet Name="FK_2189E1CFED16FA20" Association="Self.FK_2189E1CFED16FA20">
+            <End Role="metier" EntitySet="metier" />
+            <End Role="metier_utilisateur" EntitySet="metier_utilisateur" />
+          </AssociationSet>
+          <AssociationSet Name="FK_2189E1CFFB88E14F" Association="Self.FK_2189E1CFFB88E14F">
+            <End Role="utilisateur" EntitySet="utilisateur" />
+            <End Role="metier_utilisateur" EntitySet="metier_utilisateur" />
           </AssociationSet>
           <AssociationSet Name="FK_2E6C2BB34F8031AB" Association="Self.FK_2E6C2BB34F8031AB">
             <End Role="typemedia" EntitySet="typemedia" />
@@ -411,14 +419,6 @@
           <AssociationSet Name="FK_AF86866FED16FA20" Association="Self.FK_AF86866FED16FA20">
             <End Role="metier" EntitySet="metier" />
             <End Role="offre" EntitySet="offre" />
-          </AssociationSet>
-          <AssociationSet Name="FK_E7882CC94272FC9F" Association="Self.FK_E7882CC94272FC9F">
-            <End Role="domaine" EntitySet="domaine" />
-            <End Role="domaine_utilisateur" EntitySet="domaine_utilisateur" />
-          </AssociationSet>
-          <AssociationSet Name="FK_E7882CC9FB88E14F" Association="Self.FK_E7882CC9FB88E14F">
-            <End Role="utilisateur" EntitySet="utilisateur" />
-            <End Role="domaine_utilisateur" EntitySet="domaine_utilisateur" />
           </AssociationSet>
           <AssociationSet Name="FK_EDBFD5ECFB88E14F" Association="Self.FK_EDBFD5ECFB88E14F">
             <End Role="utilisateur" EntitySet="utilisateur" />
@@ -466,15 +466,6 @@
           <NavigationProperty Name="niveau" Relationship="Self.FK_94D4687FB3E9C81" FromRole="competence" ToRole="niveau" />
           <NavigationProperty Name="utilisateur" Relationship="megacastingModel.FK_94D4687FFB88E14F" FromRole="Competence" ToRole="utilisateur" />
         </EntityType>
-        <EntityType Name="Domaine">
-          <Key>
-            <PropertyRef Name="Identifiant" />
-          </Key>
-          <Property Name="Identifiant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Libelle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="metiers" Relationship="Self.FK_51A00D8C4272FC9F" FromRole="domaine" ToRole="metier" />
-          <NavigationProperty Name="utilisateurs" Relationship="megacastingModel.domaine_utilisateur" FromRole="Domaine" ToRole="utilisateur" />
-        </EntityType>
         <EntityType Name="Historique">
           <Key>
             <PropertyRef Name="Identifiant" />
@@ -495,8 +486,9 @@
           <Property Name="IdentifiantDomaine" Type="Int32" />
           <Property Name="Libelle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="domaine" Relationship="Self.FK_51A00D8C4272FC9F" FromRole="metier" ToRole="domaine" />
           <NavigationProperty Name="offres" Relationship="Self.FK_AF86866FED16FA20" FromRole="metier" ToRole="offre" />
+          <NavigationProperty Name="utilisateurs" Relationship="megacastingModel.metier_utilisateur" FromRole="Metier" ToRole="Utilisateur" />
+          <NavigationProperty Name="domaine" Relationship="megacastingModel.FK_51A00D8C4272FC9F" FromRole="Metier" ToRole="domaine" />
         </EntityType>
         <EntityType Name="Multimedia">
           <Key>
@@ -609,18 +601,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_51A00D8C4272FC9F">
-          <End Role="domaine" Type="megacastingModel.Domaine" Multiplicity="0..1" />
-          <End Role="metier" Type="megacastingModel.Metier" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="domaine">
-              <PropertyRef Name="Identifiant" />
-            </Principal>
-            <Dependent Role="metier">
-              <PropertyRef Name="IdentifiantDomaine" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_AF86866FED16FA20">
           <End Role="metier" Type="megacastingModel.Metier" Multiplicity="0..1" />
           <End Role="offre" Type="megacastingModel.Offre" Multiplicity="*" />
@@ -661,7 +641,6 @@
           <EntitySet Name="Abonnements" EntityType="megacastingModel.Abonnement" />
           <EntitySet Name="Candidatures" EntityType="megacastingModel.Candidature" />
           <EntitySet Name="Competences" EntityType="megacastingModel.Competence" />
-          <EntitySet Name="Domaines" EntityType="megacastingModel.Domaine" />
           <EntitySet Name="Historiques" EntityType="megacastingModel.Historique" />
           <EntitySet Name="Metiers" EntityType="megacastingModel.Metier" />
           <EntitySet Name="Multimedias" EntityType="megacastingModel.Multimedia" />
@@ -683,10 +662,6 @@
           <AssociationSet Name="FK_94D4687FB3E9C81" Association="Self.FK_94D4687FB3E9C81">
             <End Role="niveau" EntitySet="Niveaux" />
             <End Role="competence" EntitySet="Competences" />
-          </AssociationSet>
-          <AssociationSet Name="FK_51A00D8C4272FC9F" Association="Self.FK_51A00D8C4272FC9F">
-            <End Role="domaine" EntitySet="Domaines" />
-            <End Role="metier" EntitySet="Metiers" />
           </AssociationSet>
           <AssociationSet Name="FK_AF86866FED16FA20" Association="Self.FK_AF86866FED16FA20">
             <End Role="metier" EntitySet="Metiers" />
@@ -726,9 +701,14 @@
             <End Role="TypeUtilisateur" EntitySet="TypeUtilisateurs" />
             <End Role="utilisateur" EntitySet="Utilisateurs" />
           </AssociationSet>
-          <AssociationSet Name="domaine_utilisateur" Association="megacastingModel.domaine_utilisateur">
-            <End Role="Domaine" EntitySet="Domaines" />
-            <End Role="utilisateur" EntitySet="Utilisateurs" />
+          <AssociationSet Name="metier_utilisateur" Association="megacastingModel.metier_utilisateur">
+            <End Role="Metier" EntitySet="Metiers" />
+            <End Role="Utilisateur" EntitySet="Utilisateurs" />
+          </AssociationSet>
+          <EntitySet Name="Domaines" EntityType="megacastingModel.Domaine" />
+          <AssociationSet Name="FK_51A00D8C4272FC9F" Association="megacastingModel.FK_51A00D8C4272FC9F">
+            <End Role="domaine" EntitySet="Domaines" />
+            <End Role="Metier" EntitySet="Metiers" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="Adresse">
@@ -762,7 +742,7 @@
           <NavigationProperty Name="historiques" Relationship="megacastingModel.FK_EDBFD5ECFB88E14F" FromRole="utilisateur" ToRole="Historique" />
           <NavigationProperty Name="multimedias" Relationship="megacastingModel.FK_2E6C2BB3FB88E14F" FromRole="utilisateur" ToRole="Multimedia" />
           <NavigationProperty Name="typeutilisateur" Relationship="megacastingModel.FK_1D1C63B3E9516E8C" FromRole="utilisateur" ToRole="TypeUtilisateur" />
-          <NavigationProperty Name="domaines" Relationship="megacastingModel.domaine_utilisateur" FromRole="utilisateur" ToRole="Domaine" />
+          <NavigationProperty Name="metiers" Relationship="megacastingModel.metier_utilisateur" FromRole="Utilisateur" ToRole="Metier" />
         </EntityType>
         <Association Name="FK_351268BBFB88E14F">
           <End Type="megacastingModel.Utilisateur" Role="utilisateur" Multiplicity="1" />
@@ -836,9 +816,29 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="domaine_utilisateur">
-          <End Type="megacastingModel.Domaine" Role="Domaine" Multiplicity="*" />
-          <End Type="megacastingModel.Utilisateur" Role="utilisateur" Multiplicity="*" />
+        <Association Name="metier_utilisateur">
+          <End Type="megacastingModel.Metier" Role="Metier" Multiplicity="*" />
+          <End Type="megacastingModel.Utilisateur" Role="Utilisateur" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Domaine">
+          <Key>
+            <PropertyRef Name="Identifiant" />
+          </Key>
+          <Property Name="Identifiant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Libelle" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="metiers" Relationship="megacastingModel.FK_51A00D8C4272FC9F" FromRole="domaine" ToRole="Metier" />
+        </EntityType>
+        <Association Name="FK_51A00D8C4272FC9F">
+          <End Type="megacastingModel.Domaine" Role="domaine" Multiplicity="0..1" />
+          <End Type="megacastingModel.Metier" Role="Metier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="domaine">
+              <PropertyRef Name="Identifiant" />
+            </Principal>
+            <Dependent Role="Metier">
+              <PropertyRef Name="IdentifiantDomaine" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -878,14 +878,6 @@
                 <ScalarProperty Name="IdentifiantUtilisateur" ColumnName="utilisateur_id" />
                 <ScalarProperty Name="IdentifiantNiveau" ColumnName="niveau_id" />
                 <ScalarProperty Name="IdentifiantTypeCompetence" ColumnName="typeCompetence_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Domaines">
-            <EntityTypeMapping TypeName="megacastingModel.Domaine">
-              <MappingFragment StoreEntitySet="domaine">
-                <ScalarProperty Name="Identifiant" ColumnName="id" />
-                <ScalarProperty Name="Libelle" ColumnName="libelle" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1011,14 +1003,22 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="domaine_utilisateur" TypeName="megacastingModel.domaine_utilisateur" StoreEntitySet="domaine_utilisateur">
-            <EndProperty Name="utilisateur">
+          <AssociationSetMapping Name="metier_utilisateur" TypeName="megacastingModel.metier_utilisateur" StoreEntitySet="metier_utilisateur">
+            <EndProperty Name="Utilisateur">
               <ScalarProperty Name="Identifiant" ColumnName="utilisateur_id" />
             </EndProperty>
-            <EndProperty Name="Domaine">
-              <ScalarProperty Name="Identifiant" ColumnName="domaine_id" />
+            <EndProperty Name="Metier">
+              <ScalarProperty Name="Identifiant" ColumnName="metier_id" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="Domaines">
+            <EntityTypeMapping TypeName="megacastingModel.Domaine">
+              <MappingFragment StoreEntitySet="domaine">
+                <ScalarProperty Name="Libelle" ColumnName="libelle" />
+                <ScalarProperty Name="Identifiant" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

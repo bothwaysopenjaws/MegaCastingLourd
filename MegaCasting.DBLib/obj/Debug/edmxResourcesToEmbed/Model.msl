@@ -36,14 +36,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Domaines">
-      <EntityTypeMapping TypeName="megacastingModel.Domaine">
-        <MappingFragment StoreEntitySet="domaine">
-          <ScalarProperty Name="Identifiant" ColumnName="id" />
-          <ScalarProperty Name="Libelle" ColumnName="libelle" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Historiques">
       <EntityTypeMapping TypeName="megacastingModel.Historique">
         <MappingFragment StoreEntitySet="historique">
@@ -166,13 +158,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="domaine_utilisateur" TypeName="megacastingModel.domaine_utilisateur" StoreEntitySet="domaine_utilisateur">
-      <EndProperty Name="utilisateur">
+    <AssociationSetMapping Name="metier_utilisateur" TypeName="megacastingModel.metier_utilisateur" StoreEntitySet="metier_utilisateur">
+      <EndProperty Name="Utilisateur">
         <ScalarProperty Name="Identifiant" ColumnName="utilisateur_id" />
       </EndProperty>
-      <EndProperty Name="Domaine">
-        <ScalarProperty Name="Identifiant" ColumnName="domaine_id" />
+      <EndProperty Name="Metier">
+        <ScalarProperty Name="Identifiant" ColumnName="metier_id" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="Domaines">
+      <EntityTypeMapping TypeName="megacastingModel.Domaine">
+        <MappingFragment StoreEntitySet="domaine">
+          <ScalarProperty Name="Libelle" ColumnName="libelle" />
+          <ScalarProperty Name="Identifiant" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

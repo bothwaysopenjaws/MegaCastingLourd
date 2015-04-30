@@ -28,7 +28,6 @@ namespace MegaCasting.DBLib
         public DbSet<Abonnement> Abonnements { get; set; }
         public DbSet<Candidature> Candidatures { get; set; }
         public DbSet<Competence> Competences { get; set; }
-        public DbSet<Domaine> Domaines { get; set; }
         public DbSet<Historique> Historiques { get; set; }
         public DbSet<Metier> Metiers { get; set; }
         public DbSet<Multimedia> Multimedias { get; set; }
@@ -41,5 +40,6 @@ namespace MegaCasting.DBLib
         public DbSet<TypeUtilisateur> TypeUtilisateurs { get; set; }
         public DbSet<Adresse> Adresses { get; set; }
         public DbSet<Utilisateur> Utilisateurs { get; set; }
+        public DbSet<Domaine> Domaines { get; set; }
     }
 }
