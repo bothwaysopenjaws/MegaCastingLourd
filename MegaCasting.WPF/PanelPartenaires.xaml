@@ -57,11 +57,11 @@
             <Label Grid.Column="1" Grid.Row="4" Margin="10" Name="LabelPartenaireEmail" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
 
             <Button Grid.Column="0" Grid.Row="12" Margin="1" Name="ButtonPartenaireModifier" Content="Modifier" ></Button>
-            <Button Grid.Column="1" Grid.Row="12" Margin="1" Name="ButtonPartenaireSupprimer" Content="Supprimer"></Button>
+            <Button Grid.Column="1" Grid.Row="12" Margin="1" Name="ButtonPartenaireSupprimer" Content="Supprimer" Click="ButtonPartenaireSupprimer_Click"></Button>
 
 
         </Grid>
 
-        <Button Grid.Column="0" Grid.Row="2" Name="ButtonPartenaireAjouter" Content=" Ajouter "></Button>
+        <Button Background="Green" Grid.Column="0" Grid.Row="2" Name="ButtonPartenaireAjouter" Content=" Ajouter " Click="ButtonPartenaireAjouter_Click"></Button>
     </Grid>
 </UserControl>
