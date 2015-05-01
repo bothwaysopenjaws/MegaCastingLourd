@@ -22,23 +22,32 @@ namespace MegaCasting.WPF
     /// </summary>
     public partial class GestionCompetences : Window
     {
-        ViewModelCompetence _ViewModelCompetence;
-        ViewModelDomaine_Metier _ViewModelUtilisateur;
-        ObservableCollection<Competence> competencesArtistes = new ObservableCollection<Competence>();
+        
+        
+       
+        protected ViewModelCompetence _ViewModelCompetence;
+        public ObservableCollection<Competence> competencesArtistes;
 
-        public GestionCompetences(ViewModelDomaine_Metier _ViewModel,Utilisateur utilisateur)
+        public GestionCompetences(Utilisateur utilisateur)
         {
             InitializeComponent();
-            _ViewModelUtilisateur = _ViewModel;
-            // Récupération de la ViewModel
 
+            _ViewModelCompetence = new ViewModelCompetence();
             // intégrer la View au dataContext
-            this.DataContext = _ViewModelUtilisateur;
+            this.DataContext = _ViewModelCompetence;
+            
 
-            competencesArtistes = new ObservableCollection<Competence>((utilisateur.competences));
+
+             competencesArtistes = new ObservableCollection<Competence>(utilisateur.competences);
+            
+            this.ComboboxNiveauCompetence.ItemsSource = _ViewModelCompetence.niveaux;
+
+            this.ComboboxTypeCompetence.ItemsSource = _ViewModelCompetence.typeCompetences;
 
             this.ListBoxCompetencesArtistes.ItemsSource = competencesArtistes;
-
+            
         }
+
+        
     }
 }

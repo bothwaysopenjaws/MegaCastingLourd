@@ -75,7 +75,7 @@ namespace MegaCasting.WPF
             Utilisateur utilisateur = new Utilisateur();
             utilisateur = (Utilisateur)(this.ListBoxArtistes.SelectedItem);
 
-            GestionCompetences gestionCompetence = new GestionCompetences(_ViewModelMetierDomaine, utilisateur);
+            GestionCompetences gestionCompetence = new GestionCompetences(utilisateur);
             gestionCompetence.ShowDialog();
         }
 

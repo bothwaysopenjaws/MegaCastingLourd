@@ -98,6 +98,9 @@
     <Compile Include="GestionTypeMetierDomaine.xaml.cs">
       <DependentUpon>GestionTypeMetierDomaine.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GestionWindows\AjoutCompetenceArtiste.xaml.cs">
+      <DependentUpon>AjoutCompetenceArtiste.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GestionWindows\AjoutDomaine.xaml.cs">
       <DependentUpon>AjoutDomaine.xaml</DependentUpon>
     </Compile>
@@ -177,6 +180,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GestionTypeMetierDomaine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GestionWindows\AjoutCompetenceArtiste.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
