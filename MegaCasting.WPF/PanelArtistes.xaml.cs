@@ -72,11 +72,19 @@ namespace MegaCasting.WPF
 
         private void ButtonGestionCompetenceArtiste_Click(object sender, RoutedEventArgs e)
         {
-            Utilisateur utilisateur = new Utilisateur();
-            utilisateur = (Utilisateur)(this.ListBoxArtistes.SelectedItem);
+            if (this.ListBoxArtistes.SelectedItem != null)
+            {
+                Utilisateur utilisateur = new Utilisateur();
+                utilisateur = (Utilisateur)(this.ListBoxArtistes.SelectedItem);
 
-            GestionCompetences gestionCompetence = new GestionCompetences(utilisateur);
-            gestionCompetence.ShowDialog();
+                GestionCompetences gestionCompetence = new GestionCompetences(utilisateur);
+                gestionCompetence.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Veuillez selectionné un artiste.");
+            }
+            
         }
 
 

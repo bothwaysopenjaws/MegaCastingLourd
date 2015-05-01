@@ -6,6 +6,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="600">
     <Grid Margin="1">
+        
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.2*"></ColumnDefinition>
             <ColumnDefinition Width="0.4*"></ColumnDefinition>
@@ -16,10 +18,15 @@
             <RowDefinition></RowDefinition>
             <RowDefinition Height="0.1*"></RowDefinition>
         </Grid.RowDefinitions>
+        <!-- Listbox de gauche, listant les utlisateur étant artiste-->
         <ListBox SelectionChanged="ListBoxArtistes_SelectionChanged" x:Name="ListBoxArtistes" Grid.Column="0" Grid.Row="1" Margin="5" ItemsSource="{Binding artistes}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                  <Label Content="{Binding Nom}"></Label>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Nom}" FontWeight="SemiBold"></TextBlock>
+                        <TextBlock Text=" " Margin="5"></TextBlock>
+                        <TextBlock Text="{Binding Prenom}"></TextBlock>
+                    </StackPanel>               
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
@@ -44,6 +51,9 @@
                 <RowDefinition Height="0.1*"></RowDefinition>
                 <RowDefinition Height="0.1*"></RowDefinition>
             </Grid.RowDefinitions>
+            
+            
+            <!-- Objets non bindé-->
             <GroupBox Header="Adresse" Foreground="Black" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="2" Grid.Row="5" Width="auto"/>
 
             <GroupBox Header="Coordonnées" Foreground="Black" Grid.Column="0" Grid.ColumnSpan="2"  Grid.RowSpan="3" Grid.Row="2" Width="auto"/>
@@ -56,22 +66,23 @@
             <Label Grid.Column="0" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Center">Ville :</Label>
             <Label Grid.Column="0" Grid.Row="9" HorizontalAlignment="Left" VerticalAlignment="Center">Pays:</Label>
 
-
-            <Label Grid.Column="1"  Grid.Row="0" Margin="10" Name="LabelAnnonceurNom" HorizontalAlignment="Right" VerticalAlignment="Center" Content = "{Binding Path=SelectedItem.Nom, ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></Label>
-            <Label Grid.Column="1" Grid.Row="1" Margin="10" Name="LabelAnnonceurPrenom" HorizontalAlignment="Right" VerticalAlignment="Center" Content = "{Binding Path=SelectedItem.Prenom, ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></Label>
-            <Label Grid.Column="1" Grid.Row="2" Margin="10" Name="LabelAnnonceurAdresse" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
-            <Label Grid.Column="1" Grid.Row="3" Margin="10" Name="LabelAnnonceurNumTel" HorizontalAlignment="Right" VerticalAlignment="Center"  Content = "{Binding Path=SelectedItem.Telephone, ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></Label>
-            <Label Grid.Column="1" Grid.Row="4" Margin="10" Name="LabelAnnonceurEmail" HorizontalAlignment="Right" VerticalAlignment="Center"  Content = "{Binding Path=SelectedItem.Email, ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></Label>
-            <Label Grid.Column="1" Grid.Row="6" Margin="10" Name="LabelNumeroRue" HorizontalAlignment="Right" VerticalAlignment="Center"  Content = "{Binding Path=SelectedItem.adresse.Rue , ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></Label>
-            <Label Grid.Column="1" Grid.Row="7" Margin="10" Name="LabelCodePostal" HorizontalAlignment="Right" VerticalAlignment="Center"  Content = "{Binding Path=SelectedItem.adresse.CodePostal , ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></Label>
-            <Label Grid.Column="1" Grid.Row="8" Margin="10" Name="LabelVille" HorizontalAlignment="Right" VerticalAlignment="Center"  Content = "{Binding Path=SelectedItem.adresse.Ville , ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></Label>
-            <Label Grid.Column="1" Grid.Row="9" Margin="10" Name="LabelPays" HorizontalAlignment="Right" VerticalAlignment="Center"  Content = "{Binding Path=SelectedItem.adresse.Pays , ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></Label>
+<!--Textbox Binding-->
+            <TextBox Grid.Column="1"  Grid.Row="0" Name="LabelAnnonceurNom" Text="{Binding Path=SelectedItem.Nom, ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}" Margin="5,10,5,10" />
+            <TextBox Grid.Column="1" Grid.Row="1"  Margin="5,10,5,10" Name="LabelAnnonceurPrenom"  Text="{Binding Path=SelectedItem.Prenom, ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <TextBox Grid.Column="1" Grid.Row="3"  Name="LabelAnnonceurNumTel"   Text = "{Binding Path=SelectedItem.Telephone, ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <TextBox Grid.Column="1" Grid.Row="4"  Margin="5,10,5,10" Name="LabelAnnonceurEmail"  Text="{Binding Path=SelectedItem.Email, ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <TextBox Grid.Column="1" Grid.Row="6"  Margin="5,10,5,10" Name="LabelNumeroRue" Text="{Binding Path=SelectedItem.adresse.Rue , ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <TextBox Grid.Column="1" Grid.Row="7"  Margin="5,10,5,10" Name="LabelCodePostal"  Text="{Binding Path=SelectedItem.adresse.CodePostal , ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <TextBox Grid.Column="1" Grid.Row="8"  Margin="5,10,5,10" Name="LabelVille" Text="{Binding Path=SelectedItem.adresse.Ville , ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <TextBox Grid.Column="1" Grid.Row="9"  Margin="5,10,5,10" Name="LabelPays"  Text="{Binding Path=SelectedItem.adresse.Pays , ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
 
             <Button Grid.Column="0" Grid.Row="12" Margin="1" Name="ButtonAnnoceurModifier" Content="Modifier" ></Button>
             <Button Grid.Column="1" Grid.Row="12" Margin="1" Name="ButtonAnnonceurSupprimer" Content="Supprimer"></Button>
 
 
         </Grid>
+        
+        <!-- Grille des paramètres personnel de l'artiste-->
         <Grid Margin="1" Grid.Column="2" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.4*"></ColumnDefinition>

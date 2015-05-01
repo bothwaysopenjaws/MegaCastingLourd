@@ -21,7 +21,7 @@ namespace MegaCasting.WPF.ViewModel
             utilisateurs = new ObservableCollection<Utilisateur>(this.Entities.Utilisateurs);
             typeUtilisateurs = new ObservableCollection<TypeUtilisateur>(this.Entities.TypeUtilisateurs);
             historiques = new ObservableCollection<Historique>(this.Entities.Historiques);
-            artistes = new ObservableCollection<Utilisateur>(utilisateurs.Where(UtilisateurTemp => UtilisateurTemp.IdentifiantTypeutilisateur == 3).ToList());
+            artistes = new ObservableCollection<Utilisateur>(utilisateurs.Where(UtilisateurTemp => UtilisateurTemp.IdentifiantTypeutilisateur == 2).ToList());
 
         }
 
