@@ -18,7 +18,7 @@
             <RowDefinition></RowDefinition>
             <RowDefinition Height="0.1*"></RowDefinition>
         </Grid.RowDefinitions>
-        <!-- Listbox de gauche, listant les utlisateur étant artiste-->
+        <!-- Listbox de gauche, listant les utilisateurs étant artiste-->
         <ListBox SelectionChanged="ListBoxArtistes_SelectionChanged" x:Name="ListBoxArtistes" Grid.Column="0" Grid.Row="1" Margin="5" ItemsSource="{Binding artistes}">
             <ListBox.ItemTemplate>
                 <DataTemplate>

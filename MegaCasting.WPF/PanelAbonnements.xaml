@@ -20,7 +20,7 @@
             <ColumnDefinition Width="0.05*"></ColumnDefinition>
             <ColumnDefinition Width="0.1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="ListBoxUtilisateurs" Grid.Column="0" Grid.Row="0" Grid.RowSpan="6" Margin="5" ItemsSource="{Binding utilisateurs}">
+        <ListBox x:Name="ListBoxUtilisateurs" Grid.Column="0" Grid.Row="0" Grid.RowSpan="6" Margin="5" ItemsSource="{Binding annonceurs}" SelectionChanged="ListBoxUtilisateurs_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -35,13 +35,28 @@
         <Label Grid.Column="1" Grid.Row="1" >Diffusions restantes :</Label>
         <Label Grid.Column="1" Grid.Row="2" > Date d'inscription : </Label>
 
-        <Label Name="LabelAbonnementTypeAbonnement" Grid.Column="3" Grid.Row="0" > Pack100 </Label>
-        <Label Name="LabelAbonnementRestant" Grid.Column="3" Grid.Row="1" > 1 </Label>
-        <Label Grid.Column="3" Grid.Row="2" >Date d'inscription :</Label>
+        
+        <!--Partie non liées au données-->
+        <Label Name="LabelAbonnementTypeAbonnement" Grid.Column="3" Grid.Row="0" Foreground="Black" ></Label>
+        <Label Name="LabelAbonnementRestant" Grid.Column="3" Grid.Row="1" ></Label>
+        <Label Name="LabelAbonnementDate" Grid.Column="3" Grid.Row="2" ></Label>
 
-        <Button Name="ButtonAbonnementsAjouter" Grid.Column="1" Margin="10" Grid.ColumnSpan="3" Grid.Row="3" >Ajouter des crédits </Button>
+        <!--Partie liées au données-->
+        <Button Name="ButtonAbonnementsAjouter" Grid.Column="1" Margin="10" Grid.ColumnSpan="3" Grid.Row="3" Click="ButtonAbonnementsAjouter_Click" >Ajouter des crédits </Button>
         <Label Grid.Column="1" Grid.Row="4" > Historique des achats</Label>
-        <ListBox Name="ListBoxHistoriqueHistorique" Grid.Column="1" Margin="10" Grid.ColumnSpan="3" Grid.Row="5" ></ListBox>
+        
+        
+        <ListBox Name="ListBoxHistoriqueHistorique" Grid.Column="1" Margin="10" Grid.ColumnSpan="3" Grid.Row="5" ItemsSource="{Binding Path=SelectedItem.abonnements, ElementName=ListBoxUtilisateurs}" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding typeabonnement.Libelle}" Foreground="Black" FontSize="13" HorizontalAlignment="Center"  ></TextBlock>
+                        <TextBlock Text="    " Foreground="Black" FontSize="13" HorizontalAlignment="Center"  ></TextBlock>
+                        <TextBlock Text="{Binding DateSouscription}" Foreground="Gray"  FontSize="10" FontStyle="Italic" FontWeight="Light" HorizontalAlignment="Center"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         
     </Grid>
 </UserControl>

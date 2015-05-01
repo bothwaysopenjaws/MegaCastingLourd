@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MegaCasting.WPF.ViewModel;
 
 namespace MegaCasting.WPF
 {
@@ -20,9 +21,13 @@ namespace MegaCasting.WPF
     /// </summary>
     public partial class PanelAnnonceurs : UserControl
     {
+        ViewModelUtilisateur _ViewModelUtilisateur;
+        
         public PanelAnnonceurs()
         {
             InitializeComponent();
+            _ViewModelUtilisateur = new ViewModelUtilisateur();
+
         }
 
         private void ButtonAnnonceurSupprimer_Click(object sender, RoutedEventArgs e)
