@@ -69,10 +69,10 @@
 <!--Textbox Binding-->
             <TextBox Grid.Column="1"  Grid.Row="0" Name="LabelAnnonceurNom" Text="{Binding Path=SelectedItem.Nom, ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}" Margin="5,10,5,10" />
             <TextBox Grid.Column="1" Grid.Row="1"  Margin="5,10,5,10" Name="LabelAnnonceurPrenom"  Text="{Binding Path=SelectedItem.Prenom, ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-            <TextBox Grid.Column="1" Grid.Row="3"  Name="LabelAnnonceurNumTel"   Text = "{Binding Path=SelectedItem.Telephone, ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <TextBox Grid.Column="1" Grid.Row="3"  Name="LabelAnnonceurNumTel"   Text="{Binding Path=SelectedItem.Telephone, ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             <TextBox Grid.Column="1" Grid.Row="4"  Margin="5,10,5,10" Name="LabelAnnonceurEmail"  Text="{Binding Path=SelectedItem.Email, ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             <TextBox Grid.Column="1" Grid.Row="6"  Margin="5,10,5,10" Name="LabelNumeroRue" Text="{Binding Path=SelectedItem.adresse.Rue , ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-            <TextBox Grid.Column="1" Grid.Row="7"  Margin="5,10,5,10" Name="LabelCodePostal"  Text="{Binding Path=SelectedItem.adresse.CodePostal , ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <TextBox Grid.Column="1" Grid.Row="7"  Margin="5,10,5,10" Name="LabelCodePostal"  Text="{Binding Path=SelectedItem.adresse.Rue , ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             <TextBox Grid.Column="1" Grid.Row="8"  Margin="5,10,5,10" Name="LabelVille" Text="{Binding Path=SelectedItem.adresse.Ville , ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             <TextBox Grid.Column="1" Grid.Row="9"  Margin="5,10,5,10" Name="LabelPays"  Text="{Binding Path=SelectedItem.adresse.Pays , ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
 

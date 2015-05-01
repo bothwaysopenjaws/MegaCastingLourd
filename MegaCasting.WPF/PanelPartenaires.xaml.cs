@@ -16,6 +16,7 @@ using MegaCasting.DBLib;
 using MegaCasting.WPF.GestionWindows;
 using MegaCasting.WPF.ViewModel;
 
+
 namespace MegaCasting.WPF
 {
     /// <summary>
@@ -23,9 +24,13 @@ namespace MegaCasting.WPF
     /// </summary>
     public partial class PanelPartenaires : UserControl
     {
+
+        ViewModelUtilisateur _ViewModelUtilisateur;
         public PanelPartenaires()
         {
             InitializeComponent();
+            _ViewModelUtilisateur = new ViewModelUtilisateur();
+            this.DataContext = _ViewModelUtilisateur;
         }
 
         private void ButtonPartenaireAjouter_Click(object sender, RoutedEventArgs e)
@@ -49,6 +54,11 @@ namespace MegaCasting.WPF
                    
                     break;
             }
+        }
+
+        private void ButtonPartenaireModifier_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
