@@ -47,29 +47,43 @@ namespace MegaCasting.WPF
         // Supprimer un type d'abonnement
         private void ButtonTypeAbonnementSupprimer_Click(object sender, RoutedEventArgs e)
         {
-            // On créer un type temporaire
-            TypeAbonnement type = new TypeAbonnement();
-
-            // On récupère l'abonnement sélectionner dans la liste
-            type = (TypeAbonnement)(this.ListBoxAbonnements.SelectedItem);
-
-            // Vérifie qu'un type a été séléctionné dans la listeBox
-            if (type != null)
+            MessageBoxResult result = MessageBox.Show("Voulez-vous vraiment supprimer ce type d'abonnement ?", "Suppression d'un Abonnement", MessageBoxButton.YesNoCancel);
+            switch (result)
             {
+                case MessageBoxResult.Yes:
 
-                // Suppression 
-                _ViewModel.Entities.TypeAbonnements.Remove(type);
-                _ViewModel.TypeAbonnements.Remove(type);
+                    // On créer un type temporaire
+                    TypeAbonnement type = new TypeAbonnement();
 
-                // Sauvegarder la suppression
-                this._ViewModel.Save();
+                    // On récupère l'abonnement sélectionner dans la liste
+                    type = (TypeAbonnement)(this.ListBoxAbonnements.SelectedItem);
 
-                MessageBox.Show("Suppression réussite !!!");
+                    // Vérifie qu'un type a été séléctionné dans la listeBox
+                    if (type != null)
+                    {
+
+                        // Suppression 
+                        _ViewModel.Entities.TypeAbonnements.Remove(type);
+                        _ViewModel.TypeAbonnements.Remove(type);
+
+                        // Sauvegarder la suppression
+                        this._ViewModel.Save();
+
+                        MessageBox.Show("Suppression réussite !!!");
+                    }
+                    else
+                    {
+                        MessageBox.Show(" Saisie invalide !\r Veuillez sélectionner un abonnement à supprimer.");
+                    }
+                    break;
+                case MessageBoxResult.No:
+
+                    break;
+                case MessageBoxResult.Cancel:
+
+                    break;
             }
-            else
-            {
-                MessageBox.Show(" Saisie invalide !\r Veuillez sélectionner un abonnement à supprimer.");
-            }
+          
         }
 
         // modifier un type d'abonnement

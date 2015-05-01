@@ -59,7 +59,7 @@ namespace MegaCasting.WPF
             {
                 // Modifier le type d'abonnement
                 ((TypeCompetence)(this.ListBoxTypeCompetences.SelectedItem)).Libelle = this.TextboxNomAjoutTypeCompetence.Text;
-          
+
 
 
 
@@ -83,29 +83,45 @@ namespace MegaCasting.WPF
 
         private void ButtontypeCompetenceSupprimer_Click(object sender, RoutedEventArgs e)
         {
-            // On créer un type temporaire
-            TypeCompetence type = new TypeCompetence();
-
-            // On récupère la compétence sélectionner dans la liste
-            type = (TypeCompetence)(this.ListBoxTypeCompetences.SelectedItem);
-
-            // Vérifie qu'un type a été séléctionné dans la listeBox
-            if (type != null)
+            MessageBoxResult result = MessageBox.Show("Voulez-vous vraiment supprimer ce type de compétence ?", "Suppression d'un type de compétence", MessageBoxButton.YesNoCancel);
+            switch (result)
             {
+                case MessageBoxResult.Yes:
 
-                // Suppression 
-                _ViewModel.Entities.TypeCompetences.Remove(type);
-                _ViewModel.typeCompetences.Remove(type);
+                    // On créer un type temporaire
+                    TypeCompetence type = new TypeCompetence();
 
-                // Sauvegarder la suppression
-                this._ViewModel.Save();
+                    // On récupère la compétence sélectionner dans la liste
+                    type = (TypeCompetence)(this.ListBoxTypeCompetences.SelectedItem);
 
-                MessageBox.Show("Suppression réussite !!!");
+                    // Vérifie qu'un type a été séléctionné dans la listeBox
+                    if (type != null)
+                    {
+
+                        // Suppression 
+                        _ViewModel.Entities.TypeCompetences.Remove(type);
+                        _ViewModel.typeCompetences.Remove(type);
+
+                        // Sauvegarder la suppression
+                        this._ViewModel.Save();
+
+                        MessageBox.Show("Suppression réussite !!!");
+                    }
+                    else
+                    {
+                        MessageBox.Show(" Saisie invalide !\r Veuillez sélectionner une Compétence à supprimer.");
+                    }
+
+                    break;
+                case MessageBoxResult.No:
+
+                    break;
+                case MessageBoxResult.Cancel:
+
+                    break;
             }
-            else
-            {
-                MessageBox.Show(" Saisie invalide !\r Veuillez sélectionner une Compétence à supprimer.");
-            }
+
+
 
         }
     }

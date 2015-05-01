@@ -24,5 +24,22 @@ namespace MegaCasting.WPF
         {
             InitializeComponent();
         }
+
+        private void ButtonAnnonceurSupprimer_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Voulez-vous vraiment supprimer cet annonceur ?", "Suppression d'un annonceur", MessageBoxButton.YesNoCancel);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+
+                    break;
+                case MessageBoxResult.No:
+
+                    break;
+                case MessageBoxResult.Cancel:
+
+                    break;
+            }
+        }
     }
 }

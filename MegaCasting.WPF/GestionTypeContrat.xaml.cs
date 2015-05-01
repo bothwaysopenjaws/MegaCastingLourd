@@ -43,29 +43,44 @@ namespace MegaCasting.WPF
 
         private void ButtonContratSupprimer_Click(object sender, RoutedEventArgs e)
         {
-            // On créer un type temporaire
-            TypeContrat type = new TypeContrat();
-
-            // On récupère le type sélectionner dans la liste
-            type = (TypeContrat)(this.ListBoxTypeContrats.SelectedItem);
-
-            // Vérifie qu'un type a été séléctionné dans la listeBox
-            if (type != null)
+            MessageBoxResult result = MessageBox.Show("Voulez-vous vraiment supprimer ce type de contrat ?", "Suppression d'un type de contrat", MessageBoxButton.YesNoCancel);
+            switch (result)
             {
+                case MessageBoxResult.Yes:
 
-                // Suppression 
-                _ViewModel.Entities.TypeContrats.Remove(type);
-                _ViewModel.TypeContrats.Remove(type);
+                    // On créer un type temporaire
+                    TypeContrat type = new TypeContrat();
 
-                // Sauvegarder la suppression
-                this._ViewModel.Save();
+                    // On récupère le type sélectionner dans la liste
+                    type = (TypeContrat)(this.ListBoxTypeContrats.SelectedItem);
 
-                MessageBox.Show("Suppression réussite !!!");
+                    // Vérifie qu'un type a été séléctionné dans la listeBox
+                    if (type != null)
+                    {
+
+                        // Suppression 
+                        _ViewModel.Entities.TypeContrats.Remove(type);
+                        _ViewModel.TypeContrats.Remove(type);
+
+                        // Sauvegarder la suppression
+                        this._ViewModel.Save();
+
+                        MessageBox.Show("Suppression réussite !!!");
+                    }
+                    else
+                    {
+                        MessageBox.Show(" Saisie invalide !\r Veuillez sélectionner un type de contrat à supprimer.");
+                    }
+
+                    break;
+                case MessageBoxResult.No:
+
+                    break;
+                case MessageBoxResult.Cancel:
+
+                    break;
             }
-            else
-            {
-                MessageBox.Show(" Saisie invalide !\r Veuillez sélectionner un type de contrat à supprimer.");
-            }
+
         }
 
         private void ButtonContratModifier_Click(object sender, RoutedEventArgs e)
@@ -83,7 +98,7 @@ namespace MegaCasting.WPF
             {
                 // Modifier le type
                 ((TypeContrat)(this.ListBoxTypeContrats.SelectedItem)).Libelle = this.TextboxNomAjoutContrat.Text;
-                
+
 
                 // Une fois que la viewModel est mise à jour on sauvegarde les modifications 
                 this._ViewModel.Save();
