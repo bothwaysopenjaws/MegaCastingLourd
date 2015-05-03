@@ -94,6 +94,21 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="libelle" Type="varchar" MaxLength="255" Nullable="false" />
   </EntityType>
+  <EntityType Name="offre">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="metier_id" Type="int" />
+    <Property Name="description" Type="longtext" Nullable="false" />
+    <Property Name="dateDebut" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="datefin" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="duree" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="typeContrat_id" Type="int" />
+    <Property Name="intitule" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="isActive" Type="bool" Nullable="false" />
+    <Property Name="utilisateur_id" Type="int" />
+  </EntityType>
   <EntityType Name="typeabonnement">
     <Key>
       <PropertyRef Name="id" />
@@ -293,6 +308,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_AF86866FAE24E5C2">
+    <End Role="typecontrat" Type="Self.typecontrat" Multiplicity="0..1" />
+    <End Role="offre" Type="Self.offre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="typecontrat">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="offre">
+        <PropertyRef Name="typeContrat_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AF86866FED16FA20">
+    <End Role="metier" Type="Self.metier" Multiplicity="0..1" />
+    <End Role="offre" Type="Self.offre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="metier">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="offre">
+        <PropertyRef Name="metier_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AF86866FFB88E14F">
+    <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="0..1" />
+    <End Role="offre" Type="Self.offre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="utilisateur">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="offre">
+        <PropertyRef Name="utilisateur_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_EDBFD5ECFB88E14F">
     <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="0..1" />
     <End Role="historique" Type="Self.historique" Multiplicity="*" />
@@ -316,6 +367,7 @@
     <EntitySet Name="metier_utilisateur" EntityType="Self.metier_utilisateur" Schema="megacasting" store:Type="Tables" />
     <EntitySet Name="multimedia" EntityType="Self.multimedia" Schema="megacasting" store:Type="Tables" />
     <EntitySet Name="niveau" EntityType="Self.niveau" Schema="megacasting" store:Type="Tables" />
+    <EntitySet Name="offre" EntityType="Self.offre" Schema="megacasting" store:Type="Tables" />
     <EntitySet Name="typeabonnement" EntityType="Self.typeabonnement" Schema="megacasting" store:Type="Tables" />
     <EntitySet Name="typecompetence" EntityType="Self.typecompetence" Schema="megacasting" store:Type="Tables" />
     <EntitySet Name="typecontrat" EntityType="Self.typecontrat" Schema="megacasting" store:Type="Tables" />
@@ -369,6 +421,18 @@
     <AssociationSet Name="FK_94D4687FFB88E14F" Association="Self.FK_94D4687FFB88E14F">
       <End Role="utilisateur" EntitySet="utilisateur" />
       <End Role="competence" EntitySet="competence" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AF86866FAE24E5C2" Association="Self.FK_AF86866FAE24E5C2">
+      <End Role="typecontrat" EntitySet="typecontrat" />
+      <End Role="offre" EntitySet="offre" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AF86866FED16FA20" Association="Self.FK_AF86866FED16FA20">
+      <End Role="metier" EntitySet="metier" />
+      <End Role="offre" EntitySet="offre" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AF86866FFB88E14F" Association="Self.FK_AF86866FFB88E14F">
+      <End Role="utilisateur" EntitySet="utilisateur" />
+      <End Role="offre" EntitySet="offre" />
     </AssociationSet>
     <AssociationSet Name="FK_EDBFD5ECFB88E14F" Association="Self.FK_EDBFD5ECFB88E14F">
       <End Role="utilisateur" EntitySet="utilisateur" />

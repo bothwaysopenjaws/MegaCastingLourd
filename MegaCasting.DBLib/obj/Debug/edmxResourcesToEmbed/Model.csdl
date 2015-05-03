@@ -59,6 +59,7 @@
     <Property Name="Description" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="utilisateurs" Relationship="megacastingModel.metier_utilisateur" FromRole="Metier" ToRole="Utilisateur" />
     <NavigationProperty Name="domaine" Relationship="megacastingModel.FK_51A00D8C4272FC9F" FromRole="Metier" ToRole="domaine" />
+    <NavigationProperty Name="offres" Relationship="megacastingModel.FK_AF86866FED16FA20" FromRole="Metier" ToRole="offre" />
   </EntityType>
   <EntityType Name="Multimedia">
     <Key>
@@ -103,6 +104,7 @@
     </Key>
     <Property Name="Identifiant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Libelle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="offres" Relationship="megacastingModel.FK_AF86866FAE24E5C2" FromRole="TypeContrat" ToRole="offre" />
   </EntityType>
   <EntityType Name="TypeMedia">
     <Key>
@@ -232,6 +234,19 @@
       <End Role="domaine" EntitySet="Domaines" />
       <End Role="Metier" EntitySet="Metiers" />
     </AssociationSet>
+    <EntitySet Name="Offres" EntityType="megacastingModel.Offre" />
+    <AssociationSet Name="FK_AF86866FED16FA20" Association="megacastingModel.FK_AF86866FED16FA20">
+      <End Role="Metier" EntitySet="Metiers" />
+      <End Role="offre" EntitySet="Offres" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AF86866FAE24E5C2" Association="megacastingModel.FK_AF86866FAE24E5C2">
+      <End Role="TypeContrat" EntitySet="TypeContrats" />
+      <End Role="offre" EntitySet="Offres" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AF86866FFB88E14F" Association="megacastingModel.FK_AF86866FFB88E14F">
+      <End Role="Utilisateur" EntitySet="Utilisateurs" />
+      <End Role="Offre" EntitySet="Offres" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Adresse">
     <Key>
@@ -265,6 +280,7 @@
     <NavigationProperty Name="multimedias" Relationship="megacastingModel.FK_2E6C2BB3FB88E14F" FromRole="utilisateur" ToRole="Multimedia" />
     <NavigationProperty Name="typeutilisateur" Relationship="megacastingModel.FK_1D1C63B3E9516E8C" FromRole="utilisateur" ToRole="TypeUtilisateur" />
     <NavigationProperty Name="metiers" Relationship="megacastingModel.metier_utilisateur" FromRole="Utilisateur" ToRole="Metier" />
+    <NavigationProperty Name="Offres" Relationship="megacastingModel.FK_AF86866FFB88E14F" FromRole="Utilisateur" ToRole="Offre" />
   </EntityType>
   <Association Name="FK_351268BBFB88E14F">
     <End Type="megacastingModel.Utilisateur" Role="utilisateur" Multiplicity="1" />
@@ -359,6 +375,60 @@
       </Principal>
       <Dependent Role="Metier">
         <PropertyRef Name="IdentifiantDomaine" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Offre">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Metier_id" Type="Int32" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DateDebut" Type="DateTime" Nullable="false" />
+    <Property Name="Datefin" Type="DateTime" Nullable="false" />
+    <Property Name="Duree" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TypeContrat_id" Type="Int32" />
+    <Property Name="Intitule" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Metier" Relationship="megacastingModel.FK_AF86866FED16FA20" FromRole="offre" ToRole="Metier" />
+    <NavigationProperty Name="TypeContrat" Relationship="megacastingModel.FK_AF86866FAE24E5C2" FromRole="offre" ToRole="TypeContrat" />
+    <Property Name="Utilisateur_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Utilisateur" Relationship="megacastingModel.FK_AF86866FFB88E14F" FromRole="Offre" ToRole="Utilisateur" />
+  </EntityType>
+  <Association Name="FK_AF86866FED16FA20">
+    <End Type="megacastingModel.Metier" Role="Metier" Multiplicity="0..1" />
+    <End Type="megacastingModel.Offre" Role="offre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Metier">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="offre">
+        <PropertyRef Name="Metier_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AF86866FAE24E5C2">
+    <End Type="megacastingModel.TypeContrat" Role="TypeContrat" Multiplicity="0..1" />
+    <End Type="megacastingModel.Offre" Role="offre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeContrat">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="offre">
+        <PropertyRef Name="TypeContrat_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AF86866FFB88E14F">
+    <End Type="megacastingModel.Utilisateur" Role="Utilisateur" Multiplicity="1" />
+    <End Type="megacastingModel.Offre" Role="Offre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilisateur">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="Offre">
+        <PropertyRef Name="Utilisateur_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

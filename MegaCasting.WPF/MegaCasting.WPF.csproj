@@ -74,28 +74,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AjoutCredit.xaml.cs">
+    <Compile Include="Ajout Windows\AjoutCredit.xaml.cs">
       <DependentUpon>AjoutCredit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AjoutOffre.xaml.cs">
+    <Compile Include="Ajout Windows\AjoutOffre.xaml.cs">
       <DependentUpon>AjoutOffre.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AjoutTypeAbonnement.xaml.cs">
+    <Compile Include="Ajout Windows\AjoutTypeAbonnement.xaml.cs">
       <DependentUpon>AjoutTypeAbonnement.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AjoutTypeCompetence.xaml.cs">
+    <Compile Include="Ajout Windows\AjoutTypeCompetence.xaml.cs">
       <DependentUpon>AjoutTypeCompetence.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GestionTypeAbonnement.xaml.cs">
+    <Compile Include="GestionWindows\GestionTypeAbonnement.xaml.cs">
       <DependentUpon>GestionTypeAbonnement.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GestionTypeCompetence.xaml.cs">
+    <Compile Include="GestionWindows\GestionTypeCompetence.xaml.cs">
       <DependentUpon>GestionTypeCompetence.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GestionTypeContrat.xaml.cs">
+    <Compile Include="GestionWindows\GestionTypeContrat.xaml.cs">
       <DependentUpon>GestionTypeContrat.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GestionTypeMetierDomaine.xaml.cs">
+    <Compile Include="GestionWindows\GestionTypeMetierDomaine.xaml.cs">
       <DependentUpon>GestionTypeMetierDomaine.xaml</DependentUpon>
     </Compile>
     <Compile Include="GestionWindows\AjoutCompetenceArtiste.xaml.cs">
@@ -113,37 +113,37 @@
     <Compile Include="GestionWindows\AjoutTypeContrat.xaml.cs">
       <DependentUpon>AjoutTypeContrat.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GestionCompetences.xaml.cs">
+    <Compile Include="GestionWindows\GestionCompetences.xaml.cs">
       <DependentUpon>GestionCompetences.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gestion_Experiences.xaml.cs">
+    <Compile Include="GestionWindows\Gestion_Experiences.xaml.cs">
       <DependentUpon>Gestion_Experiences.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gestion_Mediatheque.xaml.cs">
+    <Compile Include="GestionWindows\Gestion_Mediatheque.xaml.cs">
       <DependentUpon>Gestion_Mediatheque.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PanelAbonnements.xaml.cs">
+    <Compile Include="MainPanels\PanelAbonnements.xaml.cs">
       <DependentUpon>PanelAbonnements.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PanelAnnonceurs.xaml.cs">
+    <Compile Include="MainPanels\PanelAnnonceurs.xaml.cs">
       <DependentUpon>PanelAnnonceurs.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PanelArtistes.xaml.cs">
+    <Compile Include="MainPanels\PanelArtistes.xaml.cs">
       <DependentUpon>PanelArtistes.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PanelCandidatures.xaml.cs">
+    <Compile Include="MainPanels\PanelCandidatures.xaml.cs">
       <DependentUpon>PanelCandidatures.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PanelMain.xaml.cs">
+    <Compile Include="MainPanels\PanelMain.xaml.cs">
       <DependentUpon>PanelMain.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PanelOffres.xaml.cs">
+    <Compile Include="MainPanels\PanelOffres.xaml.cs">
       <DependentUpon>PanelOffres.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PanelParametres.xaml.cs">
+    <Compile Include="MainPanels\PanelParametres.xaml.cs">
       <DependentUpon>PanelParametres.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PanelPartenaires.xaml.cs">
+    <Compile Include="MainPanels\PanelPartenaires.xaml.cs">
       <DependentUpon>PanelPartenaires.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\ViewModelAbonnement.cs" />
@@ -154,35 +154,35 @@
     <Compile Include="ViewModel\ViewModelMedia.cs" />
     <Compile Include="ViewModel\ViewModelOffre.cs" />
     <Compile Include="ViewModel\ViewModelUtilisateur.cs" />
-    <Page Include="AjoutCredit.xaml">
+    <Page Include="Ajout Windows\AjoutCredit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AjoutOffre.xaml">
+    <Page Include="Ajout Windows\AjoutOffre.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AjoutTypeAbonnement.xaml">
+    <Page Include="Ajout Windows\AjoutTypeAbonnement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AjoutTypeCompetence.xaml">
+    <Page Include="Ajout Windows\AjoutTypeCompetence.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GestionTypeAbonnement.xaml">
+    <Page Include="GestionWindows\GestionTypeAbonnement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GestionTypeCompetence.xaml">
+    <Page Include="GestionWindows\GestionTypeCompetence.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GestionTypeContrat.xaml">
+    <Page Include="GestionWindows\GestionTypeContrat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GestionTypeMetierDomaine.xaml">
+    <Page Include="GestionWindows\GestionTypeMetierDomaine.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -206,15 +206,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GestionCompetences.xaml">
+    <Page Include="GestionWindows\GestionCompetences.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Gestion_Experiences.xaml">
+    <Page Include="GestionWindows\Gestion_Experiences.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Gestion_Mediatheque.xaml">
+    <Page Include="GestionWindows\Gestion_Mediatheque.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -230,35 +230,35 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="PanelAbonnements.xaml">
+    <Page Include="MainPanels\PanelAbonnements.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PanelAnnonceurs.xaml">
+    <Page Include="MainPanels\PanelAnnonceurs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PanelArtistes.xaml">
+    <Page Include="MainPanels\PanelArtistes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PanelCandidatures.xaml">
+    <Page Include="MainPanels\PanelCandidatures.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PanelMain.xaml">
+    <Page Include="MainPanels\PanelMain.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PanelOffres.xaml">
+    <Page Include="MainPanels\PanelOffres.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PanelParametres.xaml">
+    <Page Include="MainPanels\PanelParametres.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PanelPartenaires.xaml">
+    <Page Include="MainPanels\PanelPartenaires.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -297,9 +297,7 @@
       <Name>MegaCasting.DBLib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MainPanels\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
