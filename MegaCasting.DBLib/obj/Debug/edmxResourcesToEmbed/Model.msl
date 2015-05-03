@@ -80,6 +80,7 @@
     <EntitySetMapping Name="Offres">
       <EntityTypeMapping TypeName="megacastingModel.Offre">
         <MappingFragment StoreEntitySet="offre">
+          <ScalarProperty Name="IsActive" ColumnName="isActive" />
           <ScalarProperty Name="Identifiant" ColumnName="id" />
           <ScalarProperty Name="IdentifiantMetier" ColumnName="metier_id" />
           <ScalarProperty Name="Description" ColumnName="description" />

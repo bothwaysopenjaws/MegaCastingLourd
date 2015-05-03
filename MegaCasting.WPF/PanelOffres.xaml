@@ -26,18 +26,80 @@
         
         
         <Label Content="Offres : " FontWeight="Bold"></Label>
-        <ListBox Name="ListBoxOffres" Grid.Column="0" Grid.Row="1" Grid.RowSpan="4"></ListBox>
+        <Button x:Name="ButtonOffreReset" Grid.Row="1" Click="ButtonOffreReset_Click"> Toutes les offres</Button>
+        <ListBox Name="ListBoxOffres" ItemsSource="{Binding offres}" Grid.Column="0" Grid.Row="2" Grid.RowSpan="3">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"></RowDefinition>
+                            <RowDefinition Height="1*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding metier.Libelle}"></TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding DateDebut}" FontStyle="Italic" ></TextBlock>
+                        <CheckBox Grid.RowSpan="2" VerticalAlignment="Center" IsChecked="{Binding IsActive}"></CheckBox>
+                        
+
+                    </Grid>
+                    
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <Button Name="ButtonOffresAjouter" Content="Ajouter"  Grid.Column="0" Grid.Row="5" ></Button>
 
+        
+        <!--GroupeBox-->
         <GroupBox Header="Recherche rapide" Foreground="Black"  Grid.Column="1" Grid.ColumnSpan="3"  Grid.RowSpan="4" Grid.Row="0" Width="auto"/>
         <GroupBox Header="Informations" Foreground="Black"  Grid.Column="1" Grid.ColumnSpan="3"  Grid.RowSpan="4" Grid.Row="3" Width="auto"/>
-        <ComboBox Name="ComboBoxOffresAnnonceur" Grid.Row="1" Grid.Column="1" Margin="10" SelectedValue="Annonceur"></ComboBox>
-        <ComboBox Name="ComboBoxOffresDomaine"  Grid.Row="1" Grid.Column="2" Margin="10" SelectedValue="Domaine"></ComboBox>
-        <ComboBox Name="ComboBoxOffresMetier" Grid.Row="2" Grid.Column="3" Margin="10" SelectedValue="Metier"></ComboBox>
-        <ComboBox Name="ComboBoxOffresTypeContrat" Grid.Row="2" Grid.Column="1" Margin="10" SelectedValue="TypeContrat"></ComboBox>
-        <ComboBox Name="ComboBoxOffreDuree" Grid.Row="2" Grid.Column="2" Margin="10" SelectedValue="Durée"></ComboBox>
+        
+        <!-- Zone de recherche-->
+        <ComboBox Name="ComboBoxOffresAnnonceur" ItemsSource="{ Binding annonceurs}" Grid.Row="1" Grid.Column="1" Margin="10" SelectedValue="Annonceur">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Nom}" ></TextBlock>
+                        <TextBlock Text="   " ></TextBlock>
+                        <TextBlock Text="{Binding Prenom}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox Name="ComboBoxOffresDomaine"  ItemsSource="{ Binding domaines}" Grid.Row="1" Grid.Column="2" Margin="10" SelectedValue="Domaine">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Libelle}" ></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox Name="ComboBoxOffresMetier" ItemsSource="{ Binding metiers}" Grid.Row="2" Grid.Column="3" Margin="10" SelectedValue="Metier">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Libelle}" ></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox Name="ComboBoxOffresTypeContrat" ItemsSource="{ Binding TypeContrats}" Grid.Row="2" Grid.Column="1" Margin="10" SelectedValue="TypeContrat">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Libelle}" ></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
         <DatePicker Name="ComboBoxOffreDateContrat"  Grid.Row="1" Grid.Column="3" Margin="10" ></DatePicker>
 
+        <!--Panel D'affichage des détails -->
         <Grid Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="3" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -87,7 +149,7 @@
             <ComboBox Name="ComboboxOffresMetierAjouter" Margin="2" Grid.Column="5" Grid.Row="2"></ComboBox>
             <TextBox Name="TextBoxOffresNombrePosteAjouter" Margin="2" Grid.Column="5" Grid.Row="3"></TextBox>
         </Grid>
-        <TextBlock Grid.Column="3" HorizontalAlignment="Left" Margin="263,24,-195,-48" Grid.Row="4" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+ 
 
     </Grid>
 </UserControl>

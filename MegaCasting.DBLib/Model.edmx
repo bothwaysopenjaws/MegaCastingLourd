@@ -33,10 +33,10 @@
           <Property Name="nom" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="prenom" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="urlCv" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="urlLettreMotivation" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
           <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="telephone" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="urlLettreMotivation" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
         </EntityType>
         <EntityType Name="competence">
           <Key>
@@ -108,6 +108,7 @@
           <Property Name="description" Type="longtext" Nullable="false" />
           <Property Name="dateDebut" Type="datetime" Precision="0" Nullable="false" />
           <Property Name="datefin" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="isActive" Type="bool" Nullable="false" />
           <Property Name="duree" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="typeContrat_id" Type="int" />
         </EntityType>
@@ -152,15 +153,15 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adresse_id" Type="int" />
           <Property Name="nom" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="prenom" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="login" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="password" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="dateNaissance" Type="date" Nullable="false" />
-          <Property Name="typeUtilisateur_id" Type="int" Nullable="false" />
           <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="telephone" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="adresse_id" Type="int" />
+          <Property Name="typeUtilisateur_id" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_1D1C63B34DE7DC5C">
           <End Role="adresse" Type="Self.adresse" Multiplicity="0..1" />
@@ -523,6 +524,7 @@
           <Property Name="IdentifiantTypeContrat" Type="Int32" />
           <NavigationProperty Name="metier" Relationship="Self.FK_AF86866FED16FA20" FromRole="offre" ToRole="metier" />
           <NavigationProperty Name="typecontrat" Relationship="Self.FK_AF86866FAE24E5C2" FromRole="offre" ToRole="typecontrat" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="TypeAbonnement">
           <Key>
@@ -925,6 +927,7 @@
           <EntitySetMapping Name="Offres">
             <EntityTypeMapping TypeName="megacastingModel.Offre">
               <MappingFragment StoreEntitySet="offre">
+                <ScalarProperty Name="IsActive" ColumnName="isActive" />
                 <ScalarProperty Name="Identifiant" ColumnName="id" />
                 <ScalarProperty Name="IdentifiantMetier" ColumnName="metier_id" />
                 <ScalarProperty Name="Description" ColumnName="description" />

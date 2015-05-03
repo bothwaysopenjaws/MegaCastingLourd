@@ -8,6 +8,7 @@ C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.DBLib\bin\Debug\
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.DBLib\bin\Debug\fr\EntityFramework.resources.dll
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.DBLib\obj\Debug\MegaCasting.DBLib.dll
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.DBLib\obj\Debug\MegaCasting.DBLib.pdb
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.DBLib\obj\Debug\MegaCasting.DBLib.csprojResolveAssemblyReference.cache
 C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.DBLib\bin\Debug\MegaCasting.DBLib.dll.config
 C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.DBLib\bin\Debug\MegaCasting.DBLib.dll
 C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.DBLib\bin\Debug\MegaCasting.DBLib.pdb
@@ -16,7 +17,6 @@ C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.DBLib\bin\Debug\
 C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.DBLib\bin\Debug\Oracle.ManagedDataAccess.dll
 C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.DBLib\bin\Debug\EntityFramework.xml
 C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.DBLib\bin\Debug\fr\EntityFramework.resources.dll
-C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.DBLib\obj\Debug\MegaCasting.DBLib.csprojResolveAssemblyReference.cache
 C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.DBLib\obj\Debug\MegaCasting.DBLib.dll
 C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.DBLib\obj\Debug\MegaCasting.DBLib.pdb
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.DBLib\obj\Debug\MegaCasting.DBLib.csprojResolveAssemblyReference.cache
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.DBLib\obj\Debug\MegaCasting.DBLib.csprojResolveAssemblyReference.cache

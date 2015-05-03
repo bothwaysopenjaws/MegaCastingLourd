@@ -26,8 +26,8 @@ namespace MegaCasting.WPF
         public PanelMain()
         {
             InitializeComponent();
-
-
+            this.labelMain.Content = "Bienvenue  dans MegaGestion, Gestionnaire de données pour le site MegaShow !";
+            this.labelConnexion.Content = " Vous êtes connecté avec le compte : " + System.Security.Principal.WindowsIdentity.GetCurrent().Name;
             
         }
     }

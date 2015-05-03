@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MegaCasting.WPF.ViewModel;
+
 
 namespace MegaCasting.WPF
 {
@@ -20,9 +22,53 @@ namespace MegaCasting.WPF
     /// </summary>
     public partial class PanelOffres : UserControl
     {
+
+
+
+        #region Attributs
+        protected ViewModelOffre _ViewModelOffre;
+      
+        #endregion
+
+
+        #region Constructeurs
         public PanelOffres()
         {
             InitializeComponent();
+            this._ViewModelOffre = new ViewModelOffre();
+            this.DataContext = _ViewModelOffre;
+        }       
+        #endregion
+
+
+
+
+
+        #region Évènements
+        /// <summary>
+        /// Recharge la listebox avec toutes les offres, sans tri
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonOffreReset_Click(object sender, RoutedEventArgs e)
+        {
+            this.ListBoxOffres.ItemsSource = _ViewModelOffre.offres;
+
         }
+        #endregion
+
+
+        #region Méthodes
+
+
+
+        #endregion
+
+
+
+        #region Méthodes
+
+        #endregion
+
     }
 }

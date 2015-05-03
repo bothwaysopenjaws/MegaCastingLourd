@@ -94,6 +94,7 @@
     <Property Name="IdentifiantTypeContrat" Type="Int32" />
     <NavigationProperty Name="metier" Relationship="Self.FK_AF86866FED16FA20" FromRole="offre" ToRole="metier" />
     <NavigationProperty Name="typecontrat" Relationship="Self.FK_AF86866FAE24E5C2" FromRole="offre" ToRole="typecontrat" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="TypeAbonnement">
     <Key>

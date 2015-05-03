@@ -21,6 +21,7 @@ namespace MegaCasting.DBLib
         public System.DateTime Datefin { get; set; }
         public string Duree { get; set; }
         public Nullable<int> IdentifiantTypeContrat { get; set; }
+        public bool IsActive { get; set; }
     
         public virtual Metier metier { get; set; }
         public virtual TypeContrat typecontrat { get; set; }
