@@ -128,7 +128,7 @@ namespace MegaCasting.WPF
                     else
                     {
 
-                        MessageBox.Show("L'annonceur viens de dépensé un crédit");
+                        MessageBox.Show("L'annonceur " + ((Utilisateur)(this.ComboBoxOffresAnnonceurAjouter.SelectedItem)).Nom + " " + ((Utilisateur)(this.ComboBoxOffresAnnonceurAjouter.SelectedItem)).Prenom + " viens de dépenser un crédit.");
                         ((Abonnement)((Utilisateur)(this.ComboBoxOffresAnnonceurAjouter.SelectedItem)).abonnements.Last()).Restant = ((Abonnement)((Utilisateur)(this.ComboBoxOffresAnnonceurAjouter.SelectedItem)).abonnements.Last()).Restant - 1;
                         _ViewModelOffre.Save();
                         ((Offre)this.ListBoxOffres.SelectedItem).IsActive = true;
