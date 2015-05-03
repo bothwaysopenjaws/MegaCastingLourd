@@ -28,6 +28,11 @@
         <Label Content="Offres : " FontWeight="Bold"></Label>
         <Button x:Name="ButtonOffreReset" Grid.Row="1" Click="ButtonOffreReset_Click"> Toutes les offres</Button>
         <ListBox Name="ListBoxOffres" ItemsSource="{Binding offres}" Grid.Column="0" Grid.Row="2" Grid.RowSpan="3">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Setter Property="IsSelected" Value="{Binding IsActive, Mode=OneWay}"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -38,11 +43,14 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*"></ColumnDefinition>
                             <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.2*"></ColumnDefinition>
                             <ColumnDefinition Width="1*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding metier.Libelle}"></TextBlock>
-                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding DateDebut}" FontStyle="Italic" ></TextBlock>
-                        <CheckBox Grid.RowSpan="2" VerticalAlignment="Center" IsChecked="{Binding IsActive}"></CheckBox>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding Intitule}" TextDecorations="Underline"></TextBlock>
+                        <TextBlock Grid.Column="2" Grid.Row="0" Text=" - "></TextBlock>
+                        <TextBlock Grid.Column="3" Grid.Row="0" Text="{Binding Metier.Libelle}" FontSize="10" ></TextBlock>
+                        <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding DateDebut}" FontStyle="Italic" Grid.ColumnSpan="3" ></TextBlock>
+                        <CheckBox x:Name="checkBoxOffreIsActive" Grid.RowSpan="2" VerticalAlignment="Center" IsChecked="{Binding IsActive}" Checked="checkBoxOffreIsActive_Checked" ToolTip="Cocher cette case pour activé l'offre"></CheckBox>
                         
 
                     </Grid>
@@ -58,7 +66,7 @@
         <GroupBox Header="Informations" Foreground="Black"  Grid.Column="1" Grid.ColumnSpan="3"  Grid.RowSpan="4" Grid.Row="3" Width="auto"/>
         
         <!-- Zone de recherche-->
-        <ComboBox Name="ComboBoxOffresAnnonceur" ItemsSource="{ Binding annonceurs}" Grid.Row="1" Grid.Column="1" Margin="10" SelectedValue="Annonceur">
+        <ComboBox Name="ComboBoxOffresAnnonceur" ItemsSource="{ Binding annonceurs}" ToolTip=" Rechercher une offre proposer par un professionnel partenaire" Grid.Row="1" Grid.Column="1" Margin="10" SelectedValue="Annonceur" SelectionChanged="ComboBoxOffresAnnonceur_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -70,7 +78,7 @@
             
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <ComboBox Name="ComboBoxOffresDomaine"  ItemsSource="{ Binding domaines}" Grid.Row="1" Grid.Column="2" Margin="10" SelectedValue="Domaine">
+        <ComboBox Name="ComboBoxOffresDomaine"  ItemsSource="{ Binding domaines}" ToolTip=" rechercher les offres par domaines d'activité" SelectionChanged="ComboBoxOffresDomaine_SelectionChanged" Grid.Row="1" Grid.Column="2" Margin="10" SelectedValue="Domaine">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -79,7 +87,7 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <ComboBox Name="ComboBoxOffresMetier" ItemsSource="{ Binding metiers}" Grid.Row="2" Grid.Column="3" Margin="10" SelectedValue="Metier">
+        <ComboBox Name="ComboBoxOffresMetier" ItemsSource="{ Binding metiers}" ToolTip="rechercher les offres par metier" SelectionChanged="ComboBoxOffresMetier_SelectionChanged" Grid.Row="2" Grid.Column="3" Margin="10" SelectedValue="Metier"  > 
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -88,7 +96,7 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <ComboBox Name="ComboBoxOffresTypeContrat" ItemsSource="{ Binding TypeContrats}" Grid.Row="2" Grid.Column="1" Margin="10" SelectedValue="TypeContrat">
+        <ComboBox Name="ComboBoxOffresTypeContrat" ItemsSource="{ Binding TypeContrats}" ToolTip="Rechercher les offres par type de contrat" SelectionChanged="ComboBoxOffresTypeContrat_SelectionChanged" Grid.Row="2" Grid.Column="1" Margin="10" SelectedValue="TypeContrat">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -97,7 +105,7 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <DatePicker Name="ComboBoxOffreDateContrat"  Grid.Row="1" Grid.Column="3" Margin="10" ></DatePicker>
+        <DatePicker Name="ComboBoxOffreDateContrat"  Grid.Row="1" Grid.Column="3" Margin="10" ToolTip="Rechercher les offres par date supérieure à celle sélectionnée" ></DatePicker>
 
         <!--Panel D'affichage des détails -->
         <Grid Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="3" Grid.Column="1">
@@ -126,28 +134,26 @@
             <Label Content="Date du contrat :" Grid.Column="0" Grid.Row="3"></Label>
             <Label Content="Description du poste : " Grid.Column="0" Grid.Row="4"></Label>
             
-            <Label Content="Référence :" Grid.Column="2" Grid.Row="1"></Label>
             <Label Content="Domaine : " Grid.Column="2" Grid.Row="2"></Label>
             <Label Content="Type de contrat : " Grid.Column="2" Grid.Row="3"></Label>
             
             <Label Content="Date de publication : " Grid.Column="4" Grid.Row="1"></Label>
             <Label Content="Metier " Grid.Column="4" Grid.Row="2"></Label>
-            <Label Content="nombre de poste : " Grid.Column="4" Grid.Row="3"></Label>
 
 
+    <!--Détail des informations, bindé sur le selected item de la listbox-->
+            <TextBox Name="TextBoxOffresIntituleModifier" Text="{Binding Path=SelectedItem.Intitule, ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}" Margin="2" Grid.Column="1" Grid.Row="1"></TextBox>
+            <ComboBox Name="ComboBoxOffresAnnonceurAjouter" Text="Annonceur" ItemsSource="{Binding annonceurs}" SelectedItem="{Binding Path=SelectedItem.Utilisateur, ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Nom" Margin="2" Grid.Column="1" Grid.Row="2"></ComboBox>
+            <DatePicker Name="DatePickerOffresDateDebutAjouter" SelectedDate="{Binding Path=SelectedItem.DateDebut, ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}" Margin="2" Grid.Column="1" Grid.Row="3"></DatePicker>
+            <TextBox TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Name="TextBlockOffresDescriptionAjouter"  Margin="10,20,10,5" Grid.Column="0" Grid.Row="5" Text="{Binding Path=SelectedItem.Description, ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="6" Grid.RowSpan="2">
+            </TextBox>
 
-            <TextBox Name="TextBoxOffresNomAjouter" Margin="2" Grid.Column="1" Grid.Row="1"></TextBox>
-            <ComboBox Name="ComboBoxOffresAnnonceurAjouter" Margin="2" Grid.Column="1" Grid.Row="2"></ComboBox>
-            <DatePicker Name="DatePickerOffresDateDebutAjouter" Margin="2" Grid.Column="1" Grid.Row="3"></DatePicker>
-            <RichTextBox Name="RichTextBoxOffresDescriptionAjouter" Margin="10,20,10,5" Grid.Column="0" Grid.Row="5"   Grid.ColumnSpan="6" Grid.RowSpan="2" />
-
-            <TextBox Name="TextBoxOffresReferenceAjouter" Margin="2" Grid.Column="3" Grid.Row="1"></TextBox>
-            <ComboBox Name="ComboBoxOffresDomaineAjouter" Margin="2" Grid.Column="3" Grid.Row="2"></ComboBox>
-            <ComboBox Name="ComboboxOffresTypeContratAjouter" Margin="2" Grid.Column="3" Grid.Row="3"></ComboBox>
+            <Label Name="ComboBoxOffresDomaineAjouter"  Content="{Binding Path=SelectedItem.domaine.Libelle, ElementName=ComboboxOffresMetierAjouter, UpdateSourceTrigger=PropertyChanged}" Margin="2" Grid.Column="3" Grid.Row="2" ></Label>
+            <ComboBox Name="ComboboxOffresTypeContratAjouter" ItemsSource="{Binding TypeContrats}" SelectedItem="{Binding Path=SelectedItem.TypeContrat, ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Libelle" Margin="2" Grid.Column="3" Grid.Row="3"></ComboBox>
 
             <DatePicker Name="DatePickerOffresDatePublicationAjouter" Margin="2" Grid.Column="5" Grid.Row="1"></DatePicker>
-            <ComboBox Name="ComboboxOffresMetierAjouter" Margin="2" Grid.Column="5" Grid.Row="2"></ComboBox>
-            <TextBox Name="TextBoxOffresNombrePosteAjouter" Margin="2" Grid.Column="5" Grid.Row="3"></TextBox>
+            <ComboBox Name="ComboboxOffresMetierAjouter" ItemsSource="{Binding metiers}" SelectedItem="{Binding Path=SelectedItem.Metier, ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Libelle" Margin="2" Grid.Column="5" Grid.Row="2"></ComboBox>
+
         </Grid>
  
 
