@@ -77,20 +77,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Offres">
-      <EntityTypeMapping TypeName="megacastingModel.Offre">
-        <MappingFragment StoreEntitySet="offre">
-          <ScalarProperty Name="IsActive" ColumnName="isActive" />
-          <ScalarProperty Name="Identifiant" ColumnName="id" />
-          <ScalarProperty Name="IdentifiantMetier" ColumnName="metier_id" />
-          <ScalarProperty Name="Description" ColumnName="description" />
-          <ScalarProperty Name="DateDebut" ColumnName="dateDebut" />
-          <ScalarProperty Name="Datefin" ColumnName="datefin" />
-          <ScalarProperty Name="Duree" ColumnName="duree" />
-          <ScalarProperty Name="IdentifiantTypeContrat" ColumnName="typeContrat_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TypeAbonnements">
       <EntityTypeMapping TypeName="megacastingModel.TypeAbonnement">
         <MappingFragment StoreEntitySet="typeabonnement">
