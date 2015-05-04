@@ -20,8 +20,11 @@ namespace MegaCasting.WPF.GestionWindows
     /// </summary>
     public partial class AjoutDomaine : Window
     {
+        #region Attributs
         protected ViewModelDomaine_Metier _ViewModelDomaine;
+        #endregion
 
+        #region Constructeur
         public AjoutDomaine(ViewModelDomaine_Metier _ViewModel)
         {
             InitializeComponent();
@@ -31,7 +34,9 @@ namespace MegaCasting.WPF.GestionWindows
             // intégrer la View au dataContext
             this.DataContext = _ViewModelDomaine;
         }
+        #endregion
 
+        #region Evénements
         private void ButtonAjoutDomaine_Click(object sender, RoutedEventArgs e)
         {
             // récupère le text de la textbox dans une string 
@@ -65,7 +70,7 @@ namespace MegaCasting.WPF.GestionWindows
 
 
         }
+        #endregion
 
-        
     }
 }

@@ -21,8 +21,13 @@ namespace MegaCasting.WPF.GestionWindows
     /// </summary>
     public partial class AjoutMetier : Window
     {
+        #region Attributs
+
         protected ViewModelDomaine_Metier _ViewModelMetier;
 
+        #endregion
+
+        #region Constructeur
         public AjoutMetier(ViewModelDomaine_Metier _ViewModel)
         {
             InitializeComponent();
@@ -34,7 +39,9 @@ namespace MegaCasting.WPF.GestionWindows
 
             this.comboBoxMetier.ItemsSource = _ViewModel.domaines;
         }
+        #endregion
 
+        #region Evènements
         private void ButtonAjoutMetier_Click(object sender, RoutedEventArgs e)
         {
 
@@ -69,5 +76,7 @@ namespace MegaCasting.WPF.GestionWindows
             }
 
         }
+        #endregion
     }
+
 }

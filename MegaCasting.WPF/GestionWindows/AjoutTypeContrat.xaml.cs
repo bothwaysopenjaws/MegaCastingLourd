@@ -21,8 +21,11 @@ namespace MegaCasting.WPF.GestionWindows
     /// </summary>
     public partial class AjoutTypeContrat : Window
     {
+        #region Attributs
         protected ViewModelOffre _ViewModelOffre;
+        #endregion
 
+        #region Constructeur
         public AjoutTypeContrat(ViewModelOffre _ViewModel)
         {
             InitializeComponent();
@@ -34,7 +37,9 @@ namespace MegaCasting.WPF.GestionWindows
 
       
         }
+        #endregion
 
+        #region Evènements
         private void ButtonAjoutContrat_Click(object sender, RoutedEventArgs e)
         {
             string saisieNomContrat = this.TextBoxNomTypeContrat.Text;
@@ -58,5 +63,6 @@ namespace MegaCasting.WPF.GestionWindows
                 this.TextBoxNomTypeContrat.Clear();
             }
         }
+        #endregion
     }
 }

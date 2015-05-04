@@ -29,7 +29,7 @@ namespace MegaCasting.WPF
 
         #region Attributs
         protected ViewModelOffre _ViewModelOffre;
-      
+
         #endregion
 
         #region Constructeurs
@@ -38,7 +38,7 @@ namespace MegaCasting.WPF
             InitializeComponent();
             this._ViewModelOffre = new ViewModelOffre();
             this.DataContext = _ViewModelOffre;
-        }       
+        }
         #endregion
 
         #region Évènements
@@ -54,7 +54,7 @@ namespace MegaCasting.WPF
         private void ButtonOffreReset_Click(object sender, RoutedEventArgs e)
         {
             this.ListBoxOffres.ItemsSource = _ViewModelOffre.offres;
-           
+
         }
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace MegaCasting.WPF
 
         }
 
- 
+
         #endregion
 
         private void ButtonOffresAjouter_Click(object sender, RoutedEventArgs e)
@@ -161,7 +161,7 @@ namespace MegaCasting.WPF
 
 
         #endregion
- 
+
 
     }
 }

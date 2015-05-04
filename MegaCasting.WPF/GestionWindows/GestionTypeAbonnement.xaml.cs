@@ -118,7 +118,7 @@ namespace MegaCasting.WPF
             // On récupère l'abonnement sélectionner dans la liste et on l'intègre au temporaire
             type = (TypeAbonnement)(this.ListBoxAbonnements.SelectedItem);
 
-            // Vérifie que la saisie n'est pas null que l'offre est bien en chiffre et que un Abonnment à été sélectionner dans la liste
+            // Vérifie que la saisie n'est pas null que l'offre est bien en chiffre et que un Abonement à été sélectionner dans la liste
             if (this.TextBoxNombreOffreTypeAbonnement.Text != null && IsInteger(saisieOffre) == true && type != null)
             {
                 // Modifier le type d'abonnement

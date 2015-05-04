@@ -1,7 +1,7 @@
 ﻿<Window x:Class="MegaCasting.WPF.AjoutTypeAbonnement"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="AjoutTypeAbonnement" Height="200" Width= "300 ">
+        Title="AjoutTypeAbonnement" Height="200" Width= "300 " Background="Honeydew">
     <Grid>
 
         <Grid.ColumnDefinitions>

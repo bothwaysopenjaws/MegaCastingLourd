@@ -27,7 +27,8 @@ namespace MegaCasting.WPF
 
         #region Attributs
             ViewModelUtilisateur _ViewModelUtilisateur;
-
+            
+        
 
         #endregion
 
@@ -69,6 +70,33 @@ namespace MegaCasting.WPF
                 {
                     case MessageBoxResult.Yes:
 
+                        // On créer un Partenaire temporaire
+                        Utilisateur partenaire = new Utilisateur();
+
+                        // On récupère le partenaire sélectionner dans la liste
+                        partenaire = (Utilisateur)(this.ListBoxPartenaires.SelectedItem);
+
+                        // Vérifie qu'un type a été séléctionné dans la listeBox
+                        if (partenaire != null)
+                        {
+                           
+                         // reste a gérer la suppression des offres lié au partenaire
+
+                            // Suppression 
+                            _ViewModelUtilisateur.diffuseurs.Remove(partenaire);
+                            _ViewModelUtilisateur.Entities.Utilisateurs.Remove(partenaire);
+                            
+
+                            // Sauvegarder la suppression
+                            this._ViewModelUtilisateur.Save();
+
+                            MessageBox.Show("Suppression réussite !!!");
+                        }
+                        else
+                        {
+                            MessageBox.Show(" Saisie invalide !\r Veuillez sélectionner un partenaire à supprimer.");
+                        }
+
                         break;
                     case MessageBoxResult.No:
 
@@ -87,7 +115,35 @@ namespace MegaCasting.WPF
             /// <param name="e"></param>
             private void ButtonPartenaireModifier_Click(object sender, RoutedEventArgs e)
             {
-                _ViewModelUtilisateur.Save();
+                
+                // Vérifie que la saisie n'est pas null que le pa est bien en chiffre et que un Abonnment à été sélectionner dans la liste
+                if (this.TextBoxPartenaireNom.Text != null && this.TextBoxPartenairePrenom != null )
+                {
+                     //Modifier le partenaire
+                    ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).Nom = this.TextBoxPartenaireNom.Text;
+                    ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).Prenom = this.TextBoxPartenairePrenom.Text;
+                    ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).Telephone = this.TextBoxPartenaireNumTel.Text;
+                    ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).Email = this.TextBoxPartenaireEmail.Text;
+                    ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).adresse.Rue = this.TextBoxPartenaireRue.Text;
+                    ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).adresse.CodePostal = this.TextBoxPartenaireCodePostal.Text;
+                    ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).adresse.Ville = this.TextBoxPartenaireCity.Text;
+                    ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).adresse.Pays = this.TextBoxPartenairePays.Text;
+
+                    // Une fois que la viewModel est mise à jour on sauvegarde les modifications 
+                    this._ViewModelUtilisateur.Save();
+                    MessageBox.Show("Modification réussite !!!");
+
+                }
+
+                // si la saisie n'est pas valide apparition d'un message d'erreur
+                else
+                {
+                    MessageBox.Show("Saisie invalide !\r Modification impossible.");
+
+                }
+                
+
+                
             }
 
             #endregion

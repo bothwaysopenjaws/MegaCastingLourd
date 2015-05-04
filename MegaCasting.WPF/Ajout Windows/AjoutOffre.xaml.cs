@@ -81,16 +81,19 @@ namespace MegaCasting.WPF.Ajout_Windows
                         // fermeture de la fenêtre
                         this.Close();
                     }
-                    else { MessageBox.Show("La date de publication ne peut pas être plus récente que la date du contrat !");}
+
+                    else
+                    {
+                        MessageBox.Show("La date de publication ne peut pas être plus récente que la date du contrat !");
+                    }
                 }
+
                 else
                 {
                     MessageBox.Show("Veuillez saisir des dates valides !");
                 }
-
-
-
             }
+
             else
             {
 

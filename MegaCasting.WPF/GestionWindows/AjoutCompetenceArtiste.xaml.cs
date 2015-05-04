@@ -22,9 +22,17 @@ namespace MegaCasting.WPF.GestionWindows
     /// </summary>
     public partial class AjoutCompetenceArtiste : Window
     {
+        #region Attributs
+        #endregion
+
+        #region Constructeurs
         public AjoutCompetenceArtiste()
         {
             InitializeComponent();
         }
+        #endregion
+
+        #region Evènements
+        #endregion
     }
 }
