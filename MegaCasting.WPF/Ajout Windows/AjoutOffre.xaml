@@ -1,8 +1,72 @@
-﻿<Window x:Class="MegaCasting.WPF.AjoutOffre"
+﻿<Window x:Class="MegaCasting.WPF.Ajout_Windows.AjouteOffre"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="AjoutOffre" Height="300" Width="300">
+        Title="AjoutOffre" Height="700" Width="310">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"></RowDefinition>
+            <RowDefinition Height="0.15*"></RowDefinition>
+            <RowDefinition Height="0.1*"></RowDefinition>
+            <RowDefinition Height="0.15*"></RowDefinition>
+            <RowDefinition Height="0.15*"></RowDefinition>
+            <RowDefinition Height="0.15*"></RowDefinition>
+            <RowDefinition Height="0.1*"></RowDefinition>
+            <RowDefinition Height="0.20*"></RowDefinition>
+            <RowDefinition Height="0.20*"></RowDefinition>
+            <RowDefinition Height="0.20*"></RowDefinition>
+            <RowDefinition Height="0.1*"></RowDefinition>
+            <RowDefinition Height="0.8*"></RowDefinition>
+            <RowDefinition Height="0.25*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Content="Intitulé :" Grid.Column="0" Grid.Row="1" ></Label>
+        <TextBox Name="TextBoxIntituleAjoutOffre" Grid.Column="1" Grid.Row="1" Margin="3" ></TextBox>
+        <GroupBox Header="date" Foreground="Black"  Grid.Column="0" Grid.ColumnSpan="3"  Grid.RowSpan="4" Grid.Row="2" Width="auto"/>
+        <GroupBox Header="Information" Foreground="Black"  Grid.Column="0" Grid.ColumnSpan="3"  Grid.RowSpan="4" Grid.Row="6" Width="auto"/>
+        <GroupBox Header="Description" Foreground="Black"  Grid.Column="0" Grid.ColumnSpan="3"  Grid.RowSpan="2" Grid.Row="10" Width="auto"/>
+
+        <Label Content="Date de début :" Grid.Column="0" Grid.Row="3"></Label>
+        <Label Content="Date de fin :" Grid.Column="0" Grid.Row="4"></Label>
+        <Label Content="Durée : " Grid.Column="0" Grid.Row="5"></Label>
+        <Label Content="Type de contrat :" Grid.Column="0" Grid.Row="7"></Label>
+        <Label Content="utilisateur :" Grid.Column="0" Grid.Row="8"></Label>
+        <Label Content="Métier :" Grid.Column="0" Grid.Row="9"></Label>
+
+        <DatePicker Name="DatePickerOffresDateDebutAjouter" Margin="2" Grid.Column="5" Grid.Row="3"></DatePicker>
+        <DatePicker Name="DatePickerOffresDateFinAjouter" Margin="2" Grid.Column="5" Grid.Row="4" ></DatePicker>
+        <TextBox Name="textBoxDureeAjoutOffre" Grid.Column="1" Grid.Row="5" Margin="3"  ></TextBox>
+
+        <TextBox Name="TextBoxDescription" AcceptsReturn="True" TextWrapping="Wrap"  Grid.Row="11" Grid.ColumnSpan="2" Margin="5" />
+
+
+        <ComboBox Name="ComboboxContrat" Grid.Column="1" ItemsSource="{Binding TypeContrats}" Grid.Row="7" Margin="5">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding Libelle}"></Label>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox Name="ComboboxUtilisateur" Grid.Column="1" ItemsSource="{Binding annonceurs}" Grid.Row="8" Margin="5">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding Nom}"></Label>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <ComboBox Name="ComboboxMetier" Grid.Column="1" ItemsSource="{Binding metiers}" Grid.Row="9" Margin="5">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding Libelle}"></Label>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <Button Name="ButtonAjouterOffre" Content="Ajouter"  Grid.Row="12" Background="Green" Grid.ColumnSpan="2" Margin="2" Click="ButtonAjouterOffre_Click"></Button>
     </Grid>
 </Window>

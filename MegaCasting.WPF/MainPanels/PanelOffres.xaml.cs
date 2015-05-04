@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using MegaCasting.WPF.ViewModel;
 using MegaCasting.DBLib;
 using System.Collections.ObjectModel;
+using MegaCasting.WPF.Ajout_Windows;
 
 namespace MegaCasting.WPF
 {
@@ -151,6 +152,12 @@ namespace MegaCasting.WPF
 
  
         #endregion
+
+        private void ButtonOffresAjouter_Click(object sender, RoutedEventArgs e)
+        {
+            AjouteOffre ajoutoffre = new AjouteOffre(_ViewModelOffre);
+            ajoutoffre.ShowDialog();
+        }
 
 
         #endregion

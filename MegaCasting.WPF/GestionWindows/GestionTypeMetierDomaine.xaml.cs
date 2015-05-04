@@ -41,7 +41,7 @@ namespace MegaCasting.WPF
             this.DataContext = _ViewModel;
 
 
-            this.comboBoxDomaine.ItemsSource = _ViewModel.domaines;
+            
 
 
         }

@@ -59,7 +59,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Background="Green" Name="ButtonOffresAjouter" Content="Ajouter"  Grid.Column="0" Grid.Row="5" ></Button>
+        <Button Background="Green" Name="ButtonOffresAjouter" Content="Ajouter"  Grid.Column="0" Grid.Row="5" Click="ButtonOffresAjouter_Click" Height="30" VerticalAlignment="Top" ></Button>
 
         
         <!--GroupeBox-->
@@ -67,7 +67,7 @@
         <GroupBox Header="Informations" Foreground="Black"  Grid.Column="1" Grid.ColumnSpan="3"  Grid.RowSpan="4" Grid.Row="3" Width="auto"/>
         
         <!-- Zone de recherche-->
-        <ComboBox Name="ComboBoxOffresAnnonceur" ItemsSource="{ Binding annonceurs}" ToolTip=" Rechercher une offre proposer par un professionnel partenaire" Grid.Row="1" Grid.Column="1" Margin="10" SelectedValue="Annonceur" SelectionChanged="ComboBoxOffresAnnonceur_SelectionChanged">
+        <ComboBox  Name="ComboBoxOffresAnnonceur"  ItemsSource="{ Binding annonceurs}" ToolTip=" Rechercher une offre proposer par un professionnel partenaire" Grid.Row="1" Grid.Column="1" Margin="10" SelectedValue="Annonceur" SelectionChanged="ComboBoxOffresAnnonceur_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">

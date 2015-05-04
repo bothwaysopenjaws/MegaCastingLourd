@@ -62,38 +62,6 @@ C:\Users\Emmanuel\Documents\Visual Studio 2013\Projects\MegaCasting\MegaCasting.
 C:\Users\Emmanuel\Documents\Visual Studio 2013\Projects\MegaCasting\MegaCasting.WPF\obj\Debug\Gestion_Experiences.g.cs
 C:\Users\Emmanuel\Documents\Visual Studio 2013\Projects\MegaCasting\MegaCasting.WPF\obj\Debug\TabCandidatures.baml
 C:\Users\Emmanuel\Documents\Visual Studio 2013\Projects\MegaCasting\MegaCasting.WPF\obj\Debug\TabCandidatures.g.cs
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.csprojResolveAssemblyReference.cache
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainWindow.g.cs
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\App.g.cs
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF_MarkupCompile.cache
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF_MarkupCompile.lref
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.WPF.exe.config
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.WPF.exe
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.WPF.pdb
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\bin\Debug\EntityFramework.dll
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.DBLib.dll
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MySql.Data.dll
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\bin\Debug\mysql.data.entity.EF6.dll
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.DBLib.pdb
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\bin\Debug\EntityFramework.xml
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\bin\Debug\fr\EntityFramework.resources.dll
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainWindow.baml
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.g.resources
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.Properties.Resources.resources
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.csproj.GenerateResource.Cache
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.exe
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.pdb
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutDomaine.baml
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutDomaine.g.cs
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutMetier.baml
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutMetier.g.cs
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutTypeContrat.baml
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutTypeContrat.g.cs
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutCompetenceArtiste.baml
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutCompetenceArtiste.g.cs
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutPartenaire.baml
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutPartenaire.g.cs
 C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutCompetenceArtiste.baml
 C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutDomaine.baml
 C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutMetier.baml
@@ -164,6 +132,17 @@ C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ma
 C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelOffres.g.cs
 C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelParametres.g.cs
 C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelPartenaires.g.cs
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.WPF.exe.config
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.WPF.exe
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.WPF.pdb
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\bin\Debug\EntityFramework.dll
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.DBLib.dll
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MySql.Data.dll
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\bin\Debug\mysql.data.entity.EF6.dll
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.DBLib.pdb
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\bin\Debug\EntityFramework.xml
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.csprojResolveAssemblyReference.cache
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutCredit.baml
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutOffre.baml
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutTypeAbonnement.baml
@@ -172,6 +151,11 @@ C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ge
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionTypeCompetence.baml
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionTypeContrat.baml
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionTypeMetierDomaine.baml
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutCompetenceArtiste.baml
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutDomaine.baml
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutMetier.baml
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutPartenaire.baml
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutTypeContrat.baml
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionCompetences.baml
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\Gestion_Experiences.baml
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\Gestion_Mediatheque.baml
@@ -191,9 +175,15 @@ C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ge
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionTypeCompetence.g.cs
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionTypeContrat.g.cs
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionTypeMetierDomaine.g.cs
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutCompetenceArtiste.g.cs
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutDomaine.g.cs
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutMetier.g.cs
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutPartenaire.g.cs
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutTypeContrat.g.cs
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionCompetences.g.cs
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\Gestion_Experiences.g.cs
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\Gestion_Mediatheque.g.cs
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainWindow.g.cs
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelAbonnements.g.cs
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelAnnonceurs.g.cs
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelArtistes.g.cs
@@ -202,3 +192,13 @@ C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ma
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelOffres.g.cs
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelParametres.g.cs
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelPartenaires.g.cs
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\App.g.cs
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF_MarkupCompile.cache
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF_MarkupCompile.lref
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainWindow.baml
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.g.resources
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.Properties.Resources.resources
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.csproj.GenerateResource.Cache
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.exe
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.pdb
