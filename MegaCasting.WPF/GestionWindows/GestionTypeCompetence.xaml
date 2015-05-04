@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <Button Background="Green" HorizontalAlignment="Center" Height="25" Width="100" Grid.Column="0" Grid.Row="2" Margin="29,14,35,14" Name="ButtontypeCompetenceAjouter" Content="Ajouter" Click="ButtontypeCompetenceAjouter_Click"/>
         <Button Background="Red" VerticalAlignment="Center" HorizontalAlignment="Right" Height="25" Width="100" Grid.Column="1" Grid.Row="2"  Name="ButtontypeCompetenceSupprimer" Content="Supprimer" Margin="0,11,28,11" Click="ButtontypeCompetenceSupprimer_Click"/>
-        <Button Background="SteelBlue" VerticalAlignment="Center" HorizontalAlignment="Left" Height="25" Width="100" Grid.Column="1" Grid.Row="2"  Name="ButtontypeCompetenceModifier" Content="Modifier" Margin="23,11,0,11" Click="ButtontypeCompetenceModifier_Click"/>
+        <Button Background="SteelBlue" VerticalAlignment="Center" HorizontalAlignment="Left" Height="25" Width="100" Grid.Column="1" Grid.Row="2"  Name="ButtontypeCompetenceModifier" Content="Sauvegarder" Margin="23,11,0,11" Click="ButtontypeCompetenceModifier_Click"/>
 
         <Label  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.ColumnSpan="2">Gestion des types de Compétences</Label>
         <ListBox x:Name="ListBoxTypeCompetences" Grid.Column="0" Grid.Row="1" Margin="5" ItemsSource="{Binding typeCompetences}">

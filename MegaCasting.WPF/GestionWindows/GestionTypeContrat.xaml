@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <Button Background="Green" HorizontalAlignment="Center" Height="25" Width="100" Grid.Column="1" Grid.Row="2" Margin="5" Name="ButtonContratAjouter" Content="Ajouter" Grid.RowSpan="2" Click="ButtonContratAjouter_Click"></Button>
         <Button Background="Red" VerticalAlignment="Bottom" Height="25" Width="100" Grid.Column="0" Grid.Row="2"  Name="ButtonContratSupprimer" Content="Supprimer" Margin="32,0,32,29" Click="ButtonContratSupprimer_Click"/>
-        <Button Background="SteelBlue" VerticalAlignment="Bottom" Height="25" Width="100" Grid.Column="0" Grid.Row="2"  Name="ButtonContratModifier" Content="Modifier" Click="ButtonContratModifier_Click"/>
+        <Button Background="SteelBlue" VerticalAlignment="Bottom" Height="25" Width="100" Grid.Column="0" Grid.Row="2"  Name="ButtonContratModifier" Content="Sauvegarder" Click="ButtonContratModifier_Click"/>
 
         <Label  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.ColumnSpan="2">Gestion des Contrats</Label>
         <ListBox x:Name="ListBoxTypeContrats" Grid.Column="0" Grid.Row="1" Margin="5" ItemsSource="{Binding TypeContrats}">

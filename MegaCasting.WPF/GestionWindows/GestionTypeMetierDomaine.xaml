@@ -35,7 +35,7 @@
             </Grid.RowDefinitions>
 
             <Button Background="Green" HorizontalAlignment="Center" Height="25" Width="100" Grid.Column="0" Grid.Row="1" Margin="5" Name="ButtonMetierAjouter" Content="Ajouter" Click="ButtonMetierAjouter_Click"></Button>
-            <Button Background="SteelBlue" HorizontalAlignment="Right" Height="25" Width="100" Grid.Column="0" Grid.Row="0" Margin="5" Name="ButtonMetierModifier" Content="Modifier" Click="ButtonMetierModifier_Click"/>
+            <Button Background="SteelBlue" HorizontalAlignment="Right" Height="25" Width="100" Grid.Column="0" Grid.Row="0" Margin="5" Name="ButtonMetierModifier" Content="Sauvegarder" Click="ButtonMetierModifier_Click"/>
             <Button Background="Red" HorizontalAlignment="Left" Height="25" Width="100" Grid.Column="0" Grid.Row="0" Margin="5" Name="ButtonMetierSupprimer" Content="Supprimer" Click="ButtonMetierSupprimer_Click"/>
 
 
@@ -97,7 +97,7 @@
 
             <Button Background="Green" HorizontalAlignment="Center" Height="25" Width="100" Grid.Column="0" Grid.Row="1" Margin="5" Name="ButtonDomaineAjouter" Content="Ajouter" Click="ButtonDomaineAjouter_Click"></Button>
             <Button Background="Red" HorizontalAlignment="Left" Height="25" Width="100" Grid.Column="1" Grid.Row="0" Margin="5" Name="ButtonDomaineSupprimer" Content="Supprimer" Click="ButtonDomaineSupprimer_Click"/>
-            <Button Background="SteelBlue" HorizontalAlignment="Right" Height="25" Width="100" Grid.Column="1" Grid.Row="0" Margin="5" Name="ButtonDomaineModifier" Content="Modifier" Click="ButtonDomaineModifier_Click"/>
+            <Button Background="SteelBlue" HorizontalAlignment="Right" Height="25" Width="100" Grid.Column="1" Grid.Row="0" Margin="5" Name="ButtonDomaineModifier" Content="Sauvegarder" Click="ButtonDomaineModifier_Click"/>
 
 
         </Grid>

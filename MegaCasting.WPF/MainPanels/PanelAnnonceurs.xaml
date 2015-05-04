@@ -70,7 +70,7 @@
             <Label Grid.Column="1" Grid.Row="3" Margin="10" Name="LabelAnnonceurNumTel" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
             <Label Grid.Column="1" Grid.Row="4" Margin="10" Name="LabelAnnonceurEmail" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
 
-            <Button Background="SteelBlue" Grid.Column="0" Grid.Row="12" Margin="1" Name="ButtonAnnoceurModifier" Content="Modifier" ></Button>
+            <Button Background="SteelBlue" Grid.Column="0" Grid.Row="12" Margin="1" Name="ButtonAnnoceurModifier" Content="Sauvegarder" ></Button>
             <Button Background="Red" Grid.Column="1" Grid.Row="12" Margin="1" Name="ButtonAnnonceurSupprimer" Content="Supprimer" Click="ButtonAnnonceurSupprimer_Click"></Button>
             
 
