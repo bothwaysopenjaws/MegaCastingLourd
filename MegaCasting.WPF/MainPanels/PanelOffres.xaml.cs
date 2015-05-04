@@ -54,7 +54,7 @@ namespace MegaCasting.WPF
         private void ButtonOffreReset_Click(object sender, RoutedEventArgs e)
         {
             this.ListBoxOffres.ItemsSource = _ViewModelOffre.offres;
-
+           
         }
 
         /// <summary>

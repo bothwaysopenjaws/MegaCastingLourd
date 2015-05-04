@@ -14,16 +14,16 @@ namespace MegaCasting.DBLib
     
     public partial class Offre
     {
-        public int Id { get; set; }
-        public Nullable<int> Metier_id { get; set; }
+        public int Identifiant { get; set; }
+        public Nullable<int> IdentifiantMetier { get; set; }
         public string Description { get; set; }
         public System.DateTime DateDebut { get; set; }
-        public System.DateTime Datefin { get; set; }
+        public System.DateTime DatePublication { get; set; }
         public string Duree { get; set; }
-        public Nullable<int> TypeContrat_id { get; set; }
+        public Nullable<int> IdentifiantContrat { get; set; }
+        public Nullable<int> IdentifiantUtilisateur { get; set; }
         public string Intitule { get; set; }
         public bool IsActive { get; set; }
-        public int Utilisateur_id { get; set; }
     
         public virtual Metier Metier { get; set; }
         public virtual TypeContrat TypeContrat { get; set; }

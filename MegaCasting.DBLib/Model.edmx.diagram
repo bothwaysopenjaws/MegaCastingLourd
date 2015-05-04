@@ -32,7 +32,7 @@
         <AssociationConnector Association="megacastingModel.metier_utilisateur" />
         <EntityTypeShape EntityType="megacastingModel.Domaine" Width="1.5" PointX="0.75" PointY="10.875" />
         <AssociationConnector Association="megacastingModel.FK_51A00D8C4272FC9F" />
-        <EntityTypeShape EntityType="megacastingModel.Offre" Width="1.5" PointX="10.625" PointY="7.375" />
+        <EntityTypeShape EntityType="megacastingModel.Offre" Width="1.5" PointX="5.25" PointY="8.625" />
         <AssociationConnector Association="megacastingModel.FK_AF86866FED16FA20" />
         <AssociationConnector Association="megacastingModel.FK_AF86866FAE24E5C2" />
         <AssociationConnector Association="megacastingModel.FK_AF86866FFB88E14F" />

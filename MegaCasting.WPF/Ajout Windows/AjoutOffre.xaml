@@ -4,7 +4,7 @@
         Title="AjoutOffre" Height="700" Width="310">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            <ColumnDefinition Width="0.68*"></ColumnDefinition>
             <ColumnDefinition ></ColumnDefinition>
 
         </Grid.ColumnDefinitions>
@@ -30,8 +30,8 @@
         <GroupBox Header="Information" Foreground="Black"  Grid.Column="0" Grid.ColumnSpan="3"  Grid.RowSpan="4" Grid.Row="6" Width="auto"/>
         <GroupBox Header="Description" Foreground="Black"  Grid.Column="0" Grid.ColumnSpan="3"  Grid.RowSpan="2" Grid.Row="10" Width="auto"/>
 
-        <Label Content="Date de début :" Grid.Column="0" Grid.Row="3"></Label>
-        <Label Content="Date de fin :" Grid.Column="0" Grid.Row="4"></Label>
+        <Label Content="Date du contrat :" Grid.Column="0" Grid.Row="3"></Label>
+        <Label Content="Date de publication :" Grid.Column="0" Grid.Row="4"></Label>
         <Label Content="Durée : " Grid.Column="0" Grid.Row="5"></Label>
         <Label Content="Type de contrat :" Grid.Column="0" Grid.Row="7"></Label>
         <Label Content="utilisateur :" Grid.Column="0" Grid.Row="8"></Label>

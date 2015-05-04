@@ -164,16 +164,16 @@
     <EntitySetMapping Name="Offres">
       <EntityTypeMapping TypeName="megacastingModel.Offre">
         <MappingFragment StoreEntitySet="offre">
-          <ScalarProperty Name="Utilisateur_id" ColumnName="utilisateur_id" />
           <ScalarProperty Name="IsActive" ColumnName="isActive" />
           <ScalarProperty Name="Intitule" ColumnName="intitule" />
-          <ScalarProperty Name="TypeContrat_id" ColumnName="typeContrat_id" />
+          <ScalarProperty Name="IdentifiantUtilisateur" ColumnName="utilisateur_id" />
+          <ScalarProperty Name="IdentifiantContrat" ColumnName="typeContrat_id" />
           <ScalarProperty Name="Duree" ColumnName="duree" />
-          <ScalarProperty Name="Datefin" ColumnName="datefin" />
+          <ScalarProperty Name="DatePublication" ColumnName="datePublication" />
           <ScalarProperty Name="DateDebut" ColumnName="dateDebut" />
           <ScalarProperty Name="Description" ColumnName="description" />
-          <ScalarProperty Name="Metier_id" ColumnName="metier_id" />
-          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="IdentifiantMetier" ColumnName="metier_id" />
+          <ScalarProperty Name="Identifiant" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

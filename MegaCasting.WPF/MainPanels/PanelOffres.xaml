@@ -134,6 +134,9 @@
             <Label Content="Annonceur : " Grid.Column="0" Grid.Row="2"></Label>
             <Label Content="Date du contrat :" Grid.Column="0" Grid.Row="3"></Label>
             <Label Content="Description du poste : " Grid.Column="0" Grid.Row="4"></Label>
+
+            <Label Content="Durée : " Grid.Column="2" Grid.Row="1"></Label>
+            <Label Content ="{Binding Path=SelectedItem.Duree, ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}"  Grid.Column="3" Grid.Row="1"></Label>
             
             <Label Content="Domaine : " Grid.Column="2" Grid.Row="2"></Label>
             <Label Content="Type de contrat : " Grid.Column="2" Grid.Row="3"></Label>
@@ -152,7 +155,7 @@
             <Label Name="ComboBoxOffresDomaineAjouter"  Content="{Binding Path=SelectedItem.domaine.Libelle, ElementName=ComboboxOffresMetierAjouter, UpdateSourceTrigger=PropertyChanged}" Margin="2" Grid.Column="3" Grid.Row="2" ></Label>
             <ComboBox Name="ComboboxOffresTypeContratAjouter" ItemsSource="{Binding TypeContrats}" SelectedItem="{Binding Path=SelectedItem.TypeContrat, ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Libelle" Margin="2" Grid.Column="3" Grid.Row="3"></ComboBox>
 
-            <DatePicker Name="DatePickerOffresDatePublicationAjouter" Margin="2" Grid.Column="5" Grid.Row="1"></DatePicker>
+            <DatePicker Name="DatePickerOffresDatePublicationAjouter" Margin="2" Grid.Column="5" Grid.Row="1" SelectedDate="{Binding Path=SelectedItem.DatePublication, ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
             <ComboBox Name="ComboboxOffresMetierAjouter" ItemsSource="{Binding metiers}" SelectedItem="{Binding Path=SelectedItem.Metier, ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Libelle" Margin="2" Grid.Column="5" Grid.Row="2"></ComboBox>
 
         </Grid>
