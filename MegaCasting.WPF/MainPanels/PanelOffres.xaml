@@ -59,7 +59,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Name="ButtonOffresAjouter" Content="Ajouter"  Grid.Column="0" Grid.Row="5" ></Button>
+        <Button Background="Green" Name="ButtonOffresAjouter" Content="Ajouter"  Grid.Column="0" Grid.Row="5" ></Button>
 
         
         <!--GroupeBox-->

@@ -70,8 +70,8 @@
             <TextBox Grid.Column="1" Grid.Row="8" Margin="10,10,10,10" Name="TextBoxPartenaireCity" Text="{Binding Path=SelectedItem.adresse.Ville, ElementName=ListBoxPartenaires, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             <TextBox Grid.Column="1" Grid.Row="9" Margin="10,10,10,10" Name="TextBoxPartenairePays" Text="{Binding Path=SelectedItem.adresse.Pays, ElementName=ListBoxPartenaires, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             
-            <Button Grid.Column="0" Grid.Row="12" Margin="1" Name="ButtonPartenaireModifier" Content="Modifier" Click="ButtonPartenaireModifier_Click" ></Button>
-            <Button Grid.Column="1" Grid.Row="12" Margin="1" Name="ButtonPartenaireSupprimer" Content="Supprimer" Click="ButtonPartenaireSupprimer_Click"></Button>
+            <Button Background="SteelBlue" Grid.Column="0" Grid.Row="12" Margin="1" Name="ButtonPartenaireModifier" Content="Modifier" Click="ButtonPartenaireModifier_Click" ></Button>
+            <Button Background="Red" Grid.Column="1" Grid.Row="12" Margin="1" Name="ButtonPartenaireSupprimer" Content="Supprimer" Click="ButtonPartenaireSupprimer_Click"></Button>
 
 
         </Grid>

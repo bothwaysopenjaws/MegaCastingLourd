@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\
 MegaCasting.WPF
 none
 false
 DEBUG;TRACE
-C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\App.xaml
+C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\App.xaml
 25613867692
 
 37194382175
-23-2138061143
+23-287811854
 Ajout Windows\AjoutCredit.xaml;Ajout Windows\AjoutOffre.xaml;Ajout Windows\AjoutTypeAbonnement.xaml;Ajout Windows\AjoutTypeCompetence.xaml;GestionWindows\GestionTypeAbonnement.xaml;GestionWindows\GestionTypeCompetence.xaml;GestionWindows\GestionTypeContrat.xaml;GestionWindows\GestionTypeMetierDomaine.xaml;GestionWindows\AjoutCompetenceArtiste.xaml;GestionWindows\AjoutDomaine.xaml;GestionWindows\AjoutMetier.xaml;GestionWindows\AjoutPartenaire.xaml;GestionWindows\AjoutTypeContrat.xaml;GestionWindows\GestionCompetences.xaml;GestionWindows\Gestion_Experiences.xaml;GestionWindows\Gestion_Mediatheque.xaml;MainWindow.xaml;MainPanels\PanelAbonnements.xaml;MainPanels\PanelAnnonceurs.xaml;MainPanels\PanelArtistes.xaml;MainPanels\PanelCandidatures.xaml;MainPanels\PanelMain.xaml;MainPanels\PanelOffres.xaml;MainPanels\PanelParametres.xaml;MainPanels\PanelPartenaires.xaml;
 
 False

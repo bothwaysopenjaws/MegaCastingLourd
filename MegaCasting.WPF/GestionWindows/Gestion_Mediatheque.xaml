@@ -14,7 +14,7 @@
             <RowDefinition></RowDefinition>
             <RowDefinition Height="0.1*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Button HorizontalAlignment="Center" Height="25" Width="100" Grid.Column="0" Grid.Row="2" Margin="5" Name="ButtonMediaAjouter" Content="Ajouter" Grid.RowSpan="2"></Button>
+        <Button Background="Green"  HorizontalAlignment="Center" Height="25" Width="100" Grid.Column="0" Grid.Row="2" Margin="5" Name="ButtonMediaAjouter" Content="Ajouter" Grid.RowSpan="2"></Button>
 
         <Label  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.ColumnSpan="2">Gestion des médias</Label>
         <ListBox Name="ListBoxMedia" Grid.Column="0" Grid.Row="1" Margin="5"></ListBox>
@@ -48,8 +48,8 @@
             </ComboBox>
 
 
-            <Button Height="25" Width="65" Grid.Column="0" Grid.Row="3" Margin="1" Name="ButtonMediaModifier" Content="Modifier" Grid.RowSpan="2" Grid.ColumnSpan="2" ></Button>
-            <Button HorizontalAlignment="Right" Height="25" Width="65" Grid.Column="2" Grid.Row="3" Margin="9.5" Name="ButtonMediaSupprimer" Content="Supprimer" Grid.RowSpan="2"></Button>
+            <Button Background="SteelBlue" Height="25" Width="65" Grid.Column="0" Grid.Row="3" Margin="1" Name="ButtonMediaModifier" Content="Modifier" Grid.RowSpan="2" Grid.ColumnSpan="2" ></Button>
+            <Button Background="Red" HorizontalAlignment="Right" Height="25" Width="65" Grid.Column="2" Grid.Row="3" Margin="9.5" Name="ButtonMediaSupprimer" Content="Supprimer" Grid.RowSpan="2"></Button>
 
         </Grid>
     </Grid>
