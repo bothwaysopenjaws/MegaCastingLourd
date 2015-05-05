@@ -16,6 +16,7 @@ using MegaCasting.DBLib;
 using MegaCasting.WPF.ViewModel;
 using System.Collections.ObjectModel;
 using MegaCasting.WPF;
+using MegaCasting.WPF.GestionWindows;
 
 namespace MegaCasting.WPF
 
@@ -102,8 +103,19 @@ namespace MegaCasting.WPF
             
         }
 
+        private void ButtonMediaArtiste_Click(object sender, RoutedEventArgs e)
+        {
+            GestionMediaUtilisateur gestionMediaUtilisateur = new GestionMediaUtilisateur();
+            gestionMediaUtilisateur.ShowDialog();
+        }
 
         #endregion
+
+       
+
+       
+
+        
 
 
     }

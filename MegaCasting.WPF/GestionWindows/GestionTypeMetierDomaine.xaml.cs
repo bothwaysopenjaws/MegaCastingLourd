@@ -157,7 +157,7 @@ namespace MegaCasting.WPF
 
             string saisieDescription = this.TextboxDescriptionMetier.Text;
 
-            Domaine domaine = ((Domaine)(this.comboBoxDomaine.SelectedItem));
+            Domaine domaine = ((Domaine)(this.ComboBoxDomaine.SelectedItem));
 
 
 

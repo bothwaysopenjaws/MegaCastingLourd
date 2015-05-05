@@ -74,8 +74,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Ajout Windows\AjoutAnnonceur.xaml.cs">
+      <DependentUpon>AjoutAnnonceur.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ajout Windows\AjoutCompetenceArtiste.xaml.cs">
+      <DependentUpon>AjoutCompetenceArtiste.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ajout Windows\AjoutCredit.xaml.cs">
       <DependentUpon>AjoutCredit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ajout Windows\AjoutMediaArtiste.xaml.cs">
+      <DependentUpon>AjoutMediaArtiste.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ajout Windows\AjoutOffre.xaml.cs">
       <DependentUpon>AjoutOffre.xaml</DependentUpon>
@@ -85,6 +94,9 @@
     </Compile>
     <Compile Include="Ajout Windows\AjoutTypeCompetence.xaml.cs">
       <DependentUpon>AjoutTypeCompetence.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GestionWindows\GestionMediaUtilisateur.xaml.cs">
+      <DependentUpon>GestionMediaUtilisateur.xaml</DependentUpon>
     </Compile>
     <Compile Include="GestionWindows\GestionTypeAbonnement.xaml.cs">
       <DependentUpon>GestionTypeAbonnement.xaml</DependentUpon>
@@ -154,7 +166,19 @@
     <Compile Include="ViewModel\ViewModelMedia.cs" />
     <Compile Include="ViewModel\ViewModelOffre.cs" />
     <Compile Include="ViewModel\ViewModelUtilisateur.cs" />
+    <Page Include="Ajout Windows\AjoutAnnonceur.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ajout Windows\AjoutCompetenceArtiste.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ajout Windows\AjoutCredit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ajout Windows\AjoutMediaArtiste.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -167,6 +191,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Ajout Windows\AjoutTypeCompetence.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GestionWindows\GestionMediaUtilisateur.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

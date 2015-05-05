@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using MegaCasting.DBLib;
 using MegaCasting.WPF.ViewModel;
 using System.Collections.ObjectModel;
+using MegaCasting.WPF.Ajout_Windows;
 
 namespace MegaCasting.WPF
 {
@@ -54,6 +55,13 @@ namespace MegaCasting.WPF
 
         #endregion
 
-        
+        #region Evenement
+        private void ButtonCompetenceAjouter_Click(object sender, RoutedEventArgs e)
+        {
+            AjoutCompetenceArtiste competenceArtiste = new AjoutCompetenceArtiste();
+            competenceArtiste.ShowDialog();
+        }
+        #endregion
+
     }
 }

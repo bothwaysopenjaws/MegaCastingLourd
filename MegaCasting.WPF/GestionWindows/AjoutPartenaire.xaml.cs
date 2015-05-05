@@ -28,12 +28,14 @@ namespace MegaCasting.WPF.GestionWindows
         #endregion
 
         #region Constructeur
-        public AjoutPartenaire()
+        public AjoutPartenaire(ViewModelUtilisateur _ViewModel)
         {
             InitializeComponent();
 
             // Récupération du viewModel
             this._ViewModelUtilisateur = new ViewModelUtilisateur();
+
+            _ViewModelUtilisateur = _ViewModel;
             // intégration de la View au dataContext
             this.DataContext = _ViewModelUtilisateur;
         }
@@ -54,35 +56,39 @@ namespace MegaCasting.WPF.GestionWindows
             ObservableCollection<TypeUtilisateur> type = _ViewModelUtilisateur.typeUtilisateurs;
             TypeUtilisateur typeTemp = new TypeUtilisateur();
 
-
-            partenaire.Nom = this.TextBoxNomAjoutPartenaire.Text;
-            partenaire.Prenom = this.TextBoxPrenomAjoutPartenaire.Text;
-            partenaire.Telephone = this.TextBoxTelAjoutPartenaire.Text;
-            partenaire.Email = this.TextBoxEmailAjoutPartenaire.Text;
-            partenaire.Login = partenaire.Nom + "login";
-            partenaire.Password = partenaire.Nom + "Password";
-            adressePartenaire.Rue = this.TextBoxRueAjoutPartenaire.Text;
-            adressePartenaire.Pays = this.textBoxPaysAjoutPartenaire.Text;
-            adressePartenaire.Ville = this.TextBoxVilleAjoutPartenaire.Text;
-            adressePartenaire.CodePostal = this.TextBoxCPAjoutPartenaire.Text;
-
-            // retrouve le type d'utilisateur associé aux partenaires
-            foreach (TypeUtilisateur typeUtilisateur in type)
+            if (this.TextBoxNomAjoutPartenaire.Text != null && this.TextBoxEmailAjoutPartenaire.Text != null && this.TextBoxTelAjoutPartenaire.Text != null && this.TextBoxNomAjoutPartenaire.Text != "" && this.TextBoxEmailAjoutPartenaire.Text != "" && this.TextBoxTelAjoutPartenaire.Text != "")
             {
                 
-                if (typeUtilisateur.Libelle.Contains("Diffuseur"))
+                partenaire.Nom = this.TextBoxNomAjoutPartenaire.Text;
+                partenaire.Prenom = this.TextBoxPrenomAjoutPartenaire.Text;
+                partenaire.Telephone = this.TextBoxTelAjoutPartenaire.Text;
+                partenaire.Email = this.TextBoxEmailAjoutPartenaire.Text;
+                partenaire.Login = partenaire.Nom + "login";
+                partenaire.Password = partenaire.Nom + "Password";
+                adressePartenaire.Rue = this.TextBoxRueAjoutPartenaire.Text;
+                adressePartenaire.Pays = this.textBoxPaysAjoutPartenaire.Text;
+                adressePartenaire.Ville = this.TextBoxVilleAjoutPartenaire.Text;
+                adressePartenaire.CodePostal = this.TextBoxCPAjoutPartenaire.Text;
+
+                // retrouve le type d'utilisateur associé aux partenaires
+                foreach (TypeUtilisateur typeUtilisateur in type)
                 {
-                    partenaire.typeutilisateur = (TypeUtilisateur)typeUtilisateur ;
+
+                    if (typeUtilisateur.Libelle.Contains("Diffuseur"))
+                    {
+                        partenaire.typeutilisateur = (TypeUtilisateur)typeUtilisateur;
+                    }
+
                 }
 
+                partenaire.adresse = (Adresse)adressePartenaire;
+                _ViewModelUtilisateur.diffuseurs.Add(partenaire);
+                _ViewModelUtilisateur.Entities.Utilisateurs.Add(partenaire);
+
+                this._ViewModelUtilisateur.Save();
+                this.Close();
             }
-
-            partenaire.adresse = (Adresse)adressePartenaire;
-            _ViewModelUtilisateur.diffuseurs.Add(partenaire);
-            _ViewModelUtilisateur.Entities.Utilisateurs.Add(partenaire);
-
-            this._ViewModelUtilisateur.Save();
-            this.Close();
+            else { MessageBox.Show("veuillez saisir au minimum :\r\n - Un nom\n - Un numéro de téléphone \n - Une adresse mail."); }
         }
         #endregion
     }

@@ -69,7 +69,7 @@
 <!--Textbox Binding-->
             <TextBox Grid.Column="1"  Grid.Row="0" Name="LabelAnnonceurNom" Text="{Binding Path=SelectedItem.Nom, ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}" Margin="5,10,5,10" />
             <TextBox Grid.Column="1" Grid.Row="1"  Margin="5,10,5,10" Name="LabelAnnonceurPrenom"  Text="{Binding Path=SelectedItem.Prenom, ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-            <TextBox Grid.Column="1" Grid.Row="3"  Name="LabelAnnonceurNumTel"   Text="{Binding Path=SelectedItem.Telephone, ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <TextBox Grid.Column="1" Grid.Row="3" Margin="5,10,5,10"  Name="LabelAnnonceurNumTel"   Text="{Binding Path=SelectedItem.Telephone, ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             <TextBox Grid.Column="1" Grid.Row="4"  Margin="5,10,5,10" Name="LabelAnnonceurEmail"  Text="{Binding Path=SelectedItem.Email, ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             <TextBox Grid.Column="1" Grid.Row="6"  Margin="5,10,5,10" Name="LabelNumeroRue" Text="{Binding Path=SelectedItem.adresse.Rue , ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             <TextBox Grid.Column="1" Grid.Row="7"  Margin="5,10,5,10" Name="LabelCodePostal"  Text="{Binding Path=SelectedItem.adresse.Rue , ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
@@ -130,7 +130,7 @@
             <Label Grid.Column="1" Grid.Row="4" Margin="10"  HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
 
             <Button x:Name="ButtonGestionCompetenceArtiste" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="5" Margin="3"  Content="Compétences" Click="ButtonGestionCompetenceArtiste_Click" ></Button>
-            <Button Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="7" Margin="3"  Content="Médiathèque"></Button>
+            <Button Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="7" Margin="3"  Content="Médiathèque" Name="ButtonMediaArtiste" Click="ButtonMediaArtiste_Click"></Button>
             <Button Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="9" Margin="3"  Content="Contrats" ></Button>
             <Button Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="11" Margin="3"  Content="Expériences"></Button>
 
