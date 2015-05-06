@@ -92,8 +92,9 @@ namespace MegaCasting.WPF.GestionWindows
         {
             if (this.ListBoxMediaArtiste.SelectedItem != null)
             {
-                
-                viewModelMedia.multimediasArtiste.Remove((Multimedia)(this.ListBoxMediaArtiste.SelectedItem));
+                // Suppression 
+                viewModelMedia.Entities.Multimedias.Remove((Multimedia)this.ListBoxMediaArtiste.SelectedItem);
+                viewModelMedia.multimediasArtiste.Remove((Multimedia)this.ListBoxMediaArtiste.SelectedItem);
                 viewModelMedia.Save();
             }
         }

@@ -31,7 +31,7 @@ namespace MegaCasting.WPF.ViewModel
         {
             if (artiste != null)
             {
-                competencesArtiste = new ObservableCollection<Competence>(this.Entities.Competences.Where(competenceTemp => competenceTemp.IdentifiantUtilisateur == artiste.Identifiant));
+                competencesArtiste = new ObservableCollection<Competence>(competences.Where(competenceTemp => competenceTemp.IdentifiantUtilisateur == artiste.Identifiant));
             }
         }
 

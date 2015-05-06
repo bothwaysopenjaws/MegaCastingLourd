@@ -26,7 +26,7 @@ namespace MegaCasting.WPF
 
         #region Attributs
         protected ViewModelCompetence viewModelCompetence;
-        Utilisateur artiste;
+        protected Utilisateur artiste;
        
         #endregion
 
@@ -82,6 +82,7 @@ namespace MegaCasting.WPF
             if (this.ListBoxCompetencesArtistes.SelectedItem != null)
             {
                 viewModelCompetence.Entities.Competences.Remove((Competence)this.ListBoxCompetencesArtistes.SelectedItem);
+                viewModelCompetence.competencesArtiste.Remove((Competence)this.ListBoxCompetencesArtistes.SelectedItem);
                 viewModelCompetence.competencesParArtiste(artiste);
                 viewModelCompetence.Save();
             }
