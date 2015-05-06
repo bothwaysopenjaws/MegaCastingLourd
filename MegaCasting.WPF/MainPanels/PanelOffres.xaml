@@ -31,7 +31,7 @@
         <ListBox Name="ListBoxOffres" ItemsSource="{Binding offres}" Grid.Column="0" Grid.Row="2" Grid.RowSpan="3">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="{x:Type ListBoxItem}">
-                    <Setter Property="IsSelected" Value="{Binding IsActive, Mode=OneWay}"/>
+                    <Setter Property="IsSelected" Value="{Binding IsActive}"/>
                 </Style>
             </ListBox.ItemContainerStyle>
             <ListBox.ItemTemplate>
@@ -51,7 +51,7 @@
                         <TextBlock Grid.Column="2" Grid.Row="0" Text=" - "></TextBlock>
                         <TextBlock Grid.Column="3" Grid.Row="0" ToolTip="{Binding Metier.Libelle}" Text="{Binding Metier.Libelle}" FontSize="10" ></TextBlock>
                         <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding DateDebut}" FontStyle="Italic" Grid.ColumnSpan="3" ></TextBlock>
-                        <CheckBox x:Name="checkBoxOffreIsActive" Grid.RowSpan="2" VerticalAlignment="Center" IsChecked="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" Checked="checkBoxOffreIsActive_Checked" ToolTip="Cocher cette case pour activer l'offre"></CheckBox>
+                        <CheckBox x:Name="checkBoxOffreIsActive" Grid.RowSpan="2" VerticalAlignment="Center" IsChecked="{Binding IsActive, UpdateSourceTrigger=PropertyChanged}" Checked="checkBoxOffreIsActive_Checked" ToolTip="Cocher cette case pour activer l'offre"></CheckBox>
                         
 
                     </Grid>

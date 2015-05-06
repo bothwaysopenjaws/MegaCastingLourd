@@ -96,6 +96,7 @@
     <Compile Include="Offre.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="partialclassGen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TypeAbonnement.cs">
       <DependentUpon>Model.tt</DependentUpon>
