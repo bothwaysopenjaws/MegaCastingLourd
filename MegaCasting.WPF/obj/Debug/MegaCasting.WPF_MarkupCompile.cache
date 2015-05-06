@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\
 MegaCasting.WPF
 none
 false
 DEBUG;TRACE
-C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\App.xaml
-29-375337193
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\App.xaml
+281337356017
 
-411531973730
-23-287811854
-Ajout Windows\AjoutAnnonceur.xaml;Ajout Windows\AjoutCompetenceArtiste.xaml;Ajout Windows\AjoutCredit.xaml;Ajout Windows\AjoutMediaArtiste.xaml;Ajout Windows\AjoutOffre.xaml;Ajout Windows\AjoutTypeAbonnement.xaml;Ajout Windows\AjoutTypeCompetence.xaml;GestionWindows\GestionMediaUtilisateur.xaml;GestionWindows\GestionTypeAbonnement.xaml;GestionWindows\GestionTypeCompetence.xaml;GestionWindows\GestionTypeContrat.xaml;GestionWindows\GestionTypeMetierDomaine.xaml;GestionWindows\AjoutCompetenceArtiste.xaml;GestionWindows\AjoutDomaine.xaml;GestionWindows\AjoutMetier.xaml;GestionWindows\AjoutPartenaire.xaml;GestionWindows\AjoutTypeContrat.xaml;GestionWindows\GestionCompetences.xaml;GestionWindows\Gestion_Experiences.xaml;GestionWindows\Gestion_Mediatheque.xaml;MainWindow.xaml;MainPanels\PanelAbonnements.xaml;MainPanels\PanelAnnonceurs.xaml;MainPanels\PanelArtistes.xaml;MainPanels\PanelCandidatures.xaml;MainPanels\PanelMain.xaml;MainPanels\PanelOffres.xaml;MainPanels\PanelParametres.xaml;MainPanels\PanelPartenaires.xaml;
+40-1421302879
+23-2138061143
+Ajout Windows\AjoutAnnonceur.xaml;Ajout Windows\AjoutCompetenceArtiste.xaml;Ajout Windows\AjoutCredit.xaml;Ajout Windows\AjoutMediaArtiste.xaml;Ajout Windows\AjoutOffre.xaml;Ajout Windows\AjoutTypeAbonnement.xaml;Ajout Windows\AjoutTypeCompetence.xaml;GestionWindows\GestionMediaUtilisateur.xaml;GestionWindows\GestionTypeAbonnement.xaml;GestionWindows\GestionTypeCompetence.xaml;GestionWindows\GestionTypeContrat.xaml;GestionWindows\GestionTypeMetierDomaine.xaml;GestionWindows\AjoutDomaine.xaml;GestionWindows\AjoutMetier.xaml;GestionWindows\AjoutPartenaire.xaml;GestionWindows\AjoutTypeContrat.xaml;GestionWindows\GestionCompetences.xaml;GestionWindows\Gestion_Experiences.xaml;GestionWindows\Gestion_Mediatheque.xaml;MainWindow.xaml;MainPanels\PanelAbonnements.xaml;MainPanels\PanelAnnonceurs.xaml;MainPanels\PanelArtistes.xaml;MainPanels\PanelCandidatures.xaml;MainPanels\PanelMain.xaml;MainPanels\PanelOffres.xaml;MainPanels\PanelParametres.xaml;MainPanels\PanelPartenaires.xaml;
 
 False
 

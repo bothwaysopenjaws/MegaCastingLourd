@@ -15,7 +15,7 @@ namespace MegaCasting.DBLib
     public partial class Abonnement
     {
         public int Identifiant { get; set; }
-        public int IdenfiantUtilisateur { get; set; }
+        public int IdentifiantUtilisateur { get; set; }
         public System.DateTime DateSouscription { get; set; }
         public int Restant { get; set; }
         public Nullable<int> IdentifiantTypeAbonnement { get; set; }

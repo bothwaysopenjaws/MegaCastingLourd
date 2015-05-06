@@ -51,7 +51,7 @@
                         <TextBlock Grid.Column="2" Grid.Row="0" Text=" - "></TextBlock>
                         <TextBlock Grid.Column="3" Grid.Row="0" ToolTip="{Binding Metier.Libelle}" Text="{Binding Metier.Libelle}" FontSize="10" ></TextBlock>
                         <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding DateDebut}" FontStyle="Italic" Grid.ColumnSpan="3" ></TextBlock>
-                        <CheckBox x:Name="checkBoxOffreIsActive" Grid.RowSpan="2" VerticalAlignment="Center" IsChecked="{Binding IsActive}" Checked="checkBoxOffreIsActive_Checked" ToolTip="Cocher cette case pour activé l'offre"></CheckBox>
+                        <CheckBox x:Name="checkBoxOffreIsActive" Grid.RowSpan="2" VerticalAlignment="Center" IsChecked="{Binding IsActive, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" Checked="checkBoxOffreIsActive_Checked" ToolTip="Cocher cette case pour activer l'offre"></CheckBox>
                         
 
                     </Grid>
@@ -72,7 +72,7 @@
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{Binding Nom}" ></TextBlock>
-                        <TextBlock Text="   " ></TextBlock>
+                        <TextBlock Text="  - " ></TextBlock>
                         <TextBlock Text="{Binding Prenom}"></TextBlock>
                     </StackPanel>
                 </DataTemplate>

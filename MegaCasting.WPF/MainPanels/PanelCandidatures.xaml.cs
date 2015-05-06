@@ -14,13 +14,14 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MegaCasting.WPF.ViewModel;
 using MegaCasting.DBLib;
+using System.Windows.Forms;
 
 namespace MegaCasting.WPF
 {
     /// <summary>
     /// Logique d'interaction pour PanelCandidatures.xaml
     /// </summary>
-    public partial class PanelCandidatures : UserControl
+    public partial class PanelCandidatures : System.Windows.Controls.UserControl
     {
 
 
@@ -41,6 +42,7 @@ namespace MegaCasting.WPF
 
             // Attribution du contexte au panel
             this.DataContext = _ViewModelCandidatures;
+
         }
 
 
@@ -71,17 +73,61 @@ namespace MegaCasting.WPF
                 // Sauvegarde des changements
                 _ViewModelCandidatures.Save();
 
-                MessageBox.Show("Suppression réussite !!!");
+                System.Windows.MessageBox.Show("Suppression réussite !!!");
             }
             else
             {
-                MessageBox.Show(" Veuillez sélectionner une candidature à supprimer.");
+                System.Windows.MessageBox.Show(" Veuillez sélectionner une candidature à supprimer.");
             }
         }
 
 
+        
+
+
+        /// <summary>
+        /// Ajouter ou modifier l'URL d'un cv d'une candidature
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBoxCandidatureUrlCV_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = "d:\\MegaGestion\\Cv et motivation";
+            openFileDialog.Filter = "Pdf Files|*.pdf";
+            openFileDialog.ShowDialog();
+            if ((openFileDialog.FileName != null) && (this.ListBoxCandidatures.SelectedItem != null))
+            {
+                this.TextBoxCandidatureUrlCV.Content = openFileDialog.FileName;
+                _ViewModelCandidatures.candidatures.Where(candidatureTemp => candidatureTemp.Identifiant == ((Candidature)this.ListBoxCandidatures.SelectedItem).Identifiant).First().UrlCv = openFileDialog.FileName;
+                _ViewModelCandidatures.Save();
+
+            }
+            
+        }
+
+
+
+        /// <summary>
+        /// Ajouter ou modifier l'url d'une candidature
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBoxCandidatureUrlLettreMotivation_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = "d:\\MegaGestion\\Cv et motivation";
+            openFileDialog.Filter = "Pdf Files|*.pdf";
+            openFileDialog.ShowDialog();
+            if ((openFileDialog.FileName != null) && (this.ListBoxCandidatures.SelectedItem != null))
+            {
+                this.TextBoxCandidatureUrlLettreMotivation.Content = openFileDialog.FileName;
+                _ViewModelCandidatures.candidatures.Where(candidatureTemp => candidatureTemp.Identifiant == ((Candidature)this.ListBoxCandidatures.SelectedItem).Identifiant).First().UrlLettreMotivation = openFileDialog.FileName;
+                _ViewModelCandidatures.Entities.SaveChanges();
+                _ViewModelCandidatures.Save();
+            }
+        }
+
         #endregion
-
-
     }
 }

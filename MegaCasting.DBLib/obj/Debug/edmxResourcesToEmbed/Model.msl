@@ -5,7 +5,7 @@
       <EntityTypeMapping TypeName="megacastingModel.Abonnement">
         <MappingFragment StoreEntitySet="abonnement">
           <ScalarProperty Name="Identifiant" ColumnName="id" />
-          <ScalarProperty Name="IdenfiantUtilisateur" ColumnName="utilisateur_id" />
+          <ScalarProperty Name="IdentifiantUtilisateur" ColumnName="utilisateur_id" />
           <ScalarProperty Name="DateSouscription" ColumnName="dateSouscription" />
           <ScalarProperty Name="Restant" ColumnName="restant" />
           <ScalarProperty Name="IdentifiantTypeAbonnement" ColumnName="typeAbonnement_id" />

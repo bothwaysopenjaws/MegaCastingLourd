@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MegaCasting.WPF.ViewModel;
+using MegaCasting.DBLib;
 
 namespace MegaCasting.WPF
 {
@@ -21,13 +23,58 @@ namespace MegaCasting.WPF
     {
 
 
+        #region Attributs
+        public ViewModelAbonnement viewModelAbonnement;
+        private Utilisateur _annonceur;
+
+        public Utilisateur annonceur
+        {
+            get { return _annonceur; }
+            set { _annonceur = value; }
+        }
+        
+
+        #endregion
+        
+
+
         #region Constructeurs
 
- public AjoutCredit()
+        public AjoutCredit(Utilisateur annonceurPanel, ViewModelAbonnement viewModelAbonnementPanel)
         {
+
             InitializeComponent();
+            viewModelAbonnement = new ViewModelAbonnement();
+            viewModelAbonnement = viewModelAbonnementPanel;
+            this.DataContext = viewModelAbonnement;
+            annonceur = annonceurPanel;
+          
         }
         #endregion
+
+        private void ButtonAjouterAbonnementAnnonceur_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.ComboBoxTypeAbonnement.SelectedItem != null)
+            {
+
+                Abonnement abonnement = new Abonnement();
+                abonnement.typeabonnement = (TypeAbonnement)(this.ComboBoxTypeAbonnement.SelectedItem);
+                abonnement.Restant = ((TypeAbonnement)(this.ComboBoxTypeAbonnement.SelectedItem)).NombreOffres;
+                abonnement.DateSouscription = DateTime.Now;
+                abonnement.utilisateur = annonceur;
+                
+                viewModelAbonnement.annonceurs.Where(annonceurTemp => annonceurTemp == annonceur).First().abonnements.Add(abonnement);
+                viewModelAbonnement.Save();
+                MessageBox.Show("Ajout réussi.");
+                this.Close();
+                
+            }
+            
+        }
+
+
+
+
        
     }
 }

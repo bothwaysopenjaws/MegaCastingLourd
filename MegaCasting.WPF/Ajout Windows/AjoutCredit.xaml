@@ -19,8 +19,19 @@
         <Label VerticalAlignment="Center" Grid.ColumnSpan="2" HorizontalAlignment="Center">Choix d'un abonnement</Label>
         <Label Content=" Choisir un Abonnement :" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"></Label>
         <!--Combobox-->
-        <ComboBox Name="ComboBoxTypeAbonnement" Grid.Column="1" Grid.Row="1" Width="150" Height="25"></ComboBox>
+        <ComboBox x:Name="ComboBoxTypeAbonnement" Grid.Column="1" Grid.Row="1" Width="150" Height="25" ItemsSource="{Binding TypeAbonnements}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Libelle}" ></TextBlock>
+                        <TextBlock Text=" -  " ></TextBlock>
+                        <TextBlock Text="{Binding NombreOffres}" Foreground="#7F000000" FontStyle="Italic" FontSize="10" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+
+            </ComboBox.ItemTemplate>
+        </ComboBox>
         <!--Button-->
-        <Button Name="ButtonAjouterAbonnementAnnonceur" Width="150" Height="25" Background="Green" Grid.Column="0" Grid.Row="3" Content="Ajouter" Grid.ColumnSpan="2"></Button>
+        <Button Name="ButtonAjouterAbonnementAnnonceur" Width="150" Height="25" Background="Green" Grid.Column="0" Grid.Row="3" Content="Ajouter" Grid.ColumnSpan="2" Click="ButtonAjouterAbonnementAnnonceur_Click"></Button>
     </Grid>
 </Window>

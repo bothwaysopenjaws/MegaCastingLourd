@@ -131,8 +131,7 @@
 
             <Button x:Name="ButtonGestionCompetenceArtiste" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="5" Margin="3"  Content="Compétences" Click="ButtonGestionCompetenceArtiste_Click" ></Button>
             <Button Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="7" Margin="3"  Content="Médiathèque" Name="ButtonMediaArtiste" Click="ButtonMediaArtiste_Click"></Button>
-            <Button Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="9" Margin="3"  Content="Contrats" ></Button>
-            <Button Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="11" Margin="3"  Content="Expériences"></Button>
+            <Button Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="9" Margin="3"  Content="Expériences"></Button>
 
 
         </Grid>

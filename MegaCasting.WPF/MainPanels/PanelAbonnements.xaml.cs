@@ -23,7 +23,7 @@ namespace MegaCasting.WPF
     {
 
         #region Attributs
-        protected ViewModelUtilisateur _ViewModelUtilisateur;
+        protected ViewModelAbonnement viewModelAbonnement;
        
         #endregion
 
@@ -35,10 +35,10 @@ namespace MegaCasting.WPF
                     InitializeComponent();
 
                     // Récupération du viewModel
-           
-                    this._ViewModelUtilisateur = new ViewModelUtilisateur();           
+
+                    this.viewModelAbonnement = new ViewModelAbonnement();           
                     // intégration de la View au dataContext
-                    this.DataContext = _ViewModelUtilisateur;
+                    this.DataContext = viewModelAbonnement;
                     this.ButtonAbonnementsAjouter.Visibility = Visibility.Hidden;
                 }
         #endregion
@@ -100,8 +100,26 @@ namespace MegaCasting.WPF
         /// <param name="e"></param>
       private void ButtonAbonnementsAjouter_Click(object sender, RoutedEventArgs e)
        {
-           AjoutCredit ajoutCredit = new AjoutCredit();
+           Utilisateur annonceur = new Utilisateur();
+           annonceur = (Utilisateur)(this.ListBoxUtilisateurs.SelectedItem);
+           
+           AjoutCredit ajoutCredit = new AjoutCredit(annonceur, viewModelAbonnement);
            ajoutCredit.ShowDialog();
+           viewModelAbonnement = ajoutCredit.viewModelAbonnement;
+
+
+
+
+           Abonnement abonnement = new Abonnement();
+           abonnement = ((Utilisateur)(this.ListBoxUtilisateurs.SelectedItem)).abonnements.Last();
+
+           // affichage des données
+           this.LabelAbonnementTypeAbonnement.Content = abonnement.typeabonnement.Libelle;
+           this.LabelAbonnementRestant.Content = abonnement.Restant.ToString();
+           this.LabelAbonnementDate.Content = abonnement.DateSouscription.ToString();
+ 
+
+
        }
        #endregion
 

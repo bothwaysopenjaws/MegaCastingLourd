@@ -20,9 +20,9 @@
         <Label Content="Niveau :" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
         <Label Content="type de compétence :" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
         <!--Combobox-->
-        <ComboBox Name="ComboBoxNiveauCompetence" Grid.Column="1" Grid.Row="1" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center"></ComboBox>
-        <ComboBox Name="ComboBoxTypeCompetence" Grid.Column="1" Grid.Row="2" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center"></ComboBox>
+        <ComboBox Name="ComboBoxNiveauCompetence" ItemsSource="{Binding niveaux, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center" DisplayMemberPath="Libelle"></ComboBox>
+        <ComboBox Name="ComboBoxTypeCompetence" ItemsSource="{Binding typeCompetences , UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="2" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center" DisplayMemberPath="Libelle"></ComboBox>
         <!--Button-->
-        <Button Name="ButtonAjouterCompetenceArtiste" Content="Ajouter" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Background="Green"></Button>
+        <Button Name="ButtonAjouterCompetenceArtiste" Click="ButtonAjouterCompetenceArtiste_Click" Content="Ajouter" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Background="Green"></Button>
     </Grid>
 </Window>

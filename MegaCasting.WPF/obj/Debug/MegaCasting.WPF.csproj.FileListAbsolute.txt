@@ -62,12 +62,10 @@ C:\Users\Emmanuel\Documents\Visual Studio 2013\Projects\MegaCasting\MegaCasting.
 C:\Users\Emmanuel\Documents\Visual Studio 2013\Projects\MegaCasting\MegaCasting.WPF\obj\Debug\Gestion_Experiences.g.cs
 C:\Users\Emmanuel\Documents\Visual Studio 2013\Projects\MegaCasting\MegaCasting.WPF\obj\Debug\TabCandidatures.baml
 C:\Users\Emmanuel\Documents\Visual Studio 2013\Projects\MegaCasting\MegaCasting.WPF\obj\Debug\TabCandidatures.g.cs
-C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutCompetenceArtiste.baml
 C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutDomaine.baml
 C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutMetier.baml
 C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutPartenaire.baml
 C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutTypeContrat.baml
-C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutCompetenceArtiste.g.cs
 C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutDomaine.g.cs
 C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutMetier.g.cs
 C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutPartenaire.g.cs
@@ -210,3 +208,11 @@ C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Aj
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionMediaUtilisateur.g.cs
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutCompetenceArtiste.baml
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutCompetenceArtiste.g.cs
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutAnnonceur.baml
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutCompetenceArtiste.baml
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutMediaArtiste.baml
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionMediaUtilisateur.baml
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutAnnonceur.g.cs
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutCompetenceArtiste.g.cs
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutMediaArtiste.g.cs
+C:\Users\Emmanuel\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionMediaUtilisateur.g.cs

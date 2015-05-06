@@ -25,30 +25,23 @@ namespace MegaCasting.WPF
     {
 
         #region Attributs
-        protected ViewModelCompetence _ViewModelCompetence;
-        public ObservableCollection<Competence> competencesArtistes;
+        protected ViewModelCompetence viewModelCompetence;
+        Utilisateur artiste;
        
         #endregion
 
         #region Constructeurs
 
-        public GestionCompetences(Utilisateur utilisateur)
+        public GestionCompetences(Utilisateur artisteTemp)
         {
+            artiste = artisteTemp;
+            
             InitializeComponent();
-
-            _ViewModelCompetence = new ViewModelCompetence();
+            viewModelCompetence = new ViewModelCompetence();
+            viewModelCompetence.competencesParArtiste(artiste);
             // intégrer la View au dataContext
-            this.DataContext = _ViewModelCompetence;
+            this.DataContext = viewModelCompetence;
 
-
-
-            competencesArtistes = new ObservableCollection<Competence>(utilisateur.competences);
-
-            this.ComboboxNiveauCompetence.ItemsSource = _ViewModelCompetence.niveaux;
-
-            this.ComboboxTypeCompetence.ItemsSource = _ViewModelCompetence.typeCompetences;
-
-            this.ListBoxCompetencesArtistes.ItemsSource = competencesArtistes;
 
         }
 
@@ -56,12 +49,45 @@ namespace MegaCasting.WPF
         #endregion
 
         #region Evenement
+
+        /// <summary>
+        /// Event ouvrant une fenêtre permettant l'ajout de nouvelles compétences
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonCompetenceAjouter_Click(object sender, RoutedEventArgs e)
         {
-            AjoutCompetenceArtiste competenceArtiste = new AjoutCompetenceArtiste();
+            AjoutCompetenceArtiste competenceArtiste = new AjoutCompetenceArtiste(viewModelCompetence,  artiste);
             competenceArtiste.ShowDialog();
+            this.DataContext = competenceArtiste.viewModelCompetence;
+        }
+
+        /// <summary>
+        /// Event de sauvegarder des modifications
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonCompetenceSauvegarder_Click(object sender, RoutedEventArgs e)
+        {
+            viewModelCompetence.Save();
+        }
+
+        /// <summary>
+        /// Eventde suppression d'une compétence d'un artiste
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonCompetenceSupprimer_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.ListBoxCompetencesArtistes.SelectedItem != null)
+            {
+                viewModelCompetence.Entities.Competences.Remove((Competence)this.ListBoxCompetencesArtistes.SelectedItem);
+                viewModelCompetence.competencesParArtiste(artiste);
+                viewModelCompetence.Save();
+            }
         }
         #endregion
+
 
     }
 }

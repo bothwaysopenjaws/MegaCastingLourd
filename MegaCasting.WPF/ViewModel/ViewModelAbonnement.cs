@@ -8,7 +8,7 @@ using MegaCasting.DBLib;
 
 namespace MegaCasting.WPF.ViewModel
 {
-    public class ViewModelAbonnement : ViewModelBase
+    public class ViewModelAbonnement : ViewModelUtilisateur
     {
        public ObservableCollection<Abonnement> Abonnements { get; set; }
        public ObservableCollection<TypeAbonnement> TypeAbonnements { get; set; }

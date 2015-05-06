@@ -5,7 +5,7 @@
       <PropertyRef Name="Identifiant" />
     </Key>
     <Property Name="Identifiant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="IdenfiantUtilisateur" Type="Int32" Nullable="false" />
+    <Property Name="IdentifiantUtilisateur" Type="Int32" Nullable="false" />
     <Property Name="DateSouscription" Type="DateTime" Nullable="false" />
     <Property Name="Restant" Type="Int32" Nullable="false" />
     <Property Name="IdentifiantTypeAbonnement" Type="Int32" />
@@ -290,7 +290,7 @@
         <PropertyRef Name="Identifiant" />
       </Principal>
       <Dependent Role="Abonnement">
-        <PropertyRef Name="IdenfiantUtilisateur" />
+        <PropertyRef Name="IdentifiantUtilisateur" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

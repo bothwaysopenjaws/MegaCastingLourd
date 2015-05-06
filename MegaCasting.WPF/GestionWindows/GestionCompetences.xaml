@@ -18,7 +18,7 @@
 
         <Label  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.ColumnSpan="2">Gestion des compétences</Label>
 
-        <ListBox x:Name="ListBoxCompetencesArtistes" Grid.Column="0" Grid.Row="1" Margin="5" ItemsSource="{Binding competencesArtistes}">
+        <ListBox x:Name="ListBoxCompetencesArtistes" Grid.Column="0" Grid.Row="1" Margin="5" ItemsSource="{Binding competencesArtiste, UpdateSourceTrigger=PropertyChanged}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Label Content="{Binding typecompetence.Libelle}"></Label>
@@ -46,16 +46,16 @@
 
             <TextBox Text="{Binding Path=SelectedItem.typecompetence.Libelle, ElementName=ListBoxCompetencesArtistes, UpdateSourceTrigger=PropertyChanged}" Height="25" Width="150" Margin="10,45" Grid.Column="2" Grid.Row="0" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" />
 
-            <ComboBox Name="ComboboxNiveauCompetence" Height="25" Width="150"  Grid.Column="2" Grid.Row="1" SelectedValue="{Binding Path=SelectedItem.niveau, ElementName=ListBoxCompetencesArtistes, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Libelle">
+            <ComboBox Name="ComboboxNiveauCompetence" Height="25" Width="150"  Grid.Column="2" Grid.Row="1" ItemsSource="{Binding niveaux}" SelectedItem="{Binding Path=SelectedItem.niveau, ElementName=ListBoxCompetencesArtistes, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Libelle">
 
             </ComboBox>
 
-            <ComboBox Name="ComboboxTypeCompetence" Height="25" Width="150"  Grid.Column="2" Grid.Row="2" SelectedValue="{Binding Path=SelectedItem.typecompetence, ElementName=ListBoxCompetencesArtistes, UpdateSourceTrigger=PropertyChanged}"  DisplayMemberPath="Libelle">
+            <ComboBox Name="ComboboxTypeCompetence" Height="25" Width="150"  Grid.Column="2" Grid.Row="2" ItemsSource="{Binding typeCompetences}" SelectedItem="{Binding Path=SelectedItem.typecompetence, ElementName=ListBoxCompetencesArtistes, UpdateSourceTrigger=PropertyChanged}"  DisplayMemberPath="Libelle">
             </ComboBox>
 
 
-            <Button Background="SteelBlue" Height="25" Width="70" Grid.Column="0" Grid.Row="3" Margin="1" Name="ButtonCompetenceModifier" Content="Sauvegarder"                              Grid.RowSpan="2" Grid.ColumnSpan="2" ></Button>
-            <Button Background="Red" HorizontalAlignment="Right" Height="25" Width="70" Grid.Column="2" Grid.Row="3" Margin="5" Name="ButtonCompetenceSupprimer" Content="Supprimer" Grid.RowSpan="2"></Button>
+            <Button  Background="SteelBlue" Height="25" Width="70" Grid.Column="0" Grid.Row="3" Margin="1" Name="ButtonCompetenceSauvegarder" Content="Sauvegarder" Click="ButtonCompetenceSauvegarder_Click"                             Grid.RowSpan="2" Grid.ColumnSpan="2" ></Button>
+            <Button Background="Red" HorizontalAlignment="Right" Height="25" Width="70" Grid.Column="2" Grid.Row="3" Margin="5" Name="ButtonCompetenceSupprimer" Click="ButtonCompetenceSupprimer_Click" Content="Supprimer" Grid.RowSpan="2"></Button>
 
         </Grid>
     </Grid>

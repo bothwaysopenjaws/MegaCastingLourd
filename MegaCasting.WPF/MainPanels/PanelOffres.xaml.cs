@@ -126,7 +126,8 @@ namespace MegaCasting.WPF
                     if (abo.Restant == 0)
                     {
                         MessageBox.Show(" L'annonceur n'a plus de crédit de diffusion");
-                        ((Offre)this.ListBoxOffres.SelectedItem).IsActive = false;
+                        _ViewModelOffre.offres.Where(offreTemp => offreTemp.Identifiant == ((Offre)this.ListBoxOffres.SelectedItem).Identifiant).First().IsActive = false;
+                        _ViewModelOffre.Save();
 
 
                     }
@@ -137,7 +138,7 @@ namespace MegaCasting.WPF
                         ((Abonnement)((Utilisateur)(this.ComboBoxOffresAnnonceurAjouter.SelectedItem)).abonnements.Last()).Restant = ((Abonnement)((Utilisateur)(this.ComboBoxOffresAnnonceurAjouter.SelectedItem)).abonnements.Last()).Restant - 1;
                         _ViewModelOffre.Save();
                         ((Offre)this.ListBoxOffres.SelectedItem).IsActive = true;
-
+                        
 
                     }
                 }
@@ -153,6 +154,12 @@ namespace MegaCasting.WPF
 
         #endregion
 
+
+        /// <summary>
+        /// Ajouter une offre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonOffresAjouter_Click(object sender, RoutedEventArgs e)
         {
             AjouteOffre ajoutoffre = new AjouteOffre(_ViewModelOffre);

@@ -28,7 +28,8 @@ namespace MegaCasting.WPF
     {
 
         #region Attributs
-        protected ViewModelDomaine_Metier _ViewModelMetierDomaine;
+        
+        protected ViewModelDomaine_Metier viewModelMetierDomaine;
         public ObservableCollection<Metier> metierArtiste = new ObservableCollection<Metier>();
         public ObservableCollection<Domaine> DomaineArtiste = new ObservableCollection<Domaine>();
         #endregion
@@ -38,11 +39,11 @@ namespace MegaCasting.WPF
         public PanelArtistes()
         {
             InitializeComponent();
-            _ViewModelMetierDomaine = new ViewModelDomaine_Metier();
+            viewModelMetierDomaine = new ViewModelDomaine_Metier();
             // Récupération de la ViewModel
             
             // intégrer la View au dataContext
-            this.DataContext = _ViewModelMetierDomaine;
+            this.DataContext = viewModelMetierDomaine;
 
            
         }
@@ -103,10 +104,23 @@ namespace MegaCasting.WPF
             
         }
 
+
+        /// <summary>
+        /// Ouverture d'une fenêtre de gestion des medias d'un artiste
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonMediaArtiste_Click(object sender, RoutedEventArgs e)
         {
-            GestionMediaUtilisateur gestionMediaUtilisateur = new GestionMediaUtilisateur();
-            gestionMediaUtilisateur.ShowDialog();
+            if (this.ListBoxArtistes.SelectedItem != null)
+            {
+                Utilisateur utilisateur = new Utilisateur();
+                utilisateur = (Utilisateur)(this.ListBoxArtistes.SelectedItem);
+                GestionMediaUtilisateur gestionMediaUtilisateur = new GestionMediaUtilisateur(utilisateur);
+                gestionMediaUtilisateur.ShowDialog();
+                
+            }
+            
         }
 
         #endregion
