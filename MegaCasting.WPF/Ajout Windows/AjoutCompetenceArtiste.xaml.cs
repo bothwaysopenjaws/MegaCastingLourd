@@ -61,12 +61,7 @@ namespace MegaCasting.WPF.Ajout_Windows
  
 
             }
-
-
-
-
-            
-            
+  
             
         }
     }
