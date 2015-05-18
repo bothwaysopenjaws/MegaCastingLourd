@@ -12,6 +12,7 @@ namespace MegaCasting.WPF.ViewModel
     {
        public ObservableCollection<Domaine> domaines { get; set; }
        public ObservableCollection<Metier> metiers { get; set; }
+       public ObservableCollection<Metier> metiersArtistes { get; set; }
         
         public ViewModelDomaine_Metier()
         {
@@ -19,7 +20,7 @@ namespace MegaCasting.WPF.ViewModel
             metiers = new ObservableCollection<Metier>(this.Entities.Metiers);
         }
 
-
+        
 
     }
 }

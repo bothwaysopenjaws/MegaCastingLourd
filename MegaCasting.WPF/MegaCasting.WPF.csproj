@@ -77,14 +77,17 @@
     <Compile Include="Ajout Windows\AjoutAnnonceur.xaml.cs">
       <DependentUpon>AjoutAnnonceur.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ajout Windows\AjoutArtiste.xaml.cs">
+      <DependentUpon>AjoutArtiste.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ajout Windows\AjoutCompetenceArtiste.xaml.cs">
       <DependentUpon>AjoutCompetenceArtiste.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ajout Windows\AjoutCredit.xaml.cs">
       <DependentUpon>AjoutCredit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Ajout Windows\AjoutMediaArtiste.xaml.cs">
-      <DependentUpon>AjoutMediaArtiste.xaml</DependentUpon>
+    <Compile Include="Ajout Windows\AjoutHistorique.xaml.cs">
+      <DependentUpon>AjoutHistorique.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ajout Windows\AjoutOffre.xaml.cs">
       <DependentUpon>AjoutOffre.xaml</DependentUpon>
@@ -97,6 +100,9 @@
     </Compile>
     <Compile Include="GestionWindows\GestionMediaUtilisateur.xaml.cs">
       <DependentUpon>GestionMediaUtilisateur.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GestionWindows\GestionMetierArtiste.xaml.cs">
+      <DependentUpon>GestionMetierArtiste.xaml</DependentUpon>
     </Compile>
     <Compile Include="GestionWindows\GestionTypeAbonnement.xaml.cs">
       <DependentUpon>GestionTypeAbonnement.xaml</DependentUpon>
@@ -167,6 +173,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Ajout Windows\AjoutArtiste.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ajout Windows\AjoutCompetenceArtiste.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -175,7 +185,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Ajout Windows\AjoutMediaArtiste.xaml">
+    <Page Include="Ajout Windows\AjoutHistorique.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -192,6 +202,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GestionWindows\GestionMediaUtilisateur.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GestionWindows\GestionMetierArtiste.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

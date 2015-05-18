@@ -16,6 +16,7 @@ namespace MegaCasting.WPF.ViewModel
         public ObservableCollection<Utilisateur> artistes { get; set; }
         public ObservableCollection<Utilisateur> annonceurs { get; set; }
         public ObservableCollection<Utilisateur> diffuseurs { get; set; }
+        public ObservableCollection<Historique> HistoriquesArtiste { get; set; }              
 
         public ViewModelUtilisateur()
         {
@@ -27,6 +28,13 @@ namespace MegaCasting.WPF.ViewModel
             diffuseurs = new ObservableCollection<Utilisateur>(utilisateurs.Where(UtilisateurTemp => UtilisateurTemp.typeutilisateur.Libelle == "Diffuseur").ToList());
         }
 
-
+        /// <summary>
+        /// Récupère les expériences d'un artiste
+        /// </summary>
+        /// <param name="artiste"></param>
+        public void HistoriquesParArtiste(Utilisateur artiste)
+        {
+            HistoriquesArtiste = new ObservableCollection<Historique>(this.Entities.Historiques.Where(historiquesTemp => historiquesTemp.IdentifiantUtilisateur == artiste.Identifiant).ToList());
+        }
     }
 }

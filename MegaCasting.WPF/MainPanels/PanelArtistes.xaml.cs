@@ -17,6 +17,7 @@ using MegaCasting.WPF.ViewModel;
 using System.Collections.ObjectModel;
 using MegaCasting.WPF;
 using MegaCasting.WPF.GestionWindows;
+using MegaCasting.WPF.Ajout_Windows;
 
 namespace MegaCasting.WPF
 
@@ -81,7 +82,6 @@ namespace MegaCasting.WPF
             
         }
 
-
         /// <summary>
         /// ouverture d'une fenêtre de gestion des compétences d'un artiste
         /// </summary>
@@ -104,7 +104,6 @@ namespace MegaCasting.WPF
             
         }
 
-
         /// <summary>
         /// Ouverture d'une fenêtre de gestion des medias d'un artiste
         /// </summary>
@@ -123,7 +122,63 @@ namespace MegaCasting.WPF
             
         }
 
+        /// <summary>
+        /// Ouverture d'une fenêtre de gestion des expériences d'un artiste
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonExperiencesArtiste_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.ListBoxArtistes.SelectedItem != null)
+            {
+                Utilisateur utilisateur = new Utilisateur();
+                utilisateur = (Utilisateur)(this.ListBoxArtistes.SelectedItem);
+                Gestion_Experiences gestionUtilisateur = new Gestion_Experiences(utilisateur);
+                gestionUtilisateur.ShowDialog();
+
+            }
+        }
+        
+        /// <summary>
+        /// Ajout d'un artiste
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonArtisteAjouter_Click(object sender, RoutedEventArgs e)
+        {
+            AjoutArtiste ajoutArtiste = new AjoutArtiste();
+            ajoutArtiste.ShowDialog();
+        }
+        /// <summary>
+        /// Gérer les domaines de l'artiste sélectionné
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonModifierMetiersArtistes_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.ListBoxArtistes.SelectedItem != null)
+            {
+                Utilisateur utilisateur = new Utilisateur();
+                utilisateur = (Utilisateur)(this.ListBoxArtistes.SelectedItem);
+
+                GestionMetierArtiste gestionMetierArtiste = new GestionMetierArtiste(utilisateur, viewModelMetierDomaine);
+                gestionMetierArtiste.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Veuillez selectionné un artiste.");
+            }
+        }
         #endregion
+
+      
+
+      
+
+        
+
+        
+        
 
        
 

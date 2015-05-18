@@ -13,7 +13,7 @@ namespace MegaCasting.WPF.ViewModel
         public ObservableCollection<TypeMedia> typeMedias { get; set; }
         public ObservableCollection<Multimedia> multimedias { get; set; }
         public ObservableCollection<Multimedia> multimediasArtiste { get; set; }
-
+        
 
         public ViewModelMedia()
         {
@@ -31,5 +31,6 @@ namespace MegaCasting.WPF.ViewModel
         {
             multimediasArtiste = new ObservableCollection<Multimedia>(this.Entities.Multimedias.Where(multimediaTemp => multimediaTemp.IdentifiantUtilisateur == artiste.Identifiant).ToList());
         }
+        
     }
 }
