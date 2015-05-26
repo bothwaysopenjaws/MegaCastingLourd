@@ -1,7 +1,7 @@
 ﻿<Window x:Class="MegaCasting.WPF.AjoutCredit"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="AjoutCredit" Height="200" Width="400" Background="Honeydew">
+        Title="Ajout de credit : Choix de l'abonnement" Height="200" Width="400" Background="Honeydew" Icon="/MegaCasting.WPF;component/unnamed.ico">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.3*"></ColumnDefinition>

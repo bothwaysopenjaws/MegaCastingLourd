@@ -63,7 +63,7 @@
             <Label Grid.Column="0" Grid.Row="7" HorizontalAlignment="Left" VerticalAlignment="Center">Code Postal :</Label>
             <Label Grid.Column="0" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Center">Ville :</Label>
             <Label Grid.Column="0" Grid.Row="9" HorizontalAlignment="Left" VerticalAlignment="Center">Pays:</Label>
-
+            <Label  Grid.Column="0" Grid.Row="10" HorizontalAlignment="Left" VerticalAlignment="Center">Date de naissance :</Label>
 
             <TextBox Name="textBoxNomAnnonceur" Text="{Binding Path=SelectedItem.Nom, ElementName=ListBoxAnnonceurs, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center"  Margin="5"></TextBox>
             <TextBox Name="textBoxPrenomAnnonceur" Text="{Binding Path=SelectedItem.Prenom, ElementName=ListBoxAnnonceurs, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center"  Margin="5"></TextBox>
@@ -73,7 +73,7 @@
             <TextBox Name="textBoxCodePostalAnnonceur" Text="{Binding Path=SelectedItem.adresse.CodePostal, ElementName=ListBoxAnnonceurs, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="7" VerticalAlignment="Center"  Margin="5"></TextBox>
             <TextBox Name="textBoxVilleAnnonceur" Text="{Binding Path=SelectedItem.adresse.Ville, ElementName=ListBoxAnnonceurs, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="8" VerticalAlignment="Center"  Margin="5"></TextBox>
             <TextBox Name="textBoxPaysAnnonceur" Text="{Binding Path=SelectedItem.adresse.Pays, ElementName=ListBoxAnnonceurs, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center"  Margin="5"></TextBox>
-
+            <DatePicker Name="DatePickerDateNaissance" Text="{Binding Path=SelectedItem.DateNaissance, ElementName=ListBoxAnnonceurs, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Margin="5"></DatePicker>
             <Button Background="SteelBlue" Grid.Column="0" Grid.Row="12" Margin="1" Name="ButtonAnnoceurModifier" Content="Sauvegarder" Click="ButtonAnnoceurModifier_Click" ></Button>
             <Button Background="Red" Grid.Column="1" Grid.Row="12" Margin="1" Name="ButtonAnnonceurSupprimer" Content="Supprimer" Click="ButtonAnnonceurSupprimer_Click"></Button>
 

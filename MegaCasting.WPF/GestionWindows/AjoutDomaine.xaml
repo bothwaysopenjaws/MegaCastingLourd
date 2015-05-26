@@ -1,7 +1,7 @@
 ﻿<Window x:Class="MegaCasting.WPF.GestionWindows.AjoutDomaine"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="AjoutDomaine" Height="300" Width="300" Background="Honeydew">
+        Title="Ajout d'un domaine de métier" Height="300" Width="300" Background="Honeydew" Icon="/MegaCasting.WPF;component/unnamed.ico">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.2*"></ColumnDefinition>

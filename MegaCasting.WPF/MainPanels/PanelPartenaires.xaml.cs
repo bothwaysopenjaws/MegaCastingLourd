@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using MegaCasting.DBLib;
 using MegaCasting.WPF.GestionWindows;
 using MegaCasting.WPF.ViewModel;
-
+using MegaCasting.WPF.Functions;
 
 namespace MegaCasting.WPF
 {
@@ -27,7 +27,7 @@ namespace MegaCasting.WPF
 
         #region Attributs
         ViewModelUtilisateur _ViewModelUtilisateur;
-
+        Functions.Functions function = new Functions.Functions();
 
 
         #endregion
@@ -119,23 +119,30 @@ namespace MegaCasting.WPF
             // Vérifie que la saisie n'est pas null que le pa est bien en chiffre et que un Abonnment à été sélectionner dans la liste
             if (this.TextBoxPartenaireNom.Text != null && this.TextBoxPartenairePrenom != null)
             {
-                //Modifier le partenaire
-                ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).Nom = this.TextBoxPartenaireNom.Text;
-                ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).Prenom = this.TextBoxPartenairePrenom.Text;
-                ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).Telephone = this.TextBoxPartenaireNumTel.Text;
-                ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).Email = this.TextBoxPartenaireEmail.Text;
-                ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).adresse.Rue = this.TextBoxPartenaireRue.Text;
-                ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).adresse.CodePostal = this.TextBoxPartenaireCodePostal.Text;
-                ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).adresse.Ville = this.TextBoxPartenaireCity.Text;
-                ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).adresse.Pays = this.TextBoxPartenairePays.Text;
+                DateTime date = (DateTime)this.DatePickerDateNaissance.SelectedDate;
+                int age = function.CalculAge(date);
+                if (age > 18)
+                {
+                    //Modifier le partenaire
+                    ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).DateNaissance = date; 
+                    ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).Nom = this.TextBoxPartenaireNom.Text;
+                    ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).Prenom = this.TextBoxPartenairePrenom.Text;
+                    ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).Telephone = this.TextBoxPartenaireNumTel.Text;
+                    ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).Email = this.TextBoxPartenaireEmail.Text;
+                    ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).adresse.Rue = this.TextBoxPartenaireRue.Text;
+                    ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).adresse.CodePostal = this.TextBoxPartenaireCodePostal.Text;
+                    ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).adresse.Ville = this.TextBoxPartenaireCity.Text;
+                    ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).adresse.Pays = this.TextBoxPartenairePays.Text;
 
-                // Une fois que la viewModel est mise à jour on sauvegarde les modifications 
-                this._ViewModelUtilisateur.Save();
-                MessageBox.Show("Modification réussite !!!");
+                    // Une fois que la viewModel est mise à jour on sauvegarde les modifications 
+                    this._ViewModelUtilisateur.Save();
+                    MessageBox.Show("Modification réussite !!!");
 
+                }
+                else { MessageBox.Show("Le partenaire doit être agé de 18 ans ou plus."); }
+
+                // si la saisie n'est pas valide apparition d'un message d'erreur
             }
-
-            // si la saisie n'est pas valide apparition d'un message d'erreur
             else
             {
                 MessageBox.Show("Saisie invalide !\r Modification impossible.");

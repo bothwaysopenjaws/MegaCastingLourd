@@ -33,10 +33,10 @@
           <Property Name="nom" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="prenom" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="urlCv" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="urlLettreMotivation" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
           <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="telephone" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="urlLettreMotivation" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
         </EntityType>
         <EntityType Name="competence">
           <Key>
@@ -104,15 +104,15 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="utilisateur_id" Type="int" />
           <Property Name="metier_id" Type="int" />
           <Property Name="description" Type="longtext" Nullable="false" />
           <Property Name="dateDebut" Type="datetime" Precision="0" Nullable="false" />
           <Property Name="datePublication" Type="datetime" Precision="0" Nullable="false" />
-          <Property Name="duree" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="typeContrat_id" Type="int" />
-          <Property Name="utilisateur_id" Type="int" />
           <Property Name="intitule" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="isActive" Type="bool" Nullable="false" />
+          <Property Name="duree" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="typeContrat_id" Type="int" />
         </EntityType>
         <EntityType Name="typeabonnement">
           <Key>
@@ -155,15 +155,28 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adresse_id" Type="int" />
+          <Property Name="username" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="username_canonical" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="email_canonical" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="enabled" Type="bool" Nullable="false" />
+          <Property Name="salt" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="last_login" Type="datetime" Precision="0" />
+          <Property Name="locked" Type="bool" Nullable="false" />
+          <Property Name="expired" Type="bool" Nullable="false" />
+          <Property Name="expires_at" Type="datetime" Precision="0" />
+          <Property Name="confirmation_token" Type="varchar" MaxLength="255" />
+          <Property Name="password_requested_at" Type="datetime" Precision="0" />
+          <Property Name="roles" Type="longtext" Nullable="false" />
+          <Property Name="credentials_expired" Type="bool" Nullable="false" />
+          <Property Name="credentials_expire_at" Type="datetime" Precision="0" />
           <Property Name="nom" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="prenom" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="login" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="password" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="dateNaissance" Type="date" Nullable="false" />
-          <Property Name="typeUtilisateur_id" Type="int" Nullable="false" />
-          <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="telephone" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="adresse_id" Type="int" />
+          <Property Name="dateNaissance" Type="date" />
+          <Property Name="telephone" Type="varchar" MaxLength="255" />
+          <Property Name="typeUtilisateur_id" Type="int" />
         </EntityType>
         <Association Name="FK_1D1C63B34DE7DC5C">
           <End Role="adresse" Type="Self.adresse" Multiplicity="0..1" />
@@ -178,7 +191,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_1D1C63B3E9516E8C">
-          <End Role="typeutilisateur" Type="Self.typeutilisateur" Multiplicity="1" />
+          <End Role="typeutilisateur" Type="Self.typeutilisateur" Multiplicity="0..1" />
           <End Role="utilisateur" Type="Self.utilisateur" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="typeutilisateur">
@@ -714,7 +727,6 @@
           <Property Name="Identifiant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nom" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Prenom" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Login" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="DateNaissance" Type="DateTime" Nullable="false" />
           <Property Name="IdentifiantTypeutilisateur" Type="Int32" Nullable="false" />
@@ -729,6 +741,20 @@
           <NavigationProperty Name="typeutilisateur" Relationship="megacastingModel.FK_1D1C63B3E9516E8C" FromRole="utilisateur" ToRole="TypeUtilisateur" />
           <NavigationProperty Name="metiers" Relationship="megacastingModel.metier_utilisateur" FromRole="Utilisateur" ToRole="Metier" />
           <NavigationProperty Name="offres" Relationship="megacastingModel.FK_AF86866FFB88E14F" FromRole="Utilisateur" ToRole="offre" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="username_canonical" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="email_canonical" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="enabled" Type="Boolean" Nullable="false" />
+          <Property Name="salt" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="last_login" Type="DateTime" />
+          <Property Name="locked" Type="Boolean" Nullable="false" />
+          <Property Name="expired" Type="Boolean" Nullable="false" />
+          <Property Name="expires_at" Type="DateTime" />
+          <Property Name="confirmation_token" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="password_requested_at" Type="DateTime" />
+          <Property Name="roles" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="credentials_expired" Type="Boolean" Nullable="false" />
+          <Property Name="credentials_expire_at" Type="DateTime" />
         </EntityType>
         <Association Name="FK_351268BBFB88E14F">
           <End Type="megacastingModel.Utilisateur" Role="utilisateur" Multiplicity="1" />
@@ -1017,13 +1043,26 @@
           <EntitySetMapping Name="Utilisateurs">
             <EntityTypeMapping TypeName="megacastingModel.Utilisateur">
               <MappingFragment StoreEntitySet="utilisateur">
+                <ScalarProperty Name="credentials_expire_at" ColumnName="credentials_expire_at" />
+                <ScalarProperty Name="credentials_expired" ColumnName="credentials_expired" />
+                <ScalarProperty Name="roles" ColumnName="roles" />
+                <ScalarProperty Name="password_requested_at" ColumnName="password_requested_at" />
+                <ScalarProperty Name="confirmation_token" ColumnName="confirmation_token" />
+                <ScalarProperty Name="expires_at" ColumnName="expires_at" />
+                <ScalarProperty Name="expired" ColumnName="expired" />
+                <ScalarProperty Name="locked" ColumnName="locked" />
+                <ScalarProperty Name="last_login" ColumnName="last_login" />
+                <ScalarProperty Name="salt" ColumnName="salt" />
+                <ScalarProperty Name="enabled" ColumnName="enabled" />
+                <ScalarProperty Name="email_canonical" ColumnName="email_canonical" />
+                <ScalarProperty Name="username_canonical" ColumnName="username_canonical" />
+                <ScalarProperty Name="username" ColumnName="username" />
                 <ScalarProperty Name="IdentifiantAdresse" ColumnName="adresse_id" />
                 <ScalarProperty Name="Telephone" ColumnName="telephone" />
                 <ScalarProperty Name="Email" ColumnName="email" />
                 <ScalarProperty Name="IdentifiantTypeutilisateur" ColumnName="typeUtilisateur_id" />
                 <ScalarProperty Name="DateNaissance" ColumnName="dateNaissance" />
                 <ScalarProperty Name="Password" ColumnName="password" />
-                <ScalarProperty Name="Login" ColumnName="login" />
                 <ScalarProperty Name="Prenom" ColumnName="prenom" />
                 <ScalarProperty Name="Nom" ColumnName="nom" />
                 <ScalarProperty Name="Identifiant" ColumnName="id" />

@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using MegaCasting.DBLib;
 using MegaCasting.WPF.ViewModel;
 using System.Collections.ObjectModel;
+using MegaCasting.WPF.Functions;
 
 namespace MegaCasting.WPF.Ajout_Windows
 {
@@ -24,6 +25,7 @@ namespace MegaCasting.WPF.Ajout_Windows
     {
         #region Attributs
         protected ViewModelUtilisateur _ViewModelUtilisateur;
+        Functions.Functions function = new Functions.Functions();
         #endregion
 
         #region Constructeur
@@ -32,11 +34,11 @@ namespace MegaCasting.WPF.Ajout_Windows
             InitializeComponent();
             // instancie la  viewModel
             _ViewModelUtilisateur = new ViewModelUtilisateur();
-           
+
             _ViewModelUtilisateur = _ViewModel;
 
             this.DataContext = _ViewModelUtilisateur;
-        
+
         }
         #endregion
 
@@ -51,35 +53,52 @@ namespace MegaCasting.WPF.Ajout_Windows
 
             if (this.TextBoxNomAjoutAnnonceur.Text != null && this.TextBoxEmailAjoutAnnonceur.Text != null && this.TextBoxTelAjoutAnnonceur.Text != null && this.TextBoxNomAjoutAnnonceur.Text != "" && this.TextBoxEmailAjoutAnnonceur.Text != "" && this.TextBoxTelAjoutAnnonceur.Text != "")
             {
-            annonceur.Nom = this.TextBoxNomAjoutAnnonceur.Text;
-            annonceur.Prenom = this.TextBoxPrenomAjoutAnnonceur.Text;
-            annonceur.Email = this.TextBoxEmailAjoutAnnonceur.Text;
-            annonceur.Telephone = this.TextBoxTelAjoutAnnonceur.Text;
-            adresseAnnonceur.Rue = this.TextBoxRueAjoutAnnonceur.Text;
-            adresseAnnonceur.CodePostal =this.TextBoxCPAjoutAnnonceur.Text;
-            adresseAnnonceur.Ville =  this.TextBoxVilleAjoutAnnonceur.Text;
-            adresseAnnonceur.Pays = this.textBoxPaysAjoutAnnonceur.Text;
-            annonceur.adresse = (Adresse)adresseAnnonceur;
-            annonceur.Login = annonceur.Nom + "login";
-            annonceur.Password = annonceur.Nom + "Password";
+                DateTime dateNaissance = (DateTime)this.DatePickerNaissanceAnnonceur.SelectedDate;
 
+                int age = function.CalculAge(dateNaissance);
 
-            // retrouve le type d'utilisateur associé aux annonceurs
-            foreach (TypeUtilisateur typeUtilisateur in type)
-            {
-
-                if (typeUtilisateur.Libelle.Contains("Annonceur"))
+                if (age > 18)
                 {
-                    annonceur.typeutilisateur = (TypeUtilisateur)typeUtilisateur;
+                    annonceur.Nom = this.TextBoxNomAjoutAnnonceur.Text;
+                    annonceur.DateNaissance = dateNaissance;
+                    annonceur.Prenom = this.TextBoxPrenomAjoutAnnonceur.Text;
+                    annonceur.Email = this.TextBoxEmailAjoutAnnonceur.Text;
+                    annonceur.email_canonical = annonceur.Email;
+                    annonceur.Telephone = this.TextBoxTelAjoutAnnonceur.Text;
+                    adresseAnnonceur.Rue = this.TextBoxRueAjoutAnnonceur.Text;
+                    adresseAnnonceur.CodePostal = this.TextBoxCPAjoutAnnonceur.Text;
+                    adresseAnnonceur.Ville = this.TextBoxVilleAjoutAnnonceur.Text;
+                    adresseAnnonceur.Pays = this.textBoxPaysAjoutAnnonceur.Text;
+                    annonceur.adresse = (Adresse)adresseAnnonceur;
+                    annonceur.username = annonceur.Nom + annonceur.Prenom;
+                    annonceur.username_canonical = annonceur.username;
+                    annonceur.Password = annonceur.Nom + "Password";
+                    annonceur.salt = "";
+                    annonceur.enabled = true;
+                    annonceur.locked = false;
+                    annonceur.expired = false;
+                    annonceur.roles = "a:0:{}";
+                    annonceur.credentials_expired = false;
+
+
+                    // retrouve le type d'utilisateur associé aux annonceurs
+                    foreach (TypeUtilisateur typeUtilisateur in type)
+                    {
+
+                        if (typeUtilisateur.Libelle.Contains("Annonceur"))
+                        {
+                            annonceur.typeutilisateur = (TypeUtilisateur)typeUtilisateur;
+                        }
+
+                    }
+
+                    _ViewModelUtilisateur.annonceurs.Add(annonceur);
+                    _ViewModelUtilisateur.Entities.Utilisateurs.Add(annonceur);
+
+                    _ViewModelUtilisateur.Save();
+                    this.Close();
                 }
-
-            }
-
-            _ViewModelUtilisateur.annonceurs.Add(annonceur);
-            _ViewModelUtilisateur.Entities.Utilisateurs.Add(annonceur);
-
-            _ViewModelUtilisateur.Save();
-            this.Close();
+                else { MessageBox.Show("L'annonceur doit être agé de 18 ans ou plus."); }
             }
             else { MessageBox.Show("veuillez saisir au minimum :\r\n - Un nom\n - Un numéro de téléphone \n - Une adresse mail."); }
         }

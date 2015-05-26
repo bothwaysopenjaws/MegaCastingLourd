@@ -40,7 +40,16 @@ namespace MegaCasting.WPF.GestionWindows
             this.DataContext = _ViewModelMetier;
         }
         #endregion
+
+        
+
+        
         #region Evenement
+        private void ButtonAjouterMetier_Click(object sender, RoutedEventArgs e)
+        {
+            AjoutMetierArtiste ajoutMetierArtiste = new AjoutMetierArtiste();
+            ajoutMetierArtiste.ShowDialog();
+        }
 
         #endregion
     }

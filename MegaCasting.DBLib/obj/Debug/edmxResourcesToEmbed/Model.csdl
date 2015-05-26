@@ -266,7 +266,6 @@
     <Property Name="Identifiant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Nom" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="Prenom" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="Login" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="Password" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="DateNaissance" Type="DateTime" Nullable="false" />
     <Property Name="IdentifiantTypeutilisateur" Type="Int32" Nullable="false" />
@@ -281,6 +280,20 @@
     <NavigationProperty Name="typeutilisateur" Relationship="megacastingModel.FK_1D1C63B3E9516E8C" FromRole="utilisateur" ToRole="TypeUtilisateur" />
     <NavigationProperty Name="metiers" Relationship="megacastingModel.metier_utilisateur" FromRole="Utilisateur" ToRole="Metier" />
     <NavigationProperty Name="offres" Relationship="megacastingModel.FK_AF86866FFB88E14F" FromRole="Utilisateur" ToRole="offre" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="username_canonical" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="email_canonical" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="enabled" Type="Boolean" Nullable="false" />
+    <Property Name="salt" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="last_login" Type="DateTime" />
+    <Property Name="locked" Type="Boolean" Nullable="false" />
+    <Property Name="expired" Type="Boolean" Nullable="false" />
+    <Property Name="expires_at" Type="DateTime" />
+    <Property Name="confirmation_token" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="password_requested_at" Type="DateTime" />
+    <Property Name="roles" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="credentials_expired" Type="Boolean" Nullable="false" />
+    <Property Name="credentials_expire_at" Type="DateTime" />
   </EntityType>
   <Association Name="FK_351268BBFB88E14F">
     <End Type="megacastingModel.Utilisateur" Role="utilisateur" Multiplicity="1" />

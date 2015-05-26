@@ -1,7 +1,7 @@
 ﻿<Window x:Class="MegaCasting.WPF.AjoutTypeCompetence"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="AjoutTypeCompetence" Height="200" Width="300" Background="Honeydew">
+        Title="Ajout d'un type de compétence" Height="200" Width="300" Background="Honeydew" Icon="/MegaCasting.WPF;component/unnamed.ico">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.2*"></ColumnDefinition>

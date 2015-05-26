@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using MegaCasting.DBLib;
 using MegaCasting.WPF.ViewModel;
 using System.Collections.ObjectModel;
+using MegaCasting.WPF.Functions;
 
 
 namespace MegaCasting.WPF.GestionWindows
@@ -25,6 +26,7 @@ namespace MegaCasting.WPF.GestionWindows
     {
         #region Attributs
         ViewModelUtilisateur _ViewModelUtilisateur;
+        Functions.Functions function = new Functions.Functions();
         #endregion
 
         #region Constructeur
@@ -58,17 +60,32 @@ namespace MegaCasting.WPF.GestionWindows
 
             if (this.TextBoxNomAjoutPartenaire.Text != null && this.TextBoxEmailAjoutPartenaire.Text != null && this.TextBoxTelAjoutPartenaire.Text != null && this.TextBoxNomAjoutPartenaire.Text != "" && this.TextBoxEmailAjoutPartenaire.Text != "" && this.TextBoxTelAjoutPartenaire.Text != "")
             {
-                
+                 DateTime dateNaissance = (DateTime)this.DatePickerNaissancePartenaire.SelectedDate;
+
+                int age = function.CalculAge(dateNaissance);
+
+                if (age > 18)
+                {
                 partenaire.Nom = this.TextBoxNomAjoutPartenaire.Text;
                 partenaire.Prenom = this.TextBoxPrenomAjoutPartenaire.Text;
-                partenaire.Telephone = this.TextBoxTelAjoutPartenaire.Text;
                 partenaire.Email = this.TextBoxEmailAjoutPartenaire.Text;
-                partenaire.Login = partenaire.Nom + "login";
-                partenaire.Password = partenaire.Nom + "Password";
+                partenaire.email_canonical = partenaire.Email;
+                partenaire.DateNaissance = dateNaissance;
+                partenaire.Telephone = this.TextBoxTelAjoutPartenaire.Text;
                 adressePartenaire.Rue = this.TextBoxRueAjoutPartenaire.Text;
-                adressePartenaire.Pays = this.textBoxPaysAjoutPartenaire.Text;
-                adressePartenaire.Ville = this.TextBoxVilleAjoutPartenaire.Text;
                 adressePartenaire.CodePostal = this.TextBoxCPAjoutPartenaire.Text;
+                adressePartenaire.Ville = this.TextBoxVilleAjoutPartenaire.Text;
+                adressePartenaire.Pays = this.textBoxPaysAjoutPartenaire.Text;
+                partenaire.adresse = (Adresse)adressePartenaire;
+                partenaire.username = partenaire.Nom + partenaire.Prenom;
+                partenaire.username_canonical = partenaire.username;
+                partenaire.Password = partenaire.Nom + "Password";
+                partenaire.salt = "";
+                partenaire.enabled = true;
+                partenaire.locked = false;
+                partenaire.expired = false;
+                partenaire.roles = "a:0:{}";
+                partenaire.credentials_expired = false;
 
                 // retrouve le type d'utilisateur associé aux partenaires
                 foreach (TypeUtilisateur typeUtilisateur in type)
@@ -81,12 +98,14 @@ namespace MegaCasting.WPF.GestionWindows
 
                 }
 
-                partenaire.adresse = (Adresse)adressePartenaire;
                 _ViewModelUtilisateur.diffuseurs.Add(partenaire);
                 _ViewModelUtilisateur.Entities.Utilisateurs.Add(partenaire);
 
                 this._ViewModelUtilisateur.Save();
-                this.Close();
+                    this.Close();
+                    }
+                else { MessageBox.Show("L'artiste doit être agé de 18 ans ou plus."); }
+                
             }
             else { MessageBox.Show("veuillez saisir au minimum :\r\n - Un nom\n - Un numéro de téléphone \n - Une adresse mail."); }
         }

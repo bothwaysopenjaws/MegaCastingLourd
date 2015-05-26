@@ -132,13 +132,26 @@
     <EntitySetMapping Name="Utilisateurs">
       <EntityTypeMapping TypeName="megacastingModel.Utilisateur">
         <MappingFragment StoreEntitySet="utilisateur">
+          <ScalarProperty Name="credentials_expire_at" ColumnName="credentials_expire_at" />
+          <ScalarProperty Name="credentials_expired" ColumnName="credentials_expired" />
+          <ScalarProperty Name="roles" ColumnName="roles" />
+          <ScalarProperty Name="password_requested_at" ColumnName="password_requested_at" />
+          <ScalarProperty Name="confirmation_token" ColumnName="confirmation_token" />
+          <ScalarProperty Name="expires_at" ColumnName="expires_at" />
+          <ScalarProperty Name="expired" ColumnName="expired" />
+          <ScalarProperty Name="locked" ColumnName="locked" />
+          <ScalarProperty Name="last_login" ColumnName="last_login" />
+          <ScalarProperty Name="salt" ColumnName="salt" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+          <ScalarProperty Name="email_canonical" ColumnName="email_canonical" />
+          <ScalarProperty Name="username_canonical" ColumnName="username_canonical" />
+          <ScalarProperty Name="username" ColumnName="username" />
           <ScalarProperty Name="IdentifiantAdresse" ColumnName="adresse_id" />
           <ScalarProperty Name="Telephone" ColumnName="telephone" />
           <ScalarProperty Name="Email" ColumnName="email" />
           <ScalarProperty Name="IdentifiantTypeutilisateur" ColumnName="typeUtilisateur_id" />
           <ScalarProperty Name="DateNaissance" ColumnName="dateNaissance" />
           <ScalarProperty Name="Password" ColumnName="password" />
-          <ScalarProperty Name="Login" ColumnName="login" />
           <ScalarProperty Name="Prenom" ColumnName="prenom" />
           <ScalarProperty Name="Nom" ColumnName="nom" />
           <ScalarProperty Name="Identifiant" ColumnName="id" />

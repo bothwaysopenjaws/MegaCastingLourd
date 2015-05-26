@@ -61,7 +61,7 @@
             <Label Grid.Column="0" Grid.Row="7" HorizontalAlignment="Left" VerticalAlignment="Center">Code Postal :</Label>
             <Label Grid.Column="0" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Center">Ville :</Label>
             <Label Grid.Column="0" Grid.Row="9" HorizontalAlignment="Left" VerticalAlignment="Center">Pays:</Label>
-
+            <Label  Grid.Column="0" Grid.Row="10" HorizontalAlignment="Left" VerticalAlignment="Center">Date de naissance :</Label>
             <!-- objets bindés-->
             <TextBox Grid.Column="1" Grid.Row="0" Margin="10,10,10,10" Name="TextBoxPartenaireNom" Text="{Binding Path=SelectedItem.Nom, ElementName=ListBoxPartenaires, UpdateSourceTrigger=PropertyChanged}" ></TextBox>
             <TextBox Grid.Column="1" Grid.Row="1" Margin="10,10,10,10" Name="TextBoxPartenairePrenom" Text="{Binding Path=SelectedItem.Prenom, ElementName=ListBoxPartenaires, UpdateSourceTrigger=PropertyChanged}" ></TextBox>
@@ -71,7 +71,7 @@
             <TextBox Grid.Column="1" Grid.Row="7" Margin="10,10,10,10" Name="TextBoxPartenaireCodePostal" Text="{Binding Path=SelectedItem.adresse.CodePostal, ElementName=ListBoxPartenaires, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             <TextBox Grid.Column="1" Grid.Row="8" Margin="10,10,10,10" Name="TextBoxPartenaireCity" Text="{Binding Path=SelectedItem.adresse.Ville, ElementName=ListBoxPartenaires, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             <TextBox Grid.Column="1" Grid.Row="9" Margin="10,10,10,10" Name="TextBoxPartenairePays" Text="{Binding Path=SelectedItem.adresse.Pays, ElementName=ListBoxPartenaires, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-
+            <DatePicker Name="DatePickerDateNaissance" Text="{Binding Path=SelectedItem.DateNaissance, ElementName=ListBoxPartenaires, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Margin="5"></DatePicker>
             <Button Background="SteelBlue" Grid.Column="0" Grid.Row="12" Margin="1" Name="ButtonPartenaireModifier" Content="Sauvegarder" Click="ButtonPartenaireModifier_Click" ></Button>
             <Button Background="Red" Grid.Column="1" Grid.Row="12" Margin="1" Name="ButtonPartenaireSupprimer" Content="Supprimer" Click="ButtonPartenaireSupprimer_Click"></Button>
 

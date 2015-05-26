@@ -1,7 +1,7 @@
 ﻿<Window x:Class="MegaCasting.WPF.Ajout_Windows.AjoutHistorique"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="AjoutHistorique" Height="500" Width="400" Background="Honeydew">
+        Title="Gestion des expériences" Height="500" Width="400" Background="Honeydew" Icon="/MegaCasting.WPF;component/unnamed.ico">
     <Grid>
         <Grid.ColumnDefinitions>
           

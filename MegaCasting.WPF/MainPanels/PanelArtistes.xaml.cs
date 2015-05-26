@@ -18,6 +18,7 @@ using System.Collections.ObjectModel;
 using MegaCasting.WPF;
 using MegaCasting.WPF.GestionWindows;
 using MegaCasting.WPF.Ajout_Windows;
+using MegaCasting.WPF.Functions;
 
 namespace MegaCasting.WPF
 
@@ -31,8 +32,10 @@ namespace MegaCasting.WPF
         #region Attributs
         
         protected ViewModelDomaine_Metier viewModelMetierDomaine;
+        
         public ObservableCollection<Metier> metierArtiste = new ObservableCollection<Metier>();
         public ObservableCollection<Domaine> DomaineArtiste = new ObservableCollection<Domaine>();
+        Functions.Functions function = new Functions.Functions();
         #endregion
 
         #region Constructeurs
@@ -170,6 +173,38 @@ namespace MegaCasting.WPF
             }
         }
         #endregion
+
+        private void ButtonArtisteModifier_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.TextBoxNomArtiste != null && this.TextBoxNomArtiste.Text != "" && this.TextBoxEmailArtiste != null && this.TextBoxEmailArtiste.Text != null && this.TextBoxTelephoneArtiste != null && this.TextBoxTelephoneArtiste.Text != null)
+            {
+                DateTime date = (DateTime)this.DatePickerDateNaissance.SelectedDate;
+                int age = function.CalculAge(date);
+                if (age > 18)
+                {
+                    Adresse adresseArtiste = new Adresse();
+                    ((Utilisateur)(this.ListBoxArtistes.SelectedItem)).Nom = this.TextBoxNomArtiste.Text;
+                    ((Utilisateur)(this.ListBoxArtistes.SelectedItem)).Prenom = this.TextBoxPrenomArtiste.Text;
+                    ((Utilisateur)(this.ListBoxArtistes.SelectedItem)).Telephone = this.TextBoxTelephoneArtiste.Text;
+                    ((Utilisateur)(this.ListBoxArtistes.SelectedItem)).Email = this.TextBoxEmailArtiste.Text;
+                    ((Utilisateur)(this.ListBoxArtistes.SelectedItem)).DateNaissance = date;
+                    adresseArtiste.Rue = this.TextBoxRueArtiste.Text;
+                    adresseArtiste.CodePostal = this.TextBoxCPArtiste.Text;
+                    adresseArtiste.Ville = this.TextBoxVilleArtiste.Text;
+                    adresseArtiste.Pays = this.TextBoxPaysArtiste.Text;
+                    ((Utilisateur)(this.ListBoxArtistes.SelectedItem)).adresse = (Adresse)adresseArtiste;
+
+                    // Une fois que la viewModel est mise à jour on sauvegarde les modifications
+ 
+                    //this._ViewModelUtilisateur.Save();
+                    MessageBox.Show("Modification réussite !!!");
+                }
+                else { MessageBox.Show("L'artiste doit être agé de 18 ans ou plus."); }
+            }
+
+
+            else { MessageBox.Show("L' artiste doit disposer au minimum de : \n - Un nom \n - Un numéro de téléphone \n - Un Email "); }
+        }
 
       
 

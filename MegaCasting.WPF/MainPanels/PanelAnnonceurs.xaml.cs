@@ -27,6 +27,7 @@ namespace MegaCasting.WPF
         #region Attributs
 
         ViewModelUtilisateur _ViewModelUtilisateur;
+        Functions.Functions function = new Functions.Functions();
         #endregion
 
         #region Constructeurs
@@ -36,7 +37,7 @@ namespace MegaCasting.WPF
             _ViewModelUtilisateur = new ViewModelUtilisateur();
 
             this.DataContext = _ViewModelUtilisateur;
-           
+
         }
 
         #endregion
@@ -101,21 +102,29 @@ namespace MegaCasting.WPF
         {
             if (this.textBoxNomAnnonceur != null && this.textBoxNomAnnonceur.Text != "" && this.textBoxEmailAnnonceur != null && this.textBoxEmailAnnonceur.Text != null && this.textBoxTelephoneAnnonceur != null && this.textBoxTelephoneAnnonceur.Text != null)
             {
-                Adresse adresseAnnonceur = new Adresse();
-                ((Utilisateur)(this.ListBoxAnnonceurs.SelectedItem)).Nom = this.textBoxNomAnnonceur.Text;
-                ((Utilisateur)(this.ListBoxAnnonceurs.SelectedItem)).Prenom = this.textBoxPrenomAnnonceur.Text;
-                ((Utilisateur)(this.ListBoxAnnonceurs.SelectedItem)).Telephone = this.textBoxTelephoneAnnonceur.Text;
-                ((Utilisateur)(this.ListBoxAnnonceurs.SelectedItem)).Email = this.textBoxEmailAnnonceur.Text;
-                adresseAnnonceur.Rue = this.textBoxRueAnnonceur.Text;
-                adresseAnnonceur.CodePostal = this.textBoxCodePostalAnnonceur.Text;
-                adresseAnnonceur.Ville = this.textBoxVilleAnnonceur.Text;
-                adresseAnnonceur.Pays = this.textBoxPaysAnnonceur.Text;
-                ((Utilisateur)(this.ListBoxAnnonceurs.SelectedItem)).adresse = (Adresse)adresseAnnonceur;
-                
-                // Une fois que la viewModel est mise à jour on sauvegarde les modifications 
-                this._ViewModelUtilisateur.Save();
-                MessageBox.Show("Modification réussite !!!");
+                DateTime date = (DateTime)this.DatePickerDateNaissance.SelectedDate;
+                int age = function.CalculAge(date);
+                if (age > 18)
+                {
+                    Adresse adresseAnnonceur = new Adresse();
+                    ((Utilisateur)(this.ListBoxAnnonceurs.SelectedItem)).Nom = this.textBoxNomAnnonceur.Text;
+                    ((Utilisateur)(this.ListBoxAnnonceurs.SelectedItem)).Prenom = this.textBoxPrenomAnnonceur.Text;
+                    ((Utilisateur)(this.ListBoxAnnonceurs.SelectedItem)).Telephone = this.textBoxTelephoneAnnonceur.Text;
+                    ((Utilisateur)(this.ListBoxAnnonceurs.SelectedItem)).Email = this.textBoxEmailAnnonceur.Text;
+                    ((Utilisateur)(this.ListBoxAnnonceurs.SelectedItem)).DateNaissance = date;
+                    adresseAnnonceur.Rue = this.textBoxRueAnnonceur.Text;
+                    adresseAnnonceur.CodePostal = this.textBoxCodePostalAnnonceur.Text;
+                    adresseAnnonceur.Ville = this.textBoxVilleAnnonceur.Text;
+                    adresseAnnonceur.Pays = this.textBoxPaysAnnonceur.Text;
+                    ((Utilisateur)(this.ListBoxAnnonceurs.SelectedItem)).adresse = (Adresse)adresseAnnonceur;
+
+                    // Une fois que la viewModel est mise à jour on sauvegarde les modifications 
+                    this._ViewModelUtilisateur.Save();
+                    MessageBox.Show("Modification réussite !!!");
+                }
+                else { MessageBox.Show("L'annonceur doit être agé de 18 ans ou plus."); }
             }
+
 
             else { MessageBox.Show("L' annonceur doit disposer au minimum de : \n - Un nom \n - Un numéro de téléphone \n - Un Email "); }
         }
@@ -132,7 +141,7 @@ namespace MegaCasting.WPF
         }
         #endregion
 
-        
+
 
 
 

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MegaCasting.DBLib;
 using MegaCasting.WPF.ViewModel;
+using MegaCasting.WPF.Functions;
 using System.Collections.ObjectModel;
 
 namespace MegaCasting.WPF.Ajout_Windows
@@ -24,7 +25,7 @@ namespace MegaCasting.WPF.Ajout_Windows
     {
         #region Attributs
         protected ViewModelUtilisateur _viewModelUser;
-
+        Functions.Functions function = new Functions.Functions();
         #endregion
 
         #region Constructeurs
@@ -35,7 +36,7 @@ namespace MegaCasting.WPF.Ajout_Windows
 
 
             this.DataContext = _viewModelUser;
-        
+
         }
         #endregion
         #region Evenements
@@ -49,39 +50,56 @@ namespace MegaCasting.WPF.Ajout_Windows
 
             if (this.TextBoxNomAjoutArtiste.Text != null && this.TextBoxEmailAjoutArtiste.Text != null && this.TextBoxTelAjoutArtiste.Text != null && this.TextBoxNomAjoutArtiste.Text != "" && this.TextBoxEmailAjoutArtiste.Text != "" && this.TextBoxTelAjoutArtiste.Text != "")
             {
-                artiste.Nom = this.TextBoxNomAjoutArtiste.Text;
-                artiste.Prenom = this.TextBoxPrenomAjoutArtiste.Text;
-                artiste.Email = this.TextBoxEmailAjoutArtiste.Text;
-                artiste.Telephone = this.TextBoxTelAjoutArtiste.Text;
-                adresseArtiste.Rue = this.TextBoxRueAjoutArtiste.Text;
-                adresseArtiste.CodePostal = this.TextBoxCPAjoutArtiste.Text;
-                adresseArtiste.Ville = this.TextBoxVilleAjoutArtiste.Text;
-                adresseArtiste.Pays = this.textBoxPaysAjoutArtiste.Text;
-                artiste.adresse = (Adresse)adresseArtiste;
-                artiste.Login = artiste.Nom + "login";
-                artiste.Password = artiste.Nom + "Password";
+                DateTime dateNaissance = (DateTime)this.DatePickerNaissanceArtiste.SelectedDate;
 
+                int age = function.CalculAge(dateNaissance);
 
-                // retrouve le type d'utilisateur associé aux annonceurs
-                foreach (TypeUtilisateur typeUtilisateur in type)
+                if (age > 18)
                 {
+                    artiste.Nom = this.TextBoxNomAjoutArtiste.Text;
+                    artiste.DateNaissance = dateNaissance;
+                    artiste.Prenom = this.TextBoxPrenomAjoutArtiste.Text;
+                    artiste.Email = this.TextBoxEmailAjoutArtiste.Text;
+                    artiste.email_canonical = artiste.Email;
+                    artiste.Telephone = this.TextBoxTelAjoutArtiste.Text;
+                    adresseArtiste.Rue = this.TextBoxRueAjoutArtiste.Text;
+                    adresseArtiste.CodePostal = this.TextBoxCPAjoutArtiste.Text;
+                    adresseArtiste.Ville = this.TextBoxVilleAjoutArtiste.Text;
+                    adresseArtiste.Pays = this.textBoxPaysAjoutArtiste.Text;
+                    artiste.adresse = (Adresse)adresseArtiste;
+                    artiste.username = artiste.Nom + artiste.Prenom;
+                    artiste.username_canonical = artiste.username;
+                    artiste.Password = artiste.Nom + "Password";
+                    artiste.salt = "";
+                    artiste.enabled = true;
+                    artiste.locked = false;
+                    artiste.expired = false;
+                    artiste.roles = "a:0:{}";
+                    artiste.credentials_expired = false;
 
-                    if (typeUtilisateur.Libelle.Contains("Artiste"))
+
+                    // retrouve le type d'utilisateur associé aux annonceurs
+                    foreach (TypeUtilisateur typeUtilisateur in type)
                     {
-                        artiste.typeutilisateur = (TypeUtilisateur)typeUtilisateur;
+
+                        if (typeUtilisateur.Libelle.Contains("Artiste"))
+                        {
+                            artiste.typeutilisateur = (TypeUtilisateur)typeUtilisateur;
+                        }
+
                     }
 
+                    _viewModelUser.artistes.Add(artiste);
+                    _viewModelUser.Entities.Utilisateurs.Add(artiste);
+
+                    _viewModelUser.Save();
+                    this.Close();
                 }
-
-                _viewModelUser.artistes.Add(artiste);
-                _viewModelUser.Entities.Utilisateurs.Add(artiste);
-
-                _viewModelUser.Save();
-                this.Close();
+                else { MessageBox.Show("L'artiste doit être agé de 18 ans ou plus."); }
             }
             else { MessageBox.Show("veuillez saisir au minimum :\r\n - Un nom\n - Un numéro de téléphone \n - Une adresse mail."); }
         }
-        
+
         #endregion
     }
 }

@@ -1,7 +1,7 @@
 ﻿<Window x:Class="MegaCasting.WPF.GestionTypeAbonnement"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Gestion des types d'abonnements" Height="300" Width="500" Background="Honeydew">
+        Title="Gestion des types d'abonnements" Height="300" Width="500" Background="Honeydew" Icon="/MegaCasting.WPF;component/unnamed.ico">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.2*"></ColumnDefinition>
