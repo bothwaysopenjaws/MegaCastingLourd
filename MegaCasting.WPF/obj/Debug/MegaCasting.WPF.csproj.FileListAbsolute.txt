@@ -218,24 +218,13 @@ C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Aj
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutArtiste.g.cs
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionMetierArtiste.baml
 C:\Users\jeoffrey\Documents\GitHub\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionMetierArtiste.g.cs
-C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.WPF.exe.config
-C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.exe
-C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.pdb
-C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.WPF.exe
-C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.WPF.pdb
-C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\bin\Debug\EntityFramework.dll
-C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.DBLib.dll
-C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MySql.Data.dll
-C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\bin\Debug\mysql.data.entity.EF6.dll
-C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.DBLib.pdb
-C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\bin\Debug\EntityFramework.xml
-C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\bin\Debug\fr\EntityFramework.resources.dll
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.csprojResolveAssemblyReference.cache
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutAnnonceur.baml
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutArtiste.baml
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutCompetenceArtiste.baml
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutCredit.baml
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutHistorique.baml
+C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutMetierArtiste.baml
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutOffre.baml
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutTypeAbonnement.baml
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutTypeCompetence.baml
@@ -265,6 +254,7 @@ C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutCompetenceArtiste.g.cs
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutCredit.g.cs
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutHistorique.g.cs
+C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutMetierArtiste.g.cs
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutOffre.g.cs
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutTypeAbonnement.g.cs
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutTypeCompetence.g.cs
@@ -294,9 +284,19 @@ C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF_MarkupCompile.cache
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF_MarkupCompile.lref
+C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.WPF.exe.config
+C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.WPF.exe
+C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.WPF.pdb
+C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\bin\Debug\EntityFramework.dll
+C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.DBLib.dll
+C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MySql.Data.dll
+C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\bin\Debug\mysql.data.entity.EF6.dll
+C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.DBLib.pdb
+C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\bin\Debug\EntityFramework.xml
+C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\bin\Debug\fr\EntityFramework.resources.dll
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainWindow.baml
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.g.resources
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.Properties.Resources.resources
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.csproj.GenerateResource.Cache
-C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutMetierArtiste.baml
-C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutMetierArtiste.g.cs
+C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.exe
+C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.pdb

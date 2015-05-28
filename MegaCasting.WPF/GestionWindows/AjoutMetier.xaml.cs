@@ -24,16 +24,18 @@ namespace MegaCasting.WPF.GestionWindows
         #region Attributs
 
         protected ViewModelDomaine_Metier _ViewModelMetier;
-
+       
         #endregion
 
         #region Constructeur
         public AjoutMetier(ViewModelDomaine_Metier _ViewModel)
         {
             InitializeComponent();
+
+            
             // Intégration de la ViewModel récupérer avec celle de cette fenêtre
             _ViewModelMetier = _ViewModel;
-
+            
             // intégrer la View au dataContext
             this.DataContext = _ViewModelMetier;
 

@@ -29,11 +29,11 @@ namespace MegaCasting.WPF.Ajout_Windows
         #endregion
 
         #region Constructeurs
-        public AjoutArtiste()
+        public AjoutArtiste( ViewModelUtilisateur viewModelUser)
         {
             InitializeComponent();
             _viewModelUser = new ViewModelUtilisateur();
-
+            _viewModelUser = viewModelUser;
 
             this.DataContext = _viewModelUser;
 

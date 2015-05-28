@@ -31,6 +31,7 @@ namespace MegaCasting.WPF
 
         #region Attributs
         
+        protected ViewModelUtilisateur viewModelUser;
         protected ViewModelDomaine_Metier viewModelMetierDomaine;
         
         public ObservableCollection<Metier> metierArtiste = new ObservableCollection<Metier>();
@@ -43,11 +44,11 @@ namespace MegaCasting.WPF
         public PanelArtistes()
         {
             InitializeComponent();
-            viewModelMetierDomaine = new ViewModelDomaine_Metier();
+            viewModelUser = new ViewModelUtilisateur();
             // Récupération de la ViewModel
             
             // intégrer la View au dataContext
-            this.DataContext = viewModelMetierDomaine;
+            this.DataContext = viewModelUser;
 
            
         }
@@ -64,13 +65,15 @@ namespace MegaCasting.WPF
         /// <param name="e"></param>
         private void ListBoxArtistes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // Récupère tout les métiers assorti à l'artiste sélectionné
-            metierArtiste = new ObservableCollection<Metier>(((Utilisateur)this.ListBoxArtistes.SelectedItem).metiers);
-            this.ListBoxMetiers.ItemsSource = metierArtiste;
+            viewModelMetierDomaine = new ViewModelDomaine_Metier();
+            
+            Utilisateur user = ((Utilisateur)this.ListBoxArtistes.SelectedItem);
+            viewModelMetierDomaine.metierParArtiste(user);
+            this.ListBoxMetiers.ItemsSource = viewModelMetierDomaine.metiersArtistes;
 
             DomaineArtiste = new ObservableCollection<Domaine>();
             // recherche tout les domaines associés aux métiers
-            foreach (Metier metier in metierArtiste)
+            foreach (Metier metier in viewModelMetierDomaine.metiersArtistes)
             {
                 // si le domaine est déja contenu dans la collection on ne le rajoute pas 
                 if ( !DomaineArtiste.Contains(metier.domaine))
@@ -149,7 +152,7 @@ namespace MegaCasting.WPF
         /// <param name="e"></param>
         private void ButtonArtisteAjouter_Click(object sender, RoutedEventArgs e)
         {
-            AjoutArtiste ajoutArtiste = new AjoutArtiste();
+            AjoutArtiste ajoutArtiste = new AjoutArtiste(viewModelUser);
             ajoutArtiste.ShowDialog();
         }
         /// <summary>
@@ -164,7 +167,7 @@ namespace MegaCasting.WPF
                 Utilisateur utilisateur = new Utilisateur();
                 utilisateur = (Utilisateur)(this.ListBoxArtistes.SelectedItem);
 
-                GestionMetierArtiste gestionMetierArtiste = new GestionMetierArtiste(utilisateur, viewModelMetierDomaine);
+                GestionMetierArtiste gestionMetierArtiste = new GestionMetierArtiste(utilisateur,viewModelUser);
                 gestionMetierArtiste.ShowDialog();
             }
             else
@@ -196,7 +199,7 @@ namespace MegaCasting.WPF
 
                     // Une fois que la viewModel est mise à jour on sauvegarde les modifications
  
-                    //this._ViewModelUtilisateur.Save();
+                    this.viewModelUser.Save();
                     MessageBox.Show("Modification réussite !!!");
                 }
                 else { MessageBox.Show("L'artiste doit être agé de 18 ans ou plus."); }
@@ -205,6 +208,17 @@ namespace MegaCasting.WPF
 
             else { MessageBox.Show("L' artiste doit disposer au minimum de : \n - Un nom \n - Un numéro de téléphone \n - Un Email "); }
         }
+        private void ButtonArtisteSupprimer_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.ListBoxArtistes.SelectedItem != null)
+            {
+                
+                viewModelUser.Entities.Utilisateurs.Remove((Utilisateur)this.ListBoxArtistes.SelectedItem);
+                viewModelUser.artistes.Remove((Utilisateur)this.ListBoxArtistes.SelectedItem);
+                viewModelUser.Save();
+            }
+        }
+        
 
       
 

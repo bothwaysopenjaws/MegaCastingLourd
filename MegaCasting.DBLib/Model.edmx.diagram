@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="megacastingModel.Candidature" Width="1.5" PointX="7.75" PointY="10.375" IsExpanded="true" />
         <EntityTypeShape EntityType="megacastingModel.Competence" Width="1.5" PointX="8.25" PointY="6.375" IsExpanded="true" />
         <EntityTypeShape EntityType="megacastingModel.Historique" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="megacastingModel.Metier" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="megacastingModel.Metier" Width="1.5" PointX="12.25" PointY="10.5" IsExpanded="true" />
         <EntityTypeShape EntityType="megacastingModel.Multimedia" Width="1.5" PointX="8.25" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="megacastingModel.Niveau" Width="1.5" PointX="6" PointY="17.625" IsExpanded="true" />
         <EntityTypeShape EntityType="megacastingModel.TypeAbonnement" Width="2.125" PointX="2.125" PointY="1.5" IsExpanded="true" />

@@ -25,32 +25,56 @@ namespace MegaCasting.WPF.GestionWindows
 
         #region Attributs
         protected ViewModelDomaine_Metier _ViewModelMetier;
+        protected ViewModelUtilisateur _ViewModelUser;
         protected Utilisateur artiste;
         #endregion
         #region Contructeur
-        public GestionMetierArtiste(Utilisateur user, ViewModelDomaine_Metier viewModelMetierDomaine)
+
+        public GestionMetierArtiste(Utilisateur user,ViewModelUtilisateur viewModelUser)
         {
             InitializeComponent();
 
             artiste = user;
-
+            _ViewModelUser = new ViewModelUtilisateur();
+            _ViewModelUser = viewModelUser;
             _ViewModelMetier = new ViewModelDomaine_Metier();
-            //_ViewModelMetier.competencesParArtiste(artiste); récupération des métiers artiste
-            _ViewModelMetier = viewModelMetierDomaine;
+            _ViewModelMetier.metierParArtiste(artiste);
+
             this.DataContext = _ViewModelMetier;
         }
         #endregion
 
-        
 
-        
+
+
         #region Evenement
         private void ButtonAjouterMetier_Click(object sender, RoutedEventArgs e)
         {
-            AjoutMetierArtiste ajoutMetierArtiste = new AjoutMetierArtiste();
+            AjoutMetierArtiste ajoutMetierArtiste = new AjoutMetierArtiste(_ViewModelMetier, artiste);
             ajoutMetierArtiste.ShowDialog();
+
+        }
+        //a finir
+        private void ButtonSupprimerMetier_Click(object sender, RoutedEventArgs e)
+        {
+            Metier metierArtiste = (Metier)this.ListBoxMetiersArtiste.SelectedItem;
+            
+            if (metierArtiste != null)
+            {
+
+                _ViewModelUser.artistes.Where(artisteTemp => artisteTemp.Identifiant == artiste.Identifiant).First().metiers.Remove(metierArtiste);
+                _ViewModelUser.Entities.Utilisateurs.Where(artisteTemp => artisteTemp.Identifiant == artiste.Identifiant).First().metiers.Remove(metierArtiste);
+                _ViewModelUser.Save();
+                this.Close();             
+                                       
+            }
+           
         }
 
         #endregion
+
+
+
+
     }
 }

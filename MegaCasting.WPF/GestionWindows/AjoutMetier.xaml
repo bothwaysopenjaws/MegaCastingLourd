@@ -25,7 +25,7 @@
 
         <TextBox Height="25" Grid.Column="1" Grid.Row="1" Margin="10" Name="TextBoxNomMetier" ></TextBox>
 
-        <ComboBox Grid.Column="1" Grid.Row="2" Name="comboBoxMetier" HorizontalAlignment="Center" SelectedValue="{Binding Path=SelectedItem.domaine}" DisplayMemberPath="Libelle" VerticalAlignment="Center" Height="25" Width="150" ></ComboBox>
+        <ComboBox Grid.Column="1" Grid.Row="2" Name="comboBoxMetier" HorizontalAlignment="Center" ItemsSource="{Binding domaines}" DisplayMemberPath="Libelle" VerticalAlignment="Center" Height="25" Width="150" ></ComboBox>
         
         <TextBox Name="TextboxDescriptionMetier" Grid.Column="1" Grid.Row="3" Margin="5"></TextBox>
 

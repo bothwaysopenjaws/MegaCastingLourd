@@ -76,10 +76,10 @@
             <TextBox Grid.Column="1" Grid.Row="8"  Margin="5,10,5,10" Name="TextBoxVilleArtiste" Text="{Binding Path=SelectedItem.adresse.Ville , ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             <TextBox Grid.Column="1" Grid.Row="9"  Margin="5,10,5,10" Name="TextBoxPaysArtiste"  Text="{Binding Path=SelectedItem.adresse.Pays , ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             <!--DAtePicker-->
-            <DatePicker Name="DatePickerDateNaissance" Text="{Binding Path=SelectedItem.DateNaissance, ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Margin="5"></DatePicker>
+            <DatePicker SelectedDateFormat = "Short" Name="DatePickerDateNaissance"  Text="{Binding Path=SelectedItem.DateNaissance, StringFormat='dd/MM/yyy', ElementName=ListBoxArtistes, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Margin="5"></DatePicker>
             <!--Button-->
             <Button Background="SteelBlue" Grid.Column="0" Grid.Row="11" Margin="1,1,1,0" Name="ButtonArtisteModifier" Content="Sauvegarder" Click="ButtonArtisteModifier_Click" Height="39" VerticalAlignment="Top" ></Button>
-            <Button Background="Red" Grid.Column="1" Grid.Row="12" Margin="1" Name="ButtonArtisteSupprimer" Content="Supprimer"></Button>
+            <Button Background="Red" Grid.Column="1" Grid.Row="12" Margin="1" Name="ButtonArtisteSupprimer" Content="Supprimer" Click="ButtonArtisteSupprimer_Click"></Button>
 
 
         </Grid>

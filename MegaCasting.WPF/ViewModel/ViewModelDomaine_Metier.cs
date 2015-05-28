@@ -20,7 +20,17 @@ namespace MegaCasting.WPF.ViewModel
             metiers = new ObservableCollection<Metier>(this.Entities.Metiers);
         }
 
-        
+        public void metierParArtiste(Utilisateur user)
+        {
+            metiersArtistes = new ObservableCollection<Metier>();
+            if(user != null)
+            {
+                foreach(Metier metier in user.metiers)
+                {
+                    metiersArtistes.Add(metier);
+                }
+            }
+        }
 
     }
 }
