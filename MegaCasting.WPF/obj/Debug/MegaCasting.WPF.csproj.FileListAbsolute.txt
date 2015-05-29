@@ -240,7 +240,6 @@ C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutTypeContrat.baml
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionCompetences.baml
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\Gestion_Experiences.baml
-C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\Gestion_Mediatheque.baml
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelAbonnements.baml
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelAnnonceurs.baml
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelArtistes.baml
@@ -270,7 +269,6 @@ C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\AjoutTypeContrat.g.cs
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionCompetences.g.cs
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\Gestion_Experiences.g.cs
-C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\Gestion_Mediatheque.g.cs
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainWindow.g.cs
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelAbonnements.g.cs
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelAnnonceurs.g.cs

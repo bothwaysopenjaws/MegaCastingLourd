@@ -66,7 +66,16 @@ namespace MegaCasting.WPF
                 viewModelUtilisateur.Save();
             }
         }
+
+        private void ButtonExperienceModifier_Click(object sender, RoutedEventArgs e)
+        {
+            
+            this.viewModelUtilisateur.Save();
+        
+        }
         #endregion
+
+        
 
     }
 }

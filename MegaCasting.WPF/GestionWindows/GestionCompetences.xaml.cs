@@ -59,7 +59,7 @@ namespace MegaCasting.WPF
         {
             AjoutCompetenceArtiste competenceArtiste = new AjoutCompetenceArtiste(viewModelCompetence,  artiste);
             competenceArtiste.ShowDialog();
-            this.DataContext = competenceArtiste.viewModelCompetence;
+            
         }
 
         /// <summary>
@@ -81,9 +81,13 @@ namespace MegaCasting.WPF
         {
             if (this.ListBoxCompetencesArtistes.SelectedItem != null)
             {
-                viewModelCompetence.Entities.Competences.Remove((Competence)this.ListBoxCompetencesArtistes.SelectedItem);
-                viewModelCompetence.competencesArtiste.Remove((Competence)this.ListBoxCompetencesArtistes.SelectedItem);
-                viewModelCompetence.competencesParArtiste(artiste);
+                Competence competence =(Competence) this.ListBoxCompetencesArtistes.SelectedItem;
+                viewModelCompetence.Entities.Utilisateurs.Where(utilisateurTemp => utilisateurTemp.Identifiant == artiste.Identifiant).First().competences.Remove(competence);
+                viewModelCompetence.artistes.Where(utilisateurTemp => utilisateurTemp.Identifiant == artiste.Identifiant).First().competences.Remove(competence);
+                viewModelCompetence.competences.Remove(competence);
+                viewModelCompetence.Entities.Competences.Remove(competence);
+                viewModelCompetence.competencesArtiste.Remove(competence);
+                
                 viewModelCompetence.Save();
             }
         }

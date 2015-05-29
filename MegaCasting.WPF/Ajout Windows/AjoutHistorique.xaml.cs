@@ -33,7 +33,6 @@ namespace MegaCasting.WPF.Ajout_Windows
             artiste = utilisateurPanel;
             viewModelUtilisateur = new ViewModelUtilisateur();
             viewModelUtilisateur = viewModelUser;
-            viewModelUtilisateur.HistoriquesParArtiste(utilisateurPanel);
             this.DataContext = viewModelUtilisateur;
         }
         #endregion
@@ -57,11 +56,9 @@ namespace MegaCasting.WPF.Ajout_Windows
                     historique.Description = this.TextBlockDescriptionExp.Text;
 
                     viewModelUtilisateur.Entities.Utilisateurs.Where(utilisateurTemp => utilisateurTemp.Identifiant == artiste.Identifiant).First().historiques.Add(historique);
-                    historique.utilisateur = viewModelUtilisateur.Entities.Utilisateurs.Where(utilisateurTemp => utilisateurTemp.Identifiant == artiste.Identifiant).First();
-                    //push sur la base de données
-
+                    viewModelUtilisateur.artistes.Where(utilisateurTemp => utilisateurTemp.Identifiant == artiste.Identifiant).First().historiques.Add(historique);
                     viewModelUtilisateur.HistoriquesArtiste.Add(historique);
-                    viewModelUtilisateur.Save();
+                    this.viewModelUtilisateur.Save();
                     this.Close();
                 }
                 else { MessageBox.Show("Veuillez saisir une date de début inférieur à la date de fin !"); }

@@ -73,9 +73,10 @@ namespace MegaCasting.WPF.GestionWindows
                 viewModelMedia.Entities.Utilisateurs.Where(utilisateurTemp => utilisateurTemp.Identifiant == utilisateur.Identifiant).First().multimedias.Add(multimedia);
                 multimedia.utilisateur = viewModelMedia.Entities.Utilisateurs.Where(utilisateurTemp => utilisateurTemp.Identifiant == utilisateur.Identifiant).First();
                 //push sur la base de données
-                
-                viewModelMedia.multimediasArtiste.Add(multimedia);
-                viewModelMedia.Save();
+               
+               
+              viewModelMedia.multimediasArtiste.Add(multimedia);
+              viewModelMedia.Save();
                 
             }
             

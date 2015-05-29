@@ -62,10 +62,15 @@ namespace MegaCasting.WPF.GestionWindows
             if (metierArtiste != null)
             {
 
-                _ViewModelUser.artistes.Where(artisteTemp => artisteTemp.Identifiant == artiste.Identifiant).First().metiers.Remove(metierArtiste);
-                _ViewModelUser.Entities.Utilisateurs.Where(artisteTemp => artisteTemp.Identifiant == artiste.Identifiant).First().metiers.Remove(metierArtiste);
+                _ViewModelMetier.Entities.Utilisateurs.Where(utilisateurTemp => utilisateurTemp.Identifiant == artiste.Identifiant).First().metiers.Remove(metierArtiste);
+                _ViewModelMetier.artistes.Where(utilisateurTemp => utilisateurTemp.Identifiant == artiste.Identifiant).First().metiers.Remove(metierArtiste);
+
+                _ViewModelUser.Entities.Utilisateurs.Where(utilisateurTemp => utilisateurTemp.Identifiant == artiste.Identifiant).First().metiers.Remove(metierArtiste);
+                _ViewModelUser.artistes.Where(utilisateurTemp => utilisateurTemp.Identifiant == artiste.Identifiant).First().metiers.Remove(metierArtiste);
+                _ViewModelMetier.metiersArtistes.Remove(metierArtiste);
+                
                 _ViewModelUser.Save();
-                this.Close();             
+                _ViewModelMetier.Save();
                                        
             }
            

@@ -148,14 +148,14 @@
     <!--Détail des informations, bindé sur le selected item de la listbox-->
             <TextBox Name="TextBoxOffresIntituleModifier" Text="{Binding Path=SelectedItem.Intitule, ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}" Margin="2" Grid.Column="1" Grid.Row="1"></TextBox>
             <ComboBox Name="ComboBoxOffresAnnonceurAjouter" Text="Annonceur" ItemsSource="{Binding annonceurs}" SelectedItem="{Binding Path=SelectedItem.Utilisateur, ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Nom" Margin="2" Grid.Column="1" Grid.Row="2"></ComboBox>
-            <DatePicker Name="DatePickerOffresDateDebutAjouter" SelectedDate="{Binding Path=SelectedItem.DateDebut, ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}" Margin="2" Grid.Column="1" Grid.Row="3"></DatePicker>
+            <DatePicker Name="DatePickerOffresDateDebutAjouter" SelectedDate="{Binding Path=SelectedItem.DateDebut,StringFormat='dd/MM/yyy', ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}" Margin="2" Grid.Column="1" Grid.Row="3"></DatePicker>
             <TextBox TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Name="TextBlockOffresDescriptionAjouter"  Margin="10,20,10,5" Grid.Column="0" Grid.Row="5" Text="{Binding Path=SelectedItem.Description, ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="6" Grid.RowSpan="2">
             </TextBox>
 
             <Label Name="ComboBoxOffresDomaineAjouter"  Content="{Binding Path=SelectedItem.domaine.Libelle, ElementName=ComboboxOffresMetierAjouter, UpdateSourceTrigger=PropertyChanged}" Margin="2" Grid.Column="3" Grid.Row="2" ></Label>
             <ComboBox Name="ComboboxOffresTypeContratAjouter" ItemsSource="{Binding TypeContrats}" SelectedItem="{Binding Path=SelectedItem.TypeContrat, ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Libelle" Margin="2" Grid.Column="3" Grid.Row="3"></ComboBox>
 
-            <DatePicker Name="DatePickerOffresDatePublicationAjouter" Margin="2" Grid.Column="5" Grid.Row="1" SelectedDate="{Binding Path=SelectedItem.DatePublication, ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
+            <DatePicker Name="DatePickerOffresDatePublicationAjouter" Margin="2" Grid.Column="5" Grid.Row="1" SelectedDate="{Binding Path=SelectedItem.DatePublication, StringFormat='dd/MM/yyy',ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
             <ComboBox Name="ComboboxOffresMetierAjouter" ItemsSource="{Binding metiers}" SelectedItem="{Binding Path=SelectedItem.Metier, ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Libelle" Margin="2" Grid.Column="5" Grid.Row="2"></ComboBox>
 
         </Grid>

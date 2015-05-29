@@ -47,12 +47,25 @@ namespace MegaCasting.WPF.Ajout_Windows
                 Competence competence = new Competence();
                 competence.niveau = (Niveau)this.ComboBoxNiveauCompetence.SelectedItem;
                 competence.typecompetence = (TypeCompetence)this.ComboBoxTypeCompetence.SelectedItem;
+                competence.utilisateur = viewModelCompetence.Entities.Utilisateurs.Where(utilisateurTemp => utilisateurTemp.Identifiant == artiste.Identifiant).First();
+
                 if (!artiste.competences.Any(competenceTemp => competenceTemp.typecompetence.Identifiant == ((TypeCompetence)this.ComboBoxTypeCompetence.SelectedItem).Identifiant))
                 {
-                    viewModelCompetence.artistes.Where(artisteTemp => artisteTemp.Identifiant == artiste.Identifiant).First().competences.Add(competence);
-                    viewModelCompetence.competencesParArtiste(artiste);
+                    ////viewModelCompetence.artistes.Where(artisteTemp => artisteTemp.Identifiant == artiste.Identifiant).First().competences.Add(competence);
+                    //// ajouter à la viewModel du nouveau type de compétences
+                    //viewModelCompetence.competences.Add(competence);
+                    //viewModelCompetence.Entities.Competences.Add(competence);
+
+                    //viewModelCompetence.competencesParArtiste(artiste);
+                    //this.viewModelCompetence.Save();
+                    //this.Close();
+
+                    viewModelCompetence.Entities.Utilisateurs.Where(utilisateurTemp => utilisateurTemp.Identifiant == artiste.Identifiant).First().competences.Add(competence);
+                    viewModelCompetence.artistes.Where(utilisateurTemp => utilisateurTemp.Identifiant == artiste.Identifiant).First().competences.Add(competence);
+                    viewModelCompetence.competencesArtiste.Add(competence);
                     viewModelCompetence.Save();
                     this.Close();
+
                 }
                 else
                 {

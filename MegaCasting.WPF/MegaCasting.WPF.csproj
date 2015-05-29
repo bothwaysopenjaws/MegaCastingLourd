@@ -141,9 +141,6 @@
     <Compile Include="GestionWindows\Gestion_Experiences.xaml.cs">
       <DependentUpon>Gestion_Experiences.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GestionWindows\Gestion_Mediatheque.xaml.cs">
-      <DependentUpon>Gestion_Mediatheque.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainPanels\PanelAbonnements.xaml.cs">
       <DependentUpon>PanelAbonnements.xaml</DependentUpon>
     </Compile>
@@ -257,10 +254,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GestionWindows\Gestion_Experiences.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="GestionWindows\Gestion_Mediatheque.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

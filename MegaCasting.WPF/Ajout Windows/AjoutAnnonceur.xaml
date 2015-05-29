@@ -48,7 +48,7 @@
         <TextBox Name="TextBoxVilleAjoutAnnonceur" Grid.Column="3" Grid.Row="3" Width="150" Height="25"></TextBox>
         <TextBox Name="textBoxPaysAjoutAnnonceur" Grid.Column="3" Grid.Row="4" Width="150" Height="25"></TextBox>
         <!--DatePicker-->
-        <DatePicker Name="DatePickerNaissanceAnnonceur" Width="150" Height="25" Grid.Column="1" Grid.Row="5"></DatePicker>
+        <DatePicker SelectedDate="{Binding Path=SelectedItem.DateFin, StringFormat='dd/MM/yyy'}" Name="DatePickerNaissanceAnnonceur" Width="150" Height="25" Grid.Column="1" Grid.Row="5"></DatePicker>
         <!-- Bouton-->
         <Button Content="Ajouter"  Name="ButtonAjouterAnnonceur" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="4" Width="150" Height="25" Background="Green" Click="ButtonAjouterAnnonceur_Click"></Button>
     </Grid>

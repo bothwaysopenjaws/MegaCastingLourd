@@ -33,24 +33,16 @@
                 <ColumnDefinition Width="130*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="13*"></RowDefinition>
+                
                 <RowDefinition Height="13*"></RowDefinition>
                 <RowDefinition Height="13*"></RowDefinition>
                 <RowDefinition Height="2.5*"></RowDefinition>
                 <RowDefinition Height="2.5*"/>
             </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.ColumnSpan="2">Niveau :</Label>
 
-            <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.ColumnSpan="2">Nom :</Label>
-            <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.ColumnSpan="2">Niveau :</Label>
-            <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.ColumnSpan="2">Type :</Label>
+            <ComboBox Name="ComboboxNiveauCompetence" Height="25" Width="150"  Grid.Column="2" Grid.Row="0" ItemsSource="{Binding niveaux}" SelectedItem="{Binding Path=SelectedItem.niveau, ElementName=ListBoxCompetencesArtistes, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Libelle">
 
-            <TextBox Text="{Binding Path=SelectedItem.typecompetence.Libelle, ElementName=ListBoxCompetencesArtistes, UpdateSourceTrigger=PropertyChanged}" Height="25" Width="150" Margin="10,45" Grid.Column="2" Grid.Row="0" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" />
-
-            <ComboBox Name="ComboboxNiveauCompetence" Height="25" Width="150"  Grid.Column="2" Grid.Row="1" ItemsSource="{Binding niveaux}" SelectedItem="{Binding Path=SelectedItem.niveau, ElementName=ListBoxCompetencesArtistes, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Libelle">
-
-            </ComboBox>
-
-            <ComboBox Name="ComboboxTypeCompetence" Height="25" Width="150"  Grid.Column="2" Grid.Row="2" ItemsSource="{Binding typeCompetences}" SelectedItem="{Binding Path=SelectedItem.typecompetence, ElementName=ListBoxCompetencesArtistes, UpdateSourceTrigger=PropertyChanged}"  DisplayMemberPath="Libelle">
             </ComboBox>
 
 
