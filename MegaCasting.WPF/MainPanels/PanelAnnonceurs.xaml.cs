@@ -77,7 +77,7 @@ namespace MegaCasting.WPF
                         // Sauvegarder la suppression
                         this._ViewModelUtilisateur.Save();
 
-                        MessageBox.Show("Suppression réussite !!!");
+                        MessageBox.Show("Suppression réussie ! ");
                     }
                     else
                     {
