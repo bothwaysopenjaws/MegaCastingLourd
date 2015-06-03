@@ -29,7 +29,11 @@ namespace MegaCasting.WPF
         {
             InitializeComponent();
             this.labelMain.Content = "Bienvenue  dans MegaGestion, Gestionnaire de données pour le site MegaShow !";
-            this.labelConnexion.Content = " Vous êtes connecté avec le compte : " + System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+            // On découpe cette chaine en 2
+            int i = System.Security.Principal.WindowsIdentity.GetCurrent().Name.IndexOf(@"\");
+            // On récupère le login et le domaine
+            string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Substring(i + 1, System.Security.Principal.WindowsIdentity.GetCurrent().Name.Length - i - 1);
+            this.labelConnexion.Content = " Bienvenue " + userName;
             
         }
 

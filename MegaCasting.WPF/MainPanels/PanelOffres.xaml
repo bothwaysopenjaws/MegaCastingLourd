@@ -51,7 +51,7 @@
                         <TextBlock Grid.Column="2" Grid.Row="0" Text=" - "></TextBlock>
                         <TextBlock Grid.Column="3" Grid.Row="0" ToolTip="{Binding Metier.Libelle}" Text="{Binding Metier.Libelle}" FontSize="10" ></TextBlock>
                         <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding DateDebut}" FontStyle="Italic" Grid.ColumnSpan="3" ></TextBlock>
-                        <CheckBox x:Name="checkBoxOffreIsActive" Grid.RowSpan="2" VerticalAlignment="Center" IsChecked="{Binding IsActive, UpdateSourceTrigger=PropertyChanged}" Checked="checkBoxOffreIsActive_Checked" ToolTip="Cocher cette case pour activer l'offre"></CheckBox>
+                       
                         
 
                     </Grid>
@@ -59,7 +59,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Background="Green" Name="ButtonOffresAjouter" Content="Ajouter"  Grid.Column="0" Grid.Row="5" Click="ButtonOffresAjouter_Click" Height="30" VerticalAlignment="Top" ></Button>
+        <Button Background="Green" Name="ButtonOffresAjouter" Content="Ajouter" Grid.RowSpan="2"  Grid.Column="0" Grid.Row="5" Click="ButtonOffresAjouter_Click" Height="30" VerticalAlignment="Top" ></Button>
 
         
         <!--GroupeBox-->
@@ -157,6 +157,9 @@
 
             <DatePicker Name="DatePickerOffresDatePublicationAjouter" Margin="2" Grid.Column="5" Grid.Row="1" SelectedDate="{Binding Path=SelectedItem.DatePublication, StringFormat='dd/MM/yyy',ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
             <ComboBox Name="ComboboxOffresMetierAjouter" ItemsSource="{Binding metiers}" SelectedItem="{Binding Path=SelectedItem.Metier, ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Libelle" Margin="2" Grid.Column="5" Grid.Row="2"></ComboBox>
+
+
+            <CheckBox x:Name="checkBoxOffreIsActiveAjout" Grid.Column="5" Grid.Row="3" VerticalAlignment="Center" IsChecked="{Binding Path=SelectItem.IsActive, ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}" Checked="checkBoxOffreIsActive_Checked" ToolTip="Cochez cette case pour activer l'offre"> Activé/Désactivé.</CheckBox>
 
         </Grid>
  

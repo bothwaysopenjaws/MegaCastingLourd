@@ -126,7 +126,7 @@ namespace MegaCasting.WPF
                     abo = (Abonnement)annonceur.abonnements.Last();
                     if (abo.Restant == 0)
                     {
-                        MessageBox.Show(" L'annonceur n'a plus de crédit de diffusion");
+                        MessageBox.Show(" L'annonceur n'a plus de crédit de diffusion. ");
                         _ViewModelOffre.offres.Where(offreTemp => offreTemp.Identifiant == ((Offre)this.ListBoxOffres.SelectedItem).Identifiant).First().IsActive = false;
                         _ViewModelOffre.Save();
 
@@ -147,6 +147,7 @@ namespace MegaCasting.WPF
                 {
                     MessageBox.Show("L'annonceur de l'offre doit d'abord acheter un pack de diffusion pour que son offre soit diffusée.");
                     ((Offre)this.ListBoxOffres.SelectedItem).IsActive = false;
+                    this.checkBoxOffreIsActiveAjout.IsChecked = false;
                 }
             }
 
