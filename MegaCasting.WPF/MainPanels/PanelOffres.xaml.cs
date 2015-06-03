@@ -119,10 +119,11 @@ namespace MegaCasting.WPF
                 offre = ((Offre)this.ListBoxOffres.SelectedItem);
                 Utilisateur annonceur = new Utilisateur();
                 annonceur = (Utilisateur)offre.Utilisateur;
-                Abonnement abo = new Abonnement();
-                abo = (Abonnement)annonceur.abonnements.Last();
-                if (annonceur.abonnements.Last() != null)
+                
+                if (annonceur.abonnements.Count() != 0)
                 {
+                    Abonnement abo = new Abonnement();
+                    abo = (Abonnement)annonceur.abonnements.Last();
                     if (abo.Restant == 0)
                     {
                         MessageBox.Show(" L'annonceur n'a plus de crédit de diffusion");
