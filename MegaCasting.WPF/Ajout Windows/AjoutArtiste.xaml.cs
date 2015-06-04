@@ -62,8 +62,8 @@ namespace MegaCasting.WPF.Ajout_Windows
                 {
 
 
-                    String passwordSalt = function.CreateSHA(artiste.Nom + artiste.Prenom);
-                    String[] tabString = passwordSalt.Split('|');
+                    
+                    
                     artiste.Nom = this.TextBoxNomAjoutArtiste.Text;
                     artiste.DateNaissance = dateNaissance;
                     artiste.Prenom = this.TextBoxPrenomAjoutArtiste.Text;
@@ -78,16 +78,19 @@ namespace MegaCasting.WPF.Ajout_Windows
                     artiste.username = artiste.Nom + artiste.Prenom;
                     artiste.username_canonical = artiste.username;
 
-                    artiste.Password = tabString[0];
-                    artiste.salt = tabString[1];
+
+                    var saltByte = function.CreateSaltByte();
+                    artiste.salt = function.SaltByteToString(saltByte);
+                    artiste.Password = SimpleHash.ComputeHash(artiste.Nom + artiste.Prenom, "SHA512", saltByte);
+                    
                     artiste.enabled = true;
                     artiste.locked = false;
                     artiste.expired = false;
-                    artiste.roles = "a:0:{}";
+                    artiste.roles = "a:0:{ROLE_ARTISTE}";
                     artiste.credentials_expired = false;
 
 
-                    // retrouve le type d'utilisateur associé aux annonceurs
+                    // retrouve le type d'utilisateur associé aux artistes
                     foreach (TypeUtilisateur typeUtilisateur in type)
                     {
 

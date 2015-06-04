@@ -79,8 +79,10 @@ namespace MegaCasting.WPF.GestionWindows
                 partenaire.adresse = (Adresse)adressePartenaire;
                 partenaire.username = partenaire.Nom + partenaire.Prenom;
                 partenaire.username_canonical = partenaire.username;
-                partenaire.Password = partenaire.Nom + "Password";
-                partenaire.salt = "";
+                var saltByte = function.CreateSaltByte();
+                partenaire.salt = function.SaltByteToString(saltByte);
+                partenaire.Password = SimpleHash.ComputeHash(partenaire.Nom + partenaire.Prenom, "SHA512", saltByte);
+                    
                 partenaire.enabled = true;
                 partenaire.locked = false;
                 partenaire.expired = false;

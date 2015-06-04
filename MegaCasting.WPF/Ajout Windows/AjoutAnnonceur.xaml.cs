@@ -73,8 +73,10 @@ namespace MegaCasting.WPF.Ajout_Windows
                     annonceur.adresse = (Adresse)adresseAnnonceur;
                     annonceur.username = annonceur.Nom + annonceur.Prenom;
                     annonceur.username_canonical = annonceur.username;
-                    annonceur.Password = annonceur.Nom + "Password";
-                    annonceur.salt = "";
+                    var saltByte = function.CreateSaltByte();
+                    annonceur.salt = function.SaltByteToString(saltByte);
+                    annonceur.Password = SimpleHash.ComputeHash(annonceur.Nom + annonceur.Prenom, "SHA512", saltByte);
+                    
                     annonceur.enabled = true;
                     annonceur.locked = false;
                     annonceur.expired = false;

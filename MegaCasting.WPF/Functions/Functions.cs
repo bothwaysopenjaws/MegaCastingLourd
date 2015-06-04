@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Management;
 
 using System.IO;
+using System.Security.Cryptography;
 
 namespace MegaCasting.WPF.Functions
 {
@@ -55,15 +56,35 @@ namespace MegaCasting.WPF.Functions
 
 
 
-        public string CreateSHA(string Password)
+        public byte[] CreateSaltByte()
         {
-            var Salt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            var random = new Random();
-            var result = new String(Enumerable.Repeat(Salt, 8).Select(s => s[random.Next(s.Length)]).ToArray());
-            System.Security.Cryptography.SHA512Managed HashTool = new System.Security.Cryptography.SHA512Managed();
-            String PasswordSalt = Salt + "|" + result ;
+            var saltBytes = new byte[] { 1, 2, 4, 8, 16, 32, 64, 128, 255 };
+            // Define min and max salt sizes.
+            int minSaltSize = 4;
+            int maxSaltSize = 8;
 
-            return PasswordSalt;
+            // Generate a random number for the size of the salt.
+            Random random = new Random();
+            int saltSize = random.Next(minSaltSize, maxSaltSize);
+
+            // Allocate a byte array, which will hold the salt.
+            saltBytes = new byte[saltSize];
+
+            // Initialize a random number generator.
+            RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
+
+            // Fill the salt with cryptographically strong byte values.
+            rng.GetNonZeroBytes(saltBytes);
+
+            return saltBytes;
+        }
+
+
+        public string SaltByteToString(byte[] salt)
+        {
+            var s = Convert.ToBase64String(salt);
+            return s;
+
         }
     }
 }
