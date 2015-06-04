@@ -51,8 +51,9 @@ namespace MegaCasting.WPF.Ajout_Windows
             ObservableCollection<TypeUtilisateur> type = _ViewModelUtilisateur.typeUtilisateurs;
             TypeUtilisateur typeTemp = new TypeUtilisateur();
 
-            if (this.TextBoxNomAjoutAnnonceur.Text != null && this.TextBoxEmailAjoutAnnonceur.Text != null && this.TextBoxTelAjoutAnnonceur.Text != null && this.TextBoxNomAjoutAnnonceur.Text != "" && this.TextBoxEmailAjoutAnnonceur.Text != "" && this.TextBoxTelAjoutAnnonceur.Text != "")
+            if (this.TextBoxNomAjoutAnnonceur.Text != null && this.TextBoxEmailAjoutAnnonceur.Text != null && this.TextBoxTelAjoutAnnonceur.Text != null && this.TextBoxNomAjoutAnnonceur.Text != "" && this.TextBoxEmailAjoutAnnonceur.Text != "" && this.TextBoxTelAjoutAnnonceur.Text != "" && this.DatePickerNaissanceAnnonceur.SelectedDate != null)
             {
+
                 DateTime dateNaissance = (DateTime)this.DatePickerNaissanceAnnonceur.SelectedDate;
 
                 int age = function.CalculAge(dateNaissance);

@@ -16,6 +16,7 @@ using MegaCasting.WPF.ViewModel;
 using MegaCasting.WPF.Functions;
 using System.Collections.ObjectModel;
 
+
 namespace MegaCasting.WPF.Ajout_Windows
 {
     /// <summary>
@@ -39,7 +40,10 @@ namespace MegaCasting.WPF.Ajout_Windows
 
         }
         #endregion
+
         #region Evenements
+
+
         private void ButtonAjouterArtiste_Click(object sender, RoutedEventArgs e)
         {
             Utilisateur artiste = new Utilisateur();
@@ -56,6 +60,10 @@ namespace MegaCasting.WPF.Ajout_Windows
 
                 if (age > 18)
                 {
+
+
+                    String passwordSalt = function.CreateSHA(artiste.Nom + artiste.Prenom);
+                    String[] tabString = passwordSalt.Split('|');
                     artiste.Nom = this.TextBoxNomAjoutArtiste.Text;
                     artiste.DateNaissance = dateNaissance;
                     artiste.Prenom = this.TextBoxPrenomAjoutArtiste.Text;
@@ -69,8 +77,9 @@ namespace MegaCasting.WPF.Ajout_Windows
                     artiste.adresse = (Adresse)adresseArtiste;
                     artiste.username = artiste.Nom + artiste.Prenom;
                     artiste.username_canonical = artiste.username;
-                    artiste.Password = artiste.Nom + "Password";
-                    artiste.salt = "";
+
+                    artiste.Password = tabString[0];
+                    artiste.salt = tabString[1];
                     artiste.enabled = true;
                     artiste.locked = false;
                     artiste.expired = false;

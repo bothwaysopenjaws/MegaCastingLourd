@@ -52,5 +52,18 @@ namespace MegaCasting.WPF.Functions
             //    Console.WriteLine("Creation of process returned: " + result);
             //    Console.WriteLine("Process ID: {0}", methodArgs[3]);
             //}
+
+
+
+        public string CreateSHA(string Password)
+        {
+            var Salt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var random = new Random();
+            var result = new String(Enumerable.Repeat(Salt, 8).Select(s => s[random.Next(s.Length)]).ToArray());
+            System.Security.Cryptography.SHA512Managed HashTool = new System.Security.Cryptography.SHA512Managed();
+            String PasswordSalt = Salt + "|" + result ;
+
+            return PasswordSalt;
+        }
     }
 }
