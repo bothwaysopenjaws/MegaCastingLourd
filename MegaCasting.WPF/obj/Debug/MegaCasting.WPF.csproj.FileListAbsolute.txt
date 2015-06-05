@@ -298,3 +298,83 @@ C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.csproj.GenerateResource.Cache
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.exe
 C:\Users\ProtoConcept GJ\Documents\Visual Studio 2013\Projects\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.pdb
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.WPF.exe.config
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.WPF.exe
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.WPF.pdb
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\bin\Debug\EntityFramework.dll
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.DBLib.dll
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MySql.Data.dll
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\bin\Debug\mysql.data.entity.EF6.dll
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\bin\Debug\MegaCasting.DBLib.pdb
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\bin\Debug\EntityFramework.xml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.csprojResolveAssemblyReference.cache
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutAnnonceur.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutArtiste.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutCompetenceArtiste.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutCredit.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutHistorique.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutMetierArtiste.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutOffre.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutTypeAbonnement.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutTypeCompetence.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionMediaUtilisateur.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionMetierArtiste.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionTypeAbonnement.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionTypeCompetence.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionTypeContrat.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionTypeMetierDomaine.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutDomaine.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutMetier.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutPartenaire.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutTypeContrat.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionCompetences.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\Gestion_Experiences.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelAbonnements.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelAnnonceurs.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelArtistes.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelCandidatures.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelMain.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelOffres.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelParametres.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelPartenaires.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutAnnonceur.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutArtiste.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutCompetenceArtiste.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutCredit.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutHistorique.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutMetierArtiste.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutOffre.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutTypeAbonnement.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutTypeCompetence.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionMediaUtilisateur.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionMetierArtiste.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionTypeAbonnement.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionTypeCompetence.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionTypeContrat.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionTypeMetierDomaine.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutDomaine.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutMetier.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutPartenaire.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\Ajout Windows\AjoutTypeContrat.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\GestionCompetences.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GestionWindows\Gestion_Experiences.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainWindow.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelAbonnements.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelAnnonceurs.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelArtistes.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelCandidatures.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelMain.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelOffres.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelParametres.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainPanels\PanelPartenaires.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\App.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF_MarkupCompile.cache
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF_MarkupCompile.lref
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MainWindow.baml
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.g.resources
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.Properties.Resources.resources
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.csproj.GenerateResource.Cache
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.exe
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\MegaCasting.WPF.pdb

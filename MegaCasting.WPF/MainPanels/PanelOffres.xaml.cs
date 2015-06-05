@@ -106,55 +106,6 @@ namespace MegaCasting.WPF
         }
 
 
-        /// <summary>
-        /// Evenement d'activation d'une offre, retirant un crédit à l'abonnement courant de l'annonceur de l'offre.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void checkBoxOffreIsActive_Checked(object sender, RoutedEventArgs e)
-        {
-            if (this.ListBoxOffres.SelectedItem != null)
-            {
-                Offre offre = new Offre();
-                offre = ((Offre)this.ListBoxOffres.SelectedItem);
-                Utilisateur annonceur = new Utilisateur();
-                annonceur = (Utilisateur)offre.Utilisateur;
-                
-                if (annonceur.abonnements.Count() != 0)
-                {
-                    Abonnement abo = new Abonnement();
-                    abo = (Abonnement)annonceur.abonnements.Last();
-                    if (abo.Restant == 0)
-                    {
-                        MessageBox.Show(" L'annonceur n'a plus de crédit de diffusion. ");
-                        _ViewModelOffre.offres.Where(offreTemp => offreTemp.Identifiant == ((Offre)this.ListBoxOffres.SelectedItem).Identifiant).First().IsActive = false;
-                        this.checkBoxOffreIsActiveAjout.IsChecked = false;
-                        _ViewModelOffre.Save();
-
-
-
-                    }
-                    else
-                    {
-
-                        MessageBox.Show("L'annonceur " + ((Utilisateur)(this.ComboBoxOffresAnnonceurAjouter.SelectedItem)).Nom + " " + ((Utilisateur)(this.ComboBoxOffresAnnonceurAjouter.SelectedItem)).Prenom + " viens de dépenser un crédit.");
-                        ((Abonnement)((Utilisateur)(this.ComboBoxOffresAnnonceurAjouter.SelectedItem)).abonnements.Last()).Restant = ((Abonnement)((Utilisateur)(this.ComboBoxOffresAnnonceurAjouter.SelectedItem)).abonnements.Last()).Restant - 1;
-                        
-                        ((Offre)this.ListBoxOffres.SelectedItem).IsActive = true;
-                        _ViewModelOffre.Save();
-                        
-
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("L'annonceur de l'offre doit d'abord acheter un pack de diffusion pour que son offre soit diffusée.");
-                    ((Offre)this.ListBoxOffres.SelectedItem).IsActive = false;
-                    this.checkBoxOffreIsActiveAjout.IsChecked = false;
-                }
-            }
-
-        }
 
 
         #endregion
@@ -173,6 +124,76 @@ namespace MegaCasting.WPF
 
 
         #endregion
+
+        private void buttonOffreIsActiveAjout_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.ListBoxOffres.SelectedItem != null)
+            {
+                Offre offre = new Offre();
+                offre = ((Offre)this.ListBoxOffres.SelectedItem);
+                Utilisateur annonceur = new Utilisateur();
+                annonceur = (Utilisateur)offre.Utilisateur;
+
+               
+                if (annonceur.abonnements.Count() != 0 && offre.IsActive == false)
+                {
+                    Abonnement abo = new Abonnement();
+                    abo = (Abonnement)annonceur.abonnements.Last();
+                    if (abo.Restant == 0)
+                    {
+                        MessageBox.Show(" L'annonceur n'a plus de crédit de diffusion. ");
+                        _ViewModelOffre.offres.Where(offreTemp => offreTemp.Identifiant == ((Offre)this.ListBoxOffres.SelectedItem).Identifiant).First().IsActive = false;
+
+                        _ViewModelOffre.Save();
+
+                        this.buttonOffreIsActiveAjout.Content = "Non active";
+
+
+                    }
+                    else
+                    {
+
+                        MessageBox.Show("L'annonceur " + ((Utilisateur)(this.ComboBoxOffresAnnonceurAjouter.SelectedItem)).Nom + " " + ((Utilisateur)(this.ComboBoxOffresAnnonceurAjouter.SelectedItem)).Prenom + " viens de dépenser un crédit.");
+                        ((Abonnement)((Utilisateur)(this.ComboBoxOffresAnnonceurAjouter.SelectedItem)).abonnements.Last()).Restant = ((Abonnement)((Utilisateur)(this.ComboBoxOffresAnnonceurAjouter.SelectedItem)).abonnements.Last()).Restant - 1;
+
+                        _ViewModelOffre.offres.Where(offreTemp => offreTemp.Identifiant == ((Offre)this.ListBoxOffres.SelectedItem).Identifiant).First().IsActive = true;
+                        this.buttonOffreIsActiveAjout.Content = "Active";
+
+                        _ViewModelOffre.Save();
+
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("L'annonceur de l'offre doit d'abord acheter un pack de diffusion pour que son offre soit diffusée.");
+                    ((Offre)this.ListBoxOffres.SelectedItem).IsActive = false;
+                    _ViewModelOffre.offres.Where(offreTemp => offreTemp.Identifiant == ((Offre)this.ListBoxOffres.SelectedItem).Identifiant).First().IsActive = false;
+                    this.buttonOffreIsActiveAjout.Content = "Non active";
+                }
+            }
+
+        }
+
+        private void ListBoxOffres_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (this.ListBoxOffres.SelectedItem != null)
+            {
+
+                if (((Offre)ListBoxOffres.SelectedItem).IsActive)
+	            {
+                    this.buttonOffreIsActiveAjout.Content = "Active";
+                }
+                else
+                {
+                    this.buttonOffreIsActiveAjout.Content = "Non active";
+                }
+                
+            }
+        }
+
+
+
 
 
     }

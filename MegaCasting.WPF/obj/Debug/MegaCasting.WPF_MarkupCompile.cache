@@ -1,0 +1,20 @@
+﻿MegaCasting.WPF
+
+
+winexe
+C#
+.cs
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\obj\Debug\
+MegaCasting.WPF
+none
+false
+DEBUG;TRACE
+C:\Users\Emmanuel\Documents\Visual Studio 2013\MegaCastingLourd\MegaCasting.WPF\App.xaml
+30-73945399
+
+44-1056250932
+241857514690
+Ajout Windows\AjoutAnnonceur.xaml;Ajout Windows\AjoutArtiste.xaml;Ajout Windows\AjoutCompetenceArtiste.xaml;Ajout Windows\AjoutCredit.xaml;Ajout Windows\AjoutHistorique.xaml;Ajout Windows\AjoutMetierArtiste.xaml;Ajout Windows\AjoutOffre.xaml;Ajout Windows\AjoutTypeAbonnement.xaml;Ajout Windows\AjoutTypeCompetence.xaml;GestionWindows\GestionMediaUtilisateur.xaml;GestionWindows\GestionMetierArtiste.xaml;GestionWindows\GestionTypeAbonnement.xaml;GestionWindows\GestionTypeCompetence.xaml;GestionWindows\GestionTypeContrat.xaml;GestionWindows\GestionTypeMetierDomaine.xaml;Ajout Windows\AjoutDomaine.xaml;Ajout Windows\AjoutMetier.xaml;Ajout Windows\AjoutPartenaire.xaml;Ajout Windows\AjoutTypeContrat.xaml;GestionWindows\GestionCompetences.xaml;GestionWindows\Gestion_Experiences.xaml;MainWindow.xaml;MainPanels\PanelAbonnements.xaml;MainPanels\PanelAnnonceurs.xaml;MainPanels\PanelArtistes.xaml;MainPanels\PanelCandidatures.xaml;MainPanels\PanelMain.xaml;MainPanels\PanelOffres.xaml;MainPanels\PanelParametres.xaml;MainPanels\PanelPartenaires.xaml;
+
+False
+

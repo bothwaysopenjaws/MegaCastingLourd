@@ -28,12 +28,7 @@
         <Label Content="Offres : " FontWeight="Bold"></Label>
         <Button x:Name="ButtonOffreReset" Grid.Row="1" Click="ButtonOffreReset_Click"> Toutes les offres</Button>
         <!-- Definition de la listbox-->
-        <ListBox Name="ListBoxOffres" ItemsSource="{Binding offres}" Grid.Column="0" Grid.Row="2" Grid.RowSpan="3">
-            <ListBox.ItemContainerStyle>
-                <Style TargetType="{x:Type ListBoxItem}">
-                    <Setter Property="IsSelected" Value="{Binding IsActive}"/>
-                </Style>
-            </ListBox.ItemContainerStyle>
+        <ListBox Name="ListBoxOffres" ItemsSource="{Binding offres}" SelectionChanged="ListBoxOffres_SelectionChanged"  Grid.Column="0" Grid.Row="2" Grid.RowSpan="3">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -50,7 +45,7 @@
                         <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding Intitule}" ToolTip="{Binding Intitule}" TextDecorations="Underline"></TextBlock>
                         <TextBlock Grid.Column="2" Grid.Row="0" Text=" - "></TextBlock>
                         <TextBlock Grid.Column="3" Grid.Row="0" ToolTip="{Binding Metier.Libelle}" Text="{Binding Metier.Libelle}" FontSize="10" ></TextBlock>
-                        <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding DateDebut}" FontStyle="Italic" Grid.ColumnSpan="3" ></TextBlock>
+                        <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding DateDebut, StringFormat='dd/MM/yyy hh:mm'}"  FontStyle="Italic" Grid.ColumnSpan="3" ></TextBlock>
                        
                         
 
@@ -155,11 +150,10 @@
             <Label Name="ComboBoxOffresDomaineAjouter"  Content="{Binding Path=SelectedItem.domaine.Libelle, ElementName=ComboboxOffresMetierAjouter, UpdateSourceTrigger=PropertyChanged}" Margin="2" Grid.Column="3" Grid.Row="2" ></Label>
             <ComboBox Name="ComboboxOffresTypeContratAjouter" ItemsSource="{Binding TypeContrats}" SelectedItem="{Binding Path=SelectedItem.TypeContrat, ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Libelle" Margin="2" Grid.Column="3" Grid.Row="3"></ComboBox>
 
-            <DatePicker Name="DatePickerOffresDatePublicationAjouter" Margin="2" Grid.Column="5" Grid.Row="1" SelectedDate="{Binding Path=SelectedItem.DatePublication, StringFormat='dd/MM/yyy',ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
+            <DatePicker Name="DatePickerOffresDatePublicationAjouter" Margin="2" Grid.Column="5" Grid.Row="1" SelectedDate="{Binding Path=SelectedItem.DatePublication, StringFormat='dd/mm/yyy',ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
             <ComboBox Name="ComboboxOffresMetierAjouter" ItemsSource="{Binding metiers}" SelectedItem="{Binding Path=SelectedItem.Metier, ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Libelle" Margin="2" Grid.Column="5" Grid.Row="2"></ComboBox>
 
-
-            <CheckBox x:Name="checkBoxOffreIsActiveAjout" Grid.Column="5" Grid.Row="3" VerticalAlignment="Center" IsChecked="{Binding Path=SelectItem.IsActive, ElementName=ListBoxOffres, UpdateSourceTrigger=PropertyChanged}" Checked="checkBoxOffreIsActive_Checked" ToolTip="Cochez cette case pour activer l'offre"> Activé/Désactivé.</CheckBox>
+            <Button Name="buttonOffreIsActiveAjout" Grid.Column="5" Click="buttonOffreIsActiveAjout_Click" Grid.Row="3"  Height="25"  ToolTip="Cliquer cette case pour activer l'offre" Margin="1"> Activé/Désactivé.</Button>
 
         </Grid>
  
