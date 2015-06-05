@@ -118,7 +118,6 @@ namespace MegaCasting.WPF
                     adresseAnnonceur.Pays = this.textBoxPaysAnnonceur.Text;
                     ((Utilisateur)(this.ListBoxAnnonceurs.SelectedItem)).adresse = (Adresse)adresseAnnonceur;
 
-
                     // Une fois que la viewModel est mise à jour on sauvegarde les modifications 
                     this._ViewModelUtilisateur.Save();
                     MessageBox.Show("Modification réussite !!!");
