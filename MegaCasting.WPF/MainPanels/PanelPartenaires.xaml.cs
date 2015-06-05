@@ -77,7 +77,7 @@ namespace MegaCasting.WPF
                     partenaire = (Utilisateur)(this.ListBoxPartenaires.SelectedItem);
 
                     // Vérifie qu'un type a été séléctionné dans la listeBox
-                    if (partenaire != null)
+                    if (partenaire != null && partenaire.competences == null && partenaire.historiques != null && partenaire.metiers == null && partenaire.offres == null && partenaire.multimedias == null && partenaire.abonnements == null)
                     {
 
                         // reste a gérer la suppression des offres lié au partenaire
@@ -94,7 +94,7 @@ namespace MegaCasting.WPF
                     }
                     else
                     {
-                        MessageBox.Show(" Saisie invalide !\r Veuillez sélectionner un partenaire à supprimer.");
+                        MessageBox.Show(" Saisie invalide !\r Veuillez  vérifier que le partenaire ne dispose pas de champs associés.");
                     }
 
                     break;

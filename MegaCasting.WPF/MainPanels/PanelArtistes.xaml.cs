@@ -179,43 +179,64 @@ namespace MegaCasting.WPF
 
         private void ButtonArtisteModifier_Click(object sender, RoutedEventArgs e)
         {
-            if (this.TextBoxNomArtiste != null && this.TextBoxNomArtiste.Text != "" && this.TextBoxEmailArtiste != null && this.TextBoxEmailArtiste.Text != null && this.TextBoxTelephoneArtiste != null && this.TextBoxTelephoneArtiste.Text != null)
-            {
-                DateTime date = (DateTime)this.DatePickerDateNaissance.SelectedDate;
-                int age = function.CalculAge(date);
-                if (age > 18)
-                {
-                    Adresse adresseArtiste = new Adresse();
-                    ((Utilisateur)(this.ListBoxArtistes.SelectedItem)).Nom = this.TextBoxNomArtiste.Text;
-                    ((Utilisateur)(this.ListBoxArtistes.SelectedItem)).Prenom = this.TextBoxPrenomArtiste.Text;
-                    ((Utilisateur)(this.ListBoxArtistes.SelectedItem)).Telephone = this.TextBoxTelephoneArtiste.Text;
-                    ((Utilisateur)(this.ListBoxArtistes.SelectedItem)).Email = this.TextBoxEmailArtiste.Text;
-                    ((Utilisateur)(this.ListBoxArtistes.SelectedItem)).DateNaissance = date;
-                    adresseArtiste.Rue = this.TextBoxRueArtiste.Text;
-                    adresseArtiste.CodePostal = this.TextBoxCPArtiste.Text;
-                    adresseArtiste.Ville = this.TextBoxVilleArtiste.Text;
-                    adresseArtiste.Pays = this.TextBoxPaysArtiste.Text;
-                    ((Utilisateur)(this.ListBoxArtistes.SelectedItem)).adresse = (Adresse)adresseArtiste;
+           
+                    if (this.TextBoxNomArtiste != null && this.TextBoxNomArtiste.Text != "" && this.TextBoxEmailArtiste != null && this.TextBoxEmailArtiste.Text != null && this.TextBoxTelephoneArtiste != null && this.TextBoxTelephoneArtiste.Text != null)
+                    {
+                        DateTime date = (DateTime)this.DatePickerDateNaissance.SelectedDate;
+                        int age = function.CalculAge(date);
+                        if (age > 18)
+                        {
+                            Adresse adresseArtiste = new Adresse();
+                            ((Utilisateur)(this.ListBoxArtistes.SelectedItem)).Nom = this.TextBoxNomArtiste.Text;
+                            ((Utilisateur)(this.ListBoxArtistes.SelectedItem)).Prenom = this.TextBoxPrenomArtiste.Text;
+                            ((Utilisateur)(this.ListBoxArtistes.SelectedItem)).Telephone = this.TextBoxTelephoneArtiste.Text;
+                            ((Utilisateur)(this.ListBoxArtistes.SelectedItem)).Email = this.TextBoxEmailArtiste.Text;
+                            ((Utilisateur)(this.ListBoxArtistes.SelectedItem)).DateNaissance = date;
+                            adresseArtiste.Rue = this.TextBoxRueArtiste.Text;
+                            adresseArtiste.CodePostal = this.TextBoxCPArtiste.Text;
+                            adresseArtiste.Ville = this.TextBoxVilleArtiste.Text;
+                            adresseArtiste.Pays = this.TextBoxPaysArtiste.Text;
+                            ((Utilisateur)(this.ListBoxArtistes.SelectedItem)).adresse = (Adresse)adresseArtiste;
 
-                    // Une fois que la viewModel est mise à jour on sauvegarde les modifications
- 
-                    this.viewModelUser.Save();
-                    MessageBox.Show("Modification réussite !!!");
-                }
-                else { MessageBox.Show("L'artiste doit être agé de 18 ans ou plus."); }
-            }
+                            // Une fois que la viewModel est mise à jour on sauvegarde les modifications
+
+                            this.viewModelUser.Save();
+                            MessageBox.Show("Modification réussite !!!");
+                        }
+                        else { MessageBox.Show("L'artiste doit être agé de 18 ans ou plus."); }
+                    }
 
 
-            else { MessageBox.Show("L' artiste doit disposer au minimum de : \n - Un nom \n - Un numéro de téléphone \n - Un Email "); }
+                    else { MessageBox.Show("L' artiste doit disposer au minimum de : \n - Un nom \n - Un numéro de téléphone \n - Un Email "); }
+                   
         }
         private void ButtonArtisteSupprimer_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.ListBoxArtistes.SelectedItem != null)
+        { 
+            MessageBoxResult result = MessageBox.Show("Voulez-vous vraiment supprimer cet artiste ?", "Suppression d'un artiste", MessageBoxButton.YesNoCancel);
+            switch (result)
+            {
+            case MessageBoxResult.Yes:
+            Utilisateur artiste = new Utilisateur();
+
+            // On récupère l'annonceur sélectionner dans la liste
+            artiste = (Utilisateur)(this.ListBoxArtistes.SelectedItem);
+
+
+            if (this.ListBoxArtistes.SelectedItem != null && artiste != null && artiste.competences == null && artiste.historiques != null && artiste.metiers == null && artiste.offres == null && artiste.multimedias == null && artiste.abonnements == null)
             {
                 
                 viewModelUser.Entities.Utilisateurs.Remove((Utilisateur)this.ListBoxArtistes.SelectedItem);
                 viewModelUser.artistes.Remove((Utilisateur)this.ListBoxArtistes.SelectedItem);
                 viewModelUser.Save();
+            }
+            else { MessageBox.Show("Vous ne pouvez supprimer des artistes qui ont des champs associés."); }
+            break;
+            case MessageBoxResult.No:
+
+            break;
+            case MessageBoxResult.Cancel:
+
+            break;
             }
         }
         

@@ -64,7 +64,7 @@ namespace MegaCasting.WPF
                     annonceur = (Utilisateur)(this.ListBoxAnnonceurs.SelectedItem);
 
                     // Vérifie qu'un annonceur a été séléctionné dans la listeBox
-                    if (annonceur != null)
+                    if (annonceur != null && annonceur.competences == null && annonceur.historiques != null && annonceur.metiers == null && annonceur.offres == null && annonceur.multimedias == null && annonceur.abonnements == null)
                     {
 
                         // reste a gérer la suppression des offres lié a l'annonceur
@@ -81,7 +81,7 @@ namespace MegaCasting.WPF
                     }
                     else
                     {
-                        MessageBox.Show(" Saisie invalide !\r Veuillez sélectionner un annonceur à supprimer.");
+                        MessageBox.Show(" Saisie invalide !\r Veuillez sélectionner un annonceur qui n'est pas lié à d'autre champs.");
                     }
                     break;
                 case MessageBoxResult.No:
