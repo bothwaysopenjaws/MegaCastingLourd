@@ -64,7 +64,7 @@ namespace MegaCasting.WPF
                     annonceur = (Utilisateur)(this.ListBoxAnnonceurs.SelectedItem);
 
                     // Vérifie qu'un annonceur a été séléctionné dans la listeBox
-                    if (annonceur != null && annonceur.competences == null && annonceur.historiques != null && annonceur.metiers == null && annonceur.offres == null && annonceur.multimedias == null && annonceur.abonnements == null)
+                    if (annonceur != null && annonceur.competences.Count == 0 && annonceur.historiques.Count == 0 && annonceur.metiers.Count == 0 && annonceur.offres.Count == 0 && annonceur.multimedias.Count == 0 && annonceur.abonnements.Count == 0)
                     {
 
                         // reste a gérer la suppression des offres lié a l'annonceur

@@ -77,7 +77,7 @@ namespace MegaCasting.WPF
                     partenaire = (Utilisateur)(this.ListBoxPartenaires.SelectedItem);
 
                     // Vérifie qu'un type a été séléctionné dans la listeBox
-                    if (partenaire != null && partenaire.competences == null && partenaire.historiques != null && partenaire.metiers == null && partenaire.offres == null && partenaire.multimedias == null && partenaire.abonnements == null)
+                    if (partenaire != null && partenaire.competences.Count == 0 && partenaire.historiques.Count == 0 && partenaire.metiers.Count == 0 && partenaire.offres.Count == 0 && partenaire.multimedias.Count == 0 && partenaire.abonnements.Count == 0)
                     {
 
                         // reste a gérer la suppression des offres lié au partenaire

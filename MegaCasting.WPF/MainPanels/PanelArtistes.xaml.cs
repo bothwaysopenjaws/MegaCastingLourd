@@ -222,7 +222,7 @@ namespace MegaCasting.WPF
             artiste = (Utilisateur)(this.ListBoxArtistes.SelectedItem);
 
 
-            if (this.ListBoxArtistes.SelectedItem != null && artiste != null && artiste.competences == null && artiste.historiques != null && artiste.metiers == null && artiste.offres == null && artiste.multimedias == null && artiste.abonnements == null)
+            if (this.ListBoxArtistes.SelectedItem != null && artiste.competences.Count == 0 && artiste.historiques.Count == 0 && artiste.metiers.Count == 0 && artiste.offres.Count == 0 && artiste.multimedias.Count == 0 && artiste.abonnements.Count == 0)
             {
                 
                 viewModelUser.Entities.Utilisateurs.Remove((Utilisateur)this.ListBoxArtistes.SelectedItem);
