@@ -58,7 +58,7 @@ namespace MegaCasting.WPF.GestionWindows
             ObservableCollection<TypeUtilisateur> type = _ViewModelUtilisateur.typeUtilisateurs;
             TypeUtilisateur typeTemp = new TypeUtilisateur();
 
-            if (this.TextBoxNomAjoutPartenaire.Text != null && this.TextBoxEmailAjoutPartenaire.Text != null && this.TextBoxTelAjoutPartenaire.Text != null && this.TextBoxNomAjoutPartenaire.Text != "" && this.TextBoxEmailAjoutPartenaire.Text != "" && this.TextBoxTelAjoutPartenaire.Text != "")
+            if (this.TextBoxNomAjoutPartenaire.Text != null && this.TextBoxEmailAjoutPartenaire.Text != null && this.TextBoxTelAjoutPartenaire.Text != null && this.TextBoxNomAjoutPartenaire.Text != "" && this.TextBoxEmailAjoutPartenaire.Text != "" && this.TextBoxTelAjoutPartenaire.Text != "" && this.DatePickerNaissancePartenaire.SelectedDate != null)
             {
                  DateTime dateNaissance = (DateTime)this.DatePickerNaissancePartenaire.SelectedDate;
 
@@ -109,7 +109,7 @@ namespace MegaCasting.WPF.GestionWindows
                 else { MessageBox.Show("L'artiste doit être agé de 18 ans ou plus."); }
                 
             }
-            else { MessageBox.Show("veuillez saisir au minimum :\r\n - Un nom\n - Un numéro de téléphone \n - Une adresse mail."); }
+            else { MessageBox.Show("veuillez saisir au minimum :\r\n - Un nom\n - Un numéro de téléphone \n - Une adresse mail. \n - Une date de naissance."); }
         }
         #endregion
     }

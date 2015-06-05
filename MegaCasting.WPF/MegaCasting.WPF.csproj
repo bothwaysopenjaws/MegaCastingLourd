@@ -57,6 +57,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -105,6 +106,7 @@
       <DependentUpon>AjoutTypeCompetence.xaml</DependentUpon>
     </Compile>
     <Compile Include="Functions\Functions.cs" />
+    <Compile Include="Functions\SimpleHash.cs" />
     <Compile Include="GestionWindows\GestionMediaUtilisateur.xaml.cs">
       <DependentUpon>GestionMediaUtilisateur.xaml</DependentUpon>
     </Compile>
@@ -123,16 +125,16 @@
     <Compile Include="GestionWindows\GestionTypeMetierDomaine.xaml.cs">
       <DependentUpon>GestionTypeMetierDomaine.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GestionWindows\AjoutDomaine.xaml.cs">
+    <Compile Include="Ajout Windows\AjoutDomaine.xaml.cs">
       <DependentUpon>AjoutDomaine.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GestionWindows\AjoutMetier.xaml.cs">
+    <Compile Include="Ajout Windows\AjoutMetier.xaml.cs">
       <DependentUpon>AjoutMetier.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GestionWindows\AjoutPartenaire.xaml.cs">
+    <Compile Include="Ajout Windows\AjoutPartenaire.xaml.cs">
       <DependentUpon>AjoutPartenaire.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GestionWindows\AjoutTypeContrat.xaml.cs">
+    <Compile Include="Ajout Windows\AjoutTypeContrat.xaml.cs">
       <DependentUpon>AjoutTypeContrat.xaml</DependentUpon>
     </Compile>
     <Compile Include="GestionWindows\GestionCompetences.xaml.cs">
@@ -233,19 +235,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GestionWindows\AjoutDomaine.xaml">
+    <Page Include="Ajout Windows\AjoutDomaine.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GestionWindows\AjoutMetier.xaml">
+    <Page Include="Ajout Windows\AjoutMetier.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GestionWindows\AjoutPartenaire.xaml">
+    <Page Include="Ajout Windows\AjoutPartenaire.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GestionWindows\AjoutTypeContrat.xaml">
+    <Page Include="Ajout Windows\AjoutTypeContrat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

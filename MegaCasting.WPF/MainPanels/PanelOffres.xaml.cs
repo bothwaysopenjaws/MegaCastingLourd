@@ -128,7 +128,9 @@ namespace MegaCasting.WPF
                     {
                         MessageBox.Show(" L'annonceur n'a plus de crédit de diffusion. ");
                         _ViewModelOffre.offres.Where(offreTemp => offreTemp.Identifiant == ((Offre)this.ListBoxOffres.SelectedItem).Identifiant).First().IsActive = false;
+                        this.checkBoxOffreIsActiveAjout.IsChecked = false;
                         _ViewModelOffre.Save();
+
 
 
                     }
