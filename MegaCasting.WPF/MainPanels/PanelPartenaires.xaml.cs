@@ -129,11 +129,23 @@ namespace MegaCasting.WPF
                     ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).Prenom = this.TextBoxPartenairePrenom.Text;
                     ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).Telephone = this.TextBoxPartenaireNumTel.Text;
                     ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).Email = this.TextBoxPartenaireEmail.Text;
+                    if(  ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).adresse != null)
+                    {
                     ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).adresse.Rue = this.TextBoxPartenaireRue.Text;
                     ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).adresse.CodePostal = this.TextBoxPartenaireCodePostal.Text;
                     ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).adresse.Ville = this.TextBoxPartenaireCity.Text;
                     ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).adresse.Pays = this.TextBoxPartenairePays.Text;
+                    }
+                    else
+                    {
+                        Adresse adresseUser = new Adresse();
+                        adresseUser.Rue = this.TextBoxPartenaireRue.Text ;
+                        adresseUser.Ville = this.TextBoxPartenaireCity.Text;
+                        adresseUser.CodePostal = this.TextBoxPartenaireCodePostal.Text ;
+                        adresseUser.Pays = TextBoxPartenairePays.Text;
+                        ((Utilisateur)(this.ListBoxPartenaires.SelectedItem)).adresse = (Adresse)adresseUser;
 
+                    }
                     // Une fois que la viewModel est mise à jour on sauvegarde les modifications 
                     this._ViewModelUtilisateur.Save();
                     MessageBox.Show("Modification réussite !!!");
